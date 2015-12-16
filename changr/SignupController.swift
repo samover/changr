@@ -17,10 +17,23 @@ class SignupController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
     
+    
+    // MARK: UIViewController Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        ref.observeAuthEventWithBlock { (authData) -> Void in
+            if authData != nil {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,12 +42,14 @@ class SignupController: UIViewController {
     }
     
     // MARK: Actions
+    
     @IBAction func signupButton(sender: AnyObject) {
-        self.ref.createUser(emailTextField.text, password: passwordTextField.text) {
+        self.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
             (error: NSError!) in
             if error == nil {
                 self.ref.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: { (error, auth) -> Void in
                 })
+                print("test")
             }
         }
     }

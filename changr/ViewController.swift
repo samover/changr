@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: Properties
+    let ref = Firebase(url: "https://changr.firebaseio.com/")
+
     @IBOutlet weak var usernameLabel: UILabel!
 
 
@@ -25,13 +27,15 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        self.performSegueWithIdentifier("gotoSignIn", sender: self)
+        
     }
     
     // MARK: Actions
     
     @IBAction func logoutButton(sender: AnyObject) {
-        self.performSegueWithIdentifier("gotoSignIn", sender: self) 
+        ref.unauth()
+        print("User logged out")
+        navigationController?.popViewControllerAnimated(true)
     }
     
 

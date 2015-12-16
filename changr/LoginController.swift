@@ -21,6 +21,18 @@ class LoginController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        ref.observeAuthEventWithBlock { (authData) -> Void in
+            if authData != nil {
+                self.performSegueWithIdentifier("goto_welcome", sender: self)
+            } else {
+                // alert that User is not signed in
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -29,7 +41,18 @@ class LoginController: UIViewController {
     
     // MARK: Actions
     @IBAction func signInButton(sender: AnyObject) {
-//        Firebase
+        ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: { (error, auth) in
+            if error != nil {
+                print("Authentication error")
+            } else {
+                print("User successfully logged in")
+            }
+        
+        })
+    }
+    
+    @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
+        
     }
     
     
