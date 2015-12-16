@@ -11,8 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: Properties
-
     @IBOutlet weak var usernameLabel: UILabel!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +25,13 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        <#code#>
+        self.performSegueWithIdentifier("gotoSignIn", sender: self)
     }
+    
     // MARK: Actions
     
     @IBAction func logoutButton(sender: AnyObject) {
+        self.performSegueWithIdentifier("gotoSignIn", sender: self) 
     }
     
 

@@ -13,6 +13,8 @@
 		7E9B84F41C21B226007DFE64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B84F31C21B226007DFE64 /* Assets.xcassets */; };
 		7E9B84F71C21B226007DFE64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B84F51C21B226007DFE64 /* LaunchScreen.storyboard */; };
 		7E9B85021C21B226007DFE64 /* changrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85011C21B226007DFE64 /* changrTests.swift */; };
+		7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85111C21C4E3007DFE64 /* LoginController.swift */; };
+		7E9B85141C21C61F007DFE64 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85131C21C61F007DFE64 /* SignupController.swift */; };
 		8CF4F098B54FE8E2BF9054E1 /* libPods-changr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED7EF6E3097DCA969924F86 /* libPods-changr.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		7E9B85011C21B226007DFE64 /* changrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changrTests.swift; sourceTree = "<group>"; };
 		7E9B85031C21B226007DFE64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E9B850C1C21B47E007DFE64 /* changr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "changr-Bridging-Header.h"; sourceTree = "<group>"; };
+		7E9B85111C21C4E3007DFE64 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		7E9B85131C21C61F007DFE64 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		B33ECCE5B505067FB1D7F6AA /* Pods-changr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-changr/Pods-changr.debug.xcconfig"; sourceTree = "<group>"; };
 		CED7EF6E3097DCA969924F86 /* libPods-changr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-changr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -105,7 +109,9 @@
 			children = (
 				7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */,
 				7E9B84EE1C21B226007DFE64 /* ViewController.swift */,
+				7E9B85111C21C4E3007DFE64 /* LoginController.swift */,
 				7E9B84F01C21B226007DFE64 /* Main.storyboard */,
+				7E9B85131C21C61F007DFE64 /* SignupController.swift */,
 				7E9B84F31C21B226007DFE64 /* Assets.xcassets */,
 				7E9B84F51C21B226007DFE64 /* LaunchScreen.storyboard */,
 				7E9B84F81C21B226007DFE64 /* Info.plist */,
@@ -277,7 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */,
+				7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */,
 				7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */,
+				7E9B85141C21C61F007DFE64 /* SignupController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
