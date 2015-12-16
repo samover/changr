@@ -14,6 +14,7 @@ class SignupController: UIViewController {
     let ref = Firebase(url: "https://changr.firebaseio.com/")
     
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordConfirmationTextField: UITextField!
     
@@ -47,7 +48,14 @@ class SignupController: UIViewController {
         self.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
             (error: NSError!) in
             if error == nil {
-                self.ref.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: { (error, auth) -> Void in
+                self.ref.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: { (error, authData) -> Void in
+                    
+                    let newUser = [
+                        "provider": authData.provider,
+                        "username": self.usernameTextField.text
+                    ]
+                    
+                    self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
                 })
                 print("test")
             }
