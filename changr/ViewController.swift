@@ -15,6 +15,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var usernameLabel: UILabel!
 
+    // MARK: UIViewController Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
