@@ -110,13 +110,10 @@
 			isa = PBXGroup;
 			children = (
 				7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */,
-				7E9B84EE1C21B226007DFE64 /* ViewController.swift */,
-				7E9B85111C21C4E3007DFE64 /* LoginController.swift */,
-				7E9B84F01C21B226007DFE64 /* Main.storyboard */,
-				7E9AF0DB1C21D33C00F3C6FE /* User.swift */,
-				7E9B85131C21C61F007DFE64 /* SignupController.swift */,
+				7EBA9DA11C221A86004E4C60 /* Controllers */,
+				7EBA9DA41C221B5E004E4C60 /* Views */,
+				7EBA9DA31C221AC6004E4C60 /* Models */,
 				7E9B84F31C21B226007DFE64 /* Assets.xcassets */,
-				7E9B84F51C21B226007DFE64 /* LaunchScreen.storyboard */,
 				7E9B84F81C21B226007DFE64 /* Info.plist */,
 			);
 			path = changr;
@@ -129,6 +126,33 @@
 				7E9B85031C21B226007DFE64 /* Info.plist */,
 			);
 			path = changrTests;
+			sourceTree = "<group>";
+		};
+		7EBA9DA11C221A86004E4C60 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7E9B84EE1C21B226007DFE64 /* ViewController.swift */,
+				7E9B85111C21C4E3007DFE64 /* LoginController.swift */,
+				7E9B85131C21C61F007DFE64 /* SignupController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7EBA9DA31C221AC6004E4C60 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7E9AF0DB1C21D33C00F3C6FE /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7EBA9DA41C221B5E004E4C60 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7E9B84F01C21B226007DFE64 /* Main.storyboard */,
+				7E9B84F51C21B226007DFE64 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
