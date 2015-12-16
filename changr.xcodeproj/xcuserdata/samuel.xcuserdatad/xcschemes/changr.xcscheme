@@ -26,7 +26,8 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -35,6 +36,16 @@
                BlueprintIdentifier = "7E9B84FC1C21B226007DFE64"
                BuildableName = "changrTests.xctest"
                BlueprintName = "changrTests"
+               ReferencedContainer = "container:changr.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7EBA9DA81C222175004E4C60"
+               BuildableName = "changrUITests.xctest"
+               BlueprintName = "changrUITests"
                ReferencedContainer = "container:changr.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -19,5 +19,83 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "changrTests/changrTests.swift"
+            timestampString = "471998194.46015"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "changrTests"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "changrTests.changrTests.__deallocating_deinit"
+                  moduleName = "changrTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samuel/MAKERS/projects/changr/changrTests/changrTests.swift"
+                  timestampString = "471998214.371733"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "changrTests.changrTests.init (changrTests.changrTests.Type)(invocation : Swift.Optional&lt;__ObjC.NSInvocation&gt;) -&gt; changrTests.changrTests"
+                  moduleName = "changrTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samuel/MAKERS/projects/changr/changrTests/changrTests.swift"
+                  timestampString = "471998214.445392"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "changrTests.changrTests.init (changrTests.changrTests.Type)(selector : ObjectiveC.Selector) -&gt; changrTests.changrTests"
+                  moduleName = "changrTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samuel/MAKERS/projects/changr/changrTests/changrTests.swift"
+                  timestampString = "471998214.445978"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "changrTests.changrTests.init (changrTests.changrTests.Type)() -&gt; changrTests.changrTests"
+                  moduleName = "changrTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/samuel/MAKERS/projects/changr/changrTests/changrTests.swift"
+                  timestampString = "471998214.446374"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

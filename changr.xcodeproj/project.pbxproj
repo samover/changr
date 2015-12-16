@@ -16,11 +16,19 @@
 		7E9B85021C21B226007DFE64 /* changrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85011C21B226007DFE64 /* changrTests.swift */; };
 		7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85111C21C4E3007DFE64 /* LoginController.swift */; };
 		7E9B85141C21C61F007DFE64 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85131C21C61F007DFE64 /* SignupController.swift */; };
+		7EBA9DAC1C222175004E4C60 /* changrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA9DAB1C222175004E4C60 /* changrUITests.swift */; };
 		8CF4F098B54FE8E2BF9054E1 /* libPods-changr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED7EF6E3097DCA969924F86 /* libPods-changr.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		7E9B84FE1C21B226007DFE64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E9B84E11C21B226007DFE64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E9B84E81C21B226007DFE64;
+			remoteInfo = changr;
+		};
+		7EBA9DAE1C222175004E4C60 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7E9B84E11C21B226007DFE64 /* Project object */;
 			proxyType = 1;
@@ -45,6 +53,9 @@
 		7E9B850C1C21B47E007DFE64 /* changr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "changr-Bridging-Header.h"; sourceTree = "<group>"; };
 		7E9B85111C21C4E3007DFE64 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		7E9B85131C21C61F007DFE64 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
+		7EBA9DA91C222175004E4C60 /* changrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = changrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EBA9DAB1C222175004E4C60 /* changrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changrUITests.swift; sourceTree = "<group>"; };
+		7EBA9DAD1C222175004E4C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B33ECCE5B505067FB1D7F6AA /* Pods-changr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-changr/Pods-changr.debug.xcconfig"; sourceTree = "<group>"; };
 		CED7EF6E3097DCA969924F86 /* libPods-changr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-changr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -59,6 +70,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7E9B84FA1C21B226007DFE64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EBA9DA61C222175004E4C60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -90,6 +108,7 @@
 			children = (
 				7E9B84EB1C21B226007DFE64 /* changr */,
 				7E9B85001C21B226007DFE64 /* changrTests */,
+				7EBA9DAA1C222175004E4C60 /* changrUITests */,
 				7E9B84EA1C21B226007DFE64 /* Products */,
 				69FDB9633E57C3BF56F757AA /* Pods */,
 				675A60480E880A8C47DFA66E /* Frameworks */,
@@ -102,6 +121,7 @@
 			children = (
 				7E9B84E91C21B226007DFE64 /* changr.app */,
 				7E9B84FD1C21B226007DFE64 /* changrTests.xctest */,
+				7EBA9DA91C222175004E4C60 /* changrUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,6 +175,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		7EBA9DAA1C222175004E4C60 /* changrUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7EBA9DAB1C222175004E4C60 /* changrUITests.swift */,
+				7EBA9DAD1C222175004E4C60 /* Info.plist */,
+			);
+			path = changrUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,6 +225,24 @@
 			productReference = 7E9B84FD1C21B226007DFE64 /* changrTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7EBA9DA81C222175004E4C60 /* changrUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EBA9DB01C222175004E4C60 /* Build configuration list for PBXNativeTarget "changrUITests" */;
+			buildPhases = (
+				7EBA9DA51C222175004E4C60 /* Sources */,
+				7EBA9DA61C222175004E4C60 /* Frameworks */,
+				7EBA9DA71C222175004E4C60 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EBA9DAF1C222175004E4C60 /* PBXTargetDependency */,
+			);
+			name = changrUITests;
+			productName = changrUITests;
+			productReference = 7EBA9DA91C222175004E4C60 /* changrUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -211,6 +258,11 @@
 						DevelopmentTeam = 44ZWH2XGWA;
 					};
 					7E9B84FC1C21B226007DFE64 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 44ZWH2XGWA;
+						TestTargetID = 7E9B84E81C21B226007DFE64;
+					};
+					7EBA9DA81C222175004E4C60 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 44ZWH2XGWA;
 						TestTargetID = 7E9B84E81C21B226007DFE64;
@@ -232,6 +284,7 @@
 			targets = (
 				7E9B84E81C21B226007DFE64 /* changr */,
 				7E9B84FC1C21B226007DFE64 /* changrTests */,
+				7EBA9DA81C222175004E4C60 /* changrUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -248,6 +301,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7E9B84FB1C21B226007DFE64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EBA9DA71C222175004E4C60 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -325,6 +385,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EBA9DA51C222175004E4C60 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EBA9DAC1C222175004E4C60 /* changrUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -332,6 +400,11 @@
 			isa = PBXTargetDependency;
 			target = 7E9B84E81C21B226007DFE64 /* changr */;
 			targetProxy = 7E9B84FE1C21B226007DFE64 /* PBXContainerItemProxy */;
+		};
+		7EBA9DAF1C222175004E4C60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E9B84E81C21B226007DFE64 /* changr */;
+			targetProxy = 7EBA9DAE1C222175004E4C60 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -469,6 +542,7 @@
 		};
 		7E9B850A1C21B226007DFE64 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B33ECCE5B505067FB1D7F6AA /* Pods-changr.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = changrTests/Info.plist;
@@ -481,6 +555,7 @@
 		};
 		7E9B850B1C21B226007DFE64 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22CFF3E8E788FA5BB42B7EEA /* Pods-changr.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = changrTests/Info.plist;
@@ -488,6 +563,30 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/changr.app/changr";
+			};
+			name = Release;
+		};
+		7EBA9DB11C222175004E4C60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = changrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = changr;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		7EBA9DB21C222175004E4C60 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = changrUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = changr;
+				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -520,6 +619,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7EBA9DB01C222175004E4C60 /* Build configuration list for PBXNativeTarget "changrUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EBA9DB11C222175004E4C60 /* Debug */,
+				7EBA9DB21C222175004E4C60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
