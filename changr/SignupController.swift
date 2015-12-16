@@ -11,6 +11,7 @@ import UIKit
 class SignupController: UIViewController {
 
     // MARK: Properties
+    let ref = Firebase(url: "https://changr.firebaseio.com/")
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -29,6 +30,13 @@ class SignupController: UIViewController {
     
     // MARK: Actions
     @IBAction func signupButton(sender: AnyObject) {
+        self.ref.createUser(emailTextField.text, password: passwordTextField.text) {
+            (error: NSError!) in
+            if error == nil {
+                self.ref.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: { (error, auth) -> Void in
+                })
+            }
+        }
     }
 
     @IBAction func gotoLogin(sender: AnyObject) {

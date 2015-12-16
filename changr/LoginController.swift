@@ -14,7 +14,8 @@ class LoginController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-
+    let ref = Firebase(url: "https://changr.firebaseio.com/")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,6 +29,7 @@ class LoginController: UIViewController {
     
     // MARK: Actions
     @IBAction func signInButton(sender: AnyObject) {
+//        Firebase
     }
     
     
