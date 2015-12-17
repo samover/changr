@@ -13,13 +13,14 @@ class ViewController: UIViewController {
     // MARK: Properties
     let ref = Firebase(url: "https://changr.firebaseio.com/")
 
+
     @IBOutlet weak var usernameLabel: UILabel!
 
     // MARK: UIViewController Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
     override func didReceiveMemoryWarning() {
