@@ -36,8 +36,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         
         ref.observeAuthEventWithBlock { (authData) -> Void in
             if authData != nil {
-                self.ref.unauth()
-//                self.performSegueWithIdentifier("goto_welcome", sender: self)
+                self.performSegueWithIdentifier("mainView", sender: self)
             } else {
                 // alert that User is not signed in
             }
@@ -93,7 +92,8 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                     self.errorMessage.text = "Username or password incorrect"
                     self.errorMessage.hidden = false
                 } else {
-                    print("User successfully logged in")
+                    self.performSegueWithIdentifier("mainView", sender: self)
+
                 }
                 
             })
@@ -113,17 +113,33 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                     self.errorMessage.text = "Username or password incorrect"
                     self.errorMessage.hidden = false
                 } else {
-                    print("succesfull authentication")
 
                     self.ref.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: { (error, authData) -> Void in
+                        if error != nil {
+                            self.errorMessage.text = "There was a problem with your sign in, please try again"
+                            self.errorMessage.hidden = false
+
+                        } else {
+                            
                             let newUser = [
                                 "provider": authData.provider,
-                                "userType": self.userSelection
+                                "userType": self.userSelection,
+                                "email": authData.providerData["email"] as? NSString as? String
                             ]
                             
                             self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
+                            print(self.userSelection)
+                            if self.userSelection == "Donor" {
+                                self.performSegueWithIdentifier("mainView", sender: self)
+                            } else {
+                                self.performSegueWithIdentifier("completeProfile", sender: self)
+
+                            }
                             
-                        })
+                            
+                        }
+                    })
+                        
                 }
 
             }
@@ -132,9 +148,12 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         
     }
     
-//    @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
-//        
-//    }
+    @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
+        self.emailTextField.text = ""
+        self.passwordTextField.text = ""
+
+        self.errorMessage.hidden = true
+    }
     
     
     // MARK: - Navigation
