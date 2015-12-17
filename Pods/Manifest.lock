@@ -1,13 +1,27 @@
 PODS:
   - EstimoteSDK (3.8.1)
   - Firebase (2.5.0)
+  - MMDrawerController (0.6.0):
+    - MMDrawerController/Core (= 0.6.0)
+    - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
+    - MMDrawerController/MMDrawerVisualStates (= 0.6.0)
+    - MMDrawerController/Subclass (= 0.6.0)
+  - MMDrawerController/Core (0.6.0)
+  - MMDrawerController/MMDrawerBarButtonItem (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.6.0):
+    - MMDrawerController/Core
 
 DEPENDENCIES:
   - EstimoteSDK
   - Firebase (>= 2.5.0)
+  - MMDrawerController
 
 SPEC CHECKSUMS:
   EstimoteSDK: 34a31f7ad07bfeb58015f7decd01e1c20cbe8c45
   Firebase: 744617c0733b45198f9486ebd5cac64ec2d10d79
+  MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
 
 COCOAPODS: 0.39.0
