@@ -1,4 +1,4 @@
-//
+ //
 //  MenuViewController.swift
 //  changr
 //
@@ -8,20 +8,49 @@
 
 import UIKit
 
-class MenuViewController: UIViewController {
+class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
+    // MARK: Properties
+    var menuItems = [MenuItems]()
+    
+    
+    // MARK: LiefeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let icon1 = UIImage(named: "settings")!
+        let item1 = MenuItems(title: "Settings", icon: icon1)!
+
+        let icon2 = UIImage(named: "profile")!
+        let item2 = MenuItems(title: "Profile", icon: icon2)!
+        
+        let icon3 = UIImage(named: "history")!
+        let item3 = MenuItems(title: "History", icon: icon3)!
+        
+        menuItems += [item1, item2, item3]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
+    // MARK: Table Functions
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menuItems.count
+    }
+    
+     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let menuCell = tableView.dequeueReusableCellWithIdentifier("MenuCell", forIndexPath: indexPath) as! MenuTableViewCell
+    
+        menuCell.menuItemLabel.text = menuItems[indexPath.row].title
+        menuCell.menuItemIcon.image = menuItems[indexPath.row].icon
+        
+        return menuCell 
+    }
+    
+    
     /*
     // MARK: - Navigation
 

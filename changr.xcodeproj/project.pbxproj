@@ -13,6 +13,9 @@
 		7E3FF96F1C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
 		7E3FF9701C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
 		7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
+		7E3FF9771C2377C900CEC296 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */; };
+		7E3FF9781C2377C900CEC296 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */; };
+		7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */; };
 		7E9AF0DC1C21D33C00F3C6FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9AF0DB1C21D33C00F3C6FE /* User.swift */; };
 		7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
 		7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EE1C21B226007DFE64 /* ViewController.swift */; };
@@ -51,6 +54,7 @@
 		22CFF3E8E788FA5BB42B7EEA /* Pods-changr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changr.release.xcconfig"; path = "Pods/Target Support Files/Pods-changr/Pods-changr.release.xcconfig"; sourceTree = "<group>"; };
 		51D613131C232C0400105BFC /* MenuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		7E3FF96E1C23716400CEC296 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		7E9AF0DB1C21D33C00F3C6FE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7E9B84E91C21B226007DFE64 /* changr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = changr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				7E9B84EE1C21B226007DFE64 /* ViewController.swift */,
 				7E9B85111C21C4E3007DFE64 /* LoginController.swift */,
 				BC66A6651C22E1480009FF04 /* BeaconController.swift */,
+				7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				7EF1C8CB1C2319960003C3F0 /* MMDrawerController+Storyboard.m in Sources */,
 				BC66A6661C22E1480009FF04 /* BeaconController.swift in Sources */,
 				7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */,
+				7E3FF9771C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 				7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */,
 				7E9AF0DC1C21D33C00F3C6FE /* User.swift in Sources */,
 				7E3FF96F1C23716400CEC296 /* MenuViewController.swift in Sources */,
@@ -409,6 +415,7 @@
 				51D613151C232C0400105BFC /* MenuItems.swift in Sources */,
 				BC66A6671C22E1480009FF04 /* BeaconController.swift in Sources */,
 				7E3FF9701C23716400CEC296 /* MenuViewController.swift in Sources */,
+				7E3FF9781C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +427,7 @@
 				51D613161C232C0400105BFC /* MenuItems.swift in Sources */,
 				BC66A6681C22E1480009FF04 /* BeaconController.swift in Sources */,
 				7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */,
+				7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
