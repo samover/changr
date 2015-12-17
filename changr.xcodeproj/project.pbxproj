@@ -163,11 +163,8 @@
 			children = (
 				7E9B84EE1C21B226007DFE64 /* ViewController.swift */,
 				7E9B85111C21C4E3007DFE64 /* LoginController.swift */,
-<<<<<<< HEAD
-=======
 				7E9B85131C21C61F007DFE64 /* SignupController.swift */,
 				BC66A6651C22E1480009FF04 /* BeaconController.swift */,
->>>>>>> 2e1bf4095bbd0088ec94ad9e769142d7c54d53a7
 			);
 			name = Controllers;
 			sourceTree = "<group>";
