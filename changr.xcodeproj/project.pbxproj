@@ -16,6 +16,11 @@
 		7E9B85021C21B226007DFE64 /* changrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85011C21B226007DFE64 /* changrTests.swift */; };
 		7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85111C21C4E3007DFE64 /* LoginController.swift */; };
 		7EBA9DAC1C222175004E4C60 /* changrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA9DAB1C222175004E4C60 /* changrUITests.swift */; };
+		7EF1C8CB1C2319960003C3F0 /* MMDrawerController+Storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF1C8C91C2319960003C3F0 /* MMDrawerController+Storyboard.m */; };
+		7EF1C8CC1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7EF1C8CA1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec */; };
+		7EF1C8CE1C231E840003C3F0 /* tableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF1C8CD1C231E840003C3F0 /* tableViewController.swift */; };
+		7EF1C8CF1C231E840003C3F0 /* tableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF1C8CD1C231E840003C3F0 /* tableViewController.swift */; };
+		7EF1C8D01C231E840003C3F0 /* tableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF1C8CD1C231E840003C3F0 /* tableViewController.swift */; };
 		8CF4F098B54FE8E2BF9054E1 /* libPods-changr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED7EF6E3097DCA969924F86 /* libPods-changr.a */; };
 		BC66A6661C22E1480009FF04 /* BeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66A6651C22E1480009FF04 /* BeaconController.swift */; };
 		BC66A6671C22E1480009FF04 /* BeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66A6651C22E1480009FF04 /* BeaconController.swift */; };
@@ -57,6 +62,10 @@
 		7EBA9DA91C222175004E4C60 /* changrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = changrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EBA9DAB1C222175004E4C60 /* changrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changrUITests.swift; sourceTree = "<group>"; };
 		7EBA9DAD1C222175004E4C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EF1C8C81C2319960003C3F0 /* MMDrawerController+Storyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Storyboard.h"; sourceTree = "<group>"; };
+		7EF1C8C91C2319960003C3F0 /* MMDrawerController+Storyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController+Storyboard.m"; sourceTree = "<group>"; };
+		7EF1C8CA1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MMDrawerController+Storyboard.podspec"; sourceTree = "<group>"; };
+		7EF1C8CD1C231E840003C3F0 /* tableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tableViewController.swift; sourceTree = "<group>"; };
 		B33ECCE5B505067FB1D7F6AA /* Pods-changr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-changr/Pods-changr.debug.xcconfig"; sourceTree = "<group>"; };
 		BC66A6651C22E1480009FF04 /* BeaconController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconController.swift; sourceTree = "<group>"; };
 		CED7EF6E3097DCA969924F86 /* libPods-changr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-changr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +140,9 @@
 		7E9B84EB1C21B226007DFE64 /* changr */ = {
 			isa = PBXGroup;
 			children = (
+				7EF1C8C81C2319960003C3F0 /* MMDrawerController+Storyboard.h */,
+				7EF1C8C91C2319960003C3F0 /* MMDrawerController+Storyboard.m */,
+				7EF1C8CA1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec */,
 				7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */,
 				7EBA9DA11C221A86004E4C60 /* Controllers */,
 				7EBA9DA41C221B5E004E4C60 /* Views */,
@@ -156,6 +168,7 @@
 				7E9B84EE1C21B226007DFE64 /* ViewController.swift */,
 				7E9B85111C21C4E3007DFE64 /* LoginController.swift */,
 				BC66A6651C22E1480009FF04 /* BeaconController.swift */,
+				7EF1C8CD1C231E840003C3F0 /* tableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -296,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF1C8CC1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec in Resources */,
 				7E9B84F71C21B226007DFE64 /* LaunchScreen.storyboard in Resources */,
 				7E9B84F41C21B226007DFE64 /* Assets.xcassets in Resources */,
 				7E9B84F21C21B226007DFE64 /* Main.storyboard in Resources */,
@@ -372,6 +386,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */,
+				7EF1C8CE1C231E840003C3F0 /* tableViewController.swift in Sources */,
+				7EF1C8CB1C2319960003C3F0 /* MMDrawerController+Storyboard.m in Sources */,
 				BC66A6661C22E1480009FF04 /* BeaconController.swift in Sources */,
 				7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */,
 				7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */,
@@ -383,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF1C8CF1C231E840003C3F0 /* tableViewController.swift in Sources */,
 				7E9B85021C21B226007DFE64 /* changrTests.swift in Sources */,
 				BC66A6671C22E1480009FF04 /* BeaconController.swift in Sources */,
 			);
@@ -392,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EF1C8D01C231E840003C3F0 /* tableViewController.swift in Sources */,
 				7EBA9DAC1C222175004E4C60 /* changrUITests.swift in Sources */,
 				BC66A6681C22E1480009FF04 /* BeaconController.swift in Sources */,
 			);

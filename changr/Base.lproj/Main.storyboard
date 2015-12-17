@@ -44,7 +44,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome to changR" id="K4j-RC-hg4"/>
+                    <navigationItem key="navigationItem" title="Welcome to changR" id="K4j-RC-hg4">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="iwq-K2-RrW">
+                            <connections>
+                                <action selector="showMenu:" destination="BYZ-38-t0r" id="wXN-jI-rct"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentUserLabel" destination="19U-Nl-jmR" id="j9n-vs-Dky"/>
                     </connections>
@@ -52,7 +58,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="yDT-0c-vMe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3372" y="304"/>
+            <point key="canvasLocation" x="4066" y="1087"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zf9-Cd-n3L">
@@ -91,12 +97,62 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainView" id="rqD-q2-mAs"/>
+                        <segue destination="glO-ak-c8a" kind="presentation" identifier="mainView" id="kP8-NY-t6x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V68-cY-TB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2099" y="737"/>
+            <point key="canvasLocation" x="1497" y="675"/>
+        </scene>
+        <!--Drawer Controller-->
+        <scene sceneID="f0A-lB-YcU">
+            <objects>
+                <viewController id="glO-ak-c8a" customClass="MMDrawerController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gey-aE-mjc"/>
+                        <viewControllerLayoutGuide type="bottom" id="njl-jS-gbm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dRN-O0-s9X">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="PVd-AE-vN7" kind="custom" identifier="mm_left" customClass="MMDrawerControllerSegue" id="dB7-Ap-ryp"/>
+                        <segue destination="3R2-9E-RQw" kind="custom" identifier="mm_center" customClass="MMDrawerControllerSegue" id="EBf-lB-MMw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XGQ-K3-ERU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2224" y="312"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="uQo-8F-0mX">
+            <objects>
+                <tableViewController id="PVd-AE-vN7" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WsY-Cq-sfq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gLj-mJ-fcv">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gLj-mJ-fcv" id="fi8-wN-HuD">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="PVd-AE-vN7" id="dtN-lp-mY5"/>
+                            <outlet property="delegate" destination="PVd-AE-vN7" id="kJz-uC-oQM"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gl1-Ht-rP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2820" y="1087"/>
         </scene>
         <!--changR-->
         <scene sceneID="YEh-Fr-EOS">
@@ -180,13 +236,13 @@
                         <outlet property="errorMessage" destination="klL-Su-o4e" id="bZw-f5-cm8"/>
                         <outlet property="passwordTextField" destination="qb0-rY-oFi" id="sth-mU-Qjs"/>
                         <outlet property="userType" destination="eAL-bD-pBW" id="ff9-QX-Ofl"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainView" id="9x8-IB-o1a"/>
                         <segue destination="eOE-On-Xaf" kind="presentation" identifier="completeProfile" id="otu-AL-aq2"/>
+                        <segue destination="glO-ak-c8a" kind="presentation" identifier="mainView" id="GGP-XV-vVS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4Q-3p-dJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="288"/>
+            <point key="canvasLocation" x="785" y="282"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bJV-5Y-AqP">
@@ -206,8 +262,26 @@
             </objects>
             <point key="canvasLocation" x="35" y="288"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6WB-wD-YhD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3R2-9E-RQw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bXP-Ag-fyg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nuU-AB-OFv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jew-BB-Acs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3412" y="312"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rqD-q2-mAs"/>
+        <segue reference="kP8-NY-t6x"/>
     </inferredMetricsTieBreakers>
 </document>
