@@ -45,7 +45,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Hello world</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Let potential donors view your profile through your beacon.</string>
 </dict>
 </plist>

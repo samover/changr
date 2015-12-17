@@ -18,6 +18,9 @@
 		7E9B85141C21C61F007DFE64 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85131C21C61F007DFE64 /* SignupController.swift */; };
 		7EBA9DAC1C222175004E4C60 /* changrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA9DAB1C222175004E4C60 /* changrUITests.swift */; };
 		8CF4F098B54FE8E2BF9054E1 /* libPods-changr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED7EF6E3097DCA969924F86 /* libPods-changr.a */; };
+		BC66A6621C22DC070009FF04 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC66A6611C22DC070009FF04 /* EstimoteSDK.framework */; };
+		BC66A6631C22DC070009FF04 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC66A6611C22DC070009FF04 /* EstimoteSDK.framework */; };
+		BC66A6641C22DC070009FF04 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC66A6611C22DC070009FF04 /* EstimoteSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,7 @@
 		7EBA9DAB1C222175004E4C60 /* changrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changrUITests.swift; sourceTree = "<group>"; };
 		7EBA9DAD1C222175004E4C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B33ECCE5B505067FB1D7F6AA /* Pods-changr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-changr/Pods-changr.debug.xcconfig"; sourceTree = "<group>"; };
+		BC66A6611C22DC070009FF04 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		CED7EF6E3097DCA969924F86 /* libPods-changr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-changr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -66,6 +70,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CF4F098B54FE8E2BF9054E1 /* libPods-changr.a in Frameworks */,
+				BC66A6621C22DC070009FF04 /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC66A6631C22DC070009FF04 /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC66A6641C22DC070009FF04 /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +113,7 @@
 		7E9B84E01C21B225007DFE64 = {
 			isa = PBXGroup;
 			children = (
+				BC66A6611C22DC070009FF04 /* EstimoteSDK.framework */,
 				7E9B84EB1C21B226007DFE64 /* changr */,
 				7E9B85001C21B226007DFE64 /* changrTests */,
 				7EBA9DAA1C222175004E4C60 /* changrUITests */,
@@ -519,6 +527,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = changr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -538,6 +550,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = changr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -553,6 +569,10 @@
 			baseConfigurationReference = B33ECCE5B505067FB1D7F6AA /* Pods-changr.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = changrTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrTests;
@@ -566,6 +586,10 @@
 			baseConfigurationReference = 22CFF3E8E788FA5BB42B7EEA /* Pods-changr.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = changrTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrTests;
@@ -577,6 +601,10 @@
 		7EBA9DB11C222175004E4C60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = changrUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
@@ -589,6 +617,10 @@
 		7EBA9DB21C222175004E4C60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = changrUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
