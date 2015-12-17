@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wd8-jT-vxS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wd8-jT-vxS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -9,7 +9,7 @@
         <!--Profile-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -58,7 +58,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="yDT-0c-vMe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4048" y="1084"/>
+            <point key="canvasLocation" x="4394" y="648"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zf9-Cd-n3L">
@@ -97,78 +97,59 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="glO-ak-c8a" kind="presentation" identifier="mainView" id="kP8-NY-t6x"/>
+                        <segue destination="pcd-41-N9m" kind="presentation" identifier="mainView" id="kP8-NY-t6x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V68-cY-TB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1497" y="675"/>
         </scene>
-        <!--Drawer Controller-->
+        <!--Center-->
         <scene sceneID="f0A-lB-YcU">
             <objects>
-                <viewController id="glO-ak-c8a" customClass="MMDrawerController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="glO-ak-c8a" customClass="ViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gey-aE-mjc"/>
                         <viewControllerLayoutGuide type="bottom" id="njl-jS-gbm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dRN-O0-s9X">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <segue destination="3R2-9E-RQw" kind="custom" identifier="mm_center" customClass="MMDrawerControllerSegue" id="EBf-lB-MMw"/>
-                        <segue destination="UeS-5d-bRA" kind="custom" identifier="mm_left" customClass="MMDrawerControllerSegue" id="gfh-XY-5uO"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Center" id="rkt-bZ-KKM">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="UWb-uE-Dew">
+                            <connections>
+                                <action selector="menuButton:" destination="glO-ak-c8a" id="5D0-B4-hEa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGQ-K3-ERU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208" y="312"/>
+            <point key="canvasLocation" x="3242" y="310"/>
         </scene>
-        <!--Profile View Controller-->
-        <scene sceneID="C5U-MY-T8P">
+        <!--Menu View Controller-->
+        <scene sceneID="VJI-dA-3hJ">
             <objects>
-                <viewController id="UeS-5d-bRA" customClass="ProfileViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ozy-m4-vD1" customClass="MenuViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HDj-HG-Kqc"/>
-                        <viewControllerLayoutGuide type="bottom" id="2Lc-U8-lj3"/>
+                        <viewControllerLayoutGuide type="top" id="FgS-W8-fQR"/>
+                        <viewControllerLayoutGuide type="bottom" id="J26-bG-3dA"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qTd-eb-BXp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="nd5-N6-dP2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="r2q-vu-etH">
-                                <rect key="frame" x="20" y="88" width="460" height="120"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YwT-o6-EPo">
-                                        <rect key="frame" x="0.0" y="0.0" width="460" height="30"/>
-                                        <state key="normal" title="Settings"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozA-mN-CiH">
-                                        <rect key="frame" x="0.0" y="45" width="460" height="30"/>
-                                        <state key="normal" title="Profile"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FC-A0-VM7">
-                                        <rect key="frame" x="0.0" y="90" width="460" height="30"/>
-                                        <state key="normal" title="History"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="r2q-vu-etH" firstAttribute="leading" secondItem="qTd-eb-BXp" secondAttribute="leadingMargin" id="dWX-fh-Sxr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="r2q-vu-etH" secondAttribute="trailing" constant="100" id="eKA-sh-Amd"/>
-                            <constraint firstItem="r2q-vu-etH" firstAttribute="top" secondItem="HDj-HG-Kqc" secondAttribute="bottom" constant="68" id="pRm-fG-p1K"/>
-                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1KU-s9-dEA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e9H-18-dS9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2208" y="1110"/>
+            <point key="canvasLocation" x="3759" y="310"/>
         </scene>
-        <!--changR-->
+        <!--Welcome-->
         <scene sceneID="YEh-Fr-EOS">
             <objects>
                 <viewController id="naD-LI-BFY" customClass="LoginController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
@@ -244,14 +225,14 @@
                             <constraint firstItem="bGT-Re-6y5" firstAttribute="top" secondItem="AfI-Lz-1nE" secondAttribute="bottom" constant="60" id="h6w-kT-qzY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="changR" id="POM-aT-8c9"/>
+                    <navigationItem key="navigationItem" title="Welcome" id="POM-aT-8c9"/>
                     <connections>
                         <outlet property="emailTextField" destination="8QZ-A6-SRD" id="e2Q-eU-tNm"/>
                         <outlet property="errorMessage" destination="klL-Su-o4e" id="bZw-f5-cm8"/>
                         <outlet property="passwordTextField" destination="qb0-rY-oFi" id="sth-mU-Qjs"/>
                         <outlet property="userType" destination="eAL-bD-pBW" id="ff9-QX-Ofl"/>
                         <segue destination="eOE-On-Xaf" kind="presentation" identifier="completeProfile" id="otu-AL-aq2"/>
-                        <segue destination="glO-ak-c8a" kind="presentation" identifier="mainView" id="GGP-XV-vVS"/>
+                        <segue destination="pcd-41-N9m" kind="presentation" identifier="mainView" id="GGP-XV-vVS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4Q-3p-dJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -277,134 +258,27 @@
             <point key="canvasLocation" x="35" y="288"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="6WB-wD-YhD">
+        <scene sceneID="B4S-O8-7hV">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3R2-9E-RQw" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pcd-41-N9m" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bXP-Ag-fyg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mAK-yg-ecR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nuU-AB-OFv"/>
-                        <segue destination="Z6J-wB-PYs" kind="custom" identifier="mm_center" customClass="MMDrawerControllerSegue" id="v6i-NL-cbP"/>
-                        <segue destination="yAd-O3-Xie" kind="custom" identifier="mm_center" customClass="MMDrawerControllerSegue" id="TvU-JS-Gld"/>
+                        <segue destination="glO-ak-c8a" kind="relationship" relationship="rootViewController" id="dy8-nY-6x9"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jew-BB-Acs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4fA-2L-nGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3162" y="312"/>
-        </scene>
-        <!--Welcome to changR-->
-        <scene sceneID="JFX-PW-Pyy">
-            <objects>
-                <viewController id="Z6J-wB-PYs" customClass="SettingsViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="XsV-Kj-gmW"/>
-                        <viewControllerLayoutGuide type="bottom" id="CE0-7u-E7S"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qzz-LA-v7n">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcH-We-9gV">
-                                <rect key="frame" x="242" y="434" width="85" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoutButton:" destination="Z6J-wB-PYs" eventType="touchUpInside" id="1tl-4P-dGo"/>
-                                    <segue destination="AC8-DH-M7z" kind="unwind" unwindAction="unwindToLogin:" id="Ps0-YT-Wnd"/>
-                                </connections>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KuT-eI-WBz">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Settings" id="LaS-j5-c3E"/>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXb-1g-hTc">
-                                <rect key="frame" x="117" y="483" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Welcome to changR" id="Gfv-gr-JHt">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="jJH-Pp-dc3">
-                            <connections>
-                                <action selector="showMenu:" destination="Z6J-wB-PYs" id="Rpp-hq-JkK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="currentUserLabel" destination="aXb-1g-hTc" id="9zQ-BF-qll"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oUC-Ba-2pu" sceneMemberID="firstResponder"/>
-                <exit id="AC8-DH-M7z" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="3862" y="-512"/>
-        </scene>
-        <!--Welcome to changR-->
-        <scene sceneID="UUd-52-mDV">
-            <objects>
-                <viewController id="yAd-O3-Xie" customClass="HistoryViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uJV-7I-VYj"/>
-                        <viewControllerLayoutGuide type="bottom" id="5Lt-ax-nKV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nfu-ut-bQ5">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rf6-F3-AAO">
-                                <rect key="frame" x="242" y="434" width="85" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Logout">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoutButton:" destination="yAd-O3-Xie" eventType="touchUpInside" id="KoF-xW-HY2"/>
-                                    <segue destination="Gk5-m5-R5Z" kind="unwind" unwindAction="unwindToLogin:" id="ed7-qJ-rjh"/>
-                                </connections>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fn6-vC-SSC">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="History" id="qpf-Vk-Fmx"/>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27S-Bk-SUV">
-                                <rect key="frame" x="117" y="483" width="335" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Welcome to changR" id="O0n-ES-MMo">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="0Pt-KB-rd1">
-                            <connections>
-                                <action selector="showMenu:" destination="yAd-O3-Xie" id="gwh-mH-KpU"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="currentUserLabel" destination="27S-Bk-SUV" id="owj-51-Hym"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8cH-2b-GOf" sceneMemberID="firstResponder"/>
-                <exit id="Gk5-m5-R5Z" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="4324" y="312"/>
+            <point key="canvasLocation" x="2482" y="302"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu" width="12" height="12"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kP8-NY-t6x"/>
     </inferredMetricsTieBreakers>

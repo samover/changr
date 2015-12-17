@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentUserLabel.text = "Logged in as \(ref.authData.providerData["email"]!)"
+//        currentUserLabel.text = "Logged in as \(ref.authData.providerData["email"]!)"
 
     }
 
@@ -34,15 +34,21 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     
-    @IBAction func showMenu(sender: UIBarButtonItem) {
-        self.mm_drawerController.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+    @IBAction func menuButton(sender: AnyObject) {
+        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
     
-    @IBAction func logoutButton(sender: AnyObject) {
-        ref.unauth()
-        print("User logged out")
-        navigationController?.popViewControllerAnimated(true)
-    }
+    
+//    @IBAction func showMenu(sender: UIBarButtonItem) {
+//        self.mm_drawerController.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+//    }
+//    
+//    @IBAction func logoutButton(sender: AnyObject) {
+//        ref.unauth()
+//        print("User logged out")
+//        navigationController?.popViewControllerAnimated(true)
+//    }
     
 
 }
