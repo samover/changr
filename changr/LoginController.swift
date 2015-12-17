@@ -13,6 +13,7 @@ class LoginController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var userType: UIPickerView!
     
     let ref = Firebase(url: "https://changr.firebaseio.com/")
     
@@ -51,6 +52,10 @@ class LoginController: UIViewController {
             }
         
         })
+    }
+    
+    @IBAction func signUpButton(sender: AnyObject) {
+        
     }
     
     @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
