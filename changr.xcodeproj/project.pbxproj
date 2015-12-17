@@ -21,12 +21,12 @@
 		BB487EDC1C231F9D003EC7F5 /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EDA1C231F9D003EC7F5 /* BeaconTableViewCell.swift */; };
 		BB487EDD1C231F9D003EC7F5 /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EDA1C231F9D003EC7F5 /* BeaconTableViewCell.swift */; };
 		BB487EDF1C2323C0003EC7F5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */; };
+		BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE01C233C82003EC7F5 /* Notifications.swift */; };
+		BB487EE21C233C82003EC7F5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE01C233C82003EC7F5 /* Notifications.swift */; };
+		BB487EE31C233C82003EC7F5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE01C233C82003EC7F5 /* Notifications.swift */; };
 		BC66A6661C22E1480009FF04 /* BeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66A6651C22E1480009FF04 /* BeaconController.swift */; };
 		BC66A6671C22E1480009FF04 /* BeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66A6651C22E1480009FF04 /* BeaconController.swift */; };
 		BC66A6681C22E1480009FF04 /* BeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66A6651C22E1480009FF04 /* BeaconController.swift */; };
-		BC66A66A1C22F9D50009FF04 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC66A6691C22F9D50009FF04 /* EstimoteSDK.framework */; };
-		BC66A66B1C22F9D50009FF04 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC66A6691C22F9D50009FF04 /* EstimoteSDK.framework */; };
-		BC66A66C1C22F9D50009FF04 /* EstimoteSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC66A6691C22F9D50009FF04 /* EstimoteSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +67,8 @@
 		B33ECCE5B505067FB1D7F6AA /* Pods-changr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-changr/Pods-changr.debug.xcconfig"; sourceTree = "<group>"; };
 		BB487EDA1C231F9D003EC7F5 /* BeaconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewCell.swift; sourceTree = "<group>"; };
 		BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BB487EE01C233C82003EC7F5 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		BC66A6651C22E1480009FF04 /* BeaconController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconController.swift; sourceTree = "<group>"; };
-		BC66A6691C22F9D50009FF04 /* EstimoteSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = EstimoteSDK.framework; sourceTree = "<group>"; };
 		CED7EF6E3097DCA969924F86 /* libPods-changr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-changr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -79,7 +79,6 @@
 			files = (
 				BB487EDF1C2323C0003EC7F5 /* CoreLocation.framework in Frameworks */,
 				8CF4F098B54FE8E2BF9054E1 /* libPods-changr.a in Frameworks */,
-				BC66A66A1C22F9D50009FF04 /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,7 +86,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC66A66B1C22F9D50009FF04 /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC66A66C1C22F9D50009FF04 /* EstimoteSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +120,6 @@
 		7E9B84E01C21B225007DFE64 = {
 			isa = PBXGroup;
 			children = (
-				BC66A6691C22F9D50009FF04 /* EstimoteSDK.framework */,
 				7E9B84EB1C21B226007DFE64 /* changr */,
 				7E9B85001C21B226007DFE64 /* changrTests */,
 				7EBA9DAA1C222175004E4C60 /* changrUITests */,
@@ -179,6 +175,7 @@
 		7EBA9DA31C221AC6004E4C60 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BB487EE01C233C82003EC7F5 /* Notifications.swift */,
 				7E9AF0DB1C21D33C00F3C6FE /* User.swift */,
 			);
 			name = Models;
@@ -274,7 +271,7 @@
 				TargetAttributes = {
 					7E9B84E81C21B226007DFE64 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = JX4R5DM3GR;
+						DevelopmentTeam = 2JV2F8MS42;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -394,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */,
+				BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */,
 				BB487EDB1C231F9D003EC7F5 /* BeaconTableViewCell.swift in Sources */,
 				BC66A6661C22E1480009FF04 /* BeaconController.swift in Sources */,
 				7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */,
@@ -406,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB487EE21C233C82003EC7F5 /* Notifications.swift in Sources */,
 				7E9B85021C21B226007DFE64 /* changrTests.swift in Sources */,
 				BB487EDC1C231F9D003EC7F5 /* BeaconTableViewCell.swift in Sources */,
 				BC66A6671C22E1480009FF04 /* BeaconController.swift in Sources */,
@@ -416,6 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB487EE31C233C82003EC7F5 /* Notifications.swift in Sources */,
 				7EBA9DAC1C222175004E4C60 /* changrUITests.swift in Sources */,
 				BB487EDD1C231F9D003EC7F5 /* BeaconTableViewCell.swift in Sources */,
 				BC66A6681C22E1480009FF04 /* BeaconController.swift in Sources */,
@@ -555,7 +555,7 @@
 				INFOPLIST_FILE = changr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrfergus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrHamzaSheikh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
@@ -578,7 +578,7 @@
 				INFOPLIST_FILE = changr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrfergus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrHamzaSheikh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";

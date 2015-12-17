@@ -3,4 +3,3 @@
 //
 
 #import <Firebase/Firebase.h>
-#import <EstimoteSDK/EstimoteSDK.h>
