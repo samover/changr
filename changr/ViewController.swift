@@ -34,6 +34,10 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     
+    @IBAction func showMenu(sender: UIBarButtonItem) {
+        self.mm_drawerController.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+    }
+    
     @IBAction func logoutButton(sender: AnyObject) {
         ref.unauth()
         print("User logged out")
