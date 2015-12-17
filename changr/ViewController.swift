@@ -13,13 +13,13 @@ class ViewController: UIViewController {
     // MARK: Properties
     let ref = Firebase(url: "https://changr.firebaseio.com/")
 
-
-    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var currentUserLabel: UILabel!
 
     // MARK: UIViewController Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentUserLabel.text = "Logged in as \(ref.authData.providerData["email"]!)"
 
     }
 
