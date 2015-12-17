@@ -8,21 +8,27 @@
 
 import UIKit
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: Properties
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userType: UIPickerView!
+    @IBOutlet weak var errorMessage: UILabel!
     
     let ref = Firebase(url: "https://changr.firebaseio.com/")
+    
+    var pickerDataSource = ["Donor", "Receiver"]
+    var userSelection = "Donor"
+    
     
     // MARK: UIViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.userType.dataSource = self
+        self.userType.delegate = self
+        self.errorMessage.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -30,7 +36,8 @@ class LoginController: UIViewController {
         
         ref.observeAuthEventWithBlock { (authData) -> Void in
             if authData != nil {
-                self.performSegueWithIdentifier("goto_welcome", sender: self)
+                self.ref.unauth()
+//                self.performSegueWithIdentifier("goto_welcome", sender: self)
             } else {
                 // alert that User is not signed in
             }
@@ -42,25 +49,92 @@ class LoginController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Picker functions
+    
+    func numberOfComponentsInPickerView(userType: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(userType: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerDataSource.count
+    }
+    
+    func pickerView(userType: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerDataSource[row]
+    }
+    
+    func pickerView(userType: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(row == 0)
+        {
+            print(pickerDataSource)
+            self.userSelection = pickerDataSource[0]
+            print(self.userSelection)
+        }
+        if(row == 1)
+        {
+            print(pickerDataSource)
+            self.userSelection = pickerDataSource[1]
+            print(self.userSelection)
+
+        }
+    }
+    
     // MARK: Actions
-    @IBAction func signInButton(sender: AnyObject) {
-        ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: { (error, auth) in
-            if error != nil {
-                print("Authentication error")
-            } else {
-                print("User successfully logged in")
+    
+    
+    @IBAction func loginButton(sender: AnyObject) {
+        if emailTextField.text == "" || passwordTextField.text == "" {
+            print("Make sure to enter in each textfield")
+            self.errorMessage.text = "Please fill in a username and password"
+            self.errorMessage.hidden = false
+        } else {
+            ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: { (error, authData) in
+                if error != nil {
+                    self.errorMessage.text = "Username or password incorrect"
+                    self.errorMessage.hidden = false
+                } else {
+                    print("User successfully logged in")
+                }
+                
+            })
+        }
+    }
+    
+    @IBAction func signupButton(sender: AnyObject) {
+        if emailTextField.text == "" || passwordTextField.text == "" {
+            print("Make sure to enter in each textfield")
+            self.errorMessage.text = "Please fill in a username and password"
+            self.errorMessage.hidden = false
+        } else {
+            self.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
+                (error: NSError!) in
+                if error != nil {
+                    print(error.description)
+                    self.errorMessage.text = "Username or password incorrect"
+                    self.errorMessage.hidden = false
+                } else {
+                    print("succesfull authentication")
+
+                    self.ref.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: { (error, authData) -> Void in
+                            let newUser = [
+                                "provider": authData.provider,
+                                "userType": self.userSelection
+                            ]
+                            
+                            self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
+                            
+                        })
+                }
+
             }
-        
-        })
-    }
-    
-    @IBAction func signUpButton(sender: AnyObject) {
+            
+        }
         
     }
     
-    @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
-        
-    }
+//    @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
+//        
+//    }
     
     
     // MARK: - Navigation

@@ -26,57 +26,79 @@ class changrUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testSignupAsNewUser() {
+    func testSignupAsNewDonor() {
+        
         
         let app = XCUIApplication()
         
-        let logoutButton = app.buttons["Logout"]
-        
-        if(logoutButton.exists) {
-            logoutButton.tap()
-        }
-        
-        app.buttons["Not yet registered? Sign up now."].tap()
-        
         let exampleGmailComTextField = app.textFields["Example@gmail.com"]
         exampleGmailComTextField.tap()
-        exampleGmailComTextField.typeText("user@test.com")
-        
-        let usernameTextField = app.textFields["Username"]
-        usernameTextField.tap()
-        usernameTextField.typeText("username")
+        exampleGmailComTextField.typeText("donor@makers.com")
         
         let passwordSecureTextField = app.secureTextFields["Password"]
         passwordSecureTextField.tap()
         passwordSecureTextField.typeText("password")
         
-        let passwordConfirmationSecureTextField = app.secureTextFields["Password Confirmation"]
-        passwordConfirmationSecureTextField.tap()
-        passwordConfirmationSecureTextField.typeText("password")
+        app.pickerWheels["Donor"].tap()
         app.buttons["Sign Up"].tap()
         
         XCTAssert(app.buttons["Logout"].exists)
     }
     
-    func testLoginAsRegisterdUser {
-        // Failed to find matching element please file bug (bugreport.apple.com) and provide output from Console.app
-        
-        // Failed test
+    func testSignupAsNewReceiver() {
+
         let app = XCUIApplication()
-        let exampleGmailComTextField = app.textFields["Example@gmail.com"]
-        exampleGmailComTextField.typeText("sam")
         
-        let moreNumbersKey = app.keys["more, numbers"]
-        moreNumbersKey.pressForDuration(0.6);
-        moreNumbersKey.pressForDuration(0.6);
-        exampleGmailComTextField.typeText("@gmail.com")
+        let exampleGmailComTextField = app.textFields["Example@gmail.com"]
+        exampleGmailComTextField.tap()
+        exampleGmailComTextField.typeText("receiver@makers.com")
         
         let passwordSecureTextField = app.secureTextFields["Password"]
         passwordSecureTextField.tap()
-        passwordSecureTextField.typeText("")
         passwordSecureTextField.typeText("password")
-        app.buttons["Sign In"].tap()
-        XCTAssert(
         
+        app.pickerWheels["Receiver"].tap()
+        app.buttons["Sign Up"].tap()
+        
+        XCTAssert(app.buttons["Save Profile"].exists)
     }
+    
+    func testLogin() {
+        
+        let app = XCUIApplication()
+        
+        let exampleGmailComTextField = app.textFields["Example@gmail.com"]
+        exampleGmailComTextField.tap()
+        exampleGmailComTextField.typeText("receiver@makers.com")
+        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("password")
+        
+        app.pickerWheels["Receiver"].tap()
+        app.buttons["Login"].tap()
+        
+        XCTAssert(app.buttons["Logout"].exists)
+    }
+    
+//    func testLoginAsRegisterdUser {
+//        // Failed to find matching element please file bug (bugreport.apple.com) and provide output from Console.app
+//        
+//        // Failed test
+//        let app = XCUIApplication()
+//        let exampleGmailComTextField = app.textFields["Example@gmail.com"]
+//        exampleGmailComTextField.typeText("sam")
+//        
+//        let moreNumbersKey = app.keys["more, numbers"]
+//        moreNumbersKey.pressForDuration(0.6);
+//        moreNumbersKey.pressForDuration(0.6);
+//        exampleGmailComTextField.typeText("@gmail.com")
+//        
+//        let passwordSecureTextField = app.secureTextFields["Password"]
+//        passwordSecureTextField.tap()
+//        passwordSecureTextField.typeText("")
+//        passwordSecureTextField.typeText("password")
+//        app.buttons["Sign In"].tap()
+//        
+//    }
 }
