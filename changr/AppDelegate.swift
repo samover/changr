@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var window: UIWindow?
 
     let beaconManager = ESTBeaconManager()
-    var locationManager: CLLocationManager?
+
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -47,8 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
 
         
-//      self.beaconManager.delegate = self
-//      self.beaconManager.requestAlwaysAuthorization()
+      self.beaconManager.delegate = self
+      self.beaconManager.requestAlwaysAuthorization()
         return true
     }
 
@@ -77,39 +77,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
 }
 
-extension AppDelegate: CLLocationManagerDelegate {
-    func sendLocalNotificationWithMessage(message: String!) {
-        let notification:UILocalNotification = UILocalNotification()
-        notification.alertBody = message
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
-    }
-    
-    func locationManager(manager: CLLocationManager!,
-        didRangeBeacons beacons: AnyObject[]!,
-        inRegion region: CLBeaconRegion!) {
-            NSLog("didRangeBeacons");
-            var message:String = ""
-            
-            if(beacons.count > 0) {
-                let nearestBeacon:CLBeacon = beacons[0] as CLBeacon
-                
-                switch nearestBeacon.proximity {
-                case CLProximity.Far:
-                    message = "You are far away from the beacon"
-                case CLProximity.Near:
-                    message = "You are near the beacon"
-                case CLProximity.Immediate:
-                    message = "You are in the immediate proximity of the beacon"
-                case CLProximity.Unknown:
-                    return
-                }
-            } else {
-                message = "No beacons are nearby"
-            }
-            
-            NSLog("%@", message)
-            sendLocalNotificationWithMessage(message)
-    }
-}
 
 
