@@ -19,6 +19,9 @@
 		51D613141C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
 		51D613151C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
 		51D613161C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
+		51D613181C23359A00105BFC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613171C23359A00105BFC /* MenuViewController.swift */; };
+		51D613191C23359A00105BFC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613171C23359A00105BFC /* MenuViewController.swift */; };
+		51D6131A1C23359A00105BFC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613171C23359A00105BFC /* MenuViewController.swift */; };
 		7E9AF0DC1C21D33C00F3C6FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9AF0DB1C21D33C00F3C6FE /* User.swift */; };
 		7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
 		7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EE1C21B226007DFE64 /* ViewController.swift */; };
@@ -62,6 +65,7 @@
 		51D6130B1C232A9100105BFC /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		51D6130F1C232AA100105BFC /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		51D613131C232C0400105BFC /* MenuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
+		51D613171C23359A00105BFC /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7E9AF0DB1C21D33C00F3C6FE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7E9B84E91C21B226007DFE64 /* changr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = changr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 				51D613071C232A7200105BFC /* SettingsViewController.swift */,
 				51D6130B1C232A9100105BFC /* ProfileViewController.swift */,
 				51D6130F1C232AA100105BFC /* HistoryViewController.swift */,
+				51D613171C23359A00105BFC /* MenuViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				51D613101C232AA100105BFC /* HistoryViewController.swift in Sources */,
 				BC66A6661C22E1480009FF04 /* BeaconController.swift in Sources */,
 				7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */,
+				51D613181C23359A00105BFC /* MenuViewController.swift in Sources */,
 				7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */,
 				51D6130C1C232A9100105BFC /* ProfileViewController.swift in Sources */,
 				7E9AF0DC1C21D33C00F3C6FE /* User.swift in Sources */,
@@ -430,6 +436,7 @@
 				51D613151C232C0400105BFC /* MenuItems.swift in Sources */,
 				BC66A6671C22E1480009FF04 /* BeaconController.swift in Sources */,
 				51D613091C232A7200105BFC /* SettingsViewController.swift in Sources */,
+				51D613191C23359A00105BFC /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +451,7 @@
 				51D613161C232C0400105BFC /* MenuItems.swift in Sources */,
 				BC66A6681C22E1480009FF04 /* BeaconController.swift in Sources */,
 				51D6130A1C232A7200105BFC /* SettingsViewController.swift in Sources */,
+				51D6131A1C23359A00105BFC /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

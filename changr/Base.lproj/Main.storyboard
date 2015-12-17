@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Welcome to changR-->
+        <!--Profile-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ProfileViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -44,7 +44,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome to changR" id="K4j-RC-hg4">
+                    <navigationItem key="navigationItem" title="Profile" id="K4j-RC-hg4">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="iwq-K2-RrW">
                             <connections>
                                 <action selector="showMenu:" destination="BYZ-38-t0r" id="wXN-jI-rct"/>
@@ -58,7 +58,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="yDT-0c-vMe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4066" y="1087"/>
+            <point key="canvasLocation" x="4048" y="1084"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zf9-Cd-n3L">
@@ -118,54 +118,55 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="PVd-AE-vN7" kind="custom" identifier="mm_left" customClass="MMDrawerControllerSegue" id="dB7-Ap-ryp"/>
                         <segue destination="3R2-9E-RQw" kind="custom" identifier="mm_center" customClass="MMDrawerControllerSegue" id="EBf-lB-MMw"/>
+                        <segue destination="UeS-5d-bRA" kind="custom" identifier="mm_left" customClass="MMDrawerControllerSegue" id="gfh-XY-5uO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGQ-K3-ERU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2224" y="312"/>
+            <point key="canvasLocation" x="2208" y="312"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="uQo-8F-0mX">
+        <!--Profile View Controller-->
+        <scene sceneID="C5U-MY-T8P">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gl1-Ht-rP0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="PVd-AE-vN7" customClass="tableViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="WsY-Cq-sfq">
+                <viewController id="UeS-5d-bRA" customClass="ProfileViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HDj-HG-Kqc"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Lc-U8-lj3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qTd-eb-BXp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="r2q-vu-etH">
+                                <rect key="frame" x="20" y="88" width="460" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YwT-o6-EPo">
+                                        <rect key="frame" x="0.0" y="0.0" width="460" height="30"/>
+                                        <state key="normal" title="Settings"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozA-mN-CiH">
+                                        <rect key="frame" x="0.0" y="45" width="460" height="30"/>
+                                        <state key="normal" title="Profile"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FC-A0-VM7">
+                                        <rect key="frame" x="0.0" y="90" width="460" height="30"/>
+                                        <state key="normal" title="History"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="q9T-kS-yFJ">
-                            <rect key="frame" x="0.0" y="72" width="600" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Button"/>
-                        </button>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gLj-mJ-fcv">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gLj-mJ-fcv" id="fi8-wN-HuD">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDc-Nl-RNw">
-                                            <rect key="frame" x="8" y="15" width="111" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="PVd-AE-vN7" id="dtN-lp-mY5"/>
-                            <outlet property="delegate" destination="PVd-AE-vN7" id="kJz-uC-oQM"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
+                        <constraints>
+                            <constraint firstItem="r2q-vu-etH" firstAttribute="leading" secondItem="qTd-eb-BXp" secondAttribute="leadingMargin" id="dWX-fh-Sxr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="r2q-vu-etH" secondAttribute="trailing" constant="100" id="eKA-sh-Amd"/>
+                            <constraint firstItem="r2q-vu-etH" firstAttribute="top" secondItem="HDj-HG-Kqc" secondAttribute="bottom" constant="68" id="pRm-fG-p1K"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1KU-s9-dEA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2820" y="1087"/>
+            <point key="canvasLocation" x="2208" y="1110"/>
         </scene>
         <!--changR-->
         <scene sceneID="YEh-Fr-EOS">
@@ -287,11 +288,121 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nuU-AB-OFv"/>
+                        <segue destination="Z6J-wB-PYs" kind="custom" identifier="mm_center" customClass="MMDrawerControllerSegue" id="v6i-NL-cbP"/>
+                        <segue destination="yAd-O3-Xie" kind="custom" identifier="mm_center" customClass="MMDrawerControllerSegue" id="TvU-JS-Gld"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jew-BB-Acs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3412" y="312"/>
+            <point key="canvasLocation" x="3162" y="312"/>
+        </scene>
+        <!--Welcome to changR-->
+        <scene sceneID="JFX-PW-Pyy">
+            <objects>
+                <viewController id="Z6J-wB-PYs" customClass="SettingsViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XsV-Kj-gmW"/>
+                        <viewControllerLayoutGuide type="bottom" id="CE0-7u-E7S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qzz-LA-v7n">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TcH-We-9gV">
+                                <rect key="frame" x="242" y="434" width="85" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButton:" destination="Z6J-wB-PYs" eventType="touchUpInside" id="1tl-4P-dGo"/>
+                                    <segue destination="AC8-DH-M7z" kind="unwind" unwindAction="unwindToLogin:" id="Ps0-YT-Wnd"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KuT-eI-WBz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Settings" id="LaS-j5-c3E"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXb-1g-hTc">
+                                <rect key="frame" x="117" y="483" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Welcome to changR" id="Gfv-gr-JHt">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="jJH-Pp-dc3">
+                            <connections>
+                                <action selector="showMenu:" destination="Z6J-wB-PYs" id="Rpp-hq-JkK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="currentUserLabel" destination="aXb-1g-hTc" id="9zQ-BF-qll"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oUC-Ba-2pu" sceneMemberID="firstResponder"/>
+                <exit id="AC8-DH-M7z" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3862" y="-512"/>
+        </scene>
+        <!--Welcome to changR-->
+        <scene sceneID="UUd-52-mDV">
+            <objects>
+                <viewController id="yAd-O3-Xie" customClass="HistoryViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uJV-7I-VYj"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Lt-ax-nKV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nfu-ut-bQ5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rf6-F3-AAO">
+                                <rect key="frame" x="242" y="434" width="85" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButton:" destination="yAd-O3-Xie" eventType="touchUpInside" id="KoF-xW-HY2"/>
+                                    <segue destination="Gk5-m5-R5Z" kind="unwind" unwindAction="unwindToLogin:" id="ed7-qJ-rjh"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fn6-vC-SSC">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="History" id="qpf-Vk-Fmx"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27S-Bk-SUV">
+                                <rect key="frame" x="117" y="483" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Welcome to changR" id="O0n-ES-MMo">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="0Pt-KB-rd1">
+                            <connections>
+                                <action selector="showMenu:" destination="yAd-O3-Xie" id="gwh-mH-KpU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="currentUserLabel" destination="27S-Bk-SUV" id="owj-51-Hym"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8cH-2b-GOf" sceneMemberID="firstResponder"/>
+                <exit id="Gk5-m5-R5Z" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4324" y="312"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
