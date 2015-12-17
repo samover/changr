@@ -16,9 +16,13 @@ As a passer-by
 So that I know who the person I am giving money to is
 I want to see this person's profile on my phone
 
-As a passer-by
+As a very generous person
 So that I can help this person
 I want to donate money
+
+As a person who wants to improve the world
+So that I can aid a person in need
+I want to be able to send a message of encouragement
 ```
 
 Person asking for money:
