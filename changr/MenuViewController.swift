@@ -50,6 +50,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return menuCell 
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
     
     /*
     // MARK: - Navigation
