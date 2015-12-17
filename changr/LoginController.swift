@@ -13,6 +13,8 @@ class LoginController: UIViewController {
     // MARK: Properties
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+
+    print("hello")
     
     let ref = Firebase(url: "https://changr.firebaseio.com/")
     
