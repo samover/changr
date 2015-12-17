@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: Properties
     let ref = Firebase(url: "https://changr.firebaseio.com/")
+    let locationManager = CLLocationManager()
+
 
     @IBOutlet weak var usernameLabel: UILabel!
 
@@ -19,7 +22,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        locationManager.delegate = self;
+        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
+            locationManager.requestWhenInUseAuthorization()
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
