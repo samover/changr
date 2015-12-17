@@ -9,13 +9,21 @@
 import UIKit
 
 class tableViewController: UITableViewController {
+    
+    var items = [MenuItems]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let item1 = NavigationModel(title: "Settings", icon: "test")
-        let item2 = NavigationModel(title: "Profile")
-        let item3 = NavigationModel(title: "History")
+        let icon1 = UIImage(named: "settings")
+        let icon2 = UIImage(named: "profile")
+        let icon3 = UIImage(named: "history")
+        
+        let item1 = MenuItems(title: "Settings", icon: icon1)!
+        let item2 = MenuItems(title: "Profile", icon: icon2)!
+        let item3 = MenuItems(title: "History", icon: icon3)!
+        
+        items += [item1,item2,item3]
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,7 +50,41 @@ class tableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        <#code#>
+        
+        if indexPath.item == 0 {
+            
+            let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
+            
+            let navigationController = self.mm_drawerController.centerViewController as! UINavigationController
+            
+            navigationController.viewControllers = [viewController]
+            
+            self.mm_drawerController.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+            
+        }
+        if indexPath.item == 1 {
+            
+            let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+            
+            let navigationController = self.mm_drawerController.centerViewController as! UINavigationController
+            
+            navigationController.viewControllers = [viewController]
+            
+            self.mm_drawerController.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+            
+            
+        }
+        else if indexPath.item == 2 {
+            
+            let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("HistoryViewController") as! HistoryViewController
+            
+            let navigationController = self.mm_drawerController.centerViewController as! UINavigationController
+            
+            navigationController.viewControllers = [viewController]
+            
+            self.mm_drawerController.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+            
+        }
     }
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
