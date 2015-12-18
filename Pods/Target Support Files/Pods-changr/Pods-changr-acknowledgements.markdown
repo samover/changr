@@ -1,11 +1,6 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## EstimoteSDK
-
-Copyright 2013-2015 Estimote, Inc. All rights reserved.
-
-
 ## Firebase
 
 https://www.firebase.com/terms/terms-of-service.html
