@@ -19,6 +19,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let icon0 = UIImage(named: "home")!
+        let item0 = MenuItems(title: "Home", icon: icon0)!
+        
         let icon1 = UIImage(named: "settings")!
         let item1 = MenuItems(title: "Settings", icon: icon1)!
 
@@ -28,7 +31,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let icon3 = UIImage(named: "history")!
         let item3 = MenuItems(title: "History", icon: icon3)!
         
-        menuItems += [item1, item2, item3]
+        menuItems += [item0, item1, item2, item3]
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,6 +54,55 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        switch(indexPath.row)
+        {
+            
+        case 0:
+            let centerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+            let centerNavController = UINavigationController(rootViewController: centerViewController)
+            let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            appDelegate.centerContainer!.centerViewController = centerNavController
+            appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+            
+            break;
+            
+        case 1:
+            let settingsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
+            let settingsNavController = UINavigationController(rootViewController: settingsViewController)
+            let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            appDelegate.centerContainer!.centerViewController = settingsNavController
+            appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+            
+            break;
+        
+        case 2:
+            let profileViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+            let profileNavController = UINavigationController(rootViewController: profileViewController)
+            let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            appDelegate.centerContainer!.centerViewController = profileNavController
+            appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+            
+            break;
+
+        case 3:
+            let historyViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HistoryViewController") as! HistoryViewController
+            let historyNavController = UINavigationController(rootViewController: historyViewController)
+            let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            appDelegate.centerContainer!.centerViewController = historyNavController
+            appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+            
+            break;
+
+            
+        default:
+            
+            print("\(menuItems[indexPath.row]) is selected");
+        }
         
     }
     
