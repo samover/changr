@@ -76,4 +76,11 @@ class BeaconTableViewController : UITableViewController {
         return "Beacons in range"
     }
     
+    // MARK: Navigation
+    
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
 }

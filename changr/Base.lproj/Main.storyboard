@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pcd-41-N9m">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pcd-41-N9m">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -73,9 +73,12 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gs4-EZ-dFn" id="xSU-WP-qNi">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="eOE-On-Xaf" kind="show" id="ifV-YS-Ygk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -83,14 +86,20 @@
                             <outlet property="delegate" destination="qRK-Yo-adH" id="0NO-Dw-kDl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="KaJ-tE-0gq"/>
+                    <navigationItem key="navigationItem" id="KaJ-tE-0gq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jSW-WU-AN2">
+                            <connections>
+                                <action selector="cancel:" destination="qRK-Yo-adH" id="N5t-6y-PBJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="beaconTableView" destination="9AI-Ot-mgC" id="slp-tZ-kTN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXI-t9-MfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="1858"/>
+            <point key="canvasLocation" x="1553" y="1332"/>
         </scene>
         <!--Home-->
         <scene sceneID="f0A-lB-YcU">
@@ -225,7 +234,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OBk-cz-WuV" id="OYn-XC-Otx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LiJ-y6-ZSo">
@@ -445,10 +454,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yly-DX-y2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="1002"/>
+            <point key="canvasLocation" x="1015" y="1332"/>
         </scene>
     </scenes>
     <resources>
         <image name="menu" width="12" height="12"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ifV-YS-Ygk"/>
+    </inferredMetricsTieBreakers>
 </document>

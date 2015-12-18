@@ -44,6 +44,9 @@
 		BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
 		BB487EE61C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
 		BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
+		BBA297431C245CB9001ED461 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA297421C245CB9001ED461 /* FormController.swift */; };
+		BBA297441C245CB9001ED461 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA297421C245CB9001ED461 /* FormController.swift */; };
+		BBA297451C245CB9001ED461 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA297421C245CB9001ED461 /* FormController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +97,7 @@
 		BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BB487EE01C233C82003EC7F5 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewController.swift; sourceTree = "<group>"; };
+		BBA297421C245CB9001ED461 /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormController.swift; sourceTree = "<group>"; };
 		CED7EF6E3097DCA969924F86 /* libPods-changr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-changr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -195,6 +199,7 @@
 			children = (
 				BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */,
 				7E9B84EE1C21B226007DFE64 /* ViewController.swift */,
+				BBA297421C245CB9001ED461 /* FormController.swift */,
 				7E9B85111C21C4E3007DFE64 /* LoginController.swift */,
 				7E3FF96E1C23716400CEC296 /* MenuViewController.swift */,
 				7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */,
@@ -304,7 +309,7 @@
 				TargetAttributes = {
 					7E9B84E81C21B226007DFE64 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 44ZWH2XGWA;
+						DevelopmentTeam = 2JV2F8MS42;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -425,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51D613141C232C0400105BFC /* MenuItems.swift in Sources */,
+				BBA297431C245CB9001ED461 /* FormController.swift in Sources */,
 				7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */,
 				BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */,
 				7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */,
@@ -453,6 +459,7 @@
 				7E3FF9701C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E3FF9781C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 				7E3FF9841C2381D700CEC296 /* HistoryViewController.swift in Sources */,
+				BBA297441C245CB9001ED461 /* FormController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +476,7 @@
 				7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 				7E3FF9851C2381D700CEC296 /* HistoryViewController.swift in Sources */,
+				BBA297451C245CB9001ED461 /* FormController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,7 +613,7 @@
 				INFOPLIST_FILE = changr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrSamover;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrHSHEIKH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
@@ -628,7 +636,7 @@
 				INFOPLIST_FILE = changr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrSamover;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrHSHEIKH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
