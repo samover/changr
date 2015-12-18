@@ -33,14 +33,6 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        ref.observeAuthEventWithBlock { (authData) -> Void in
-            if authData != nil {
-                self.performSegueWithIdentifier("mainView", sender: self)
-            } else {
-                // alert that User is not signed in
-            }
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,13 +85,17 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                     self.errorMessage.text = "Username or password incorrect"
                     self.errorMessage.hidden = false
                 } else {
-                    self.performSegueWithIdentifier("mainView", sender: self)
+                    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = appDelegate.centerContainer
+                    appDelegate.window!.makeKeyAndVisible()
 
                 }
                 
             })
         }
     }
+    
+
     
     @IBAction func signupButton(sender: AnyObject) {
         if emailTextField.text == "" || passwordTextField.text == "" {
@@ -131,7 +127,9 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                             self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
                             print(self.userSelection)
                             if self.userSelection == "Donor" {
-                                self.performSegueWithIdentifier("mainView", sender: self)
+                                let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                appDelegate.window!.rootViewController = mainStoryboard.instantiateInitialViewController()
                             } else {
                                 self.performSegueWithIdentifier("completeProfile", sender: self)
 

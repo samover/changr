@@ -20,8 +20,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(presentedViewController.view)
-        print(self.view.window?.rootViewController)
         
     }
 
@@ -34,12 +32,19 @@ class ViewController: UIViewController {
     
     @IBAction func menuButton(sender: AnyObject) {
         let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        print(appDelegate.centerContainer?.view)
         appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
     
     @IBAction func logoutButton(sender: AnyObject) {
         ref.unauth()
-//        self.performSegueWithIdentifier("logoutSegue", sender: self)
+        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//        let rootController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginController") as! LoginController
+        appDelegate.window?.rootViewController = appDelegate.rootController
+        appDelegate.window!.makeKeyAndVisible()
+
     }
 
 }
