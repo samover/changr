@@ -17,9 +17,14 @@
 		7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85111C21C4E3007DFE64 /* LoginController.swift */; };
 		7EBA9DAC1C222175004E4C60 /* changrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA9DAB1C222175004E4C60 /* changrUITests.swift */; };
 		8CF4F098B54FE8E2BF9054E1 /* libPods-changr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED7EF6E3097DCA969924F86 /* libPods-changr.a */; };
-		BC66A6661C22E1480009FF04 /* BeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66A6651C22E1480009FF04 /* BeaconController.swift */; };
-		BC66A6671C22E1480009FF04 /* BeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66A6651C22E1480009FF04 /* BeaconController.swift */; };
-		BC66A6681C22E1480009FF04 /* BeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC66A6651C22E1480009FF04 /* BeaconController.swift */; };
+		BB487EDF1C2323C0003EC7F5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */; };
+		BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE01C233C82003EC7F5 /* Notifications.swift */; };
+		BB487EE21C233C82003EC7F5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE01C233C82003EC7F5 /* Notifications.swift */; };
+		BB487EE31C233C82003EC7F5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE01C233C82003EC7F5 /* Notifications.swift */; };
+		BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
+		BB487EE61C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
+		BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,7 +63,9 @@
 		7EBA9DAB1C222175004E4C60 /* changrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changrUITests.swift; sourceTree = "<group>"; };
 		7EBA9DAD1C222175004E4C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B33ECCE5B505067FB1D7F6AA /* Pods-changr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-changr/Pods-changr.debug.xcconfig"; sourceTree = "<group>"; };
-		BC66A6651C22E1480009FF04 /* BeaconController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconController.swift; sourceTree = "<group>"; };
+		BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BB487EE01C233C82003EC7F5 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewController.swift; sourceTree = "<group>"; };
 		CED7EF6E3097DCA969924F86 /* libPods-changr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-changr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -67,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB487EDF1C2323C0003EC7F5 /* CoreLocation.framework in Frameworks */,
 				8CF4F098B54FE8E2BF9054E1 /* libPods-changr.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +99,7 @@
 		675A60480E880A8C47DFA66E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */,
 				CED7EF6E3097DCA969924F86 /* libPods-changr.a */,
 			);
 			name = Frameworks;
@@ -153,9 +162,9 @@
 		7EBA9DA11C221A86004E4C60 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */,
 				7E9B84EE1C21B226007DFE64 /* ViewController.swift */,
 				7E9B85111C21C4E3007DFE64 /* LoginController.swift */,
-				BC66A6651C22E1480009FF04 /* BeaconController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -163,6 +172,7 @@
 		7EBA9DA31C221AC6004E4C60 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BB487EE01C233C82003EC7F5 /* Notifications.swift */,
 				7E9AF0DB1C21D33C00F3C6FE /* User.swift */,
 			);
 			name = Models;
@@ -258,6 +268,11 @@
 					7E9B84E81C21B226007DFE64 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = JX4R5DM3GR;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					7E9B84FC1C21B226007DFE64 = {
 						CreatedOnToolsVersion = 7.2;
@@ -372,8 +387,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */,
-				BC66A6661C22E1480009FF04 /* BeaconController.swift in Sources */,
+				BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */,
 				7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */,
+				BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
 				7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */,
 				7E9AF0DC1C21D33C00F3C6FE /* User.swift in Sources */,
 			);
@@ -383,8 +399,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB487EE21C233C82003EC7F5 /* Notifications.swift in Sources */,
+				BB487EE61C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
 				7E9B85021C21B226007DFE64 /* changrTests.swift in Sources */,
-				BC66A6671C22E1480009FF04 /* BeaconController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,8 +409,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB487EE31C233C82003EC7F5 /* Notifications.swift in Sources */,
+				BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
 				7EBA9DAC1C222175004E4C60 /* changrUITests.swift in Sources */,
-				BC66A6681C22E1480009FF04 /* BeaconController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,7 +548,7 @@
 				INFOPLIST_FILE = changr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrfergus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrFergusL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
@@ -553,7 +571,7 @@
 				INFOPLIST_FILE = changr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrfergus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrFergusL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
