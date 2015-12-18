@@ -81,10 +81,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
         case .Inside:
 
-            var text : String = "Tap here to start coding."
+            var text : String = "Tap here to enter the app."
 
             if enteredRegion {
-                text = "Welcome to the best co-working space on the planet."
+                text = "You are in range of the beacon."
             }
             Notifications.display(text)
 
@@ -93,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             var text : String = "Why aren't you here? :("
 
             if !enteredRegion {
-                text = "Wait! Don't go into the light."
+                text = "You are no longer in range of the beacon."
             }
             Notifications.display(text)
 
