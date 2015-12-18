@@ -44,9 +44,9 @@
 		BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
 		BB487EE61C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
 		BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
-		BBA297431C245CB9001ED461 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA297421C245CB9001ED461 /* FormController.swift */; };
-		BBA297441C245CB9001ED461 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA297421C245CB9001ED461 /* FormController.swift */; };
-		BBA297451C245CB9001ED461 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA297421C245CB9001ED461 /* FormController.swift */; };
+		BBA297471C246970001ED461 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA297461C246970001ED461 /* FormViewController.swift */; };
+		BBA297481C246970001ED461 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA297461C246970001ED461 /* FormViewController.swift */; };
+		BBA297491C246970001ED461 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA297461C246970001ED461 /* FormViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +97,7 @@
 		BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BB487EE01C233C82003EC7F5 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewController.swift; sourceTree = "<group>"; };
-		BBA297421C245CB9001ED461 /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormController.swift; sourceTree = "<group>"; };
+		BBA297461C246970001ED461 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		CED7EF6E3097DCA969924F86 /* libPods-changr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-changr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -197,9 +197,9 @@
 		7EBA9DA11C221A86004E4C60 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBA297461C246970001ED461 /* FormViewController.swift */,
 				BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */,
 				7E9B84EE1C21B226007DFE64 /* ViewController.swift */,
-				BBA297421C245CB9001ED461 /* FormController.swift */,
 				7E9B85111C21C4E3007DFE64 /* LoginController.swift */,
 				7E3FF96E1C23716400CEC296 /* MenuViewController.swift */,
 				7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */,
@@ -430,8 +430,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				51D613141C232C0400105BFC /* MenuItems.swift in Sources */,
-				BBA297431C245CB9001ED461 /* FormController.swift in Sources */,
 				7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */,
+				BBA297471C246970001ED461 /* FormViewController.swift in Sources */,
 				BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */,
 				7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */,
 				BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
@@ -458,8 +458,8 @@
 				51D613151C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E3FF9701C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E3FF9781C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
+				BBA297481C246970001ED461 /* FormViewController.swift in Sources */,
 				7E3FF9841C2381D700CEC296 /* HistoryViewController.swift in Sources */,
-				BBA297441C245CB9001ED461 /* FormController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,8 +475,8 @@
 				51D613161C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
+				BBA297491C246970001ED461 /* FormViewController.swift in Sources */,
 				7E3FF9851C2381D700CEC296 /* HistoryViewController.swift in Sources */,
-				BBA297451C245CB9001ED461 /* FormController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

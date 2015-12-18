@@ -13,6 +13,8 @@ import CoreLocation
 class BeaconTableViewController : UITableViewController {
 
     @IBOutlet var beaconTableView: UITableView!
+    
+    let showBeaconSelectedIdentifier = "ShowBeaconSelected"
 
     var beacons = [CLBeacon]()
 
@@ -81,6 +83,24 @@ class BeaconTableViewController : UITableViewController {
     @IBAction func cancel(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == showBeaconSelectedIdentifier {
+            if let destination = segue.destinationViewController as? FormViewController {
+                if let beaconIndex = tableView.indexPathForSelectedRow?.row {
+//                    let beaconMajor = beacons[beaconIndex].major as NSNumber?
+                    let beaconMinor = beacons[beaconIndex].minor as NSNumber?
+                    // We only want to get the Minor Value for now
+                    destination.beaconName = "\(beaconMinor!)"
+                }
+            }
+        }
+    }
+
+    
+    
+    
+    
     
     
 }
