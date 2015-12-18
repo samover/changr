@@ -5,9 +5,9 @@
 
 target 'changr' do
   pod 'Firebase', '>= 2.5.0'
+  pod 'MMDrawerController'
 end
 
 target 'changrTests' do
 
 end
-

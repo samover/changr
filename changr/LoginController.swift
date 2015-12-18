@@ -33,20 +33,13 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        ref.observeAuthEventWithBlock { (authData) -> Void in
-            if authData != nil {
-                self.performSegueWithIdentifier("mainView", sender: self)
-            } else {
-                // alert that User is not signed in
-            }
-        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     // MARK: Picker functions
     
@@ -92,7 +85,9 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                     self.errorMessage.text = "Username or password incorrect"
                     self.errorMessage.hidden = false
                 } else {
-                    self.performSegueWithIdentifier("mainView", sender: self)
+                    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = appDelegate.centerContainer
+                    appDelegate.window!.makeKeyAndVisible()
 
                 }
                 
@@ -100,9 +95,10 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         }
     }
     
+
+    
     @IBAction func signupButton(sender: AnyObject) {
         if emailTextField.text == "" || passwordTextField.text == "" {
-            print("Make sure to enter in each textfield")
             self.errorMessage.text = "Please fill in a username and password"
             self.errorMessage.hidden = false
         } else {
@@ -128,9 +124,10 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                             ]
                             
                             self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
-                            print(self.userSelection)
                             if self.userSelection == "Donor" {
-                                self.performSegueWithIdentifier("mainView", sender: self)
+                                let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                                appDelegate.window?.rootViewController = appDelegate.centerContainer
+                                appDelegate.window!.makeKeyAndVisible()
                             } else {
                                 self.performSegueWithIdentifier("completeProfile", sender: self)
 
@@ -148,13 +145,14 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         
     }
     
-    @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
-        self.emailTextField.text = ""
-        self.passwordTextField.text = ""
+//    @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
+//        print("user logged out")
+//        self.emailTextField.text = ""
+//        self.passwordTextField.text = ""
+//
+//        self.errorMessage.hidden = true
+//    }
 
-        self.errorMessage.hidden = true
-    }
-    
     
     // MARK: - Navigation
     

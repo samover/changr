@@ -12,7 +12,12 @@ import CoreLocation
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
+
     var window: UIWindow?
+
+    let ref = Firebase(url: "https://changr.firebaseio.com/")
+    var centerContainer: MMDrawerController?
+    var rootController: UIViewController?
     var enteredRegion = false
     var beacons = [CLBeacon]()
     let locationManager = CLLocationManager()
@@ -24,6 +29,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.delegate = self
 
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: nil))
+
+        func isUserLoggedIn() -> Bool {
+            if(ref.authData != nil) {
+                return true
+            } else {
+                return false
+            }
+        }
+
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+
+        rootController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginController") as! LoginController
+        let centerViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+        let leftViewController = mainStoryboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
+
+        let leftSideNav = UINavigationController(rootViewController: leftViewController)
+        let centerNav = UINavigationController(rootViewController: centerViewController)
+
+        centerContainer = MMDrawerController(centerViewController: centerNav, leftDrawerViewController: leftSideNav)
+        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
+        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.PanningCenterView;
+
+        if (isUserLoggedIn())
+        {
+            print("User is logged in")
+            window!.rootViewController = centerContainer
+            window!.makeKeyAndVisible()
+        }
+        else
+        {
+            print("User is not logged in")
+            window!.rootViewController = rootController
+            window!.makeKeyAndVisible()
+        }
+
         return true
     }
 
@@ -112,9 +152,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         self.beacons = beacons
         NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
     }
-    
-    
+
 }
-
-
-
