@@ -48,6 +48,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         // Dispose of any resources that can be recreated.
     }
     
+    
     // MARK: Picker functions
     
     func numberOfComponentsInPickerView(userType: UIPickerView) -> Int {
@@ -148,13 +149,14 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         
     }
     
-    @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
-        self.emailTextField.text = ""
-        self.passwordTextField.text = ""
+//    @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
+//        print("user logged out")
+//        self.emailTextField.text = ""
+//        self.passwordTextField.text = ""
+//
+//        self.errorMessage.hidden = true
+//    }
 
-        self.errorMessage.hidden = true
-    }
-    
     
     // MARK: - Navigation
     

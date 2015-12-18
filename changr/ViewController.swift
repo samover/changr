@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: Properties
+    
     let ref = Firebase(url: "https://changr.firebaseio.com/")
 
     @IBOutlet weak var currentUserLabel: UILabel!
@@ -19,18 +20,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        currentUserLabel.text = "Logged in as \(ref.authData.providerData["email"]!)"
-
+        print(presentedViewController.view)
+        print(self.view.window?.rootViewController)
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    override func viewDidAppear(animated: Bool) {
-        
-    }
     
     // MARK: Actions
     
@@ -39,17 +37,10 @@ class ViewController: UIViewController {
         appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
     
-    
-//    @IBAction func showMenu(sender: UIBarButtonItem) {
-//        self.mm_drawerController.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
-//    }
-//    
-//    @IBAction func logoutButton(sender: AnyObject) {
-//        ref.unauth()
-//        print("User logged out")
-//        navigationController?.popViewControllerAnimated(true)
-//    }
-    
+    @IBAction func logoutButton(sender: AnyObject) {
+        ref.unauth()
+//        self.performSegueWithIdentifier("logoutSegue", sender: self)
+    }
 
 }
 
