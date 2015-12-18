@@ -16,15 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!, identifier: "Estimotes")
-    var enteredRegion = false
+    //define region for monitoring
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    var enteredRegion = false
+    var beacons = []
+    
+    func application(application: UIApplication, _didFinishLaunchingWithOptions launchOptions: [NSObject: CLBeacon]?) -> Bool {
         
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestAlwaysAuthorization() //request permission for location updates
         locationManager.delegate = self
         
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: nil))
-
+        //set notification settings
+        
         return true
     }
 
@@ -71,6 +75,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             
             self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
             
+            //display error message if location updates are declined
+            
         default:
             print("default case")
             
@@ -87,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             
         case .Inside:
             
-            var text : String = "Tap here to start coding."
+            var text : String = "Tap here to enter app"
             
             if enteredRegion {
                 text = "You have entered the region."
@@ -106,16 +112,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         }
     }
     
-    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+    func locationManager(manager: CLLocationManager!, _didRangeBeacons beacons: [AnyObject]!, inRegion region: CLBeaconRegion!) {
+        
+        self.beacons = beacons
+        print(beacons)
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
+        //send updated beacons array to BeaconTableViewController
+    }
+    
+    func locationManager(manager: CLLocationManager,didEnterRegion region: CLRegion){
         enteredRegion = true
     }
     
-    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
+    func locationManager(manager: CLLocationManager!,idExitRegion region: CLRegion!){
         enteredRegion = false
     }
 
-
 }
+    
 
 
 
