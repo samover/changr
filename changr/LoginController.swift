@@ -16,7 +16,12 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     @IBOutlet weak var userType: UIPickerView!
     @IBOutlet weak var errorMessage: UILabel!
     
+    #if DEBUG
+    let ref = Firebase(url: "https://changrtest.firebaseio.com")
+    #else
     let ref = Firebase(url: "https://changr.firebaseio.com/")
+    #endif
+    
     
     var pickerDataSource = ["Donor", "Receiver"]
     var userSelection = "Donor"

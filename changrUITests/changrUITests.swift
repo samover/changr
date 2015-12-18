@@ -7,6 +7,7 @@
 //
 
 import XCTest
+//@testable import changr
 
 class changrUITests: XCTestCase {
         
@@ -22,7 +23,8 @@ class changrUITests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        let ref = Firebase(url:
+        // Put teardown code here. This method is called after the invocation of each test method in the classs
         super.tearDown()
     }
     
@@ -42,7 +44,7 @@ class changrUITests: XCTestCase {
         app.pickerWheels["Donor"].tap()
         app.buttons["Sign Up"].tap()
         
-        XCTAssert(app.buttons["Logout"].exists)
+        XCTAssert(app.buttons["Save"].exists)
     }
     
     func testSignupAsNewReceiver() {
