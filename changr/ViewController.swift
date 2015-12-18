@@ -40,8 +40,6 @@ class ViewController: UIViewController {
         ref.unauth()
         let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
-//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let rootController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginController") as! LoginController
         appDelegate.window?.rootViewController = appDelegate.rootController
         appDelegate.window!.makeKeyAndVisible()
 

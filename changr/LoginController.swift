@@ -99,7 +99,6 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     @IBAction func signupButton(sender: AnyObject) {
         if emailTextField.text == "" || passwordTextField.text == "" {
-            print("Make sure to enter in each textfield")
             self.errorMessage.text = "Please fill in a username and password"
             self.errorMessage.hidden = false
         } else {
@@ -125,11 +124,10 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                             ]
                             
                             self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
-                            print(self.userSelection)
                             if self.userSelection == "Donor" {
                                 let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                appDelegate.window!.rootViewController = mainStoryboard.instantiateInitialViewController()
+                                appDelegate.window?.rootViewController = appDelegate.centerContainer
+                                appDelegate.window!.makeKeyAndVisible()
                             } else {
                                 self.performSegueWithIdentifier("completeProfile", sender: self)
 

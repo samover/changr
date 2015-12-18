@@ -30,7 +30,11 @@ class HistoryViewController: UIViewController {
     
     @IBAction func logoutButton(sender: AnyObject) {
         ref.unauth()
-//        self.performSegueWithIdentifier("logoutSegue", sender: self)
+        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        appDelegate.window?.rootViewController = appDelegate.rootController
+        appDelegate.window!.makeKeyAndVisible()
+
     }
 
 }
