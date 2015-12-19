@@ -201,10 +201,10 @@
 		7EBA9DA11C221A86004E4C60 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BBA297461C246970001ED461 /* FormViewController.swift */,
 				BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */,
 				7E9B84EE1C21B226007DFE64 /* ViewController.swift */,
 				7E9B85111C21C4E3007DFE64 /* LoginController.swift */,
+				BBA297461C246970001ED461 /* FormViewController.swift */,
 				7E3FF96E1C23716400CEC296 /* MenuViewController.swift */,
 				7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */,
 				7E3FF97A1C2381C300CEC296 /* ProfileViewController.swift */,
@@ -610,6 +610,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -637,6 +638,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

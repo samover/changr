@@ -12,19 +12,18 @@ class FormViewController: UIViewController {
 
     @IBOutlet var beaconNameLabel: UILabel!
     
-    let ref = Firebase(url: "https://changr.firebaseio.com/")
+    var ref: Firebase!
     
     var beaconName = String()
     var currentUser: FAuthData?
-    
+
     override func viewWillAppear(animated: Bool) {
         beaconNameLabel.text = beaconName
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        ref = Firebase(url: "https://changr.firebaseio.com/")
     }
 
     override func didReceiveMemoryWarning() {

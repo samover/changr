@@ -11,16 +11,16 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: Properties
-    
-    let ref = Firebase(url: "https://changr.firebaseio.com/")
 
     @IBOutlet weak var currentUserLabel: UILabel!
+    
+    var ref: Firebase!
 
     // MARK: UIViewController Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ref = Firebase(url: "https://changr.firebaseio.com/")
     }
 
     override func didReceiveMemoryWarning() {

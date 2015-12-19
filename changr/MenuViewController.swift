@@ -13,7 +13,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: Properties
     var menuItems = [MenuItems]()
     
-    
     // MARK: LiefeCycle
     
     override func viewDidLoad() {

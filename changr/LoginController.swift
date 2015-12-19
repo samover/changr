@@ -16,8 +16,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     @IBOutlet weak var userType: UIPickerView!
     @IBOutlet weak var errorMessage: UILabel!
     
-    let ref = Firebase(url: "https://changr.firebaseio.com/")
-    
+    var ref: Firebase!
     var pickerDataSource = ["Donor", "Receiver"]
     var userSelection = "Donor"
     var currentUser: FAuthData?
@@ -26,6 +25,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ref = Firebase(url: "https://changr.firebaseio.com/")
         self.userType.dataSource = self
         self.userType.delegate = self
         self.errorMessage.hidden = true
