@@ -13,8 +13,6 @@ import CoreLocation
 class BeaconTableViewController : UITableViewController {
 
     @IBOutlet var beaconTableView: UITableView!
-    
-    let showBeaconSelectedIdentifier = "ShowBeaconSelected"
 
     var beacons = [CLBeacon]()
 
@@ -36,11 +34,7 @@ class BeaconTableViewController : UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        print(beacons.count)
-        print(beacons)
         return beacons.count
-
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -48,10 +42,10 @@ class BeaconTableViewController : UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("beaconCell", forIndexPath: indexPath) as UITableViewCell
 
         let major = beacons[indexPath.row].major as NSNumber?
-        var majorString = major!.stringValue
+        let majorString = major!.stringValue
 
         let minor = beacons[indexPath.row].minor as NSNumber?
-        var minorString = minor!.stringValue
+        let minorString = minor!.stringValue
 
         let proximity = beacons[indexPath.row].proximity
 
@@ -85,10 +79,10 @@ class BeaconTableViewController : UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == showBeaconSelectedIdentifier {
-            if let destination = segue.destinationViewController as? FormViewController {
+        if segue.identifier == "ShowBeaconSelected" {
+            if let destination = segue.destinationViewController as? FormController {
                 if let beaconIndex = tableView.indexPathForSelectedRow?.row {
-//                    let beaconMajor = beacons[beaconIndex].major as NSNumber?
+                    // let beaconMajor = beacons[beaconIndex].major as NSNumber?
                     let beaconMinor = beacons[beaconIndex].minor as NSNumber?
                     // We only want to get the Minor Value for now
                     destination.beaconName = "\(beaconMinor!)"
@@ -96,11 +90,4 @@ class BeaconTableViewController : UITableViewController {
             }
         }
     }
-
-    
-    
-    
-    
-    
-    
 }

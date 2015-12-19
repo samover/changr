@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Form View Controller-->
+        <!--Form Controller-->
         <scene sceneID="zf9-Cd-n3L">
             <objects>
-                <viewController storyboardIdentifier="FormViewController" id="eOE-On-Xaf" customClass="FormViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FormController" id="eOE-On-Xaf" customClass="FormController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cnk-Kk-eqy"/>
                         <viewControllerLayoutGuide type="bottom" id="AbJ-Hy-z4e"/>
@@ -58,6 +58,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vM-fz-AIC">
+                                <rect key="frame" x="53" y="237" width="329" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srs-o9-6nM">
+                                <rect key="frame" x="53" y="200" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cc-iS-wwH">
+                                <rect key="frame" x="51" y="409" width="139" height="30"/>
+                                <state key="normal" title="Complete My Profile"/>
+                                <connections>
+                                    <action selector="completeProfile:" destination="eOE-On-Xaf" eventType="touchUpInside" id="zEW-JC-JVp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -69,6 +88,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="beaconNameLabel" destination="OLt-SO-Cra" id="cqQ-9h-EFX"/>
+                        <outlet property="emailLabel" destination="6vM-fz-AIC" id="0tB-ie-ptb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V68-cY-TB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -478,6 +498,6 @@
         <image name="menu" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="otu-AL-aq2"/>
+        <segue reference="1lT-rw-fD2"/>
     </inferredMetricsTieBreakers>
 </document>

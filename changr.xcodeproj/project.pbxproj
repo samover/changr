@@ -45,9 +45,8 @@
 		BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
 		BB487EE61C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
 		BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
-		BBA297471C246970001ED461 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA297461C246970001ED461 /* FormViewController.swift */; };
-		BBA297481C246970001ED461 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA297461C246970001ED461 /* FormViewController.swift */; };
-		BBA297491C246970001ED461 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA297461C246970001ED461 /* FormViewController.swift */; };
+		BBDA6B901C25F9A50057C3EC /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */; };
+		BBDA6B981C25FE350057C3EC /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B971C25FE350057C3EC /* FormController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +98,8 @@
 		BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BB487EE01C233C82003EC7F5 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewController.swift; sourceTree = "<group>"; };
-		BBA297461C246970001ED461 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewCell.swift; sourceTree = "<group>"; };
+		BBDA6B971C25FE350057C3EC /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormController.swift; sourceTree = "<group>"; };
 		CED7EF6E3097DCA969924F86 /* libPods-changr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-changr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -201,10 +201,11 @@
 		7EBA9DA11C221A86004E4C60 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */,
 				7E9B84EE1C21B226007DFE64 /* ViewController.swift */,
 				7E9B85111C21C4E3007DFE64 /* LoginController.swift */,
-				BBA297461C246970001ED461 /* FormViewController.swift */,
+				BBDA6B971C25FE350057C3EC /* FormController.swift */,
+				BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */,
+				BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */,
 				7E3FF96E1C23716400CEC296 /* MenuViewController.swift */,
 				7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */,
 				7E3FF97A1C2381C300CEC296 /* ProfileViewController.swift */,
@@ -435,17 +436,18 @@
 			files = (
 				51D613141C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */,
-				BBA297471C246970001ED461 /* FormViewController.swift in Sources */,
 				BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */,
 				7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */,
 				BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
 				7E3FF97F1C2381CF00CEC296 /* SettingsViewController.swift in Sources */,
+				BBDA6B981C25FE350057C3EC /* FormController.swift in Sources */,
 				7E3FF9831C2381D700CEC296 /* HistoryViewController.swift in Sources */,
 				7E3FF97B1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
 				7EF1C8CB1C2319960003C3F0 /* MMDrawerController+Storyboard.m in Sources */,
 				7E3FF9771C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 				7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */,
 				7E9AF0DC1C21D33C00F3C6FE /* User.swift in Sources */,
+				BBDA6B901C25F9A50057C3EC /* BeaconTableViewCell.swift in Sources */,
 				7E3FF96F1C23716400CEC296 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,7 +464,6 @@
 				51D613151C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E3FF9701C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E3FF9781C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
-				BBA297481C246970001ED461 /* FormViewController.swift in Sources */,
 				7E3FF9841C2381D700CEC296 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,7 +480,6 @@
 				51D613161C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
-				BBA297491C246970001ED461 /* FormViewController.swift in Sources */,
 				7E3FF9851C2381D700CEC296 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
