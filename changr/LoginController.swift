@@ -20,7 +20,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     var pickerDataSource = ["Donor", "Receiver"]
     var userSelection = "Donor"
-    
+    var currentUser: FAuthData?
     
     // MARK: UIViewController Lifecycle
     
@@ -85,6 +85,8 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                     self.errorMessage.text = "Username or password incorrect"
                     self.errorMessage.hidden = false
                 } else {
+                    self.currentUser = authData
+                    
                     let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                     appDelegate.window?.rootViewController = appDelegate.centerContainer
                     appDelegate.window!.makeKeyAndVisible()
@@ -116,6 +118,8 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                             self.errorMessage.hidden = false
 
                         } else {
+                            
+                            self.currentUser = authData
                             
                             let newUser = [
                                 "provider": authData.provider,
@@ -155,14 +159,12 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
 
     
     // MARK: - Navigation
+
+    // This is to pass the currentUser details to the FormViewController
     
-    
-    /*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let formVC = segue.destinationViewController as! FormViewController
+        formVC.currentUser = self.currentUser
     }
-    */
 
 }

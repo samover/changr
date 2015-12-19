@@ -12,7 +12,10 @@ class FormViewController: UIViewController {
 
     @IBOutlet var beaconNameLabel: UILabel!
     
+    let ref = Firebase(url: "https://changr.firebaseio.com/")
+    
     var beaconName = String()
+    var currentUser: FAuthData?
     
     override func viewWillAppear(animated: Bool) {
         beaconNameLabel.text = beaconName
