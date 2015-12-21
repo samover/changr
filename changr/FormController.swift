@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FormController: UIViewController, UITextFieldDelegate {
+class FormController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     // MARK: Properties
     
@@ -58,6 +58,23 @@ class FormController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    // MARK: UIImagePickerControllerDelegate
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        // Dismiss the picker if the user cancelled
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        profileImage.image = selectedImage
+        
+        // Dismiss the picker
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // MARK: Actions
     
     @IBAction func completeProfile(sender: UIButton) {
@@ -67,6 +84,18 @@ class FormController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
+        // Hide the keyboard
+        nameTextField.resignFirstResponder()
+        dayField.resignFirstResponder()
+        monthField.resignFirstResponder()
+        yearField.resignFirstResponder()
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.sourceType = .PhotoLibrary
+        
+        imagePickerController.delegate = self
+        presentViewController(imagePickerController, animated: true, completion: nil)
+        print("Naughty Hamza")
     }
     
     
