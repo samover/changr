@@ -13,7 +13,6 @@ class FormController: UIViewController {
     // MARK: Properties
     
     @IBOutlet var beaconNameLabel: UILabel!
-    @IBOutlet var emailLabel: UILabel!
     
     var ref: Firebase!
     var beaconName = String()
@@ -25,7 +24,6 @@ class FormController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Firebase(url: "https://changr.firebaseio.com/")
-        emailLabel.text = (ref.authData.providerData["email"] as! String)
     }
     
     override func didReceiveMemoryWarning() {
