@@ -32,14 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         notificationActionDismiss.identifier = "DISMISS_IDENTIFIER"
         notificationActionDismiss.title = "Dismiss"
         notificationActionDismiss.activationMode = UIUserNotificationActivationMode.Background
-        notificationActionDismiss.destructive = false
+        notificationActionDismiss.destructive = true
         notificationActionDismiss.authenticationRequired = false
 
         let notificationActionViewProfile :UIMutableUserNotificationAction = UIMutableUserNotificationAction()
         notificationActionViewProfile.identifier = "VIEW_PROFILE_IDENTIFIER"
         notificationActionViewProfile.title = "View Profile"
-        notificationActionViewProfile.activationMode = UIUserNotificationActivationMode.Background
-        notificationActionViewProfile.destructive = false
+        notificationActionViewProfile.activationMode = UIUserNotificationActivationMode.Foreground
+//        notificationActionViewProfile.destructive = false
         notificationActionViewProfile.authenticationRequired = false
 
         let notificationCategory: UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
@@ -71,20 +71,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
         if (isUserLoggedIn())
         {
-            print("User is logged in")
             window!.rootViewController = centerContainer
             window!.makeKeyAndVisible()
         }
         else
         {
-            print("User is not logged in")
             window!.rootViewController = rootController
             window!.makeKeyAndVisible()
         }
 
         return true
     }
-
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
+        if identifier == "VIEW_PROFILE_IDENTIFIER" {
+            print("View profile action")
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
+            let destinationViewController = storyboard.instantiateViewControllerWithIdentifier("FormController") as! FormController
+            
+            let centerNavController = UINavigationController(rootViewController: destinationViewController)
+            
+            centerNavController.pushViewController(destinationViewController, animated: false)
+        
+        }
+        completionHandler()
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
 
     }
@@ -136,7 +150,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
         case .Inside:
 
-
             // var text = String()
 
 //            var text : String = "Tap here to enter the app."
@@ -144,7 +157,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             if enteredRegion {
                 let localNotification:UILocalNotification = UILocalNotification()
 
-                localNotification.alertAction = "Testing notifications"
+                localNotification.alertAction = "view options"
 
                 localNotification.alertBody = "You are in range of beacons"
 
@@ -174,7 +187,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [CLBeacon]!, inRegion region: CLBeaconRegion!) {
         self.beacons = beacons
         NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
-
     }
 
 }
