@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
+        
+        // Building the Push Notification:
 
         let notificationActionDismiss :UIMutableUserNotificationAction = UIMutableUserNotificationAction()
         notificationActionDismiss.identifier = "DISMISS_IDENTIFIER"
@@ -83,18 +85,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         return true
     }
     
+    // Directing a user to a specific view controller when they tap on "View Profile" after receiving a push notification:
+    
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
         if identifier == "VIEW_PROFILE_IDENTIFIER" {
             print("View profile action")
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    
-            let destinationViewController = storyboard.instantiateViewControllerWithIdentifier("FormController") as! FormController
-            
-            let centerNavController = UINavigationController(rootViewController: destinationViewController)
-            
-            centerNavController.pushViewController(destinationViewController, animated: false)
         
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let destinationViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FormController") as! FormController
+            window!.rootViewController = destinationViewController
+            window!.makeKeyAndVisible()
         }
         completionHandler()
     }
@@ -139,42 +139,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
         default:
             print("default case")
-
         }
-
     }
+    
+    // Setting the Push Notification:
 
     func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
-
         switch state {
-
-        case .Inside:
-
-            // var text = String()
-
-//            var text : String = "Tap here to enter the app."
-
-            if enteredRegion {
-                let localNotification:UILocalNotification = UILocalNotification()
-
-                localNotification.alertAction = "view options"
-
-                localNotification.alertBody = "You are in range of beacons"
-
-                //localNotification.fireDate = NSDate(timeIntervalSinceNow: 10)
-
-                localNotification.category = "RECEIVER_IN_RANGE_ALERT"
-
-                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-
-            }
-           // Notifications.display(text)
-
-        default: break
-
+            case .Inside:
+                if enteredRegion {
+                    let localNotification:UILocalNotification = UILocalNotification()
+                    localNotification.alertAction = "view options"
+                    localNotification.alertBody = "You are in range of beacons"
+                    localNotification.category = "RECEIVER_IN_RANGE_ALERT"
+                    UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+                }
+            default: break
         }
     }
-
 
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
         enteredRegion = true
