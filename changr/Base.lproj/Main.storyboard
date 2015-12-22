@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="naD-LI-BFY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="naD-LI-BFY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -10,12 +10,6 @@
         <!--Complete Your Profile-->
         <scene sceneID="zf9-Cd-n3L">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V68-cY-TB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="F7q-UL-kho">
-                    <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="eOE-On-Xaf" id="t45-5A-rzv"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <viewController storyboardIdentifier="FormController" id="eOE-On-Xaf" customClass="FormController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cnk-Kk-eqy"/>
@@ -38,25 +32,25 @@
                                             <segue destination="qRK-Yo-adH" kind="show" id="uwj-cW-4bK"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="21" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLt-SO-Cra">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="21" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLt-SO-Cra">
                                         <rect key="frame" x="32" y="52" width="300" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXC-kn-Fek">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXC-kn-Fek">
                                         <rect key="frame" x="8" y="85" width="348" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="117" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="cys-0X-R2p">
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="117" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="cys-0X-R2p">
                                         <rect key="frame" x="124" y="127" width="117" height="31"/>
                                         <segments>
                                             <segment title="Male"/>
                                             <segment title="Female"/>
                                         </segments>
                                     </segmentedControl>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="132" placeholderIntrinsicHeight="30" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="31l-Kq-nmD">
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="132" placeholderIntrinsicHeight="30" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="31l-Kq-nmD">
                                         <rect key="frame" x="47" y="169" width="271" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="30" text="DOB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J02-et-eLk">
@@ -145,6 +139,12 @@
                         <outlet property="yearField" destination="vXb-MJ-jr0" id="fPa-DL-nM3"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V68-cY-TB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="F7q-UL-kho">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="eOE-On-Xaf" id="t45-5A-rzv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="527" y="482"/>
         </scene>
@@ -161,7 +161,7 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gs4-EZ-dFn" id="xSU-WP-qNi">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -325,7 +325,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OBk-cz-WuV" id="OYn-XC-Otx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LiJ-y6-ZSo">
@@ -532,7 +532,6 @@
         <!--Navigation Controller-->
         <scene sceneID="u4L-6r-mjT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BeW-Kh-lDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BPX-zj-G1t" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MVV-3O-DGi">
@@ -544,6 +543,7 @@
                         <segue destination="eOE-On-Xaf" kind="relationship" relationship="rootViewController" id="g48-SA-gyR"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BeW-Kh-lDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3" y="482"/>
         </scene>
@@ -553,6 +553,6 @@
         <image name="menu" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g7m-cm-cm8"/>
+        <segue reference="g48-SA-gyR"/>
     </inferredMetricsTieBreakers>
 </document>

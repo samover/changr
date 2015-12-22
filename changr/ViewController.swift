@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Firebase(url: "https://changr.firebaseio.com/")
+
+       
+
     }
 
     override func didReceiveMemoryWarning() {

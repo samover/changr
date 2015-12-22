@@ -28,7 +28,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
 
-        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: nil))
+        let notificationActionDismiss :UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        notificationActionDismiss.identifier = "DISMISS_IDENTIFIER"
+        notificationActionDismiss.title = "Dismiss"
+        notificationActionDismiss.activationMode = UIUserNotificationActivationMode.Background
+        notificationActionDismiss.destructive = false
+        notificationActionDismiss.authenticationRequired = false
+
+        let notificationActionViewProfile :UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        notificationActionViewProfile.identifier = "VIEW_PROFILE_IDENTIFIER"
+        notificationActionViewProfile.title = "View Profile"
+        notificationActionViewProfile.activationMode = UIUserNotificationActivationMode.Background
+        notificationActionViewProfile.destructive = false
+        notificationActionViewProfile.authenticationRequired = false
+
+        let notificationCategory: UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        notificationCategory.identifier = "RECEIVER_IN_RANGE_ALERT"
+        notificationCategory.setActions([notificationActionDismiss, notificationActionViewProfile], forContext: UIUserNotificationActionContext.Default)
+
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: NSSet(array: [notificationCategory]) as! Set<UIUserNotificationCategory>))
 
         func isUserLoggedIn() -> Bool {
             if(ref.authData != nil) {
@@ -116,29 +134,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
         switch state {
 
-        case .Unknown:
-            print("unknown")
-
         case .Inside:
 
-            var text : String = "Tap here to enter the app."
+
+            // var text = String()
+
+//            var text : String = "Tap here to enter the app."
 
             if enteredRegion {
-                text = "You are in range of the beacon."
+                let localNotification:UILocalNotification = UILocalNotification()
+
+                localNotification.alertAction = "Testing notifications"
+
+                localNotification.alertBody = "You are in range of beacons"
+
+                //localNotification.fireDate = NSDate(timeIntervalSinceNow: 10)
+
+                localNotification.category = "RECEIVER_IN_RANGE_ALERT"
+
+                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+
             }
-            Notifications.display(text)
+           // Notifications.display(text)
 
-        case .Outside:
-
-            var text : String = "Why aren't you here? :("
-
-            if !enteredRegion {
-                text = "You are no longer in range of the beacon."
-            }
-            Notifications.display(text)
+        default: break
 
         }
     }
+
 
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
         enteredRegion = true
@@ -151,6 +174,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [CLBeacon]!, inRegion region: CLBeaconRegion!) {
         self.beacons = beacons
         NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
+
     }
 
 }
