@@ -17,33 +17,38 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var dayField: UITextField!
     @IBOutlet weak var monthField: UITextField!
     @IBOutlet weak var yearField: UITextField!
-    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet var beaconNameLabel: UILabel!
     
-    
     var ref: Firebase!
+    let defaults = NSUserDefaults.standardUserDefaults()
     var beaconName = String()
-    
+    var gender = String()
+   
     override func viewWillAppear(animated: Bool) {
-        beaconNameLabel.text = beaconName
+        beaconNameLabel.text = "Beacon Selected: \(beaconName)"
+        nameTextField.text = defaults.stringForKey("fullName")
+        dayField.text = defaults.stringForKey("calendarDay")
+        monthField.text = defaults.stringForKey("calendarMonth")
+        yearField.text = defaults.stringForKey("calendarYear")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Firebase(url: "https://changr.firebaseio.com/")
+        
         nameTextField.delegate = self
         dayField.delegate = self
         monthField.delegate = self
         yearField.delegate = self
+        
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: "didTapView")
         self.view.addGestureRecognizer(tapRecognizer)
-
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: UITextFieldDelegate
@@ -54,6 +59,14 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         return true
     }
     
+    func textFieldDidEndEditing(textField: UITextField) {
+        // To set the default values for current user in case they select beacon after entering their name and/or DOB
+        defaults.setObject(nameTextField.text, forKey: "fullName")
+        defaults.setObject(dayField.text, forKey: "calendarDay")
+        defaults.setObject(monthField.text, forKey: "calendarMonth")
+        defaults.setObject(yearField.text, forKey: "calendarYear")
+    }
+    
     func didTapView(){
         self.view.endEditing(true)
     }
@@ -61,43 +74,71 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     // MARK: UIImagePickerControllerDelegate
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        // Dismiss the picker if the user cancelled
+        // Dismiss the picker if the user canceled.
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        // The info dictionary contains multiple representations of the image, and this uses the original.
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
-        profileImage.image = selectedImage
-        
-        // Dismiss the picker
-        
+        // Set photoImageView to display the selected image.
+        photoImageView.image = selectedImage
+        // Dismiss the picker.
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     // MARK: Actions
     
     @IBAction func completeProfile(sender: UIButton) {
+        let fullName = defaults.stringForKey("fullName") as String!
+        let day = defaults.stringForKey("calendarDay") as String!
+        let month = defaults.stringForKey("calendarMonth") as String!
+        let year = defaults.stringForKey("calendarYear") as String!
+        let dateOfBirth = "\(day)/\(month)/\(year)" as String!
+        setGender()
+        
+        let updateUser = [
+            "beaconMinor": "\(beaconName)",
+            "fullName": "\(fullName)",
+            "dateOfBirth": "\(dateOfBirth)",
+            "gender": "\(gender)"
+        ]
+        
         let usersRef = ref.childByAppendingPath("users")
         let currentUserRef = usersRef.childByAppendingPath("\(ref.authData.uid)")
-        currentUserRef.updateChildValues(["beaconMinor": "\(beaconName)"])
+        currentUserRef.updateChildValues(updateUser)
+        
+        clearUserDefaults()
+    }
+    
+    func setGender() {
+        if genderField.selectedSegmentIndex == 0 {
+            gender = "Male"
+        } else if genderField.selectedSegmentIndex == 1 {
+            gender = "Female"
+        }
+    }
+    
+    func clearUserDefaults() {
+        // This is to clear NSUserDefaults
+        let appDomain = NSBundle.mainBundle().bundleIdentifier!
+        NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain)
     }
     
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer) {
-        // Hide the keyboard
         nameTextField.resignFirstResponder()
         dayField.resignFirstResponder()
         monthField.resignFirstResponder()
         yearField.resignFirstResponder()
         
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
         let imagePickerController = UIImagePickerController()
+        // Only allow photos to be picked, not taken.
         imagePickerController.sourceType = .PhotoLibrary
-        
         imagePickerController.delegate = self
         presentViewController(imagePickerController, animated: true, completion: nil)
-        print("Naughty Hamza")
     }
-    
+
     
     /*
     // MARK: - Navigation

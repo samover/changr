@@ -74,9 +74,9 @@ class BeaconTableViewController : UITableViewController {
     
     // MARK: Navigation
     
-    @IBAction func cancel(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
+//    @IBAction func cancel(sender: UIBarButtonItem) {
+//        dismissViewControllerAnimated(true, completion: nil)
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowBeaconSelected" {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="naD-LI-BFY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="naD-LI-BFY">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -7,9 +7,15 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Form Controller-->
+        <!--Complete Your Profile-->
         <scene sceneID="zf9-Cd-n3L">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V68-cY-TB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="F7q-UL-kho">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="eOE-On-Xaf" id="t45-5A-rzv"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <viewController storyboardIdentifier="FormController" id="eOE-On-Xaf" customClass="FormController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cnk-Kk-eqy"/>
@@ -19,23 +25,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="QVy-ol-q2v">
-                                <rect key="frame" x="25" y="50" width="364" height="366"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="QVy-ol-q2v">
+                                <rect key="frame" x="25" y="80" width="364" height="476"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXC-kn-Fek">
-                                        <rect key="frame" x="8" y="10" width="348" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh7-Uv-7kr">
+                                        <rect key="frame" x="102" y="10" width="160" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Find Nearest Beacon">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="qRK-Yo-adH" kind="show" id="uwj-cW-4bK"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="21" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLt-SO-Cra">
+                                        <rect key="frame" x="32" y="52" width="300" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXC-kn-Fek">
+                                        <rect key="frame" x="8" y="85" width="348" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="117" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="cys-0X-R2p">
-                                        <rect key="frame" x="124" y="52" width="117" height="31"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="117" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="cys-0X-R2p">
+                                        <rect key="frame" x="124" y="127" width="117" height="31"/>
                                         <segments>
                                             <segment title="Male"/>
                                             <segment title="Female"/>
                                         </segments>
                                     </segmentedControl>
-                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="132" placeholderIntrinsicHeight="30" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="31l-Kq-nmD">
-                                        <rect key="frame" x="47" y="94" width="271" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="132" placeholderIntrinsicHeight="30" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="31l-Kq-nmD">
+                                        <rect key="frame" x="47" y="169" width="271" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="30" text="DOB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J02-et-eLk">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="30"/>
@@ -61,39 +83,25 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfw-LP-0ZQ">
-                                        <rect key="frame" x="132" y="136" width="100" height="21"/>
+                                        <rect key="frame" x="132" y="211" width="100" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="70" placeholderIntrinsicHeight="70" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Y4I-aC-tGz">
-                                        <rect key="frame" x="147" y="169" width="70" height="70"/>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="50" placeholderIntrinsicHeight="50" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="XHl-fm-To2">
+                                        <rect key="frame" x="92" y="244" width="180" height="180"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="width" secondItem="Y4I-aC-tGz" secondAttribute="height" multiplier="1:1" id="iKH-yD-wSx"/>
+                                            <constraint firstAttribute="width" secondItem="XHl-fm-To2" secondAttribute="height" multiplier="1:1" id="1Tb-Ln-nWO"/>
+                                            <constraint firstAttribute="height" constant="180" id="ItT-5H-O0S"/>
+                                            <constraint firstAttribute="width" constant="180" id="Pds-y6-NRY"/>
                                         </constraints>
                                         <connections>
-                                            <outletCollection property="gestureRecognizers" destination="lI8-Fa-apC" appends="YES" id="7f2-g3-Mmo"/>
+                                            <outletCollection property="gestureRecognizers" destination="F7q-UL-kho" appends="YES" id="JnO-ok-cJy"/>
                                         </connections>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh7-Uv-7kr">
-                                        <rect key="frame" x="102" y="251" width="160" height="30"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Find Nearest Beacon">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="oDG-Ht-pQc" kind="showDetail" identifier="BeaconSelectView" id="gGE-zi-Kpw"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="21" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLt-SO-Cra">
-                                        <rect key="frame" x="32" y="293" width="300" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cc-iS-wwH">
-                                        <rect key="frame" x="102" y="326" width="160" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="160" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cc-iS-wwH">
+                                        <rect key="frame" x="102" y="436" width="160" height="30"/>
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Complete Profile">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -119,11 +127,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QVy-ol-q2v" firstAttribute="top" secondItem="Cnk-Kk-eqy" secondAttribute="bottom" constant="30" id="B1O-kW-DgE"/>
-                            <constraint firstItem="QVy-ol-q2v" firstAttribute="leading" secondItem="SOI-Ea-XsN" secondAttribute="leadingMargin" constant="5" id="bC4-fS-coR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="QVy-ol-q2v" secondAttribute="trailing" constant="5" id="ppG-WH-uHa"/>
+                            <constraint firstItem="QVy-ol-q2v" firstAttribute="top" secondItem="SOI-Ea-XsN" secondAttribute="topMargin" constant="80" id="AT9-cN-3vI"/>
+                            <constraint firstItem="QVy-ol-q2v" firstAttribute="leading" secondItem="SOI-Ea-XsN" secondAttribute="leadingMargin" constant="5" id="YEW-g4-TUv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QVy-ol-q2v" secondAttribute="trailing" constant="5" id="cqp-yj-haL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Complete Your Profile" id="9vz-VA-wdS"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="beaconNameLabel" destination="OLt-SO-Cra" id="cqQ-9h-EFX"/>
@@ -131,18 +140,12 @@
                         <outlet property="genderField" destination="cys-0X-R2p" id="niy-jV-Rmf"/>
                         <outlet property="monthField" destination="vzl-aO-LHb" id="M6O-6K-VvD"/>
                         <outlet property="nameTextField" destination="wXC-kn-Fek" id="Zmh-Uw-ZRi"/>
-                        <outlet property="profileImage" destination="Y4I-aC-tGz" id="LkS-qz-hga"/>
+                        <outlet property="photoImageView" destination="XHl-fm-To2" id="YZx-rO-twe"/>
                         <outlet property="yearField" destination="vXb-MJ-jr0" id="fPa-DL-nM3"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V68-cY-TB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="lI8-Fa-apC">
-                    <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="eOE-On-Xaf" id="6GI-Us-am2"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="659" y="1144"/>
+            <point key="canvasLocation" x="527" y="482"/>
         </scene>
         <!--Beacon Table View Controller-->
         <scene sceneID="w0R-Ro-jye">
@@ -157,12 +160,12 @@
                                 <rect key="frame" x="0.0" y="92" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gs4-EZ-dFn" id="xSU-WP-qNi">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="On4-E1-Kzf" kind="unwind" trigger="accessoryAction" unwindAction="unwindToFormController:" id="IPp-0t-jOC"/>
-                                    <segue destination="eOE-On-Xaf" kind="show" identifier="ShowBeaconSelected" id="1lT-rw-fD2"/>
+                                    <segue destination="eOE-On-Xaf" kind="show" identifier="ShowBeaconSelected" id="YDX-8L-ffu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -175,6 +178,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jSW-WU-AN2">
                             <connections>
                                 <action selector="cancel:" destination="qRK-Yo-adH" id="N5t-6y-PBJ"/>
+                                <segue destination="eOE-On-Xaf" kind="show" id="g7m-cm-cm8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -185,7 +189,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXI-t9-MfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="On4-E1-Kzf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1203" y="178"/>
+            <point key="canvasLocation" x="1053" y="482"/>
         </scene>
         <!--Home-->
         <scene sceneID="f0A-lB-YcU">
@@ -248,7 +252,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4t-Cp-wiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127" y="1144"/>
+            <point key="canvasLocation" x="2753" y="1144"/>
         </scene>
         <!--Settings-->
         <scene sceneID="upM-ae-2To">
@@ -280,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iaq-kU-X52" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3004" y="1144"/>
+            <point key="canvasLocation" x="3630" y="1144"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="VJI-dA-3hJ">
@@ -320,7 +324,7 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OBk-cz-WuV" id="OYn-XC-Otx">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LiJ-y6-ZSo">
@@ -411,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9F-5G-0EA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2570" y="1144"/>
+            <point key="canvasLocation" x="3196" y="1144"/>
         </scene>
         <!--Welcome-->
         <scene sceneID="YEh-Fr-EOS">
@@ -496,12 +500,12 @@
                         <outlet property="errorMessage" destination="klL-Su-o4e" id="bZw-f5-cm8"/>
                         <outlet property="passwordTextField" destination="qb0-rY-oFi" id="sth-mU-Qjs"/>
                         <outlet property="userType" destination="eAL-bD-pBW" id="ff9-QX-Ofl"/>
-                        <segue destination="eOE-On-Xaf" kind="presentation" identifier="completeProfile" id="otu-AL-aq2"/>
+                        <segue destination="BPX-zj-G1t" kind="presentation" identifier="completeProfile" id="otu-AL-aq2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F4Q-3p-dJc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="659" y="178"/>
+            <point key="canvasLocation" x="-489" y="482"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B4S-O8-7hV">
@@ -525,22 +529,22 @@
             <point key="canvasLocation" x="2486" y="178"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="6hB-2t-Zul">
+        <scene sceneID="u4L-6r-mjT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oDG-Ht-pQc" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BeW-Kh-lDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BPX-zj-G1t" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Z2-2k-FaR">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MVV-3O-DGi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="qRK-Yo-adH" kind="relationship" relationship="rootViewController" id="rgF-UL-fnP"/>
+                        <segue destination="eOE-On-Xaf" kind="relationship" relationship="rootViewController" id="g48-SA-gyR"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yly-DX-y2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1203" y="1144"/>
+            <point key="canvasLocation" x="3" y="482"/>
         </scene>
     </scenes>
     <resources>
@@ -548,6 +552,6 @@
         <image name="menu" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="otu-AL-aq2"/>
+        <segue reference="g7m-cm-cm8"/>
     </inferredMetricsTieBreakers>
 </document>
