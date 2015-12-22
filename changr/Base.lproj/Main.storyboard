@@ -136,6 +136,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="beaconNameLabel" destination="OLt-SO-Cra" id="cqQ-9h-EFX"/>
+                        <outlet property="completeProfileButton" destination="3Cc-iS-wwH" id="wpD-F9-u8w"/>
                         <outlet property="dayField" destination="j5D-Nt-6Bk" id="IEE-UI-vTL"/>
                         <outlet property="genderField" destination="cys-0X-R2p" id="niy-jV-Rmf"/>
                         <outlet property="monthField" destination="vzl-aO-LHb" id="M6O-6K-VvD"/>

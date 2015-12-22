@@ -19,6 +19,7 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var yearField: UITextField!
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet var beaconNameLabel: UILabel!
+    @IBOutlet weak var completeProfileButton: UIButton!
     
     var ref: Firebase!
     let defaults = NSUserDefaults.standardUserDefaults()
@@ -41,6 +42,8 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         dayField.delegate = self
         monthField.delegate = self
         yearField.delegate = self
+        
+        completeProfileButton.enabled = false
         
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: "didTapView")
@@ -85,6 +88,8 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         photoImageView.image = selectedImage
         // Dismiss the picker.
         dismissViewControllerAnimated(true, completion: nil)
+        // Make the Complete Profile button enabled
+        completeProfileButton.enabled = true
     }
     
     // MARK: Actions
