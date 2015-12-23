@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     let ref = Firebase(url: "https://changr.firebaseio.com/")
     var centerContainer: MMDrawerController?
     var rootController: UIViewController?
-    var enteredRegion = false
     var beacons = [CLBeacon]()
     let locationManager = CLLocationManager()
     var stopSending = false
@@ -29,27 +28,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
         
-        // Building the Push Notification:
-
-//        let notificationActionDismiss :UIMutableUserNotificationAction = UIMutableUserNotificationAction()
-//        notificationActionDismiss.identifier = "DISMISS_IDENTIFIER"
-//        notificationActionDismiss.title = "Dismiss"
-//        notificationActionDismiss.activationMode = UIUserNotificationActivationMode.Background
-//        notificationActionDismiss.destructive = true
-//        notificationActionDismiss.authenticationRequired = false
+        // Building the Push Notification Options:
 
         let notificationActionViewProfile :UIMutableUserNotificationAction = UIMutableUserNotificationAction()
         notificationActionViewProfile.identifier = "VIEW_PROFILE_IDENTIFIER"
         notificationActionViewProfile.title = "View Profile"
         notificationActionViewProfile.activationMode = UIUserNotificationActivationMode.Foreground
-//        notificationActionViewProfile.destructive = false
         notificationActionViewProfile.authenticationRequired = false
 
         let notificationCategory: UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
         notificationCategory.identifier = "RECEIVER_IN_RANGE_ALERT"
         notificationCategory.setActions([notificationActionViewProfile], forContext: UIUserNotificationActionContext.Default)
 
-        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: NSSet(array: [notificationCategory]) as! Set<UIUserNotificationCategory>))
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: NSSet(array: [notificationCategory]) as? Set<UIUserNotificationCategory>))
 
         func isUserLoggedIn() -> Bool {
             if(ref.authData != nil) {
@@ -72,13 +63,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
         centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.PanningCenterView;
 
-        if (isUserLoggedIn())
-        {
+        if (isUserLoggedIn()) {
             window!.rootViewController = centerContainer
             window!.makeKeyAndVisible()
         }
-        else
-        {
+        else {
             window!.rootViewController = rootController
             window!.makeKeyAndVisible()
         }
@@ -86,7 +75,67 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         return true
     }
     
-    // Directing a user to a specific view controller when they tap on "View Profile" after receiving a push notification:
+    // Checking User permissions for using background location updates
+
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+
+        switch status {
+
+            case .AuthorizedAlways:
+                locationManager.startMonitoringForRegion(region)
+                locationManager.startRangingBeaconsInRegion(region)
+                locationManager.requestStateForRegion(region)
+
+            case .Denied:
+                let alert = UIAlertController(title: "Warning", message: "You've disabled location update which is required for this app to work. Go to your phone settings and change the permissions.", preferredStyle: UIAlertControllerStyle.Alert)
+                let alertAction = UIAlertAction(title: "OK!", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
+                alert.addAction(alertAction)
+
+                self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+
+            default:
+                print("default case")
+        }
+    }
+    
+    // Start searching for nearby beacons and store the found beacons in an array:
+    
+    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
+        self.beacons = beacons
+        NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
+        
+        sendNotification() // When a beacon is found, send out a local notification to user
+    }
+    
+    // Sending the Local Push Notification:
+    
+    func sendNotification() {
+        
+        var beaconInfo = [String:String]()
+        
+        if (self.beacons.first != nil) {
+            if stopSending == false {
+                    beaconInfo["beaconMinor"] = "\(self.beacons.first!.minor)" // This gets the minor value of the beacon that the user walked past
+                    let localNotification:UILocalNotification = UILocalNotification()
+                    localNotification.alertAction = "view options"
+                    localNotification.alertBody = "You are in range of beacons"
+                    localNotification.category = "RECEIVER_IN_RANGE_ALERT"
+                    localNotification.userInfo = beaconInfo // This stores the beacon minor value within the notification
+                    localNotification.soundName = UILocalNotificationDefaultSoundName
+                    UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+                
+                    stopSending = true // This is to prevent repeat notifications
+            }
+        }
+    }
+    
+    // Once the user has exited a region then turn notification sending back on for the next beacon they walk past:
+
+    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
+        stopSending = false
+    }
+    
+    // Directing a user to a specific view controller when they tap on "View Profile" after receiving a local push notification:
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
         if identifier == "VIEW_PROFILE_IDENTIFIER" {
@@ -102,52 +151,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func applicationWillResignActive(application: UIApplication) {
-
-    }
-
-    func applicationDidEnterBackground(application: UIApplication) {
-
-    }
-
-    func applicationWillEnterForeground(application: UIApplication) {
-
-    }
-
-    func applicationDidBecomeActive(application: UIApplication) {
-
-    }
-
-    func applicationWillTerminate(application: UIApplication) {
-
-    }
-
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-
-        switch status{
-
-        case .AuthorizedAlways:
-
-            locationManager.startMonitoringForRegion(region)
-            locationManager.startRangingBeaconsInRegion(region)
-            locationManager.requestStateForRegion(region)
-
-        case .Denied:
-
-            let alert = UIAlertController(title: "Warning", message: "You've disabled location update which is required for this app to work. Go to your phone settings and change the permissions.", preferredStyle: UIAlertControllerStyle.Alert)
-            let alertAction = UIAlertAction(title: "OK!", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
-            alert.addAction(alertAction)
-
-            self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-
-        default:
-            print("default case")
-        }
+        
     }
     
-    // Setting the Push Notification:
+    func applicationDidEnterBackground(application: UIApplication) {
+        
+    }
+    
+    func applicationWillEnterForeground(application: UIApplication) {
+        
+    }
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+        
+    }
+    
+    func applicationWillTerminate(application: UIApplication) {
+        
+    }
+
+}
 
 //    func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
-//        
+//
 //        switch state {
 //            case .Inside:
 //                let localNotification:UILocalNotification = UILocalNotification()
@@ -160,40 +186,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 //            default: break
 //        }
 //    }
-    
-    func sendNotification() {
-        
-        var beaconInfo = [String:String]()
-        
-        if (self.beacons.first != nil) {
-            if stopSending == false {
-                    beaconInfo["beaconMinor"] = "\(self.beacons.first!.minor)"
-                    let localNotification:UILocalNotification = UILocalNotification()
-                    localNotification.alertAction = "view options"
-                    localNotification.alertBody = "You are in range of beacons"
-                    localNotification.category = "RECEIVER_IN_RANGE_ALERT"
-                    localNotification.userInfo = beaconInfo
-                    localNotification.soundName = UILocalNotificationDefaultSoundName
-                    UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-                
-                    stopSending = true
-            }
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        enteredRegion = true
-    }
 
-    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
-        enteredRegion = false
-    }
-
-    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
-        self.beacons = beacons
-        NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
-        
-        sendNotification()
-    }
-
-}
+//    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+//        enteredRegion = true
+//    }
