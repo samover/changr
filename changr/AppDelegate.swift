@@ -15,10 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     var window: UIWindow?
 
-    let ref = Firebase(url: "https://changr.firebaseio.com/")
+    let ref = Firebase(url: "https://changr.firebaseio.com/users")
     var centerContainer: MMDrawerController?
     var rootController: UIViewController?
     var beacons = [CLBeacon]()
+    var receiverName = String()
     let locationManager = CLLocationManager()
     var stopSending = false
 
@@ -115,10 +116,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         if (self.beacons.first != nil) {
             if stopSending == false {
+                
+                // This gets the name of the receiver that a user walked past:
+                
+                ref.observeEventType(.Value, withBlock: { snapshot in
+                    let enumerator = snapshot.children
+                    while let receiver = enumerator.nextObject() as? FDataSnapshot {
+                        if receiver.value["beaconMinor"] as! String == "\(self.beacons.first!.minor)" {
+                            self.receiverName = receiver.value["fullName"] as! String
+                        }
+                    }
+                })
+                
                     beaconInfo["beaconMinor"] = "\(self.beacons.first!.minor)" // This gets the minor value of the beacon that the user walked past
                     let localNotification:UILocalNotification = UILocalNotification()
                     localNotification.alertAction = "view options"
-                    localNotification.alertBody = "You are in range of beacons"
+                    localNotification.alertBody = "Please take a moment to view \(self.receiverName)'s profile and see why they need your help."
                     localNotification.category = "RECEIVER_IN_RANGE_ALERT"
                     localNotification.userInfo = beaconInfo // This stores the beacon minor value within the notification
                     localNotification.soundName = UILocalNotificationDefaultSoundName
