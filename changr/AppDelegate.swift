@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var centerContainer: MMDrawerController?
     var rootController: UIViewController?
     var enteredRegion = false
+    var stateInside = false
     var beacons = [CLBeacon]()
     let locationManager = CLLocationManager()
 
@@ -90,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
         if identifier == "VIEW_PROFILE_IDENTIFIER" {
             print("View profile action")
-        
+            print(notification.userInfo!)
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let destinationViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FormController") as! FormController
             window!.rootViewController = destinationViewController
@@ -144,20 +145,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     // Setting the Push Notification:
 
+//    func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
+//        switch state {
+//            case .Inside:
+//                if enteredRegion {
+//                    print(self.beacons)
+//                    let localNotification:UILocalNotification = UILocalNotification()
+//                    localNotification.alertAction = "view options"
+//                    localNotification.alertBody = "You are in range of beacons"
+//                    localNotification.category = "RECEIVER_IN_RANGE_ALERT"
+//                    UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+//                }
+//            default: break
+//        }
+//    }
+    
     func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
         switch state {
             case .Inside:
-                if enteredRegion {
-                    let localNotification:UILocalNotification = UILocalNotification()
-                    localNotification.alertAction = "view options"
-                    localNotification.alertBody = "You are in range of beacons"
-                    localNotification.category = "RECEIVER_IN_RANGE_ALERT"
-                    UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-                }
-            default: break
+                stateInside = true
+        default: break
         }
     }
-
+    
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
         enteredRegion = true
     }
@@ -166,9 +176,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         enteredRegion = false
     }
 
-    func locationManager(manager: CLLocationManager!, didRangeBeacons beacons: [CLBeacon]!, inRegion region: CLBeaconRegion!) {
+    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         self.beacons = beacons
         NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
+        
+        var beaconInfo = [String:String]()
+        beaconInfo["beaconMinor"] = "12345"
+
+        if stateInside {
+            if (self.beacons.first != nil) {
+//                print(self.beacons.first!.minor)
+                let localNotification:UILocalNotification = UILocalNotification()
+                localNotification.alertAction = "view options"
+                localNotification.alertBody = "You are in range of beacons"
+                localNotification.category = "RECEIVER_IN_RANGE_ALERT"
+                localNotification.userInfo = beaconInfo
+                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            }
+        }
     }
 
 }
