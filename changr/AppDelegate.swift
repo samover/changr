@@ -30,12 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // Building the Push Notification:
 
-        let notificationActionDismiss :UIMutableUserNotificationAction = UIMutableUserNotificationAction()
-        notificationActionDismiss.identifier = "DISMISS_IDENTIFIER"
-        notificationActionDismiss.title = "Dismiss"
-        notificationActionDismiss.activationMode = UIUserNotificationActivationMode.Background
-        notificationActionDismiss.destructive = true
-        notificationActionDismiss.authenticationRequired = false
+//        let notificationActionDismiss :UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+//        notificationActionDismiss.identifier = "DISMISS_IDENTIFIER"
+//        notificationActionDismiss.title = "Dismiss"
+//        notificationActionDismiss.activationMode = UIUserNotificationActivationMode.Background
+//        notificationActionDismiss.destructive = true
+//        notificationActionDismiss.authenticationRequired = false
 
         let notificationActionViewProfile :UIMutableUserNotificationAction = UIMutableUserNotificationAction()
         notificationActionViewProfile.identifier = "VIEW_PROFILE_IDENTIFIER"
@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
         let notificationCategory: UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
         notificationCategory.identifier = "RECEIVER_IN_RANGE_ALERT"
-        notificationCategory.setActions([notificationActionDismiss, notificationActionViewProfile], forContext: UIUserNotificationActionContext.Default)
+        notificationCategory.setActions([notificationActionViewProfile], forContext: UIUserNotificationActionContext.Default)
 
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: NSSet(array: [notificationCategory]) as! Set<UIUserNotificationCategory>))
 
@@ -90,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
         if identifier == "VIEW_PROFILE_IDENTIFIER" {
             print("View profile action")
-            print(notification.userInfo!)
+//            print(notification.userInfo!)
             
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let destinationViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FormController") as! FormController
@@ -147,20 +147,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
         
-        var beaconInfo = [String:String]()
-        
         switch state {
             case .Inside:
-                if (self.beacons.first != nil) {
-                    beaconInfo["beaconMinor"] = "\(self.beacons.first!.minor)"
-                    let localNotification:UILocalNotification = UILocalNotification()
-                    localNotification.alertAction = "view options"
-                    localNotification.alertBody = "You are in range of beacons"
-                    localNotification.category = "RECEIVER_IN_RANGE_ALERT"
-                    localNotification.userInfo = beaconInfo
-                    localNotification.soundName = UILocalNotificationDefaultSoundName
-                    UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-                }
+                let localNotification:UILocalNotification = UILocalNotification()
+                localNotification.alertAction = "view options"
+                localNotification.alertBody = "You are in range of beacons"
+                localNotification.category = "RECEIVER_IN_RANGE_ALERT"
+    //          localNotification.userInfo = beaconInfo
+                localNotification.soundName = UILocalNotificationDefaultSoundName
+                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
             default: break
         }
     }
