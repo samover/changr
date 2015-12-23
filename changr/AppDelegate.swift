@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var enteredRegion = false
     var beacons = [CLBeacon]()
     let locationManager = CLLocationManager()
+    var stopSending = false
 
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!, identifier: "Estimotes")
 
@@ -90,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
         if identifier == "VIEW_PROFILE_IDENTIFIER" {
             print("View profile action")
-//            print(notification.userInfo!)
+            print(notification.userInfo!)
             
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let destinationViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FormController") as! FormController
@@ -145,18 +146,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     // Setting the Push Notification:
 
-    func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
+//    func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
+//        
+//        switch state {
+//            case .Inside:
+//                let localNotification:UILocalNotification = UILocalNotification()
+//                localNotification.alertAction = "view options"
+//                localNotification.alertBody = "You are in range of beacons"
+//                localNotification.category = "RECEIVER_IN_RANGE_ALERT"
+//    //          localNotification.userInfo = beaconInfo
+//                localNotification.soundName = UILocalNotificationDefaultSoundName
+//                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+//            default: break
+//        }
+//    }
+    
+    func sendNotification() {
         
-        switch state {
-            case .Inside:
-                let localNotification:UILocalNotification = UILocalNotification()
-                localNotification.alertAction = "view options"
-                localNotification.alertBody = "You are in range of beacons"
-                localNotification.category = "RECEIVER_IN_RANGE_ALERT"
-    //          localNotification.userInfo = beaconInfo
-                localNotification.soundName = UILocalNotificationDefaultSoundName
-                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-            default: break
+        var beaconInfo = [String:String]()
+        
+        if (self.beacons.first != nil) {
+            if stopSending == false {
+                    beaconInfo["beaconMinor"] = "\(self.beacons.first!.minor)"
+                    let localNotification:UILocalNotification = UILocalNotification()
+                    localNotification.alertAction = "view options"
+                    localNotification.alertBody = "You are in range of beacons"
+                    localNotification.category = "RECEIVER_IN_RANGE_ALERT"
+                    localNotification.userInfo = beaconInfo
+                    localNotification.soundName = UILocalNotificationDefaultSoundName
+                    UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+                
+                    stopSending = true
+            }
         }
     }
     
@@ -171,6 +192,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         self.beacons = beacons
         NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
+        
+        sendNotification()
     }
 
 }
