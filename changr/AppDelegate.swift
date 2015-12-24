@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var centerContainer: MMDrawerController?
     var rootController: UIViewController?
     var beacons = [CLBeacon]()
-    var receiverName = String()
+    var receiverName: String!
     let locationManager = CLLocationManager()
     var stopSending = false
 
@@ -120,11 +120,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 // This gets the name of the receiver that a user walked past:
                 
                 ref.observeEventType(.Value, withBlock: { snapshot in
-                    let enumerator = snapshot.children
-                    while let receiver = enumerator.nextObject() as? FDataSnapshot {
-                        if receiver.value["beaconMinor"] as! String == "\(self.beacons.first!.minor)" {
-                            self.receiverName = receiver.value["fullName"] as! String
-                        }
+                    for item in snapshot.children {
+                        let child = item as! FDataSnapshot
+                            if child.value["beaconMinor"] as! String == self.beacons.first!.minor.stringValue {
+                                self.receiverName = child.value["fullName"] as! String
+                            }
                     }
                 })
                 
