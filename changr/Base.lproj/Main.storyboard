@@ -120,7 +120,7 @@
                                 <edgeInsets key="layoutMargins" top="10" left="8" bottom="10" right="8"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.72984481820000002" blue="0.64854029609999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="QVy-ol-q2v" firstAttribute="top" secondItem="SOI-Ea-XsN" secondAttribute="topMargin" constant="80" id="AT9-cN-3vI"/>
                             <constraint firstItem="QVy-ol-q2v" firstAttribute="leading" secondItem="SOI-Ea-XsN" secondAttribute="leadingMargin" constant="5" id="YEW-g4-TUv"/>
@@ -157,9 +157,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.0" green="0.72984481820000002" blue="0.64854029609999997" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="beaconCell" rowHeight="90" id="gs4-EZ-dFn" customClass="BeaconTableViewCell" customModule="changr" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="414" height="90"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gs4-EZ-dFn" id="xSU-WP-qNi">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
@@ -488,7 +489,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.72984481820000002" blue="0.64854029609999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="bGT-Re-6y5" secondAttribute="trailing" id="0KO-wH-1Va"/>
                             <constraint firstItem="bGT-Re-6y5" firstAttribute="leading" secondItem="JCf-AU-ece" secondAttribute="leadingMargin" id="HfB-Ev-gNy"/>
@@ -554,6 +555,6 @@
         <image name="menu" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g48-SA-gyR"/>
+        <segue reference="g7m-cm-cm8"/>
     </inferredMetricsTieBreakers>
 </document>

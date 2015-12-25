@@ -105,7 +105,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         self.beacons = beacons
         NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
         
-        sendNotification() // When a beacon is found, send out a local notification to user
+        if self.beacons.count != 0 {
+            sendNotification() // When a beacon is found, send out a local notification to user
+        }
     }
     
     // Sending the Local Push Notification:
@@ -114,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         var beaconInfo = [String:String]()
         
-        if (self.beacons.first != nil) {
+        if self.beacons.first != nil {
             if stopSending == false {
                 
                 // This gets the name of the receiver that a user walked past:
@@ -123,7 +125,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     for item in snapshot.children {
                         let child = item as! FDataSnapshot
                             if child.value["beaconMinor"] as! String == self.beacons.first!.minor.stringValue {
-                                self.receiverName = child.value["fullName"] as! String
+                                self.receiverName = child.value["fullName"] as? String
                             }
                     }
                 })
