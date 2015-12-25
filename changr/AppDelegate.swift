@@ -105,9 +105,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         self.beacons = beacons
         NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
         
-        if self.beacons.count != 0 {
-            sendNotification() // When a beacon is found, send out a local notification to user
-        }
+        sendNotification() // When a beacon is found, send out a local notification to user
+        
     }
     
     // Sending the Local Push Notification:
@@ -130,16 +129,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     }
                 })
                 
-                    beaconInfo["beaconMinor"] = "\(self.beacons.first!.minor)" // This gets the minor value of the beacon that the user walked past
-                    let localNotification:UILocalNotification = UILocalNotification()
-                    localNotification.alertAction = "view options"
-                    localNotification.alertBody = "Please take a moment to view \(self.receiverName)'s profile and see why they need your help."
-                    localNotification.category = "RECEIVER_IN_RANGE_ALERT"
-                    localNotification.userInfo = beaconInfo // This stores the beacon minor value within the notification
-                    localNotification.soundName = UILocalNotificationDefaultSoundName
-                    UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-                
-                    stopSending = true // This is to prevent repeat notifications
+                beaconInfo["beaconMinor"] = "\(self.beacons.first!.minor)" // This gets the minor value of the beacon that the user walked past
+                let localNotification:UILocalNotification = UILocalNotification()
+                localNotification.alertAction = "view options"
+                localNotification.alertBody = "Please take a moment to view \(self.receiverName)'s profile and see why they need your help."
+                localNotification.category = "RECEIVER_IN_RANGE_ALERT"
+                localNotification.userInfo = beaconInfo // This stores the beacon minor value within the notification
+                localNotification.soundName = UILocalNotificationDefaultSoundName
+                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+            
+                stopSending = true // This is to prevent repeat notifications
             }
         }
     }
