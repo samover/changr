@@ -43,6 +43,24 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == self.emailTextField {
+            self.passwordTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
+//    func isValidEmail(testStr:String) -> Bool {
+//        let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+//        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+//        return emailTest.evaluateWithObject(testStr)
+//    }
+
+    
     // MARK: Picker functions
     
     func numberOfComponentsInPickerView(userType: UIPickerView) -> Int {
