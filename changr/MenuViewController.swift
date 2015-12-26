@@ -21,10 +21,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var profileNavController: UINavigationController!
     var historyNavController: UINavigationController!
     var menuItems = [MenuItems]()
-    
-    
+
     // MARK: LifeCycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate

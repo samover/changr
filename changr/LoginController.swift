@@ -23,13 +23,13 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     @IBOutlet weak var errorMessage: UILabel!
     
     // MARK: UIViewController Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.delegate = self
         passwordTextField.delegate = self
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         ref = appDelegate.ref
+
         self.userType.dataSource = self
         self.userType.delegate = self
         self.errorMessage.hidden = true
@@ -117,7 +117,8 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         let newUser = [
             "provider": authData.provider,
             "userType": self.userSelection,
-            "email": authData.providerData["email"] as? NSString as? String
+            "email": authData.providerData["email"] as? NSString as? String,
+            "beaconMinor": ""
         ]
         
         self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)

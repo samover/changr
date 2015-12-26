@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     // MARK: Outlets
     @IBOutlet weak var currentUserLabel: UILabel!
-
+    
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

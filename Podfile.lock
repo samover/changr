@@ -14,7 +14,7 @@ PODS:
     - MMDrawerController/Core
 
 DEPENDENCIES:
-  - Firebase (>= 2.5.0)
+  - Firebase (~> 2.5)
   - MMDrawerController
 
 SPEC CHECKSUMS:
