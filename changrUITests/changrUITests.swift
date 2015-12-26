@@ -10,45 +10,43 @@ import XCTest
 //@testable import changr
 
 class changrUITests: XCTestCase {
-        
+    
+    let email:String = "donor@gmail.com"
+    let password:String = "password"
+    let ref = Firebase(url: "https://changrtest.firebaseio.com")
+
     override func setUp() {
         super.setUp()
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
+        ref.unauth()
         XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
     override func tearDown() {
-        let ref = Firebase(url:
-        // Put teardown code here. This method is called after the invocation of each test method in the classs
         super.tearDown()
+        ref.removeUser(email, password: password, withCompletionBlock: nil)
     }
     
     func testSignupAsNewDonor() {
-        
         
         let app = XCUIApplication()
         
         let exampleGmailComTextField = app.textFields["Example@gmail.com"]
         exampleGmailComTextField.tap()
-        exampleGmailComTextField.typeText("donor@makers.com")
+        exampleGmailComTextField.typeText(email)
         
-        let passwordSecureTextField = app.secureTextFields["Password"]
+        let passwordSecureTextField = app.secureTextFields[password]
         passwordSecureTextField.tap()
         passwordSecureTextField.typeText("password")
         
         app.pickerWheels["Donor"].tap()
         app.buttons["Sign Up"].tap()
         
-        XCTAssert(app.buttons["Save"].exists)
+        XCTAssert(app.buttons["Sign out"].exists)
     }
     
     func testSignupAsNewReceiver() {
-
+        
         let app = XCUIApplication()
         
         let exampleGmailComTextField = app.textFields["Example@gmail.com"]

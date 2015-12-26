@@ -88,12 +88,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "changrUITests/changrUITests.swift"
-            timestampString = "472045066.538006"
+            timestampString = "472815880.763397"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "testSignupAsNewDonor()"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "tearDown()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -104,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "changr/AppDelegate.swift"
-            timestampString = "472812968.523141"
+            timestampString = "472815691.892007"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "isUserLoggedIn()"
             landmarkType = "5">
          </BreakpointContent>

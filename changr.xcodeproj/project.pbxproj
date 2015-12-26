@@ -10,6 +10,9 @@
 		51D613141C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
 		51D613151C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
 		51D613161C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
+		7E0A7E0B1C2E931A00C91E44 /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0A1C2E931900C91E44 /* notifications.swift */; };
+		7E0A7E0D1C2E933C00C91E44 /* menuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */; };
+		7E0A7E0F1C2E936B00C91E44 /* donorAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */; };
 		7E3FF96F1C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
 		7E3FF9701C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
 		7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
@@ -72,6 +75,9 @@
 /* Begin PBXFileReference section */
 		22CFF3E8E788FA5BB42B7EEA /* Pods-changr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changr.release.xcconfig"; path = "Pods/Target Support Files/Pods-changr/Pods-changr.release.xcconfig"; sourceTree = "<group>"; };
 		51D613131C232C0400105BFC /* MenuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
+		7E0A7E0A1C2E931900C91E44 /* notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
+		7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuItems.swift; sourceTree = "<group>"; };
+		7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = donorAuthentication.swift; sourceTree = "<group>"; };
 		7E3FF96E1C23716400CEC296 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		7E3FF97A1C2381C300CEC296 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +198,8 @@
 			children = (
 				7E9B85011C21B226007DFE64 /* changrTests.swift */,
 				7E9B85031C21B226007DFE64 /* Info.plist */,
+				7E0A7E0A1C2E931900C91E44 /* notifications.swift */,
+				7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */,
 			);
 			path = changrTests;
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 			children = (
 				7EBA9DAB1C222175004E4C60 /* changrUITests.swift */,
 				7EBA9DAD1C222175004E4C60 /* Info.plist */,
+				7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */,
 			);
 			path = changrUITests;
 			sourceTree = "<group>";
@@ -452,6 +461,8 @@
 			files = (
 				7E58DE371C246B6800AFF2D0 /* LoginController.swift in Sources */,
 				BB487EE21C233C82003EC7F5 /* Notifications.swift in Sources */,
+				7E0A7E0B1C2E931A00C91E44 /* notifications.swift in Sources */,
+				7E0A7E0D1C2E933C00C91E44 /* menuItems.swift in Sources */,
 				BB487EE61C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
 				7E9B85021C21B226007DFE64 /* changrTests.swift in Sources */,
 				7E3FF97C1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
@@ -476,6 +487,7 @@
 				7EBA9DAC1C222175004E4C60 /* changrUITests.swift in Sources */,
 				7E3FF9811C2381CF00CEC296 /* SettingsViewController.swift in Sources */,
 				7E58DE3A1C246B6E00AFF2D0 /* ViewController.swift in Sources */,
+				7E0A7E0F1C2E936B00C91E44 /* donorAuthentication.swift in Sources */,
 				51D613161C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,

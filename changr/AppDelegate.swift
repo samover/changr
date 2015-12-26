@@ -30,8 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         #if DEBUG
             ref = Firebase(url: "https://changrtest.firebaseio.com")
+            print("Debug mode")
         #else
             ref = Firebase(url: "https://changr.firebaseio.com/")
+            print("App mode")
         #endif
         
         locationManager.requestAlwaysAuthorization()
