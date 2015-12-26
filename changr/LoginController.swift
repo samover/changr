@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     // MARK: Properties
     @IBOutlet weak var emailTextField: UITextField!
