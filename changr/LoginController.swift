@@ -28,6 +28,10 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         self.userType.dataSource = self
         self.userType.delegate = self
         self.errorMessage.hidden = true
+        
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: "didTapView")
+        self.view.addGestureRecognizer(tapRecognizer)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -39,6 +43,9 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         // Dispose of any resources that can be recreated.
     }
     
+    func didTapView(){
+        self.view.endEditing(true)
+    }
     
     // MARK: Picker functions
     
