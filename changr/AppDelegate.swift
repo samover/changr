@@ -124,7 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     for item in snapshot.children {
                         let child = item as! FDataSnapshot
                             if child.value["beaconMinor"] as! String == self.beacons.first!.minor.stringValue {
-                                self.receiverName = child.value["fullName"] as? String
+                                self.receiverName = child.value["fullName"] as! String
                             }
                     }
                 })
@@ -157,7 +157,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             print(notification.userInfo!)
             
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let destinationViewController = mainStoryboard.instantiateViewControllerWithIdentifier("FormController") as! FormController
+            let destinationViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
             window!.rootViewController = destinationViewController
             window!.makeKeyAndVisible()
         }
