@@ -11,16 +11,16 @@ import UIKit
 class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     // MARK: Properties
+    var appDelegate: AppDelegate!
+    var ref: Firebase!
+    var pickerDataSource = ["Donor", "Receiver"]
+    var userSelection = "Donor"
+    
+    // MARK: Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userType: UIPickerView!
     @IBOutlet weak var errorMessage: UILabel!
-    
-    let ref = Firebase(url: "https://changr.firebaseio.com/")
-    
-    var pickerDataSource = ["Donor", "Receiver"]
-    var userSelection = "Donor"
-    
     
     // MARK: UIViewController Lifecycle
     
@@ -28,6 +28,8 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         super.viewDidLoad()
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        ref = appDelegate.ref
         self.userType.dataSource = self
         self.userType.delegate = self
         self.errorMessage.hidden = true
@@ -39,7 +41,6 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -62,7 +63,6 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
 
     
     // MARK: Picker functions
-    
     func numberOfComponentsInPickerView(userType: UIPickerView) -> Int {
         return 1
     }
@@ -76,24 +76,10 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func pickerView(userType: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if(row == 0)
-        {
-            print(pickerDataSource)
-            self.userSelection = pickerDataSource[0]
-            print(self.userSelection)
-        }
-        if(row == 1)
-        {
-            print(pickerDataSource)
-            self.userSelection = pickerDataSource[1]
-            print(self.userSelection)
-
-        }
+        self.userSelection = row == 0 ? pickerDataSource[0] : pickerDataSource[1]
     }
     
     // MARK: Actions
-    
-    
     @IBAction func loginButton(sender: AnyObject) {
         if emailTextField.text == "" || passwordTextField.text == "" {
             print("Make sure to enter in each textfield")
@@ -105,16 +91,14 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                     self.errorMessage.text = "Username or password incorrect"
                     self.errorMessage.hidden = false
                 } else {
-                    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                    appDelegate.window?.rootViewController = appDelegate.centerContainer
-                    appDelegate.window!.makeKeyAndVisible()
+                    self.appDelegate.window?.rootViewController = self.appDelegate.centerContainer
+                    self.appDelegate.window!.makeKeyAndVisible()
 
                 }
                 
             })
         }
     }
-    
 
     
     @IBAction func signupButton(sender: AnyObject) {
@@ -144,14 +128,12 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                             
                             self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
                             if self.userSelection == "Donor" {
-                                let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                                appDelegate.window?.rootViewController = appDelegate.centerContainer
-                                appDelegate.window!.makeKeyAndVisible()
+                                self.appDelegate.window?.rootViewController = self.appDelegate.centerContainer
+                                self.appDelegate.window!.makeKeyAndVisible()
                             } else {
                                 self.performSegueWithIdentifier("completeProfile", sender: self)
 
                             }
-                            
                             
                         }
                     })

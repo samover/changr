@@ -11,16 +11,17 @@ import UIKit
 class ViewController: UIViewController {
     
     // MARK: Properties
+    var appDelegate: AppDelegate!
+    var ref: Firebase!
     
-    let ref = Firebase(url: "https://changr.firebaseio.com/")
-
+    // MARK: Outlets
     @IBOutlet weak var currentUserLabel: UILabel!
 
     // MARK: UIViewController Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        ref = appDelegate.ref
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,20 +30,14 @@ class ViewController: UIViewController {
 
     
     // MARK: Actions
-    
     @IBAction func menuButton(sender: AnyObject) {
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        print(appDelegate.centerContainer?.view)
         appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
     
     @IBAction func logoutButton(sender: AnyObject) {
         ref.unauth()
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-
         appDelegate.window?.rootViewController = appDelegate.rootController
         appDelegate.window!.makeKeyAndVisible()
-
     }
 
 }

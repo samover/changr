@@ -10,6 +10,9 @@
 		51D613141C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
 		51D613151C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
 		51D613161C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
+		7E0A7E0B1C2E931A00C91E44 /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0A1C2E931900C91E44 /* notifications.swift */; };
+		7E0A7E0D1C2E933C00C91E44 /* menuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */; };
+		7E0A7E0F1C2E936B00C91E44 /* donorAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */; };
 		7E3FF96F1C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
 		7E3FF9701C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
 		7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
@@ -25,6 +28,12 @@
 		7E3FF9831C2381D700CEC296 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */; };
 		7E3FF9841C2381D700CEC296 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */; };
 		7E3FF9851C2381D700CEC296 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */; };
+		7E58DE351C246AA400AFF2D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
+		7E58DE361C246AA500AFF2D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
+		7E58DE371C246B6800AFF2D0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85111C21C4E3007DFE64 /* LoginController.swift */; };
+		7E58DE381C246B6900AFF2D0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85111C21C4E3007DFE64 /* LoginController.swift */; };
+		7E58DE391C246B6E00AFF2D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EE1C21B226007DFE64 /* ViewController.swift */; };
+		7E58DE3A1C246B6E00AFF2D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EE1C21B226007DFE64 /* ViewController.swift */; };
 		7E9AF0DC1C21D33C00F3C6FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9AF0DB1C21D33C00F3C6FE /* User.swift */; };
 		7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
 		7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EE1C21B226007DFE64 /* ViewController.swift */; };
@@ -66,6 +75,9 @@
 /* Begin PBXFileReference section */
 		22CFF3E8E788FA5BB42B7EEA /* Pods-changr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changr.release.xcconfig"; path = "Pods/Target Support Files/Pods-changr/Pods-changr.release.xcconfig"; sourceTree = "<group>"; };
 		51D613131C232C0400105BFC /* MenuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
+		7E0A7E0A1C2E931900C91E44 /* notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
+		7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuItems.swift; sourceTree = "<group>"; };
+		7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = donorAuthentication.swift; sourceTree = "<group>"; };
 		7E3FF96E1C23716400CEC296 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		7E3FF97A1C2381C300CEC296 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +206,8 @@
 			children = (
 				7E9B85011C21B226007DFE64 /* changrTests.swift */,
 				7E9B85031C21B226007DFE64 /* Info.plist */,
+				7E0A7E0A1C2E931900C91E44 /* notifications.swift */,
+				7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */,
 			);
 			path = changrTests;
 			sourceTree = "<group>";
@@ -237,6 +251,7 @@
 			children = (
 				7EBA9DAB1C222175004E4C60 /* changrUITests.swift */,
 				7EBA9DAD1C222175004E4C60 /* Info.plist */,
+				7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */,
 			);
 			path = changrUITests;
 			sourceTree = "<group>";
@@ -452,14 +467,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E58DE371C246B6800AFF2D0 /* LoginController.swift in Sources */,
 				BB487EE21C233C82003EC7F5 /* Notifications.swift in Sources */,
+				7E0A7E0B1C2E931A00C91E44 /* notifications.swift in Sources */,
+				7E0A7E0D1C2E933C00C91E44 /* menuItems.swift in Sources */,
 				BB487EE61C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
 				7E9B85021C21B226007DFE64 /* changrTests.swift in Sources */,
 				7E3FF97C1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
 				7E3FF9801C2381CF00CEC296 /* SettingsViewController.swift in Sources */,
+				7E58DE391C246B6E00AFF2D0 /* ViewController.swift in Sources */,
 				51D613151C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E3FF9701C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E3FF9781C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
+				7E58DE361C246AA500AFF2D0 /* AppDelegate.swift in Sources */,
 				7E3FF9841C2381D700CEC296 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,14 +488,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E58DE381C246B6900AFF2D0 /* LoginController.swift in Sources */,
 				BB487EE31C233C82003EC7F5 /* Notifications.swift in Sources */,
 				BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
 				7E3FF97D1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
 				7EBA9DAC1C222175004E4C60 /* changrUITests.swift in Sources */,
 				7E3FF9811C2381CF00CEC296 /* SettingsViewController.swift in Sources */,
+				7E58DE3A1C246B6E00AFF2D0 /* ViewController.swift in Sources */,
+				7E0A7E0F1C2E936B00C91E44 /* donorAuthentication.swift in Sources */,
 				51D613161C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
+				7E58DE351C246AA400AFF2D0 /* AppDelegate.swift in Sources */,
 				7E3FF9851C2381D700CEC296 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,6 +541,7 @@
 /* Begin XCBuildConfiguration section */
 		7E9B85041C21B226007DFE64 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B33ECCE5B505067FB1D7F6AA /* Pods-changr.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -554,6 +579,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-DDEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -679,6 +705,7 @@
 		};
 		7EBA9DB11C222175004E4C60 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B33ECCE5B505067FB1D7F6AA /* Pods-changr.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -688,6 +715,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
 				TEST_TARGET_NAME = changr;
 				USES_XCTRUNNER = YES;
 			};
@@ -704,6 +732,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
 				TEST_TARGET_NAME = changr;
 				USES_XCTRUNNER = YES;
 			};

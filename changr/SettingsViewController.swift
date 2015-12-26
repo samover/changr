@@ -10,13 +10,17 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
-    let ref = Firebase(url: "https://changr.firebaseio.com/")
-
-
+    // MARK: Properties
+    var ref: Firebase!
+    var appDelegate: AppDelegate!
+    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        ref = appDelegate.ref
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -24,14 +28,11 @@ class SettingsViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func menuButton(sender: AnyObject) {
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
     
     @IBAction func logoutButton(sender: AnyObject) {
         ref.unauth()
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
         appDelegate.window?.rootViewController = appDelegate.rootController
         appDelegate.window!.makeKeyAndVisible()
 
