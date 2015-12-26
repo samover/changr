@@ -26,6 +26,8 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         self.userType.dataSource = self
         self.userType.delegate = self
         self.errorMessage.hidden = true
