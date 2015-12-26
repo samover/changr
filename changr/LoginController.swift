@@ -125,8 +125,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             self.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
                 (error: NSError!) in
                 if error != nil {
-                    print(error.description)
-                    self.errorMessage.text = "Username or password incorrect"
+                    self.errorMessage.text = "Please enter a valid password and email"
                     self.errorMessage.hidden = false
                 } else {
 
@@ -164,25 +163,5 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         }
         
     }
-    
-//    @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
-//        print("user logged out")
-//        self.emailTextField.text = ""
-//        self.passwordTextField.text = ""
-//
-//        self.errorMessage.hidden = true
-//    }
-
-    
-    // MARK: - Navigation
-    
-    
-    /*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
