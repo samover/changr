@@ -12,31 +12,32 @@ import CoreLocation
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
+    var ref: Firebase!
 
     var window: UIWindow?
-
-    let ref = Firebase(url: "https://changr.firebaseio.com/")
     var centerContainer: MMDrawerController?
     var rootController: UIViewController?
+
     var enteredRegion = false
     var beacons = [CLBeacon]()
     let locationManager = CLLocationManager()
-
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!, identifier: "Estimotes")
 
+    override init() {
+        Firebase.defaultConfig().persistenceEnabled = true
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        #if DEBUG
+            ref = Firebase(url: "https://changrtest.firebaseio.com")
+        #else
+            ref = Firebase(url: "https://changr.firebaseio.com/")
+        #endif
+        
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
 
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: nil))
-
-        func isUserLoggedIn() -> Bool {
-            if(ref.authData != nil) {
-                return true
-            } else {
-                return false
-            }
-        }
 
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
 
@@ -87,6 +88,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     }
 
+    func isUserLoggedIn() -> Bool {
+        if(ref.authData != nil) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
 
         switch status{

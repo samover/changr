@@ -11,14 +11,28 @@ import UIKit
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     // MARK: Properties
+    var appDelegate: AppDelegate!
+    var centerViewController: ViewController!
+    var settingsViewController: SettingsViewController!
+    var profileViewController: ProfileViewController!
+    var historyViewController: HistoryViewController!
+    var settingsNavController: UINavigationController!
+    var centerNavController: UINavigationController!
+    var profileNavController: UINavigationController!
+    var historyNavController: UINavigationController!
     var menuItems = [MenuItems]()
     
     
-    // MARK: LiefeCycle
+    // MARK: LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        centerViewController = storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+        settingsViewController = storyboard?.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
+        profileViewController = storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+        historyViewController = storyboard?.instantiateViewControllerWithIdentifier("HistoryViewController") as! HistoryViewController
+        
         let icon0 = UIImage(named: "home")!
         let item0 = MenuItems(title: "Home", icon: icon0)!
         
@@ -59,61 +73,30 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         {
             
         case 0:
-            let centerViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
-            let centerNavController = UINavigationController(rootViewController: centerViewController)
-            let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            
+            centerNavController = UINavigationController(rootViewController: centerViewController)
             appDelegate.centerContainer!.centerViewController = centerNavController
-            appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
-            
             break;
             
         case 1:
-            let settingsViewController = self.storyboard?.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
-            let settingsNavController = UINavigationController(rootViewController: settingsViewController)
-            let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            
+            settingsNavController = UINavigationController(rootViewController: settingsViewController)
             appDelegate.centerContainer!.centerViewController = settingsNavController
-            appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
-            
             break;
         
         case 2:
-            let profileViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
-            let profileNavController = UINavigationController(rootViewController: profileViewController)
-            let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            
+            profileNavController = UINavigationController(rootViewController: profileViewController)
             appDelegate.centerContainer!.centerViewController = profileNavController
-            appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
-            
             break;
 
         case 3:
-            let historyViewController = self.storyboard?.instantiateViewControllerWithIdentifier("HistoryViewController") as! HistoryViewController
-            let historyNavController = UINavigationController(rootViewController: historyViewController)
-            let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-            
+            historyNavController = UINavigationController(rootViewController: historyViewController)
             appDelegate.centerContainer!.centerViewController = historyNavController
-            appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
-            
             break;
 
-            
         default:
-            
             print("\(menuItems[indexPath.row]) is selected");
         }
         
+        appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
