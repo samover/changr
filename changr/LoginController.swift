@@ -55,13 +55,6 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         return true
     }
     
-//    func isValidEmail(testStr:String) -> Bool {
-//        let emailRegEx = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-//        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-//        return emailTest.evaluateWithObject(testStr)
-//    }
-
-    
     // MARK: Picker functions
     func numberOfComponentsInPickerView(userType: UIPickerView) -> Int {
         return 1
@@ -79,71 +72,81 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         self.userSelection = row == 0 ? pickerDataSource[0] : pickerDataSource[1]
     }
     
+    // MARK: Authentication functions
+    
+    func resetAuthenticationForm() -> Void {
+        self.hideErrorMessage()
+        self.emailTextField.text = ""
+        self.passwordTextField.text = ""
+    }
+    
+    func showErrorMessage(msg:String) -> Void {
+        self.errorMessage.text = msg
+        self.errorMessage.hidden = false
+    }
+    
+    func hideErrorMessage() -> Void {
+        self.errorMessage.hidden = true
+    }
+    
+    func isInvalidInput() -> Bool {
+        return emailTextField.text == "" || passwordTextField.text == ""
+    }
+    
+    func loginUser() -> Void {
+        ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: {
+            (error, authData) in
+            if error != nil {
+                self.showErrorMessage("Username or password incorrect")
+            } else {
+                self.resetAuthenticationForm()
+                self.isRegisteredUser(authData) ? self.delegateToCenterContainer(): self.updateProfile(authData)
+            }
+        })
+    }
+    
+    func isRegisteredUser(authData: FAuthData) -> Bool {
+        var isRegistered: Bool!
+        ref.observeSingleEventOfType(.Value, andPreviousSiblingKeyWithBlock: { snapshot in
+            isRegistered = snapshot.0.hasChild("users/\(authData.uid)")
+        })
+        return isRegistered
+    }
+    
+    func updateProfile(authData: FAuthData) -> Void {
+        let newUser = [
+            "provider": authData.provider,
+            "userType": self.userSelection,
+            "email": authData.providerData["email"] as? NSString as? String
+        ]
+        
+        self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
+        self.userSelection == "Donor" ? self.delegateToCenterContainer() : self.segueToCompleteProfile()
+    }
+    
+    func delegateToCenterContainer() -> Void {
+        self.appDelegate.window?.rootViewController = self.appDelegate.centerContainer
+        self.appDelegate.window!.makeKeyAndVisible()
+    }
+    
+    func segueToCompleteProfile() -> Void {
+        self.performSegueWithIdentifier("completeProfile", sender: self)
+    }
+    
+    func registerUser() -> Void {
+        self.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
+            (error: NSError!) in
+            error == nil ? self.loginUser() : self.showErrorMessage("Please enter a valid password and email")
+        }
+    }
+
     // MARK: Actions
     @IBAction func loginButton(sender: AnyObject) {
-        if emailTextField.text == "" || passwordTextField.text == "" {
-            print("Make sure to enter in each textfield")
-            self.errorMessage.text = "Please fill in a username and password"
-            self.errorMessage.hidden = false
-        } else {
-            ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: { (error, authData) in
-                if error != nil {
-                    self.errorMessage.text = "Username or password incorrect"
-                    self.errorMessage.hidden = false
-                } else {
-                    self.appDelegate.window?.rootViewController = self.appDelegate.centerContainer
-                    self.appDelegate.window!.makeKeyAndVisible()
-
-                }
-                
-            })
-        }
+        self.isInvalidInput() ? self.showErrorMessage("Please fill in a username and password") : loginUser()
     }
 
     
     @IBAction func signupButton(sender: AnyObject) {
-        if emailTextField.text == "" || passwordTextField.text == "" {
-            self.errorMessage.text = "Please fill in a username and password"
-            self.errorMessage.hidden = false
-        } else {
-            self.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
-                (error: NSError!) in
-                if error != nil {
-                    self.errorMessage.text = "Please enter a valid password and email"
-                    self.errorMessage.hidden = false
-                } else {
-
-                    self.ref.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: { (error, authData) -> Void in
-                        if error != nil {
-                            self.errorMessage.text = "There was a problem with your sign in, please try again"
-                            self.errorMessage.hidden = false
-
-                        } else {
-                            
-                            let newUser = [
-                                "provider": authData.provider,
-                                "userType": self.userSelection,
-                                "email": authData.providerData["email"] as? NSString as? String
-                            ]
-                            
-                            self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
-                            if self.userSelection == "Donor" {
-                                self.appDelegate.window?.rootViewController = self.appDelegate.centerContainer
-                                self.appDelegate.window!.makeKeyAndVisible()
-                            } else {
-                                self.performSegueWithIdentifier("completeProfile", sender: self)
-
-                            }
-                            
-                        }
-                    })
-                        
-                }
-
-            }
-            
-        }
-        
+        self.isInvalidInput() ? self.showErrorMessage("Please fill in a username and password") : registerUser()
     }
-
 }
