@@ -38,6 +38,7 @@
 		7EF1C8CC1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7EF1C8CA1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec */; };
 		8CF4F098B54FE8E2BF9054E1 /* libPods-changr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED7EF6E3097DCA969924F86 /* libPods-changr.a */; };
 		BB1F874E1C25C57A003078FA /* libFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1F874D1C25C57A003078FA /* libFirebase.a */; };
+		BB461EC61C3032860069B45C /* ViewReceiverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */; };
 		BB487EDF1C2323C0003EC7F5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */; };
 		BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE01C233C82003EC7F5 /* Notifications.swift */; };
 		BB487EE21C233C82003EC7F5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE01C233C82003EC7F5 /* Notifications.swift */; };
@@ -95,6 +96,7 @@
 		7EF1C8CA1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MMDrawerController+Storyboard.podspec"; sourceTree = "<group>"; };
 		B33ECCE5B505067FB1D7F6AA /* Pods-changr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-changr/Pods-changr.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1F874D1C25C57A003078FA /* libFirebase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFirebase.a; path = "Pods/../build/Debug-iphoneos/libFirebase.a"; sourceTree = "<group>"; };
+		BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewReceiverProfileController.swift; sourceTree = "<group>"; };
 		BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BB487EE01C233C82003EC7F5 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				7E3FF97A1C2381C300CEC296 /* ProfileViewController.swift */,
 				7E3FF97E1C2381CF00CEC296 /* SettingsViewController.swift */,
 				7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */,
+				BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				7E3FF97B1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
 				7EF1C8CB1C2319960003C3F0 /* MMDrawerController+Storyboard.m in Sources */,
 				7E3FF9771C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
+				BB461EC61C3032860069B45C /* ViewReceiverProfileController.swift in Sources */,
 				7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */,
 				7E9AF0DC1C21D33C00F3C6FE /* User.swift in Sources */,
 				BBDA6B901C25F9A50057C3EC /* BeaconTableViewCell.swift in Sources */,

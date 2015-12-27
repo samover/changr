@@ -157,7 +157,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             print(notification.userInfo!)
             
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let destinationViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
+            let destinationViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewReceiverProfileController") as! ViewReceiverProfileController
             window!.rootViewController = destinationViewController
             window!.makeKeyAndVisible()
         }
