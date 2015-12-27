@@ -152,12 +152,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     // Directing a user to a specific view controller when they tap on "View Profile" after receiving a local push notification:
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
+        
         if identifier == "VIEW_PROFILE_IDENTIFIER" {
-            print("View profile action")
-            print(notification.userInfo!)
-            
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let destinationViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewReceiverProfileController") as! ViewReceiverProfileController
+            destinationViewController.beaconData = notification.userInfo!["beaconMinor"] as! String
             window!.rootViewController = destinationViewController
             window!.makeKeyAndVisible()
         }
@@ -185,22 +184,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
 
 }
-
-//    func locationManager(manager: CLLocationManager, didDetermineState state: CLRegionState, forRegion region: CLRegion) {
-//
-//        switch state {
-//            case .Inside:
-//                let localNotification:UILocalNotification = UILocalNotification()
-//                localNotification.alertAction = "view options"
-//                localNotification.alertBody = "You are in range of beacons"
-//                localNotification.category = "RECEIVER_IN_RANGE_ALERT"
-//    //          localNotification.userInfo = beaconInfo
-//                localNotification.soundName = UILocalNotificationDefaultSoundName
-//                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-//            default: break
-//        }
-//    }
-
-//    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
-//        enteredRegion = true
-//    }
