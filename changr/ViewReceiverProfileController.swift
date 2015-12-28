@@ -18,22 +18,6 @@ class ViewReceiverProfileController: UIViewController {
         super.viewDidLoad()
         ref = Firebase(url: "https://changr.firebaseio.com/users")
         getReceiverFromDatabaseAndDisplayData()
-        
-//        if !UIAccessibilityIsReduceTransparencyEnabled() {
-//            self.view.backgroundColor = UIColor.
-//            
-//            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
-//            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//            //always fill the view
-//            blurEffectView.frame = self.view.bounds
-//            blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-//            
-////            self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
-//            self.view.insertSubview(blurEffectView, atIndex: 0)
-//        } 
-//        else {
-//            self.view.backgroundColor = UIColor.blueColor()
-//        }
     }
     
     func getReceiverFromDatabaseAndDisplayData() {
@@ -71,7 +55,7 @@ class ViewReceiverProfileController: UIViewController {
         self.profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2
         self.profileImageView.clipsToBounds = true
-        self.profileImageView.layer.borderWidth = 7.0
+        self.profileImageView.layer.borderWidth = 6.0
     }
 
     override func didReceiveMemoryWarning() {
