@@ -25,6 +25,8 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     let defaults = NSUserDefaults.standardUserDefaults()
     var beaconName = String()
     var gender = String()
+    var data: NSData = NSData()
+    var base64String: NSString!
    
     override func viewWillAppear(animated: Bool) {
         beaconNameLabel.text = "Beacon Selected: \(beaconName)"
@@ -101,12 +103,14 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         let year = defaults.stringForKey("calendarYear") as String!
         let dateOfBirth = "\(day)/\(month)/\(year)" as String!
         setGender()
+        convertImage()
         
         let updateUser = [
             "beaconMinor": "\(beaconName)",
             "fullName": "\(fullName)",
             "dateOfBirth": "\(dateOfBirth)",
-            "gender": "\(gender)"
+            "gender": "\(gender)",
+            "profileImage": self.base64String
         ]
         
         let usersRef = ref.childByAppendingPath("users")
@@ -124,8 +128,16 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         }
     }
     
+    // This converts the profile image into an encoded string to be stored in Firebase:
+    
+    func convertImage() {
+        if let image = photoImageView.image { data = UIImageJPEGRepresentation(image, 0.1)! }
+        self.base64String = data.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+    }
+    
+    // This clears NSUserDefaults:
+    
     func clearUserDefaults() {
-        // This is to clear NSUserDefaults
         let appDomain = NSBundle.mainBundle().bundleIdentifier!
         NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain)
     }

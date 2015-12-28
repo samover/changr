@@ -33,6 +33,10 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         self.userType.dataSource = self
         self.userType.delegate = self
         self.errorMessage.hidden = true
+        
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: "didTapView")
+        self.view.addGestureRecognizer(tapRecognizer)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -43,6 +47,9 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         super.didReceiveMemoryWarning()
     }
     
+    func didTapView(){
+        self.view.endEditing(true)
+    }
     
     // MARK: UITextFieldDelegate
     
@@ -109,23 +116,10 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     func isRegisteredUser(authData: FAuthData) -> Bool {
         var isRegistered = false
-        ref = Firebase(url: "https://changr.firebaseio.com/users")
-
-        print("isRegisterduser function")
-        print(ref.childByAutoId())
         ref.observeEventType(.Value, withBlock: {
             snapshot in
-                print("From withing the snapshot: the key:")
-                print(snapshot.key)
-                print("And then the value:")
-                print(snapshot.value)
-//            print("We are in the snaphsot")
-//            print(snapshot.hasChildren())
-//            print(snapshot.childrenCount)
             isRegistered = snapshot.hasChild("users/\(authData.uid)")
-            print(isRegistered)
         })
-        print(isRegistered)
         return isRegistered
     }
     

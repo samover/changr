@@ -184,12 +184,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "changr/LoginController.swift"
-            timestampString = "472902197.675066"
+            timestampString = "472995051.641492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "registerUser()"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
+            landmarkName = "segueToCompleteProfile()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -205,7 +205,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "100"
             endingLineNumber = "100"
-            landmarkName = "loginUser()"
+            landmarkName = "isInvalidInput()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -221,7 +221,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
             endingLineNumber = "99"
-            landmarkName = "loginUser()"
+            landmarkName = "isInvalidInput()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -237,8 +237,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "103"
             endingLineNumber = "103"
-            landmarkName = "loginUser()"
-            landmarkType = "5">
+            landmarkName = "LoginController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -248,12 +248,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "changr/LoginController.swift"
-            timestampString = "472902197.675066"
+            timestampString = "472995051.641492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "registerUser()"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "segueToCompleteProfile()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -285,7 +285,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "111"
             endingLineNumber = "111"
-            landmarkName = "isRegisteredUser(_:)"
+            landmarkName = "loginUser()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
