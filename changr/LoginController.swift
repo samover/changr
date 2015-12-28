@@ -29,7 +29,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         passwordTextField.delegate = self
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         ref = appDelegate.ref
-
+        print(ref)
         self.userType.dataSource = self
         self.userType.delegate = self
         self.errorMessage.hidden = true
@@ -90,6 +90,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func isInvalidInput() -> Bool {
+        print(emailTextField.text == "" || passwordTextField.text == "")
         return emailTextField.text == "" || passwordTextField.text == ""
     }
     
@@ -100,16 +101,31 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                 self.showErrorMessage("Username or password incorrect")
             } else {
                 self.resetAuthenticationForm()
-                self.isRegisteredUser(authData) ? self.delegateToCenterContainer(): self.updateProfile(authData)
+                print("Login User function")
+                self.isRegisteredUser(authData) ? self.delegateToCenterContainer() : self.updateProfile(authData)
             }
         })
     }
     
     func isRegisteredUser(authData: FAuthData) -> Bool {
-        var isRegistered: Bool!
-        ref.observeSingleEventOfType(.Value, andPreviousSiblingKeyWithBlock: { snapshot in
-            isRegistered = snapshot.0.hasChild("users/\(authData.uid)")
+        var isRegistered = false
+        ref = Firebase(url: "https://changr.firebaseio.com/users")
+
+        print("isRegisterduser function")
+        print(ref.childByAutoId())
+        ref.observeEventType(.Value, withBlock: {
+            snapshot in
+                print("From withing the snapshot: the key:")
+                print(snapshot.key)
+                print("And then the value:")
+                print(snapshot.value)
+//            print("We are in the snaphsot")
+//            print(snapshot.hasChildren())
+//            print(snapshot.childrenCount)
+            isRegistered = snapshot.hasChild("users/\(authData.uid)")
+            print(isRegistered)
         })
+        print(isRegistered)
         return isRegistered
     }
     
@@ -135,8 +151,10 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func registerUser() -> Void {
+        print("function: Register User")
         self.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
             (error: NSError!) in
+            print("Inside create user")
             error == nil ? self.loginUser() : self.showErrorMessage("Please enter a valid password and email")
         }
     }
