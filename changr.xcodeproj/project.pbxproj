@@ -34,6 +34,12 @@
 		7E58DE381C246B6900AFF2D0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85111C21C4E3007DFE64 /* LoginController.swift */; };
 		7E58DE391C246B6E00AFF2D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EE1C21B226007DFE64 /* ViewController.swift */; };
 		7E58DE3A1C246B6E00AFF2D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EE1C21B226007DFE64 /* ViewController.swift */; };
+		7E7512B71C31864300ADB14E /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B971C25FE350057C3EC /* FormController.swift */; };
+		7E7512B81C31864400ADB14E /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B971C25FE350057C3EC /* FormController.swift */; };
+		7E7512B91C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */; };
+		7E7512BA1C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */; };
+		7E7512BB1C31865400ADB14E /* ViewReceiverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */; };
+		7E7512BC1C31865500ADB14E /* ViewReceiverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */; };
 		7E9AF0DC1C21D33C00F3C6FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9AF0DB1C21D33C00F3C6FE /* User.swift */; };
 		7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
 		7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EE1C21B226007DFE64 /* ViewController.swift */; };
@@ -492,11 +498,14 @@
 				7E3FF97C1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
 				7E3FF9801C2381CF00CEC296 /* SettingsViewController.swift in Sources */,
 				7E58DE391C246B6E00AFF2D0 /* ViewController.swift in Sources */,
+				7E7512B71C31864300ADB14E /* FormController.swift in Sources */,
 				51D613151C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E3FF9701C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E3FF9781C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 				7E58DE361C246AA500AFF2D0 /* AppDelegate.swift in Sources */,
 				7E3FF9841C2381D700CEC296 /* HistoryViewController.swift in Sources */,
+				7E7512B91C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */,
+				7E7512BB1C31865400ADB14E /* ViewReceiverProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E58DE381C246B6900AFF2D0 /* LoginController.swift in Sources */,
+				7E7512B81C31864400ADB14E /* FormController.swift in Sources */,
 				BB487EE31C233C82003EC7F5 /* Notifications.swift in Sources */,
 				BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
 				7E3FF97D1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
@@ -514,8 +524,10 @@
 				7E0A7E0F1C2E936B00C91E44 /* donorAuthentication.swift in Sources */,
 				51D613161C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */,
+				7E7512BC1C31865500ADB14E /* ViewReceiverProfileController.swift in Sources */,
 				7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 				7E58DE351C246AA400AFF2D0 /* AppDelegate.swift in Sources */,
+				7E7512BA1C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */,
 				7E3FF9851C2381D700CEC296 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
