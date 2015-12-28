@@ -48,6 +48,14 @@ class ViewReceiverProfileController: UIViewController {
         let decodedData = NSData(base64EncodedString: imageString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
         let decodedImage = UIImage(data: decodedData!)
         self.profileImageView.image = decodedImage
+        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+        self.profileImageView.clipsToBounds = true
+        self.profileImageView.layer.borderWidth = 1.0
+        self.profileImageView.layer.masksToBounds = false
+        self.profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
+        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2
+        self.profileImageView.clipsToBounds = true
+        self.profileImageView.layer.borderWidth = 5.0
     }
 
     override func didReceiveMemoryWarning() {
