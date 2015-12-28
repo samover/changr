@@ -137,7 +137,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 ref.observeEventType(.Value, withBlock: { snapshot in
                     for item in snapshot.children {
                         let child = item as! FDataSnapshot
-                            if child.value["beaconMinor"] as! String == self.beacons.first!.minor.stringValue {
+                            if child.value["beaconMinor"] as? String == self.beacons.first!.minor.stringValue {
                                 self.receiverName = child.value["fullName"] as! String
                             }
                     }
