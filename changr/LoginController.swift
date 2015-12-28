@@ -29,7 +29,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         passwordTextField.delegate = self
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         ref = appDelegate.ref
-        print(ref)
+
         self.userType.dataSource = self
         self.userType.delegate = self
         self.errorMessage.hidden = true
@@ -97,7 +97,6 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func isInvalidInput() -> Bool {
-        print(emailTextField.text == "" || passwordTextField.text == "")
         return emailTextField.text == "" || passwordTextField.text == ""
     }
     
@@ -108,7 +107,6 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                 self.showErrorMessage("Username or password incorrect")
             } else {
                 self.resetAuthenticationForm()
-                print("Login User function")
                 self.isRegisteredUser(authData) ? self.delegateToCenterContainer() : self.updateProfile(authData)
             }
         })
@@ -116,6 +114,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     func isRegisteredUser(authData: FAuthData) -> Bool {
         var isRegistered = false
+        
         ref.observeEventType(.Value, withBlock: {
             snapshot in
             isRegistered = snapshot.hasChild("users/\(authData.uid)")
@@ -145,10 +144,8 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func registerUser() -> Void {
-        print("function: Register User")
         self.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
             (error: NSError!) in
-            print("Inside create user")
             error == nil ? self.loginUser() : self.showErrorMessage("Please enter a valid password and email")
         }
     }
