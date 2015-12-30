@@ -96,6 +96,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         self.errorMessage.hidden = true
     }
     
+<<<<<<< Updated upstream
     func isInvalidInput() -> Bool {
         return emailTextField.text == "" || passwordTextField.text == ""
     }
@@ -108,6 +109,50 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             } else {
                 self.resetAuthenticationForm()
                 self.isRegisteredUser(authData) ? self.delegateToCenterContainer() : self.updateProfile(authData)
+=======
+    @IBAction func signupButton(sender: AnyObject) {
+        if emailTextField.text == "" || passwordTextField.text == "" {
+            self.errorMessage.text = "Please fill in a username and password"
+            self.errorMessage.hidden = false
+        } else {
+            self.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
+                (error: NSError!) in
+                if error != nil {
+                    print(error.description)
+                    self.errorMessage.text = "Username or password incorrect"
+                    self.errorMessage.hidden = false
+                } else {
+
+                    self.ref.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: { (error, authData) -> Void in
+                        if error != nil {
+                            self.errorMessage.text = "There was a problem with your sign in, please try again"
+                            self.errorMessage.hidden = false
+
+                        } else {
+                            print(authData)
+                            let newUser = [
+                                "provider": authData.provider,
+                                "userType": self.userSelection,
+                                "email": authData.providerData["email"] as? NSString as? String
+                            ]
+                            
+                            self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
+                            if self.userSelection == "Donor" {
+                                let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                                appDelegate.window?.rootViewController = appDelegate.centerContainer
+                                appDelegate.window!.makeKeyAndVisible()
+                            } else {
+                                self.performSegueWithIdentifier("completeProfile", sender: self)
+
+                            }
+                            
+                            
+                        }
+                    })
+                        
+                }
+
+>>>>>>> Stashed changes
             }
         })
     }
