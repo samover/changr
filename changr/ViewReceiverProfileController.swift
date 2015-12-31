@@ -18,6 +18,10 @@ class ViewReceiverProfileController: UIViewController {
         super.viewDidLoad()
         ref = Firebase(url: "https://changr.firebaseio.com/users")
         getReceiverFromDatabaseAndDisplayData()
+        
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: "didTapView")
+        self.view.addGestureRecognizer(tapRecognizer)
     }
     
     func getReceiverFromDatabaseAndDisplayData() {
@@ -33,7 +37,7 @@ class ViewReceiverProfileController: UIViewController {
                         // Display the receiver's details:
                         
                         self.displayReceiverProfileImage((currentReceiver["profileImage"] as? String)!)
-                        self.fullNameDisplay.text = currentReceiver["fullName"] as! String
+                        self.fullNameDisplay.text = (currentReceiver["fullName"] as! String)
                         self.emailDisplay.text = "EMAIL: \(currentReceiver["email"] as! String)"
                         self.dateOfBirthDisplay.text = "DOB: \(currentReceiver["dateOfBirth"] as! String)"
                         self.genderDisplay.text = "GENDER: \(currentReceiver["gender"] as! String)"
@@ -56,6 +60,10 @@ class ViewReceiverProfileController: UIViewController {
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width/2
         self.profileImageView.clipsToBounds = true
         self.profileImageView.layer.borderWidth = 6.0
+    }
+    
+    func didTapView(){
+        self.view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
