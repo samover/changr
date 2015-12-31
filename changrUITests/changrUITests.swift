@@ -12,38 +12,42 @@ class changrUITests: XCTestCase {
     
     let email:String = "donor@gmail.com"
     let password:String = "password"
-    var appDelegate: TestingAppDelegate!
-    var ref: MockFirebase!
     let app = XCUIApplication()
+    var ref: MockFirebase!
+    var loginController:LoginController = LoginController()
+    var testingAppDelegate: TestingAppDelegate!
 
 
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        app.launchArguments.append("TESTING")
-        appDelegate = UIApplication.sharedApplication().delegate as! TestingAppDelegate
-        ref = appDelegate.ref
+//        app.launchArguments.append("TESTING")
+        UIApplication.sharedApplication().delegate = TestingAppDelegate()
+//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle(forClass: self.dynamicType))
+//        loginController = mainStoryboard.instantiateViewControllerWithIdentifier("LoginController") as! LoginController
+//        loginController.loadView()
+//        loginController.viewDidLoad()
+//        testingAppDelegate = UIApplication.sharedApplication().delegate as! TestingAppDelegate
+//        loginController.ref = testingAppDelegate.ref
         XCUIApplication().launch()
     }
     
     override func tearDown() {
         super.tearDown()
-        ref.removeUser(email, password: password, withCompletionBlock: nil)
     }
     
     func testSignupAsNewDonor() {
         
-        
         let exampleGmailComTextField = app.textFields["Example@gmail.com"]
         exampleGmailComTextField.tap()
         exampleGmailComTextField.typeText(email)
+        app.buttons["Next"].tap()
         
-        let passwordSecureTextField = app.secureTextFields[password]
-        passwordSecureTextField.tap()
-        passwordSecureTextField.typeText("password")
-        
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.typeText(password)
+        app.buttons["Done"].tap()
         app.pickerWheels["Donor"].tap()
-        app.buttons["Sign Up"].tap()
+        app.buttons["SIGN UP"].tap()
         
         XCTAssert(app.buttons["Sign out"].exists)
     }

@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-//@UIApplicationMain
+@UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var ref: Firebase!

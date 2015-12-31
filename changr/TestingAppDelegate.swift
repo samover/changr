@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import CoreLocation
 
-class TestingAppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
+class TestingAppDelegate: NSObject, UIApplicationDelegate {
 
-    var ref: MockFirebase!
+    let ref = MockFirebase()
 
     func isUserLoggedIn() -> Bool {
         if(ref.authData != nil) {
