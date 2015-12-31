@@ -72,12 +72,6 @@ class BeaconTableViewController : UITableViewController {
         return "Beacons in range"
     }
     
-    // MARK: Navigation
-    
-//    @IBAction func cancel(sender: UIBarButtonItem) {
-//        dismissViewControllerAnimated(true, completion: nil)
-//    }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowBeaconSelected" {
             if let destination = segue.destinationViewController as? FormController {

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-//@testable import changr
+import MockFirebase
 
 class changrUITests: XCTestCase {
     
@@ -18,7 +18,8 @@ class changrUITests: XCTestCase {
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        ref.unauth()
+        appDelegate = XCUIApplication.sharedApplication().delegate as! AppDelegate
+        
         XCUIApplication().launch()
     }
     
