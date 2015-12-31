@@ -8,7 +8,7 @@
 
 import Foundation
 
-class mockFirebase: Firebase {
+class MockFirebase: Firebase {
     
     var authError:NSError? = NSError(domain: "User authentication", code: 1, userInfo: nil)
     var user: User!

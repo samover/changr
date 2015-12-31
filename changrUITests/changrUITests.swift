@@ -7,19 +7,22 @@
 //
 
 import XCTest
-import MockFirebase
 
 class changrUITests: XCTestCase {
     
     let email:String = "donor@gmail.com"
     let password:String = "password"
-    let ref = Firebase(url: "https://changrtest.firebaseio.com")
+    var appDelegate: TestingAppDelegate!
+    var ref: MockFirebase!
+    let app = XCUIApplication()
+
 
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        appDelegate = XCUIApplication.sharedApplication().delegate as! AppDelegate
-        
+        app.launchArguments.append("TESTING")
+        appDelegate = UIApplication.sharedApplication().delegate as! TestingAppDelegate
+        ref = appDelegate.ref
         XCUIApplication().launch()
     }
     
@@ -30,7 +33,6 @@ class changrUITests: XCTestCase {
     
     func testSignupAsNewDonor() {
         
-        let app = XCUIApplication()
         
         let exampleGmailComTextField = app.textFields["Example@gmail.com"]
         exampleGmailComTextField.tap()
