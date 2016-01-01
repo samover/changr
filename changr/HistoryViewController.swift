@@ -11,14 +11,13 @@ import UIKit
 class HistoryViewController: UIViewController {
     
     // MARK: Properties
-    var ref: Firebase!
+    let firebase = FirebaseWrapper()
     var appDelegate: AppDelegate!
     
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        ref = appDelegate.ref
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,7 +31,7 @@ class HistoryViewController: UIViewController {
 
     
     @IBAction func logoutButton(sender: AnyObject) {
-        ref.unauth()
+        firebase.ref.unauth()
         appDelegate.window?.rootViewController = appDelegate.rootController
         appDelegate.window!.makeKeyAndVisible()
     }

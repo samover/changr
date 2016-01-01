@@ -12,8 +12,7 @@ import CoreLocation
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
-    var ref: Firebase!
-
+    var firebase = FirebaseWrapper()
     var window: UIWindow?
     var centerContainer: MMDrawerController?
     var rootController: UIViewController?
@@ -28,11 +27,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!, identifier: "Estimotes")
 
     override init() {
-        Firebase.defaultConfig().persistenceEnabled = true
+//        Firebase.defaultConfig().persistenceEnabled = true
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        ref = Firebase(url: "https://changr.firebaseio.com/")
 
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
@@ -64,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
         centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.PanningCenterView;
 
-        if (isUserLoggedIn()) {
+        if (firebase.isUserLoggedIn()) {
             window!.rootViewController = centerContainer
             window!.makeKeyAndVisible()
         }
@@ -78,13 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     // Checking User permissions for using background location updates
 
-    func isUserLoggedIn() -> Bool {
-        if(ref.authData != nil) {
-            return true
-        } else {
-            return false
-        }
-    }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
 
@@ -128,7 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 
                 // This gets the name of the receiver that a user walked past:
                 
-                ref.observeEventType(.Value, withBlock: { snapshot in
+                firebase.ref.observeEventType(.Value, withBlock: { snapshot in
                     for item in snapshot.children {
                         let child = item as! FDataSnapshot
                             if child.value["beaconMinor"] as? String == self.beacons.first!.minor.stringValue {

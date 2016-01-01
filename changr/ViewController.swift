@@ -6,13 +6,16 @@
 //  Copyright © 2015 Samuel Overloop. All rights reserved.
 //
 
+// NOTE TO SELF: Do not use appdelegate for firebase operation
+// rather have a model that can be mocked 
+
 import UIKit
 
 class ViewController: UIViewController {
     
     // MARK: Properties
     var appDelegate: AppDelegate!
-    var ref: Firebase!
+    let firebase = FirebaseWrapper()
     
     // MARK: Outlets
     @IBOutlet weak var currentUserLabel: UILabel!
@@ -21,7 +24,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        ref = appDelegate.ref
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +37,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func logoutButton(sender: AnyObject) {
-        ref.unauth()
+        firebase.ref.unauth()
         appDelegate.window?.rootViewController = appDelegate.rootController
         appDelegate.window!.makeKeyAndVisible()
     }

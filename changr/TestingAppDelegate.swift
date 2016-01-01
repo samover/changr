@@ -6,9 +6,10 @@
 //  Copyright © 2015 Samuel Overloop. All rights reserved.
 //
 
+
 import UIKit
 
-class TestingAppDelegate: NSObject, UIApplicationDelegate {
+class TestingAppDelegate: UIResponder, UIApplicationDelegate {
 
     let ref = MockFirebase()
 

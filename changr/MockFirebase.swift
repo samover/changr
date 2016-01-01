@@ -14,16 +14,12 @@ class MockFirebase: Firebase {
     var user: User!
     var users: [User] = []
     var current_user: User?
-    
+
     override var authData: FAuthData? {
         get {
             if let authUserData = current_user {
-                print("AuthData is not nil: \(authUserData)")
                 return authUserData
             } else {
-                print("Current user is \(current_user)")
-                print(users)
-                print("AuthData is nil")
                 return nil
             }
         }
@@ -55,7 +51,6 @@ class MockFirebase: Firebase {
     }
     
     override func createUser(email: String!, password: String!, withCompletionBlock block: ((NSError!) -> Void)!) {
-        print("CREATE USER")
         user = User(email: email, password: password)
         users += [user]
         block(nil)

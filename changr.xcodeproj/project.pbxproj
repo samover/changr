@@ -21,6 +21,9 @@
 		7E3929591C3548B100664426 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3929561C3546A800664426 /* TestingAppDelegate.swift */; };
 		7E39295A1C35678500664426 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B84F01C21B226007DFE64 /* Main.storyboard */; };
 		7E39295B1C35678900664426 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B84F01C21B226007DFE64 /* Main.storyboard */; };
+		7E3929601C36E20C00664426 /* FirebaseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */; };
+		7E3929611C36E20C00664426 /* FirebaseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */; };
+		7E3929621C36E74500664426 /* FirebaseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */; };
 		7E3FF96F1C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
 		7E3FF9701C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
 		7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
@@ -96,6 +99,7 @@
 		7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = donorAuthentication.swift; sourceTree = "<group>"; };
 		7E3929501C353FD000664426 /* MockFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFirebase.swift; sourceTree = "<group>"; };
 		7E3929561C3546A800664426 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
+		7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseWrapper.swift; sourceTree = "<group>"; };
 		7E3FF96E1C23716400CEC296 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		7E3FF97A1C2381C300CEC296 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				BB487EE01C233C82003EC7F5 /* Notifications.swift */,
+				7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -490,6 +495,7 @@
 				BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
 				7E3FF97F1C2381CF00CEC296 /* SettingsViewController.swift in Sources */,
 				BBDA6B981C25FE350057C3EC /* FormController.swift in Sources */,
+				7E3929601C36E20C00664426 /* FirebaseWrapper.swift in Sources */,
 				7E3FF9831C2381D700CEC296 /* HistoryViewController.swift in Sources */,
 				7E3FF97B1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
 				7EF1C8CB1C2319960003C3F0 /* MMDrawerController+Storyboard.m in Sources */,
@@ -519,6 +525,7 @@
 				51D613151C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E3FF9701C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E3FF9781C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
+				7E3929611C36E20C00664426 /* FirebaseWrapper.swift in Sources */,
 				7E58DE361C246AA500AFF2D0 /* AppDelegate.swift in Sources */,
 				7E3FF9841C2381D700CEC296 /* HistoryViewController.swift in Sources */,
 				7E3929581C3548B100664426 /* TestingAppDelegate.swift in Sources */,
@@ -544,6 +551,7 @@
 				51D613161C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E7512BC1C31865500ADB14E /* ViewReceiverProfileController.swift in Sources */,
+				7E3929621C36E74500664426 /* FirebaseWrapper.swift in Sources */,
 				7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 				7E58DE351C246AA400AFF2D0 /* AppDelegate.swift in Sources */,
 				7E3929591C3548B100664426 /* TestingAppDelegate.swift in Sources */,

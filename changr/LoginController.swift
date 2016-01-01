@@ -12,7 +12,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     // MARK: Properties
     var appDelegate: AppDelegate!
-    var ref: Firebase!
+    var firebase = FirebaseWrapper()
     var pickerDataSource = ["Donor", "Receiver"]
     var userSelection = "Donor"
     
@@ -27,9 +27,8 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         super.viewDidLoad()
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        ref = appDelegate.ref
-
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate!
+        
         self.userType.dataSource = self
         self.userType.delegate = self
         self.errorMessage.hidden = true
@@ -101,7 +100,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func loginUser() -> Void {
-        ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: {
+        firebase.ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: {
             (error, authData) in
             if error != nil {
                 self.showErrorMessage("Username or password incorrect")
@@ -116,7 +115,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     func isRegisteredUser(authData: FAuthData) -> Bool {
         var isRegistered = false
         
-        ref.observeEventType(.Value, withBlock: {
+        firebase.ref.observeEventType(.Value, withBlock: {
             snapshot in
             isRegistered = snapshot.hasChild("users/\(authData.uid)")
         })
@@ -131,7 +130,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             "beaconMinor": ""
         ]
         
-        self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
+        firebase.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
         self.userSelection == "Donor" ? self.delegateToCenterContainer() : self.segueToCompleteProfile()
     }
     
@@ -145,7 +144,8 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func registerUser() -> Void {
-        self.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
+        print(firebase.ref)
+        firebase.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
             (error: NSError!) in
             error == nil ? self.loginUser() : self.showErrorMessage("Please enter a valid password and email")
         }
