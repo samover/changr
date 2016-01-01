@@ -238,6 +238,9 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="180" placeholderIntrinsicHeight="54" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cM5-OF-CzD">
                                 <rect key="frame" x="90" y="506" width="234" height="50"/>
                                 <state key="normal" backgroundImage="donateButton"/>
+                                <connections>
+                                    <action selector="donateButton:" destination="qGK-YU-L9E" eventType="touchUpInside" id="pZS-QD-QsD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -281,6 +284,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="dateOfBirthDisplay" destination="HPP-2B-OWu" id="nwT-1T-aEP"/>
+                        <outlet property="donationAmount" destination="0D0-oA-DuG" id="hvR-F1-chi"/>
                         <outlet property="emailDisplay" destination="0Cw-vm-EoK" id="ia5-i1-Nbc"/>
                         <outlet property="fullNameDisplay" destination="8Vf-Ba-CnU" id="C0Y-VM-REN"/>
                         <outlet property="genderDisplay" destination="jRZ-FX-y9j" id="sF4-n3-m27"/>

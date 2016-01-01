@@ -12,13 +12,16 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.6.0):
     - MMDrawerController/Core
+  - PayPal-iOS-SDK (2.11.5)
 
 DEPENDENCIES:
   - Firebase (~> 2.5)
   - MMDrawerController
+  - PayPal-iOS-SDK (~> 2.11.1)
 
 SPEC CHECKSUMS:
   Firebase: 744617c0733b45198f9486ebd5cac64ec2d10d79
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
+  PayPal-iOS-SDK: e5b0cf6c38866a47dad92f97df92848a90d3b858
 
 COCOAPODS: 0.39.0

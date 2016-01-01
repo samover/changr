@@ -7,37 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		075979D6A80AA907E8C15434C532C221 /* FAuthData.h in Headers */ = {isa = PBXBuildFile; fileRef = 21699FB95A5A67011E625D005CB0181A /* FAuthData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A378C41991F5219E9959E3A250E9A03 /* MMDrawerVisualState.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBF852333AB75805FFEFF717EB1216A /* MMDrawerVisualState.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		075979D6A80AA907E8C15434C532C221 /* FAuthData.h in Headers */ = {isa = PBXBuildFile; fileRef = 90F70F35C11164B4B4F99A83E91120B1 /* FAuthData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A378C41991F5219E9959E3A250E9A03 /* MMDrawerVisualState.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BAE3D01B614786DBBCF5F8BED64B035 /* MMDrawerVisualState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D9C6D8D9075C09C12E53E0D5B06F15E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E1EADEED890CA19CC41EA706B73EB0B /* CFNetwork.framework */; };
-		3FD61871A384128BD423ECB516B54AC8 /* FEventType.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C9220DFFAAFBB0181A7DFA4E4C7E663 /* FEventType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3FD61871A384128BD423ECB516B54AC8 /* FEventType.h in Headers */ = {isa = PBXBuildFile; fileRef = 174CF6FD90EEA6EE2E4318B78C6D4436 /* FEventType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FBF838CADB4A4901B09F105195CE8BE /* Pods-changr-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 59FA2BEC0D4DFA27B5CF22D00E5E9639 /* Pods-changr-dummy.m */; };
-		529A38EA9243FD532B23CE6731C41062 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 961930117C1605CC5325413901DE5681 /* MMDrawerBarButtonItem.m */; };
+		529A38EA9243FD532B23CE6731C41062 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C14A352EBFB6994F6B05CE6AE859B08F /* MMDrawerBarButtonItem.m */; };
 		5CD819353C30C805E53265229D515F63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1629060E319F7562055A4A3920D88A9 /* Foundation.framework */; };
 		62445D56D62979170E9966104FDFBFBE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89F253A8D544BF37E460DFB4A0DB24DC /* QuartzCore.framework */; };
-		6A1B1829F5A55FB2979D58FB8F957AD7 /* FirebaseApp.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BB7BB339717A74B1161F1ADEBA95872 /* FirebaseApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6B90CF1457514AE8D0945B49D8D0F5D7 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F970F9166CF86488E8B5E05C2CEF7B1 /* UIViewController+MMDrawerController.m */; };
-		6DCAAD460D5EDE19E9C93E52945F9D4B /* MMDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FC9FA2ADF99C8FC8B1D3D0FEA2AE1 /* MMDrawerController-dummy.m */; };
-		6EE911B933800447253BC3935A13E65E /* FDataSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = BE45F38B5D664AEE5D8B0EFB2C0AB61D /* FDataSnapshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		706A26834B840DE5BD0267E5B501981C /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5054EC184B89E6F13477153C28985573 /* MMDrawerVisualState.m */; };
+		6A1B1829F5A55FB2979D58FB8F957AD7 /* FirebaseApp.h in Headers */ = {isa = PBXBuildFile; fileRef = AD666D71278FE13081C7DDAF564E1771 /* FirebaseApp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B90CF1457514AE8D0945B49D8D0F5D7 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EED14F56023CE6939156858AB32DC6 /* UIViewController+MMDrawerController.m */; };
+		6DCAAD460D5EDE19E9C93E52945F9D4B /* MMDrawerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D3CDB82E43348DB00F4F6716DAD8DC /* MMDrawerController-dummy.m */; };
+		6EE911B933800447253BC3935A13E65E /* FDataSnapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = 3535BAE9CD7B2D6B26171F05DD3F1BE7 /* FDataSnapshot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		706A26834B840DE5BD0267E5B501981C /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 5518A79E2DEF69E90A42956D7152B67E /* MMDrawerVisualState.m */; };
 		71DF67850774658371D1DFD4DF5186E7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9534E6263C487FEDD253BD5E3F8CDEA0 /* Security.framework */; };
-		83126EA3B5E960F9A9C155CE3DACB9FB /* FConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AC40FE60615C0A4467C12BD49F5D4D6 /* FConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83126EA3B5E960F9A9C155CE3DACB9FB /* FConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 94B55E24F15B598035BA7F4C7B5F739C /* FConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84754CB255B272AFEFE1ECF132DE7E93 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1629060E319F7562055A4A3920D88A9 /* Foundation.framework */; };
-		8A8B2E7318F9A52B0C8DCF4991BD88E5 /* Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A51E66D61EF3AEF65CCB4813770CA89 /* Empty.m */; };
-		8F4F6C91327C6D43B7C6A83EBDC6184B /* FirebaseServerValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B6372CF9464DECC28B055744D405D37 /* FirebaseServerValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A8B2E7318F9A52B0C8DCF4991BD88E5 /* Empty.m in Sources */ = {isa = PBXBuildFile; fileRef = 8161868AD5291792CA0036E801E86B0F /* Empty.m */; };
+		8F4F6C91327C6D43B7C6A83EBDC6184B /* FirebaseServerValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FA28E1A11F3D105D545CB7AC1142330 /* FirebaseServerValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		92C91658017D8E44763536D7A691E6B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1629060E319F7562055A4A3920D88A9 /* Foundation.framework */; };
-		947575549E0193C1A5A2379EA9D95D46 /* MMDrawerController+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = C7BD62E12EA9F11098FE52959883C6CF /* MMDrawerController+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		984DD4BA68A399F50B9D7849E72385F8 /* UIViewController+MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C459391216C22FADD57D0A27F16939A /* UIViewController+MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9A7F170BE65EFFD69B5986DB55C1920A /* MMDrawerBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 97F137FD7C074950F551668BECCFC31C /* MMDrawerBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A5035EDCA2C178ABAC6CBF1C82D0C649 /* FMutableData.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE1ABC67BB2F111264378A606896AAE /* FMutableData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7B41E32FB4ADB6C44FB3797B9BB77AE /* Firebase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C7BDB698F943150F8D4870BD9182EDA7 /* Firebase-dummy.m */; };
+		947575549E0193C1A5A2379EA9D95D46 /* MMDrawerController+Subclass.h in Headers */ = {isa = PBXBuildFile; fileRef = CF0C611D148513147D9D80E471B159CD /* MMDrawerController+Subclass.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		984DD4BA68A399F50B9D7849E72385F8 /* UIViewController+MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 1830A42E303EC3AE8D4DF3B9ACA7C29F /* UIViewController+MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A7F170BE65EFFD69B5986DB55C1920A /* MMDrawerBarButtonItem.h in Headers */ = {isa = PBXBuildFile; fileRef = B2FCD112F298ECA04A6F4539F6154A14 /* MMDrawerBarButtonItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5035EDCA2C178ABAC6CBF1C82D0C649 /* FMutableData.h in Headers */ = {isa = PBXBuildFile; fileRef = 419392C254BED2835DD255C87E7C8D6B /* FMutableData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7B41E32FB4ADB6C44FB3797B9BB77AE /* Firebase-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6899070009E2662B397CCAB7A95A3B19 /* Firebase-dummy.m */; };
 		B89A4308CD40B0011195C7D370B4D8EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE568498BA21E87626041CD39CEA8DD /* SystemConfiguration.framework */; };
-		C9B2789B5C77981D226512D3AFA94AC2 /* Firebase.h in Headers */ = {isa = PBXBuildFile; fileRef = 435D086CE2E53E22CF222376689604B6 /* Firebase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D29D86661B99C954E8301C4157961A40 /* FTransactionResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 85D820CB7920F358AE0E8CBB3A6DA2CE /* FTransactionResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F06664877754422D6FB53A1D8E4FE448 /* FAuthType.h in Headers */ = {isa = PBXBuildFile; fileRef = C9EEE37052B9D9225077EC561C25F4E1 /* FAuthType.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F733730F57E794BCFB4B18DC00E2FF9B /* MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C0399FA4C6A13DF639FC4EE5E81AB26 /* MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FB8782C801FCC735C4CAED59846EFACF /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4ED6C059DCAFC483E30AD1884BE7495 /* MMDrawerController.m */; };
-		FC18554D24943F3FEEBC7222C7FD8D10 /* FQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 2EA0AE0E659CEBF1FD4739361AC4EA2E /* FQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9B2789B5C77981D226512D3AFA94AC2 /* Firebase.h in Headers */ = {isa = PBXBuildFile; fileRef = 5311EE0309E17D8B1981C7FE5A709900 /* Firebase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D29D86661B99C954E8301C4157961A40 /* FTransactionResult.h in Headers */ = {isa = PBXBuildFile; fileRef = A968D7B82981B91AF66BFCCE59E240CB /* FTransactionResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F06664877754422D6FB53A1D8E4FE448 /* FAuthType.h in Headers */ = {isa = PBXBuildFile; fileRef = CF95B3A4A21056B6242939ED38FDF753 /* FAuthType.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F733730F57E794BCFB4B18DC00E2FF9B /* MMDrawerController.h in Headers */ = {isa = PBXBuildFile; fileRef = E2488950E2FFEAD44468B639ABF0E8BB /* MMDrawerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB8782C801FCC735C4CAED59846EFACF /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 373B9EAA6F6950328EDA2F95B7267E7B /* MMDrawerController.m */; };
+		FC18554D24943F3FEEBC7222C7FD8D10 /* FQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = EF3173BC6DADAD54D6C9F693A12DB42C /* FQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,49 +59,64 @@
 
 /* Begin PBXFileReference section */
 		0BE568498BA21E87626041CD39CEA8DD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		0E70E8B1FF267F9E030315B6E20DCD39 /* libFirebaseStatic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libFirebaseStatic.a; sourceTree = "<group>"; };
-		1F4FC9FA2ADF99C8FC8B1D3D0FEA2AE1 /* MMDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController-dummy.m"; sourceTree = "<group>"; };
-		21699FB95A5A67011E625D005CB0181A /* FAuthData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAuthData.h; sourceTree = "<group>"; };
-		24C865B9DDECC10E9F3C95111B901F4F /* MMDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MMDrawerController.xcconfig; sourceTree = "<group>"; };
-		2AC40FE60615C0A4467C12BD49F5D4D6 /* FConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FConfig.h; sourceTree = "<group>"; };
-		2BA4CBA7D452101CF6FEDE53CE3085FB /* Firebase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Firebase.xcconfig; sourceTree = "<group>"; };
-		2BE1ABC67BB2F111264378A606896AAE /* FMutableData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMutableData.h; sourceTree = "<group>"; };
-		2CBF852333AB75805FFEFF717EB1216A /* MMDrawerVisualState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
+		14EED14F56023CE6939156858AB32DC6 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		174CF6FD90EEA6EE2E4318B78C6D4436 /* FEventType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FEventType.h; sourceTree = "<group>"; };
+		1830A42E303EC3AE8D4DF3B9ACA7C29F /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		1BD417367AFDFF8559A2C48E78372DFE /* PayPalPaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalPaymentViewController.h; path = PayPalMobile/PayPalPaymentViewController.h; sourceTree = "<group>"; };
 		2E1EADEED890CA19CC41EA706B73EB0B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		2EA0AE0E659CEBF1FD4739361AC4EA2E /* FQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FQuery.h; sourceTree = "<group>"; };
-		2F970F9166CF86488E8B5E05C2CEF7B1 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
-		3A51E66D61EF3AEF65CCB4813770CA89 /* Empty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Empty.m; sourceTree = "<group>"; };
-		3BB7BB339717A74B1161F1ADEBA95872 /* FirebaseApp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FirebaseApp.h; sourceTree = "<group>"; };
-		435D086CE2E53E22CF222376689604B6 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
-		4C0399FA4C6A13DF639FC4EE5E81AB26 /* MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
-		5054EC184B89E6F13477153C28985573 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
+		31CED5A3CB59A4862DB3EAFB211AB8F7 /* PayPalOAuthScopes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalOAuthScopes.h; path = PayPalMobile/PayPalOAuthScopes.h; sourceTree = "<group>"; };
+		3535BAE9CD7B2D6B26171F05DD3F1BE7 /* FDataSnapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FDataSnapshot.h; sourceTree = "<group>"; };
+		373B9EAA6F6950328EDA2F95B7267E7B /* MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
+		375CA9B0774E4B3302481975369B6F20 /* CardIOView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOView.h; path = PayPalMobile/CardIOView.h; sourceTree = "<group>"; };
+		3A80A26462C64309C4D1CC74DCA3F754 /* libFirebaseStatic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libFirebaseStatic.a; sourceTree = "<group>"; };
+		3AA3A98EFA62BAA23AFD147FD71F7335 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewController.h; path = PayPalMobile/CardIOPaymentViewController.h; sourceTree = "<group>"; };
+		419392C254BED2835DD255C87E7C8D6B /* FMutableData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMutableData.h; sourceTree = "<group>"; };
+		4B3135F3949CBE75210D05A7E58D11F0 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOCreditCardInfo.h; path = PayPalMobile/CardIOCreditCardInfo.h; sourceTree = "<group>"; };
 		508255A10C3560AFE25CD53607E289EC /* libMMDrawerController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMMDrawerController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5311EE0309E17D8B1981C7FE5A709900 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Firebase.h; sourceTree = "<group>"; };
+		5518A79E2DEF69E90A42956D7152B67E /* MMDrawerVisualState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
+		58D3CDB82E43348DB00F4F6716DAD8DC /* MMDrawerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController-dummy.m"; sourceTree = "<group>"; };
 		59FA2BEC0D4DFA27B5CF22D00E5E9639 /* Pods-changr-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-changr-dummy.m"; sourceTree = "<group>"; };
-		5C459391216C22FADD57D0A27F16939A /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		602D028A5E3917C2E583BC0846B5B13F /* PayPalPayment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalPayment.h; path = PayPalMobile/PayPalPayment.h; sourceTree = "<group>"; };
+		6899070009E2662B397CCAB7A95A3B19 /* Firebase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Firebase-dummy.m"; sourceTree = "<group>"; };
 		6BD824F04CE0F5429757C0F9588FD11C /* libFirebase.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFirebase.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		74E7852C2EC3E0907B19CEF11BF2B837 /* Firebase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Firebase.xcconfig; sourceTree = "<group>"; };
 		79358E35E383E92CCA52F03AD6D7451C /* Pods-changr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-changr.debug.xcconfig"; sourceTree = "<group>"; };
-		85D820CB7920F358AE0E8CBB3A6DA2CE /* FTransactionResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FTransactionResult.h; sourceTree = "<group>"; };
+		7A33C4C0FCBB5291210E6F238D303D8F /* CardIODetectionMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIODetectionMode.h; path = PayPalMobile/CardIODetectionMode.h; sourceTree = "<group>"; };
+		7BAE3D01B614786DBBCF5F8BED64B035 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
+		7D5592BE01B1E819B685A62378A3ED0B /* PayPalProfileSharingViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalProfileSharingViewController.h; path = PayPalMobile/PayPalProfileSharingViewController.h; sourceTree = "<group>"; };
+		7FA28E1A11F3D105D545CB7AC1142330 /* FirebaseServerValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FirebaseServerValue.h; sourceTree = "<group>"; };
+		8161868AD5291792CA0036E801E86B0F /* Empty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Empty.m; sourceTree = "<group>"; };
 		87461883615100AD17CF34A16EDC41DB /* Pods-changr-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-changr-frameworks.sh"; sourceTree = "<group>"; };
 		89C2AECABF2E07A6990634341F1DCC91 /* Pods-changr-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-changr-resources.sh"; sourceTree = "<group>"; };
 		89F253A8D544BF37E460DFB4A0DB24DC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		8C9220DFFAAFBB0181A7DFA4E4C7E663 /* FEventType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FEventType.h; sourceTree = "<group>"; };
+		90F42E8FB472C1A41D8D5AC9C11B7BA7 /* CardIOUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOUtilities.h; path = PayPalMobile/CardIOUtilities.h; sourceTree = "<group>"; };
+		90F70F35C11164B4B4F99A83E91120B1 /* FAuthData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAuthData.h; sourceTree = "<group>"; };
+		94B55E24F15B598035BA7F4C7B5F739C /* FConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FConfig.h; sourceTree = "<group>"; };
 		9534E6263C487FEDD253BD5E3F8CDEA0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		961930117C1605CC5325413901DE5681 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
-		97F137FD7C074950F551668BECCFC31C /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
-		9B6372CF9464DECC28B055744D405D37 /* FirebaseServerValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FirebaseServerValue.h; sourceTree = "<group>"; };
+		9CEA3B10B61DA8EF0E3BF818068CEC6F /* PayPalConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalConfiguration.h; path = PayPalMobile/PayPalConfiguration.h; sourceTree = "<group>"; };
 		A6E2B900A69FA0BD684114E3A6777AB4 /* libPods-changr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-changr.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A968D7B82981B91AF66BFCCE59E240CB /* FTransactionResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FTransactionResult.h; sourceTree = "<group>"; };
 		A9C48A745F9E42EC2277B34B9F98D7EC /* Pods-changr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-changr.release.xcconfig"; sourceTree = "<group>"; };
-		AD2AFABBA4B3F8CAF5E3A65C2B7BA0FD /* Firebase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Firebase-prefix.pch"; sourceTree = "<group>"; };
+		AB30F780F3D35955025E2368FA801CE2 /* PayPalMobile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalMobile.h; path = PayPalMobile/PayPalMobile.h; sourceTree = "<group>"; };
+		ACAE1848E65E7A226EDB6D0FA0C12C69 /* Firebase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Firebase-prefix.pch"; sourceTree = "<group>"; };
+		AD666D71278FE13081C7DDAF564E1771 /* FirebaseApp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FirebaseApp.h; sourceTree = "<group>"; };
 		AE206CC121E0C037AAB5D8BBBEB336F2 /* Pods-changr-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-changr-acknowledgements.markdown"; sourceTree = "<group>"; };
+		B0B47ABCC6C4FEF9682CB1A85CB4C85C /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PayPalFuturePaymentViewController.h; path = PayPalMobile/PayPalFuturePaymentViewController.h; sourceTree = "<group>"; };
+		B2FCD112F298ECA04A6F4539F6154A14 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BE45F38B5D664AEE5D8B0EFB2C0AB61D /* FDataSnapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FDataSnapshot.h; sourceTree = "<group>"; };
-		C7BD62E12EA9F11098FE52959883C6CF /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
-		C7BDB698F943150F8D4870BD9182EDA7 /* Firebase-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Firebase-dummy.m"; sourceTree = "<group>"; };
-		C9EEE37052B9D9225077EC561C25F4E1 /* FAuthType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAuthType.h; sourceTree = "<group>"; };
+		BEA40867B8E50C2AF1E0964375A4D944 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewControllerDelegate.h; path = PayPalMobile/CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
+		C11845C9DA6E8A3843293B7FC9139AB1 /* CardIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIO.h; path = PayPalMobile/CardIO.h; sourceTree = "<group>"; };
+		C14A352EBFB6994F6B05CE6AE859B08F /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		CF0C611D148513147D9D80E471B159CD /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		CF95B3A4A21056B6242939ED38FDF753 /* FAuthType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FAuthType.h; sourceTree = "<group>"; };
+		D133FB88D52C8DA0CD6D42A354437482 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = PayPalMobile/CardIOViewDelegate.h; sourceTree = "<group>"; };
 		D1629060E319F7562055A4A3920D88A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E004103706A891565687A77A480C74A2 /* MMDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-prefix.pch"; sourceTree = "<group>"; };
+		D9DD06D5213FB259C448A03983792B52 /* MMDrawerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController-prefix.pch"; sourceTree = "<group>"; };
+		E2488950E2FFEAD44468B639ABF0E8BB /* MMDrawerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
+		E56CAD055C6BDC4E8446A33F4E465906 /* MMDrawerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MMDrawerController.xcconfig; sourceTree = "<group>"; };
 		E85819C042F30F818841DC07599306A3 /* Pods-changr-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-changr-acknowledgements.plist"; sourceTree = "<group>"; };
-		F4ED6C059DCAFC483E30AD1884BE7495 /* MMDrawerController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
+		EF3173BC6DADAD54D6C9F693A12DB42C /* FQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FQuery.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,24 +151,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		009917127DF9A09BEA35D1373C8DD492 /* Pods */ = {
+		054C76541EC07CF7551D6C9565BBDE78 /* MMDrawerBarButtonItem */ = {
 			isa = PBXGroup;
 			children = (
-				F2EBAD217C8EC5A98527DA89396C369C /* Firebase */,
-				6237AF36ADBC0DA8E242BB9C03890ED4 /* MMDrawerController */,
+				B2FCD112F298ECA04A6F4539F6154A14 /* MMDrawerBarButtonItem.h */,
+				C14A352EBFB6994F6B05CE6AE859B08F /* MMDrawerBarButtonItem.m */,
 			);
-			name = Pods;
+			name = MMDrawerBarButtonItem;
 			sourceTree = "<group>";
 		};
-		02F5409462AF44EF0503472B37E6E6D2 /* Core */ = {
+		0D35CD5DD81A37BCA8075E5D6B8F617B /* MMDrawerVisualStates */ = {
 			isa = PBXGroup;
 			children = (
-				4C0399FA4C6A13DF639FC4EE5E81AB26 /* MMDrawerController.h */,
-				F4ED6C059DCAFC483E30AD1884BE7495 /* MMDrawerController.m */,
-				5C459391216C22FADD57D0A27F16939A /* UIViewController+MMDrawerController.h */,
-				2F970F9166CF86488E8B5E05C2CEF7B1 /* UIViewController+MMDrawerController.m */,
+				7BAE3D01B614786DBBCF5F8BED64B035 /* MMDrawerVisualState.h */,
+				5518A79E2DEF69E90A42956D7152B67E /* MMDrawerVisualState.m */,
 			);
-			name = Core;
+			name = MMDrawerVisualStates;
 			sourceTree = "<group>";
 		};
 		1021FECCBA3CD6E12559793814F0CB81 /* iOS */ = {
@@ -168,25 +181,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		11A8D22C49406835DAB137BC06EF1C67 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0E70E8B1FF267F9E030315B6E20DCD39 /* libFirebaseStatic.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1E6AAAE62971760EF09F1BE84DF36143 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2BA4CBA7D452101CF6FEDE53CE3085FB /* Firebase.xcconfig */,
-				C7BDB698F943150F8D4870BD9182EDA7 /* Firebase-dummy.m */,
-				AD2AFABBA4B3F8CAF5E3A65C2B7BA0FD /* Firebase-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Firebase";
-			sourceTree = "<group>";
-		};
 		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,13 +189,56 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		21CFDEE059248B980962B09BDE009FEF /* MMDrawerBarButtonItem */ = {
+		33AD4CAEB1FFC97146F9DF6D0EDB956E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				97F137FD7C074950F551668BECCFC31C /* MMDrawerBarButtonItem.h */,
-				961930117C1605CC5325413901DE5681 /* MMDrawerBarButtonItem.m */,
+				E56CAD055C6BDC4E8446A33F4E465906 /* MMDrawerController.xcconfig */,
+				58D3CDB82E43348DB00F4F6716DAD8DC /* MMDrawerController-dummy.m */,
+				D9DD06D5213FB259C448A03983792B52 /* MMDrawerController-prefix.pch */,
 			);
-			name = MMDrawerBarButtonItem;
+			name = "Support Files";
+			path = "../Target Support Files/MMDrawerController";
+			sourceTree = "<group>";
+		};
+		489E3C28BCF4A2E8DD79E0FF08BBD9DE /* PayPal-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				C11845C9DA6E8A3843293B7FC9139AB1 /* CardIO.h */,
+				4B3135F3949CBE75210D05A7E58D11F0 /* CardIOCreditCardInfo.h */,
+				7A33C4C0FCBB5291210E6F238D303D8F /* CardIODetectionMode.h */,
+				3AA3A98EFA62BAA23AFD147FD71F7335 /* CardIOPaymentViewController.h */,
+				BEA40867B8E50C2AF1E0964375A4D944 /* CardIOPaymentViewControllerDelegate.h */,
+				90F42E8FB472C1A41D8D5AC9C11B7BA7 /* CardIOUtilities.h */,
+				375CA9B0774E4B3302481975369B6F20 /* CardIOView.h */,
+				D133FB88D52C8DA0CD6D42A354437482 /* CardIOViewDelegate.h */,
+				9CEA3B10B61DA8EF0E3BF818068CEC6F /* PayPalConfiguration.h */,
+				B0B47ABCC6C4FEF9682CB1A85CB4C85C /* PayPalFuturePaymentViewController.h */,
+				AB30F780F3D35955025E2368FA801CE2 /* PayPalMobile.h */,
+				31CED5A3CB59A4862DB3EAFB211AB8F7 /* PayPalOAuthScopes.h */,
+				602D028A5E3917C2E583BC0846B5B13F /* PayPalPayment.h */,
+				1BD417367AFDFF8559A2C48E78372DFE /* PayPalPaymentViewController.h */,
+				7D5592BE01B1E819B685A62378A3ED0B /* PayPalProfileSharingViewController.h */,
+			);
+			path = "PayPal-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		4E36D1DE477734A965B1E440BB91D54B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				74E7852C2EC3E0907B19CEF11BF2B837 /* Firebase.xcconfig */,
+				6899070009E2662B397CCAB7A95A3B19 /* Firebase-dummy.m */,
+				ACAE1848E65E7A226EDB6D0FA0C12C69 /* Firebase-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Firebase";
+			sourceTree = "<group>";
+		};
+		4E72790A29F60F3106526C08DE865084 /* Subclass */ = {
+			isa = PBXGroup;
+			children = (
+				CF0C611D148513147D9D80E471B159CD /* MMDrawerController+Subclass.h */,
+			);
+			name = Subclass;
 			sourceTree = "<group>";
 		};
 		60E7665FF8D82E07CC11B855229D9D46 /* Pods-changr */ = {
@@ -219,14 +256,14 @@
 			path = "Target Support Files/Pods-changr";
 			sourceTree = "<group>";
 		};
-		6237AF36ADBC0DA8E242BB9C03890ED4 /* MMDrawerController */ = {
+		620C679D5AC677F56CED1BFFCCD5E843 /* MMDrawerController */ = {
 			isa = PBXGroup;
 			children = (
-				02F5409462AF44EF0503472B37E6E6D2 /* Core */,
-				21CFDEE059248B980962B09BDE009FEF /* MMDrawerBarButtonItem */,
-				FAD4D842887E6EFB700BBF84203CA87F /* MMDrawerVisualStates */,
-				F2D77FFC407713B93A75F637358A039C /* Subclass */,
-				EDB2FAB8F2ACBBA9A9DEFF4D7CED13E3 /* Support Files */,
+				E791946B89A419B475F47AE8A8A1B110 /* Core */,
+				054C76541EC07CF7551D6C9565BBDE78 /* MMDrawerBarButtonItem */,
+				0D35CD5DD81A37BCA8075E5D6B8F617B /* MMDrawerVisualStates */,
+				4E72790A29F60F3106526C08DE865084 /* Subclass */,
+				33AD4CAEB1FFC97146F9DF6D0EDB956E /* Support Files */,
 			);
 			path = MMDrawerController;
 			sourceTree = "<group>";
@@ -236,7 +273,7 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
-				009917127DF9A09BEA35D1373C8DD492 /* Pods */,
+				C5BAA242E171962A4F6BDDC8F3802038 /* Pods */,
 				D4BC52947CB922AEBB02F51DB5B36956 /* Products */,
 				9379F3A923BC5071B2D573CFE776C637 /* Targets Support Files */,
 			);
@@ -250,6 +287,37 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		C5BAA242E171962A4F6BDDC8F3802038 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C701D0563BD01B07909696AEF420BBAB /* Firebase */,
+				620C679D5AC677F56CED1BFFCCD5E843 /* MMDrawerController */,
+				489E3C28BCF4A2E8DD79E0FF08BBD9DE /* PayPal-iOS-SDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C701D0563BD01B07909696AEF420BBAB /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				8161868AD5291792CA0036E801E86B0F /* Empty.m */,
+				90F70F35C11164B4B4F99A83E91120B1 /* FAuthData.h */,
+				CF95B3A4A21056B6242939ED38FDF753 /* FAuthType.h */,
+				94B55E24F15B598035BA7F4C7B5F739C /* FConfig.h */,
+				3535BAE9CD7B2D6B26171F05DD3F1BE7 /* FDataSnapshot.h */,
+				174CF6FD90EEA6EE2E4318B78C6D4436 /* FEventType.h */,
+				5311EE0309E17D8B1981C7FE5A709900 /* Firebase.h */,
+				AD666D71278FE13081C7DDAF564E1771 /* FirebaseApp.h */,
+				7FA28E1A11F3D105D545CB7AC1142330 /* FirebaseServerValue.h */,
+				419392C254BED2835DD255C87E7C8D6B /* FMutableData.h */,
+				EF3173BC6DADAD54D6C9F693A12DB42C /* FQuery.h */,
+				A968D7B82981B91AF66BFCCE59E240CB /* FTransactionResult.h */,
+				FCC0AC82ECE2E8F13FD3528E359EE6F1 /* Frameworks */,
+				4E36D1DE477734A965B1E440BB91D54B /* Support Files */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		D4BC52947CB922AEBB02F51DB5B36956 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,53 +328,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EDB2FAB8F2ACBBA9A9DEFF4D7CED13E3 /* Support Files */ = {
+		E791946B89A419B475F47AE8A8A1B110 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				24C865B9DDECC10E9F3C95111B901F4F /* MMDrawerController.xcconfig */,
-				1F4FC9FA2ADF99C8FC8B1D3D0FEA2AE1 /* MMDrawerController-dummy.m */,
-				E004103706A891565687A77A480C74A2 /* MMDrawerController-prefix.pch */,
+				E2488950E2FFEAD44468B639ABF0E8BB /* MMDrawerController.h */,
+				373B9EAA6F6950328EDA2F95B7267E7B /* MMDrawerController.m */,
+				1830A42E303EC3AE8D4DF3B9ACA7C29F /* UIViewController+MMDrawerController.h */,
+				14EED14F56023CE6939156858AB32DC6 /* UIViewController+MMDrawerController.m */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/MMDrawerController";
+			name = Core;
 			sourceTree = "<group>";
 		};
-		F2D77FFC407713B93A75F637358A039C /* Subclass */ = {
+		FCC0AC82ECE2E8F13FD3528E359EE6F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C7BD62E12EA9F11098FE52959883C6CF /* MMDrawerController+Subclass.h */,
+				3A80A26462C64309C4D1CC74DCA3F754 /* libFirebaseStatic.a */,
 			);
-			name = Subclass;
-			sourceTree = "<group>";
-		};
-		F2EBAD217C8EC5A98527DA89396C369C /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				3A51E66D61EF3AEF65CCB4813770CA89 /* Empty.m */,
-				21699FB95A5A67011E625D005CB0181A /* FAuthData.h */,
-				C9EEE37052B9D9225077EC561C25F4E1 /* FAuthType.h */,
-				2AC40FE60615C0A4467C12BD49F5D4D6 /* FConfig.h */,
-				BE45F38B5D664AEE5D8B0EFB2C0AB61D /* FDataSnapshot.h */,
-				8C9220DFFAAFBB0181A7DFA4E4C7E663 /* FEventType.h */,
-				435D086CE2E53E22CF222376689604B6 /* Firebase.h */,
-				3BB7BB339717A74B1161F1ADEBA95872 /* FirebaseApp.h */,
-				9B6372CF9464DECC28B055744D405D37 /* FirebaseServerValue.h */,
-				2BE1ABC67BB2F111264378A606896AAE /* FMutableData.h */,
-				2EA0AE0E659CEBF1FD4739361AC4EA2E /* FQuery.h */,
-				85D820CB7920F358AE0E8CBB3A6DA2CE /* FTransactionResult.h */,
-				11A8D22C49406835DAB137BC06EF1C67 /* Frameworks */,
-				1E6AAAE62971760EF09F1BE84DF36143 /* Support Files */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
-		FAD4D842887E6EFB700BBF84203CA87F /* MMDrawerVisualStates */ = {
-			isa = PBXGroup;
-			children = (
-				2CBF852333AB75805FFEFF717EB1216A /* MMDrawerVisualState.h */,
-				5054EC184B89E6F13477153C28985573 /* MMDrawerVisualState.m */,
-			);
-			name = MMDrawerVisualStates;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,7 +530,7 @@
 		};
 		279D1370A9E8CEF1A904015E0BCEA513 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24C865B9DDECC10E9F3C95111B901F4F /* MMDrawerController.xcconfig */;
+			baseConfigurationReference = E56CAD055C6BDC4E8446A33F4E465906 /* MMDrawerController.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController/MMDrawerController-prefix.pch";
@@ -510,7 +548,7 @@
 		};
 		4114690B791A43811E3560051D6BF531 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BA4CBA7D452101CF6FEDE53CE3085FB /* Firebase.xcconfig */;
+			baseConfigurationReference = 74E7852C2EC3E0907B19CEF11BF2B837 /* Firebase.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Firebase/Firebase-prefix.pch";
@@ -567,7 +605,7 @@
 		};
 		B62757473F159FC5117DA60ED2AD7669 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2BA4CBA7D452101CF6FEDE53CE3085FB /* Firebase.xcconfig */;
+			baseConfigurationReference = 74E7852C2EC3E0907B19CEF11BF2B837 /* Firebase.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/Firebase/Firebase-prefix.pch";
@@ -636,7 +674,7 @@
 		};
 		F9EE87DBF34BB08705D08F38994BBB91 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24C865B9DDECC10E9F3C95111B901F4F /* MMDrawerController.xcconfig */;
+			baseConfigurationReference = E56CAD055C6BDC4E8446A33F4E465906 /* MMDrawerController.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/MMDrawerController/MMDrawerController-prefix.pch";

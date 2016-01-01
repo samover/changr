@@ -1,7 +1,7 @@
 
 import UIKit
 
-class ViewReceiverProfileController: UIViewController {
+class ViewReceiverProfileController: UIViewController, PayPalPaymentDelegate {
     
     // MARK: Properties
     
@@ -10,18 +10,48 @@ class ViewReceiverProfileController: UIViewController {
     @IBOutlet weak var emailDisplay: UILabel!
     @IBOutlet weak var dateOfBirthDisplay: UILabel!
     @IBOutlet weak var genderDisplay: UILabel!
+    @IBOutlet weak var donationAmount: UITextField!
     
     var ref: Firebase!
     var beaconData: String!
+    var currentReceiver: NSDictionary!
+    var payPalConfig = PayPalConfiguration()
+    var environment:String = PayPalEnvironmentNoNetwork {
+        willSet(newEnvironment) {
+            if (newEnvironment != environment) {
+                PayPalMobile.preconnectWithEnvironment(newEnvironment)
+            }
+        }
+    }
+    
+    var acceptCreditCards: Bool = true {
+        didSet {
+            payPalConfig.acceptCreditCards = acceptCreditCards
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         ref = Firebase(url: "https://changr.firebaseio.com/users")
         getReceiverFromDatabaseAndDisplayData()
+        
+        // PayPal Configuration:
+        payPalConfig.acceptCreditCards = acceptCreditCards;
+        payPalConfig.merchantName = "Changr"
+        payPalConfig.merchantPrivacyPolicyURL = NSURL(string: "https://www.changr.com/privacy.html")
+        payPalConfig.merchantUserAgreementURL = NSURL(string: "https://www.changr.com/useragreement.html")
+        payPalConfig.languageOrLocale = NSLocale.preferredLanguages()[0]
+        payPalConfig.payPalShippingAddressOption = .PayPal;
+        PayPalMobile.preconnectWithEnvironment(environment)
         
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: "didTapView")
         self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    func didTapView(){
+        self.view.endEditing(true)
     }
     
     func getReceiverFromDatabaseAndDisplayData() {
@@ -32,15 +62,15 @@ class ViewReceiverProfileController: UIViewController {
             for item in snapshot.children {
                 let child = item as! FDataSnapshot
                     if child.value["beaconMinor"] as! String == self.beaconData {
-                        let currentReceiver = child.value
+                         self.currentReceiver = child.value as! NSDictionary
                         
                         // Display the receiver's details:
                         
-                        self.displayReceiverProfileImage((currentReceiver["profileImage"] as? String)!)
-                        self.fullNameDisplay.text = (currentReceiver["fullName"] as! String)
-                        self.emailDisplay.text = "EMAIL: \(currentReceiver["email"] as! String)"
-                        self.dateOfBirthDisplay.text = "DOB: \(currentReceiver["dateOfBirth"] as! String)"
-                        self.genderDisplay.text = "GENDER: \(currentReceiver["gender"] as! String)"
+                        self.displayReceiverProfileImage((self.currentReceiver["profileImage"] as? String)!)
+                        self.fullNameDisplay.text = (self.currentReceiver["fullName"] as! String)
+                        self.emailDisplay.text = "EMAIL: \(self.currentReceiver["email"] as! String)"
+                        self.dateOfBirthDisplay.text = "DOB: \(self.currentReceiver["dateOfBirth"] as! String)"
+                        self.genderDisplay.text = "GENDER: \(self.currentReceiver["gender"] as! String)"
                     }
             }
         })
@@ -62,8 +92,49 @@ class ViewReceiverProfileController: UIViewController {
         self.profileImageView.layer.borderWidth = 6.0
     }
     
-    func didTapView(){
-        self.view.endEditing(true)
+    // PayPalPaymentDelegate
+    
+    func payPalPaymentDidCancel(paymentViewController: PayPalPaymentViewController!) {
+        paymentViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func payPalPaymentViewController(paymentViewController: PayPalPaymentViewController!, didCompletePayment completedPayment: PayPalPayment!) {
+        paymentViewController?.dismissViewControllerAnimated(true, completion: { () -> Void in
+            // send completed confirmaion to your server
+            print("Here is your proof of payment:\n\n\(completedPayment.confirmation)\n\nSend this to your server for confirmation and fulfillment.")
+        })
+    }
+    
+    // MARK: Actions
+    
+    // Process PayPal Payment:
+    @IBAction func donateButton(sender: UIButton) {
+        
+        let donation = donationAmount.text
+        let receiverName = self.currentReceiver["fullName"] as! String
+        
+        let item1 = PayPalItem(name: "Receiver", withQuantity: 1, withPrice: NSDecimalNumber(string: donation), withCurrency: "GBP", withSku: "Receiver-0001")
+        
+        let items = [item1]
+        let subtotal = PayPalItem.totalPriceForItems(items)
+        
+        // Optional: include payment details
+        let shipping = NSDecimalNumber(string: "0.00")
+        let tax = NSDecimalNumber(string: "0.00")
+        let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
+        
+        let total = subtotal.decimalNumberByAdding(shipping).decimalNumberByAdding(tax)
+        
+        let payment = PayPalPayment(amount: total, currencyCode: "GBP", shortDescription: receiverName, intent: .Sale)
+        
+        payment.items = items
+        payment.paymentDetails = paymentDetails
+        
+        if (payment.processable) {
+            let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
+            presentViewController(paymentViewController, animated: true, completion: nil)
+        }
+        else { print("Payment not processalbe: \(payment)") }
     }
 
     override func didReceiveMemoryWarning() {
