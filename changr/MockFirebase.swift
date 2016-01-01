@@ -51,9 +51,22 @@ class MockFirebase: Firebase {
     }
     
     override func createUser(email: String!, password: String!, withCompletionBlock block: ((NSError!) -> Void)!) {
-        user = User(email: email, password: password)
-        users += [user]
-        block(nil)
+        var error = authError
+        var exists = false
+        
+        for existingUser in users {
+            if (existingUser.email == email) {
+                exists = true
+            }
+        }
+        
+        if(!exists) {
+            user = User(email: email, password: password)
+            users += [user]
+            error = nil
+        }
+        
+        block(error)
     }
     
     override func unauth() {

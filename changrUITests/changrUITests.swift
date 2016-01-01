@@ -49,7 +49,7 @@ class changrUITests: XCTestCase {
         signUpAsDonor(email, password: password)
         
         XCTAssertFalse(signOutButton.exists)
-        XCTAssert(app.staticTexts["Please fill in a username and password"].exists)
+        XCTAssert(app.staticTexts["Please enter a valid password and email"].exists)
     }
     
     func signUpAsDonor(email: String, password: String) {
