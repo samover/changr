@@ -1,7 +1,7 @@
 
 import UIKit
 
-class ViewReceiverProfileController: UIViewController, PayPalPaymentDelegate {
+class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayPalPaymentDelegate {
     
     // MARK: Properties
     
@@ -11,7 +11,8 @@ class ViewReceiverProfileController: UIViewController, PayPalPaymentDelegate {
     @IBOutlet weak var dateOfBirthDisplay: UILabel!
     @IBOutlet weak var genderDisplay: UILabel!
     @IBOutlet weak var donationAmount: UITextField!
-    
+    @IBOutlet weak var baseConstraint: NSLayoutConstraint!
+
     var ref: Firebase!
     var beaconData: String!
     var currentReceiver: NSDictionary!
@@ -45,14 +46,17 @@ class ViewReceiverProfileController: UIViewController, PayPalPaymentDelegate {
         payPalConfig.payPalShippingAddressOption = .PayPal;
         PayPalMobile.preconnectWithEnvironment(environment)
         
+        // To move the donationAmount TextField up when keyboard appears:
+        donationAmount.delegate = self
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+        
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: "didTapView")
         self.view.addGestureRecognizer(tapRecognizer)
     }
     
-    func didTapView(){
-        self.view.endEditing(true)
-    }
+    func didTapView() { self.view.endEditing(true) }
     
     func getReceiverFromDatabaseAndDisplayData() {
         
@@ -135,6 +139,47 @@ class ViewReceiverProfileController: UIViewController, PayPalPaymentDelegate {
             presentViewController(paymentViewController, animated: true, completion: nil)
         }
         else { print("Payment not processalbe: \(payment)") }
+    }
+    
+    // To move the donationAmount TextField up when keyboard appears:
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func animateTextFieldWithKeyboard(notification: NSNotification) {
+        
+        let userInfo = notification.userInfo!
+        
+        let keyboardSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+        let duration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! Double
+        let curve = userInfo[UIKeyboardAnimationCurveUserInfoKey] as! UInt
+        
+        if notification.name == UIKeyboardWillShowNotification {
+            baseConstraint.constant = -keyboardSize.height  // move up
+        }
+        else {
+            baseConstraint.constant = 14 // move down to its original constraint
+        }
+        
+        view.setNeedsUpdateConstraints()
+        
+        let options = UIViewAnimationOptions(rawValue: curve << 16)
+        UIView.animateWithDuration(duration, delay: 0, options: options,
+            animations: {
+                self.view.layoutIfNeeded()
+            },
+            completion: nil
+        )
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        animateTextFieldWithKeyboard(notification)
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        animateTextFieldWithKeyboard(notification)
     }
 
     override func didReceiveMemoryWarning() {
