@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170783091C3811B700F9C3DC /* accepton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170783031C3811B700F9C3DC /* accepton.framework */; };
+		1707830A1C3811B700F9C3DC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170783041C3811B700F9C3DC /* SnapKit.framework */; };
+		1707830B1C3811B700F9C3DC /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170783051C3811B700F9C3DC /* Stripe.framework */; };
+		1707830C1C3811B700F9C3DC /* Braintree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170783061C3811B700F9C3DC /* Braintree.framework */; };
+		1707830D1C3811B700F9C3DC /* BUYPaymentButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170783071C3811B700F9C3DC /* BUYPaymentButton.framework */; };
+		1707830E1C3811B700F9C3DC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170783081C3811B700F9C3DC /* Alamofire.framework */; };
+		1707830F1C3811BF00F9C3DC /* accepton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170783031C3811B700F9C3DC /* accepton.framework */; };
+		170783101C3811BF00F9C3DC /* accepton.framework in Embed Frameworks (6 items) */ = {isa = PBXBuildFile; fileRef = 170783031C3811B700F9C3DC /* accepton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		170783111C3811BF00F9C3DC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170783041C3811B700F9C3DC /* SnapKit.framework */; };
+		170783121C3811BF00F9C3DC /* SnapKit.framework in Embed Frameworks (6 items) */ = {isa = PBXBuildFile; fileRef = 170783041C3811B700F9C3DC /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		170783131C3811BF00F9C3DC /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170783051C3811B700F9C3DC /* Stripe.framework */; };
+		170783141C3811BF00F9C3DC /* Stripe.framework in Embed Frameworks (6 items) */ = {isa = PBXBuildFile; fileRef = 170783051C3811B700F9C3DC /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		170783171C3811BF00F9C3DC /* BUYPaymentButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170783071C3811B700F9C3DC /* BUYPaymentButton.framework */; };
+		170783181C3811BF00F9C3DC /* BUYPaymentButton.framework in Embed Frameworks (6 items) */ = {isa = PBXBuildFile; fileRef = 170783071C3811B700F9C3DC /* BUYPaymentButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		170783191C3811BF00F9C3DC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 170783081C3811B700F9C3DC /* Alamofire.framework */; };
+		1707831A1C3811BF00F9C3DC /* Alamofire.framework in Embed Frameworks (6 items) */ = {isa = PBXBuildFile; fileRef = 170783081C3811B700F9C3DC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1707831F1C381DF700F9C3DC /* Braintree.framework in Embed Frameworks (6 items) */ = {isa = PBXBuildFile; fileRef = 1707831E1C381DF700F9C3DC /* Braintree.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		51D613141C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
 		51D613151C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
 		51D613161C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
@@ -63,7 +80,33 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1707831B1C3811BF00F9C3DC /* Embed Frameworks (6 items) */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1707831F1C381DF700F9C3DC /* Braintree.framework in Embed Frameworks (6 items) */,
+				170783101C3811BF00F9C3DC /* accepton.framework in Embed Frameworks (6 items) */,
+				1707831A1C3811BF00F9C3DC /* Alamofire.framework in Embed Frameworks (6 items) */,
+				170783121C3811BF00F9C3DC /* SnapKit.framework in Embed Frameworks (6 items) */,
+				170783141C3811BF00F9C3DC /* Stripe.framework in Embed Frameworks (6 items) */,
+				170783181C3811BF00F9C3DC /* BUYPaymentButton.framework in Embed Frameworks (6 items) */,
+			);
+			name = "Embed Frameworks (6 items)";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		170783031C3811B700F9C3DC /* accepton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = accepton.framework; sourceTree = "<group>"; };
+		170783041C3811B700F9C3DC /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapKit.framework; sourceTree = "<group>"; };
+		170783051C3811B700F9C3DC /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stripe.framework; sourceTree = "<group>"; };
+		170783061C3811B700F9C3DC /* Braintree.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Braintree.framework; path = /Users/Radu/Dev/MakersAcademy/homeless_buddy/Braintree.framework; sourceTree = "<absolute>"; };
+		170783071C3811B700F9C3DC /* BUYPaymentButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUYPaymentButton.framework; sourceTree = "<group>"; };
+		170783081C3811B700F9C3DC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
+		1707831E1C381DF700F9C3DC /* Braintree.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Braintree.framework; sourceTree = "<group>"; };
 		22CFF3E8E788FA5BB42B7EEA /* Pods-changr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-changr.release.xcconfig"; path = "Pods/Target Support Files/Pods-changr/Pods-changr.release.xcconfig"; sourceTree = "<group>"; };
 		51D613131C232C0400105BFC /* MenuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		7E3FF96E1C23716400CEC296 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +146,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB487EDF1C2323C0003EC7F5 /* CoreLocation.framework in Frameworks */,
+				1707830C1C3811B700F9C3DC /* Braintree.framework in Frameworks */,
 				8CF4F098B54FE8E2BF9054E1 /* libPods-changr.a in Frameworks */,
+				170783091C3811B700F9C3DC /* accepton.framework in Frameworks */,
+				170783171C3811BF00F9C3DC /* BUYPaymentButton.framework in Frameworks */,
+				1707830D1C3811B700F9C3DC /* BUYPaymentButton.framework in Frameworks */,
+				1707830B1C3811B700F9C3DC /* Stripe.framework in Frameworks */,
+				1707830A1C3811B700F9C3DC /* SnapKit.framework in Frameworks */,
+				1707830E1C3811B700F9C3DC /* Alamofire.framework in Frameworks */,
+				1707830F1C3811BF00F9C3DC /* accepton.framework in Frameworks */,
+				170783191C3811BF00F9C3DC /* Alamofire.framework in Frameworks */,
+				170783131C3811BF00F9C3DC /* Stripe.framework in Frameworks */,
+				170783111C3811BF00F9C3DC /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +181,6 @@
 		675A60480E880A8C47DFA66E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */,
 				CED7EF6E3097DCA969924F86 /* libPods-changr.a */,
 			);
 			name = Frameworks;
@@ -145,6 +198,13 @@
 		7E9B84E01C21B225007DFE64 = {
 			isa = PBXGroup;
 			children = (
+				170783031C3811B700F9C3DC /* accepton.framework */,
+				170783041C3811B700F9C3DC /* SnapKit.framework */,
+				170783051C3811B700F9C3DC /* Stripe.framework */,
+				170783071C3811B700F9C3DC /* BUYPaymentButton.framework */,
+				170783081C3811B700F9C3DC /* Alamofire.framework */,
+				BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */,
+				1707831E1C381DF700F9C3DC /* Braintree.framework */,
 				7E9B84EB1C21B226007DFE64 /* changr */,
 				7E9B85001C21B226007DFE64 /* changrTests */,
 				7EBA9DAA1C222175004E4C60 /* changrUITests */,
@@ -246,6 +306,8 @@
 				7E9B84E71C21B226007DFE64 /* Resources */,
 				07DBAAADF65863E3771B622B /* Embed Pods Frameworks */,
 				63CD4C65BE6492EC05CCBE78 /* Copy Pods Resources */,
+				1707831B1C3811BF00F9C3DC /* Embed Frameworks (6 items) */,
+				1707831D1C38124900F9C3DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -304,7 +366,7 @@
 				TargetAttributes = {
 					7E9B84E81C21B226007DFE64 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 44ZWH2XGWA;
+						DevelopmentTeam = BWG27V35LY;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -386,6 +448,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-changr/Pods-changr-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		1707831D1C38124900F9C3DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "#Run script to strip extraneous architectures from binaries\nAPP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
 		};
 		63CD4C65BE6492EC05CCBE78 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -605,7 +680,7 @@
 				INFOPLIST_FILE = changr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrSamover;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.radu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
@@ -628,7 +703,7 @@
 				INFOPLIST_FILE = changr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrSamover;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.radu;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
