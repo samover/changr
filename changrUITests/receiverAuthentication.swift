@@ -10,27 +10,102 @@ import XCTest
 
 class receiverAuthentication: XCTestCase {
     
+    
+    let app = XCUIApplication()
+    let email:String = "receiver@makers.com"
+    let password:String = "password"
+    var signOutButton: XCUIElement!
+    var emailTextField: XCUIElement!
+    var passwordTextField: XCUIElement!
+    
     override func setUp() {
         super.setUp()
-       
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        
+        emailTextField = app.textFields["Example@gmail.com"]
+        passwordTextField = app.secureTextFields["Password"]
+        signOutButton = app.navigationBars["Home"].buttons["Sign out"]
+        
+        app.launchArguments += ["TESTING"]
+        app.launch()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    func testSuccessfulSignupAsNewReceiver() {
+        
+        XCTAssertFalse(signOutButton.exists)
+        signUp(email, password: password, role: "Receiver")
+        XCTAssert(app.navigationBars["Complete Your Profile"].exists)
+    }
+    
+    func testFailedSignupAsNewReceiverWhenUserAlreadyExists() {
+        XCTAssertFalse(signOutButton.exists)
+        
+        signUp(email, password: password, role: "Donor")
+        signOutButton.tap()
+        signUp(email, password: password, role: "Receiver")
+        
+        XCTAssertFalse(app.navigationBars["Complete Your Profile"].exists)
+        XCTAssert(app.staticTexts["Please enter a valid password and email"].exists)
     }
 
+    // ONLY POSSIBLE AFTER COMPLETING PROFILE
+//    func testLoginAsExistingReceiver() {
+//        XCTAssertFalse(signOutButton.exists)
+//        
+//        signUp(email, password: password, role: "Receiver")
+//        signOutButton.tap()
+//        login(email, password: password)
+//        
+//        XCTAssert(signOutButton.exists)
+//    }
+//    
+//    func testLoginFailedWrongPassword() {
+//        XCTAssertFalse(signOutButton.exists)
+//        
+//        signUp(email, password: password, role: "Receiver")
+//        signOutButton.tap()
+//        login(email, password: "test")
+//        
+//        XCTAssertFalse(signOutButton.exists)
+//        XCTAssert(app.staticTexts["Username or password incorrect"].exists)
+//    }
+//    
+//    func testLoginFailedWrongUsername() {
+//        XCTAssertFalse(signOutButton.exists)
+//        
+//        signUp(email, password: password, role: "Receiver")
+//        signOutButton.tap()
+//        login("receiver@makers.com", password: "password")
+//        
+//        XCTAssertFalse(signOutButton.exists)
+//        XCTAssert(app.staticTexts["Username or password incorrect"].exists)
+//    }
+    
+    // HELPER METHODS
+    
+    func signUp(email: String, password: String, role: String) {
+        emailTextField.tap()
+        emailTextField.typeText(email)
+        app.buttons["Next"].tap()
+        
+        passwordTextField.typeText(password)
+        app.buttons["Done"].tap()
+        app.pickerWheels.element.adjustToPickerWheelValue(role)
+        app.buttons["SIGN UP"].tap()
+    }
+    
+    func login(email: String, password: String) {
+        emailTextField.tap()
+        emailTextField.typeText(email)
+        app.buttons["Next"].tap()
+        
+        passwordTextField.typeText(password)
+        app.buttons["Done"].tap()
+        app.buttons["LOGIN"].tap()
+    }
 }
+

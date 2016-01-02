@@ -62,14 +62,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
         centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.PanningCenterView;
 
-        if (firebase.isUserLoggedIn()) {
-            window!.rootViewController = centerContainer
-            window!.makeKeyAndVisible()
-        }
-        else {
-            window!.rootViewController = rootController
-            window!.makeKeyAndVisible()
-        }
+        window!.rootViewController = firebase.isUserLoggedIn() ? centerContainer : rootController
+        window!.makeKeyAndVisible()
 
         return true
     }

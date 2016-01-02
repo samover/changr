@@ -27,8 +27,7 @@ class MockFirebase: Firebase {
     
     override func authUser(email: String!, password: String!, withCompletionBlock block: ((NSError!, FAuthData!) -> Void)!) {
         var error = authError
-        print("AUTHUSER FUNCTION")
-        print("--------------------")
+
         for user in users {
             if(user.email! == email && user.password == password) {
                 print(user.email)
@@ -36,9 +35,7 @@ class MockFirebase: Firebase {
                 error = nil
             }
         }
-        print(current_user)
-        print("User error \(error)")
-        print("User Data \(authData)")
+
         block(error, authData)
     }
     
