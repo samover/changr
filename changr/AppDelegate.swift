@@ -29,7 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!, identifier: "Estimotes")
 
     override init() {
-//        Firebase.defaultConfig().persistenceEnabled = true
+        // Throws an exception for some reason
+//        FirebaseWrapper().setPersistenceEnabled()
     }
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

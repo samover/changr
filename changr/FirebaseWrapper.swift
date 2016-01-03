@@ -23,4 +23,15 @@ class FirebaseWrapper {
             return false
         }
     }
+    
+    func setPersistenceEnabled() -> Void {
+        if(!isTestEnvironment()) {
+            Firebase.defaultConfig().persistenceEnabled = true
+        }
+    }
+    
+    private func isTestEnvironment() -> Bool {
+        return NSProcessInfo.processInfo().arguments.contains("TESTING")
+    }
+    
 }

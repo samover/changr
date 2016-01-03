@@ -41,6 +41,11 @@
 		7E3FF9831C2381D700CEC296 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */; };
 		7E3FF9841C2381D700CEC296 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */; };
 		7E3FF9851C2381D700CEC296 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */; };
+		7E47F22B1C39D8C8004E0E8E /* mockFirebaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E47F22A1C39D8C8004E0E8E /* mockFirebaseSpec.swift */; };
+		7E47F22E1C39D96B004E0E8E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E47F22C1C39D96B004E0E8E /* Nimble.framework */; };
+		7E47F22F1C39D96B004E0E8E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E47F22D1C39D96B004E0E8E /* Quick.framework */; };
+		7E47F2311C39D988004E0E8E /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E47F22C1C39D96B004E0E8E /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E47F2321C39D988004E0E8E /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E47F22D1C39D96B004E0E8E /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E58DE351C246AA400AFF2D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
 		7E58DE361C246AA500AFF2D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
 		7E58DE371C246B6800AFF2D0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85111C21C4E3007DFE64 /* LoginController.swift */; };
@@ -111,6 +116,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7E47F2301C39D976004E0E8E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7E47F2311C39D988004E0E8E /* Nimble.framework in CopyFiles */,
+				7E47F2321C39D988004E0E8E /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		51D613131C232C0400105BFC /* MenuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		7E0A7E0A1C2E931900C91E44 /* notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
@@ -126,6 +145,9 @@
 		7E3FF97A1C2381C300CEC296 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7E3FF97E1C2381CF00CEC296 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		7E47F22A1C39D8C8004E0E8E /* mockFirebaseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mockFirebaseSpec.swift; sourceTree = "<group>"; };
+		7E47F22C1C39D96B004E0E8E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		7E47F22D1C39D96B004E0E8E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		7E9B84E91C21B226007DFE64 /* changr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = changr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E9B84EE1C21B226007DFE64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +196,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E47F22E1C39D96B004E0E8E /* Nimble.framework in Frameworks */,
+				7E47F22F1C39D96B004E0E8E /* Quick.framework in Frameworks */,
 				7EA952941C39A2D3000E5676 /* CFNetwork.framework in Frameworks */,
 				7EA952961C39A2D7000E5676 /* SystemConfiguration.framework in Frameworks */,
 				7EA9528C1C39A2C2000E5676 /* CoreLocation.framework in Frameworks */,
@@ -206,6 +230,8 @@
 		675A60480E880A8C47DFA66E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7E47F22C1C39D96B004E0E8E /* Nimble.framework */,
+				7E47F22D1C39D96B004E0E8E /* Quick.framework */,
 				7EA9529C1C39A484000E5676 /* DrawerController.framework */,
 				7EA9528A1C39A2BA000E5676 /* SystemConfiguration.framework */,
 				7EA952881C39A2AE000E5676 /* CFNetwork.framework */,
@@ -269,6 +295,7 @@
 				7E9B85031C21B226007DFE64 /* Info.plist */,
 				7E0A7E0A1C2E931900C91E44 /* notifications.swift */,
 				7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */,
+				7E47F22A1C39D8C8004E0E8E /* mockFirebaseSpec.swift */,
 			);
 			path = changrTests;
 			sourceTree = "<group>";
@@ -349,6 +376,7 @@
 				7E9B84F91C21B226007DFE64 /* Sources */,
 				7E9B84FA1C21B226007DFE64 /* Frameworks */,
 				7E9B84FB1C21B226007DFE64 /* Resources */,
+				7E47F2301C39D976004E0E8E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -523,6 +551,7 @@
 				7E3929581C3548B100664426 /* TestingAppDelegate.swift in Sources */,
 				7E7512B91C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */,
 				7E7512BB1C31865400ADB14E /* ViewReceiverProfileController.swift in Sources */,
+				7E47F22B1C39D8C8004E0E8E /* mockFirebaseSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
