@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     

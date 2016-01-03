@@ -26,7 +26,7 @@ class HistoryViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func menuButton(sender: AnyObject) {
-        appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+        appDelegate.centerContainer!.toggleDrawerSide(.Left, animated: true, completion: nil)
     }
 
     

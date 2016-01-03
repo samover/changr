@@ -8,13 +8,15 @@
 
 import UIKit
 import CoreLocation
+import DrawerController
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var firebase = FirebaseWrapper()
     var window: UIWindow?
-    var centerContainer: MMDrawerController?
+    var centerContainer: DrawerController?
     var rootController: UIViewController?
 
     var enteredRegion = false
@@ -58,9 +60,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let leftSideNav = UINavigationController(rootViewController: leftViewController)
         let centerNav = UINavigationController(rootViewController: centerViewController)
 
-        centerContainer = MMDrawerController(centerViewController: centerNav, leftDrawerViewController: leftSideNav)
-        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
-        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.PanningCenterView;
+        centerContainer = DrawerController(centerViewController: centerNav, leftDrawerViewController: leftSideNav)
+        centerContainer!.openDrawerGestureModeMask = OpenDrawerGestureMode.PanningCenterView;
+        centerContainer!.closeDrawerGestureModeMask = CloseDrawerGestureMode.PanningCenterView;
 
         window!.rootViewController = firebase.isUserLoggedIn() ? centerContainer : rootController
         window!.makeKeyAndVisible()
@@ -116,8 +118,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 firebase.ref.observeEventType(.Value, withBlock: { snapshot in
                     for item in snapshot.children {
                         let child = item as! FDataSnapshot
-                            if child.value["beaconMinor"] as? String == self.beacons.first!.minor.stringValue {
-                                self.receiverName = child.value["fullName"] as! String
+                        let value = child.value as! NSDictionary
+                            if value["beaconMinor"] as? String == self.beacons.first!.minor.stringValue {
+                                self.receiverName = value["fullName"] as! String
                             }
                     }
                 })

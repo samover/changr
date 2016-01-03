@@ -10,7 +10,7 @@
         <!--Complete Your Profile-->
         <scene sceneID="zf9-Cd-n3L">
             <objects>
-                <viewController storyboardIdentifier="FormController" id="eOE-On-Xaf" customClass="FormController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FormController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eOE-On-Xaf" customClass="FormController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cnk-Kk-eqy"/>
                         <viewControllerLayoutGuide type="bottom" id="AbJ-Hy-z4e"/>
@@ -158,7 +158,7 @@
         <!--View Receiver Profile Controller-->
         <scene sceneID="Q2Z-MO-N61">
             <objects>
-                <viewController storyboardIdentifier="ViewReceiverProfileController" id="qGK-YU-L9E" customClass="ViewReceiverProfileController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewReceiverProfileController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qGK-YU-L9E" customClass="ViewReceiverProfileController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Uy7-ND-QD2"/>
                         <viewControllerLayoutGuide type="bottom" id="TnH-Jw-Zdk"/>
@@ -217,7 +217,7 @@
         <!--Beacon Table View Controller-->
         <scene sceneID="w0R-Ro-jye">
             <objects>
-                <tableViewController storyboardIdentifier="BeaconTableViewController" id="qRK-Yo-adH" customClass="BeaconTableViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BeaconTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qRK-Yo-adH" customClass="BeaconTableViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="9AI-Ot-mgC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,7 +225,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.72984481820000002" blue="0.64854029609999997" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="beaconCell" rowHeight="90" id="gs4-EZ-dFn" customClass="BeaconTableViewCell" customModule="changr" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="414" height="90"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gs4-EZ-dFn" id="xSU-WP-qNi">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="89.5"/>
@@ -293,7 +293,7 @@
         <!--History-->
         <scene sceneID="OHn-OC-bP9">
             <objects>
-                <viewController storyboardIdentifier="HistoryViewController" id="yB3-26-0Qn" customClass="HistoryViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yB3-26-0Qn" customClass="HistoryViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vDD-Kq-T6d"/>
                         <viewControllerLayoutGuide type="bottom" id="rlX-cf-uci"/>
@@ -325,7 +325,7 @@
         <!--Settings-->
         <scene sceneID="upM-ae-2To">
             <objects>
-                <viewController storyboardIdentifier="SettingsViewController" id="Ak6-fa-yPu" customClass="SettingsViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ak6-fa-yPu" customClass="SettingsViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xbQ-qA-tGM"/>
                         <viewControllerLayoutGuide type="bottom" id="KuW-dm-Gya"/>
@@ -454,7 +454,7 @@
         <!--Profile-->
         <scene sceneID="Sht-R8-4v2">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="Z1l-3X-KMj" customClass="ProfileViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Z1l-3X-KMj" customClass="ProfileViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="D5d-yl-zm1"/>
                         <viewControllerLayoutGuide type="bottom" id="QGG-Xo-lHh"/>
@@ -488,7 +488,7 @@
         <!--Welcome-->
         <scene sceneID="YEh-Fr-EOS">
             <objects>
-                <viewController storyboardIdentifier="LoginController" id="naD-LI-BFY" customClass="LoginController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="naD-LI-BFY" customClass="LoginController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AfI-Lz-1nE"/>
                         <viewControllerLayoutGuide type="bottom" id="m6f-7t-ktR"/>
@@ -632,6 +632,6 @@
         <image name="menu" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g48-SA-gyR"/>
+        <segue reference="g7m-cm-cm8"/>
     </inferredMetricsTieBreakers>
 </document>

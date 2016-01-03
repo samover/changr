@@ -1,5 +1,7 @@
 
 import UIKit
+import Firebase
+
 
 class ViewReceiverProfileController: UIViewController {
     
@@ -27,8 +29,9 @@ class ViewReceiverProfileController: UIViewController {
         ref.observeEventType(.Value, withBlock: { snapshot in
             for item in snapshot.children {
                 let child = item as! FDataSnapshot
-                    if child.value["beaconMinor"] as! String == self.beaconData {
-                        let currentReceiver = child.value
+                let value = child.value as! NSDictionary
+                    if value["beaconMinor"] as! String == self.beaconData {
+                        let currentReceiver = child.value as! NSDictionary
                         
                         // Display the receiver's details:
                         

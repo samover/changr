@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class FormController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

@@ -94,7 +94,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             print("\(menuItems[indexPath.row]) is selected");
         }
         
-        appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+        appDelegate.centerContainer!.toggleDrawerSide(.Left, animated: true, completion: nil)
     }
 
 }
