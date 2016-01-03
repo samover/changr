@@ -12,6 +12,7 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
     @IBOutlet weak var genderDisplay: UILabel!
     @IBOutlet weak var donationAmount: UITextField!
     @IBOutlet weak var baseConstraint: NSLayoutConstraint!
+    @IBOutlet weak var PopUpView: UIView!
 
     var ref: Firebase!
     var beaconData: String!
@@ -33,6 +34,10 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        PopUpView.hidden = true
+        PopUpView.layer.cornerRadius = 5;
+        PopUpView.layer.masksToBounds = true
         
         ref = Firebase(url: "https://changr.firebaseio.com/users")
         getReceiverFromDatabaseAndDisplayData()
@@ -100,6 +105,7 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
     
     func payPalPaymentDidCancel(paymentViewController: PayPalPaymentViewController!) {
         paymentViewController?.dismissViewControllerAnimated(true, completion: nil)
+        donationAmount.text = ""
     }
     
     func payPalPaymentViewController(paymentViewController: PayPalPaymentViewController!, didCompletePayment completedPayment: PayPalPayment!) {
@@ -107,8 +113,22 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
             // send completed confirmaion to your server
             print("Here is your proof of payment:\n\n\(completedPayment.confirmation)\n\nSend this to your server for confirmation and fulfillment.")
         })
+        showThankYouMessage()
     }
     
+    func showThankYouMessage() {
+        donationAmount.text = ""
+        PopUpView.hidden = false
+        PopUpView.alpha = 1.0
+        _ = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("removePopUp"), userInfo: nil, repeats: false)
+    }
+    
+    func removePopUp() {
+        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.PopUpView.alpha = 0.0
+            }, completion: nil)
+    }
+
     // MARK: Actions
     
     // Process PayPal Payment:
@@ -146,6 +166,10 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        PopUpView.hidden = true
     }
     
     func animateTextFieldWithKeyboard(notification: NSNotification) {
