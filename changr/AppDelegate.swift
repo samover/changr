@@ -104,7 +104,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         sendNotification() // When a beacon is found, send out a local notification to user
         
     }
-    
+
+    func updateReceiverHistory() {
+        
+    }
     // Sending the Local Push Notification:
     
     func sendNotification() {
@@ -138,7 +141,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 stopSending = true // This is to prevent repeat notifications
             }
         }
+        updateReceiverHistory()
     }
+
     
     // Once the user has exited a region then turn notification sending back on for the next beacon they walk past:
 

@@ -133,6 +133,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         
         firebase.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
         self.userSelection == "Donor" ? self.delegateToCenterContainer() : self.segueToCompleteProfile()
+
     }
     
     func delegateToCenterContainer() -> Void {
