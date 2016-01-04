@@ -1,7 +1,7 @@
 
 import UIKit
 
-class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayPalPaymentDelegate {
+class ViewReceiverProfileController: UIViewController, UITextFieldDelegate {
     
     // MARK: Properties
     
@@ -17,20 +17,6 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
     var ref: Firebase!
     var beaconData: String!
     var currentReceiver: NSDictionary!
-    var payPalConfig = PayPalConfiguration()
-    var environment:String = PayPalEnvironmentNoNetwork {
-        willSet(newEnvironment) {
-            if (newEnvironment != environment) {
-                PayPalMobile.preconnectWithEnvironment(newEnvironment)
-            }
-        }
-    }
-    
-    var acceptCreditCards: Bool = true {
-        didSet {
-            payPalConfig.acceptCreditCards = acceptCreditCards
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,15 +27,6 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
         
         ref = Firebase(url: "https://changr.firebaseio.com/users")
         getReceiverFromDatabaseAndDisplayData()
-        
-        // PayPal Configuration:
-        payPalConfig.acceptCreditCards = acceptCreditCards;
-        payPalConfig.merchantName = "Changr"
-        payPalConfig.merchantPrivacyPolicyURL = NSURL(string: "https://www.changr.com/privacy.html")
-        payPalConfig.merchantUserAgreementURL = NSURL(string: "https://www.changr.com/useragreement.html")
-        payPalConfig.languageOrLocale = NSLocale.preferredLanguages()[0]
-        payPalConfig.payPalShippingAddressOption = .PayPal;
-        PayPalMobile.preconnectWithEnvironment(environment)
         
         // To move the donationAmount TextField up when keyboard appears:
         donationAmount.delegate = self
@@ -102,21 +79,6 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
         self.profileImageView.layer.borderWidth = 6.0
     }
     
-    // PayPalPaymentDelegate
-    
-    func payPalPaymentDidCancel(paymentViewController: PayPalPaymentViewController!) {
-        paymentViewController?.dismissViewControllerAnimated(true, completion: nil)
-        donationAmount.text = ""
-    }
-    
-    func payPalPaymentViewController(paymentViewController: PayPalPaymentViewController!, didCompletePayment completedPayment: PayPalPayment!) {
-        paymentViewController?.dismissViewControllerAnimated(true, completion: { () -> Void in
-            // send completed confirmaion to your server
-            print("Here is your proof of payment:\n\n\(completedPayment.confirmation)\n\nSend this to your server for confirmation and fulfillment.")
-        })
-        showThankYouMessage()
-    }
-    
     func showThankYouMessage() {
         donationAmount.text = ""
         PopUpView.hidden = false
@@ -135,31 +97,6 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
     // Process PayPal Payment:
     @IBAction func donateButton(sender: UIButton) {
         
-        let donation = donationAmount.text
-        let receiverName = self.currentReceiver["fullName"] as! String
-        
-        let item1 = PayPalItem(name: "Receiver", withQuantity: 1, withPrice: NSDecimalNumber(string: donation), withCurrency: "GBP", withSku: "Receiver-0001")
-        
-        let items = [item1]
-        let subtotal = PayPalItem.totalPriceForItems(items)
-        
-        // Optional: include payment details
-        let shipping = NSDecimalNumber(string: "0.00")
-        let tax = NSDecimalNumber(string: "0.00")
-        let paymentDetails = PayPalPaymentDetails(subtotal: subtotal, withShipping: shipping, withTax: tax)
-        
-        let total = subtotal.decimalNumberByAdding(shipping).decimalNumberByAdding(tax)
-        
-        let payment = PayPalPayment(amount: total, currencyCode: "GBP", shortDescription: receiverName, intent: .Sale)
-        
-        payment.items = items
-        payment.paymentDetails = paymentDetails
-        
-        if (payment.processable) {
-            let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
-            presentViewController(paymentViewController, animated: true, completion: nil)
-        }
-        else { print("Payment not processalbe: \(payment)") }
     }
     
     // To move the donationAmount TextField up when keyboard appears:

@@ -51,11 +51,6 @@
 		BBF65F941C35F39500C5137A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8C1C35F39500C5137A /* Accelerate.framework */; };
 		BBF65F951C35F39500C5137A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */; };
 		BBF65F961C35F39500C5137A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8E1C35F39500C5137A /* AVFoundation.framework */; };
-		BBF65F971C35F39500C5137A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8F1C35F39500C5137A /* CoreMedia.framework */; };
-		BBF65F981C35F39500C5137A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F901C35F39500C5137A /* MessageUI.framework */; };
-		BBF65F991C35F39500C5137A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F911C35F39500C5137A /* MobileCoreServices.framework */; };
-		BBF65F9A1C35F39500C5137A /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F921C35F39500C5137A /* SafariServices.framework */; };
-		BBF65F9B1C35F39500C5137A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F931C35F39500C5137A /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,15 +106,10 @@
 		BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewController.swift; sourceTree = "<group>"; };
 		BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewCell.swift; sourceTree = "<group>"; };
 		BBDA6B971C25FE350057C3EC /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormController.swift; sourceTree = "<group>"; };
-		BBF65F8B1C35F31100C5137A /* ZZAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAppDelegate.h; sourceTree = "<group>"; };
 		BBF65F8C1C35F39500C5137A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BBF65F8E1C35F39500C5137A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BBF65F8F1C35F39500C5137A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		BBF65F901C35F39500C5137A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		BBF65F911C35F39500C5137A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		BBF65F921C35F39500C5137A /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		BBF65F931C35F39500C5137A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,11 +120,6 @@
 				BBF65F941C35F39500C5137A /* Accelerate.framework in Frameworks */,
 				BBF65F951C35F39500C5137A /* AudioToolbox.framework in Frameworks */,
 				BBF65F961C35F39500C5137A /* AVFoundation.framework in Frameworks */,
-				BBF65F971C35F39500C5137A /* CoreMedia.framework in Frameworks */,
-				BBF65F981C35F39500C5137A /* MessageUI.framework in Frameworks */,
-				BBF65F991C35F39500C5137A /* MobileCoreServices.framework in Frameworks */,
-				BBF65F9A1C35F39500C5137A /* SafariServices.framework in Frameworks */,
-				BBF65F9B1C35F39500C5137A /* SystemConfiguration.framework in Frameworks */,
 				BB1F874E1C25C57A003078FA /* libFirebase.a in Frameworks */,
 				BB487EDF1C2323C0003EC7F5 /* CoreLocation.framework in Frameworks */,
 				0FCFD6759D90B3576A3F20BF /* libPods-changr.a in Frameworks */,
@@ -165,10 +150,6 @@
 				BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */,
 				BBF65F8E1C35F39500C5137A /* AVFoundation.framework */,
 				BBF65F8F1C35F39500C5137A /* CoreMedia.framework */,
-				BBF65F901C35F39500C5137A /* MessageUI.framework */,
-				BBF65F911C35F39500C5137A /* MobileCoreServices.framework */,
-				BBF65F921C35F39500C5137A /* SafariServices.framework */,
-				BBF65F931C35F39500C5137A /* SystemConfiguration.framework */,
 				BB1F874D1C25C57A003078FA /* libFirebase.a */,
 				BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */,
 				A5F908E9EB23D0C41B06E99A /* libPods-changr.a */,
@@ -215,7 +196,6 @@
 				7EF1C8C91C2319960003C3F0 /* MMDrawerController+Storyboard.m */,
 				7EF1C8CA1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec */,
 				7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */,
-				BBF65F8B1C35F31100C5137A /* ZZAppDelegate.h */,
 				7EBA9DA11C221A86004E4C60 /* Controllers */,
 				7EBA9DA41C221B5E004E4C60 /* Views */,
 				7EBA9DA31C221AC6004E4C60 /* Models */,
