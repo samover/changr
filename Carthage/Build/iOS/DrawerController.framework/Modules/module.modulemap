@@ -1,0 +1,10 @@
+framework module DrawerController {
+  umbrella header "DrawerController.h"
+
+  export *
+  module * { export * }
+}
+
+module DrawerController.Swift {
+    header "DrawerController-Swift.h"
+}
