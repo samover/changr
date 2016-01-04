@@ -10,31 +10,29 @@ import UIKit
 
 class HistoryViewController: UIViewController {
     
-    let ref = Firebase(url: "https://changr.firebaseio.com/")
-
+    // MARK: Properties
+    let firebase = FirebaseWrapper()
+    var appDelegate: AppDelegate!
+    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     // MARK: Actions
-    
     @IBAction func menuButton(sender: AnyObject) {
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        appDelegate.centerContainer!.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+        appDelegate.centerContainer!.toggleDrawerSide(.Left, animated: true, completion: nil)
     }
 
     
     @IBAction func logoutButton(sender: AnyObject) {
-        ref.unauth()
-        let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
+        firebase.ref.unauth()
         appDelegate.window?.rootViewController = appDelegate.rootController
         appDelegate.window!.makeKeyAndVisible()
-
     }
-
 }

@@ -7,28 +7,36 @@
 //
 
 import UIKit
+import Firebase
 
-class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
     
     // MARK: Properties
+    var appDelegate: AppDelegate!
+    var firebase = FirebaseWrapper()
+    var pickerDataSource = ["Donor", "Receiver"]
+    var userSelection = "Donor"
+    
+    // MARK: Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userType: UIPickerView!
     @IBOutlet weak var errorMessage: UILabel!
     
-    let ref = Firebase(url: "https://changr.firebaseio.com/")
-    
-    var pickerDataSource = ["Donor", "Receiver"]
-    var userSelection = "Donor"
-    
-    
     // MARK: UIViewController Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate!
+        
         self.userType.dataSource = self
         self.userType.delegate = self
         self.errorMessage.hidden = true
+        
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: "didTapView")
+        self.view.addGestureRecognizer(tapRecognizer)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -37,12 +45,24 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    func didTapView(){
+        self.view.endEditing(true)
+    }
+    
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == self.emailTextField {
+            self.passwordTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
     
     // MARK: Picker functions
-    
     func numberOfComponentsInPickerView(userType: UIPickerView) -> Int {
         return 1
     }
@@ -56,113 +76,89 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func pickerView(userType: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if(row == 0)
-        {
-            print(pickerDataSource)
-            self.userSelection = pickerDataSource[0]
-            print(self.userSelection)
-        }
-        if(row == 1)
-        {
-            print(pickerDataSource)
-            self.userSelection = pickerDataSource[1]
-            print(self.userSelection)
-
-        }
+        self.userSelection = row == 0 ? pickerDataSource[0] : pickerDataSource[1]
     }
     
+    // MARK: Authentication functions
+    
+    func resetAuthenticationForm() -> Void {
+        self.hideErrorMessage()
+        self.emailTextField.text = ""
+        self.passwordTextField.text = ""
+    }
+    
+    func showErrorMessage(msg:String) -> Void {
+        self.errorMessage.text = msg
+        self.errorMessage.hidden = false
+    }
+    
+    func hideErrorMessage() -> Void {
+        self.errorMessage.hidden = true
+    }
+    
+    func isInvalidInput() -> Bool {
+        return emailTextField.text == "" || passwordTextField.text == ""
+    }
+    
+    func loginUser() -> Void {
+        firebase.ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: {
+            (error, authData) in
+            if error != nil {
+                self.showErrorMessage("Username or password incorrect")
+            } else {
+                self.resetAuthenticationForm()
+                self.isRegisteredUser(authData) ? self.delegateToCenterContainer() : self.updateProfile(authData)
+
+            }
+        })
+    }
+    
+    func isRegisteredUser(authData: FAuthData) -> Bool {
+        var isRegistered = false
+        
+        firebase.ref.observeEventType(.Value, withBlock: {
+            snapshot in
+            isRegistered = snapshot.hasChild("users/\(authData.uid)")
+        })
+        return isRegistered
+    }
+    
+    func updateProfile(authData: FAuthData) -> Void {
+        let newUser = [
+            "provider": authData.provider,
+            "userType": self.userSelection,
+            "email": authData.providerData["email"] as? NSString as? String,
+            "beaconMinor": ""
+        ]
+        
+        firebase.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
+        self.userSelection == "Donor" ? self.delegateToCenterContainer() : self.segueToCompleteProfile()
+    }
+    
+    func delegateToCenterContainer() -> Void {
+        self.appDelegate.window?.rootViewController = self.appDelegate.centerContainer
+        self.appDelegate.window!.makeKeyAndVisible()
+    }
+    
+    func segueToCompleteProfile() -> Void {
+        self.performSegueWithIdentifier("completeProfile", sender: self)
+    }
+    
+    func registerUser() -> Void {
+        print(firebase.ref)
+        firebase.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
+            (error: NSError!) in
+            error == nil ? self.loginUser() : self.showErrorMessage("Please enter a valid password and email")
+        }
+    }
+
     // MARK: Actions
-    
-    
     @IBAction func loginButton(sender: AnyObject) {
-        if emailTextField.text == "" || passwordTextField.text == "" {
-            print("Make sure to enter in each textfield")
-            self.errorMessage.text = "Please fill in a username and password"
-            self.errorMessage.hidden = false
-        } else {
-            ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: { (error, authData) in
-                if error != nil {
-                    self.errorMessage.text = "Username or password incorrect"
-                    self.errorMessage.hidden = false
-                } else {
-                    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                    appDelegate.window?.rootViewController = appDelegate.centerContainer
-                    appDelegate.window!.makeKeyAndVisible()
-
-                }
-                
-            })
-        }
+        self.isInvalidInput() ? self.showErrorMessage("Please fill in a username and password") : loginUser()
     }
-    
 
     
     @IBAction func signupButton(sender: AnyObject) {
-        if emailTextField.text == "" || passwordTextField.text == "" {
-            self.errorMessage.text = "Please fill in a username and password"
-            self.errorMessage.hidden = false
-        } else {
-            self.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
-                (error: NSError!) in
-                if error != nil {
-                    print(error.description)
-                    self.errorMessage.text = "Username or password incorrect"
-                    self.errorMessage.hidden = false
-                } else {
-
-                    self.ref.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: { (error, authData) -> Void in
-                        if error != nil {
-                            self.errorMessage.text = "There was a problem with your sign in, please try again"
-                            self.errorMessage.hidden = false
-
-                        } else {
-                            
-                            let newUser = [
-                                "provider": authData.provider,
-                                "userType": self.userSelection,
-                                "email": authData.providerData["email"] as? NSString as? String
-                            ]
-                            
-                            self.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
-                            if self.userSelection == "Donor" {
-                                let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-                                appDelegate.window?.rootViewController = appDelegate.centerContainer
-                                appDelegate.window!.makeKeyAndVisible()
-                            } else {
-                                self.performSegueWithIdentifier("completeProfile", sender: self)
-
-                            }
-                            
-                            
-                        }
-                    })
-                        
-                }
-
-            }
-            
-        }
-        
+        self.isInvalidInput() ? self.showErrorMessage("Please fill in a username and password") : registerUser()
     }
-    
-//    @IBAction func unwindToLogin(sender: UIStoryboardSegue) {
-//        print("user logged out")
-//        self.emailTextField.text = ""
-//        self.passwordTextField.text = ""
-//
-//        self.errorMessage.hidden = true
-//    }
-
-    
-    // MARK: - Navigation
-    
-    
-    /*
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

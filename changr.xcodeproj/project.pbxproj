@@ -10,6 +10,22 @@
 		51D613141C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
 		51D613151C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
 		51D613161C232C0400105BFC /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D613131C232C0400105BFC /* MenuItems.swift */; };
+		7E0A7E0B1C2E931A00C91E44 /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0A1C2E931900C91E44 /* notifications.swift */; };
+		7E0A7E0D1C2E933C00C91E44 /* menuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */; };
+		7E0A7E0F1C2E936B00C91E44 /* donorAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */; };
+		7E328C181C37033700E30D3F /* authenticationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E328C171C37033700E30D3F /* authenticationButtons.swift */; };
+		7E328C1A1C3705B200E30D3F /* receiverAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E328C191C3705B200E30D3F /* receiverAuthentication.swift */; };
+		7E3929511C353FD000664426 /* MockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3929501C353FD000664426 /* MockFirebase.swift */; };
+		7E3929521C35418600664426 /* MockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3929501C353FD000664426 /* MockFirebase.swift */; };
+		7E3929531C35418800664426 /* MockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3929501C353FD000664426 /* MockFirebase.swift */; };
+		7E3929571C3546A800664426 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3929561C3546A800664426 /* TestingAppDelegate.swift */; };
+		7E3929581C3548B100664426 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3929561C3546A800664426 /* TestingAppDelegate.swift */; };
+		7E3929591C3548B100664426 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3929561C3546A800664426 /* TestingAppDelegate.swift */; };
+		7E39295A1C35678500664426 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B84F01C21B226007DFE64 /* Main.storyboard */; };
+		7E39295B1C35678900664426 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B84F01C21B226007DFE64 /* Main.storyboard */; };
+		7E3929601C36E20C00664426 /* FirebaseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */; };
+		7E3929611C36E20C00664426 /* FirebaseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */; };
+		7E3929621C36E74500664426 /* FirebaseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */; };
 		7E3FF96F1C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
 		7E3FF9701C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
 		7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF96E1C23716400CEC296 /* MenuViewController.swift */; };
@@ -25,26 +41,53 @@
 		7E3FF9831C2381D700CEC296 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */; };
 		7E3FF9841C2381D700CEC296 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */; };
 		7E3FF9851C2381D700CEC296 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */; };
-		7E9AF0DC1C21D33C00F3C6FE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9AF0DB1C21D33C00F3C6FE /* User.swift */; };
+		7E47F22B1C39D8C8004E0E8E /* mockFirebaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E47F22A1C39D8C8004E0E8E /* mockFirebaseSpec.swift */; };
+		7E47F22E1C39D96B004E0E8E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E47F22C1C39D96B004E0E8E /* Nimble.framework */; };
+		7E47F22F1C39D96B004E0E8E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E47F22D1C39D96B004E0E8E /* Quick.framework */; };
+		7E47F2311C39D988004E0E8E /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E47F22C1C39D96B004E0E8E /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E47F2321C39D988004E0E8E /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E47F22D1C39D96B004E0E8E /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E58DE351C246AA400AFF2D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
+		7E58DE361C246AA500AFF2D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
+		7E58DE371C246B6800AFF2D0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85111C21C4E3007DFE64 /* LoginController.swift */; };
+		7E58DE381C246B6900AFF2D0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85111C21C4E3007DFE64 /* LoginController.swift */; };
+		7E58DE391C246B6E00AFF2D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EE1C21B226007DFE64 /* ViewController.swift */; };
+		7E58DE3A1C246B6E00AFF2D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EE1C21B226007DFE64 /* ViewController.swift */; };
+		7E7512B71C31864300ADB14E /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B971C25FE350057C3EC /* FormController.swift */; };
+		7E7512B81C31864400ADB14E /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B971C25FE350057C3EC /* FormController.swift */; };
+		7E7512B91C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */; };
+		7E7512BA1C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */; };
+		7E7512BB1C31865400ADB14E /* ViewReceiverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */; };
+		7E7512BC1C31865500ADB14E /* ViewReceiverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */; };
 		7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
 		7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EE1C21B226007DFE64 /* ViewController.swift */; };
 		7E9B84F21C21B226007DFE64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B84F01C21B226007DFE64 /* Main.storyboard */; };
 		7E9B84F41C21B226007DFE64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B84F31C21B226007DFE64 /* Assets.xcassets */; };
 		7E9B84F71C21B226007DFE64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B84F51C21B226007DFE64 /* LaunchScreen.storyboard */; };
-		7E9B85021C21B226007DFE64 /* changrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85011C21B226007DFE64 /* changrTests.swift */; };
 		7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85111C21C4E3007DFE64 /* LoginController.swift */; };
-		7EBA9DAC1C222175004E4C60 /* changrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA9DAB1C222175004E4C60 /* changrUITests.swift */; };
-		7EC05DF71C3A840E00CBDF3B /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05DF61C3A840E00CBDF3B /* Firebase.framework */; };
-		7EC05DF91C3A841A00CBDF3B /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05DF81C3A841A00CBDF3B /* libicucore.tbd */; };
-		7EC05DFB1C3A842300CBDF3B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05DFA1C3A842300CBDF3B /* libc++.tbd */; };
-		7EC05DFD1C3A842900CBDF3B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05DFC1C3A842900CBDF3B /* Security.framework */; };
-		7EC05DFF1C3A843000CBDF3B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05DFE1C3A843000CBDF3B /* CFNetwork.framework */; };
-		7EC05E011C3A845A00CBDF3B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05E001C3A845A00CBDF3B /* SystemConfiguration.framework */; };
-		7EC05E031C3A849C00CBDF3B /* DrawerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05E021C3A849C00CBDF3B /* DrawerController.framework */; };
-		7EC05E071C3A850D00CBDF3B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05E051C3A850D00CBDF3B /* Nimble.framework */; };
-		7EC05E081C3A850D00CBDF3B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05E061C3A850D00CBDF3B /* Quick.framework */; };
-		7EC05E0A1C3A853100CBDF3B /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EC05E051C3A850D00CBDF3B /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7EC05E0B1C3A853100CBDF3B /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EC05E061C3A850D00CBDF3B /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7EA9527F1C39A25E000E5676 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9527E1C39A25E000E5676 /* Firebase.framework */; };
+		7EA952801C39A25E000E5676 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9527E1C39A25E000E5676 /* Firebase.framework */; };
+		7EA952811C39A25E000E5676 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9527E1C39A25E000E5676 /* Firebase.framework */; };
+		7EA952831C39A27A000E5676 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA952821C39A27A000E5676 /* libicucore.tbd */; };
+		7EA952851C39A283000E5676 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA952841C39A283000E5676 /* libc++.tbd */; };
+		7EA952871C39A289000E5676 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA952861C39A289000E5676 /* Security.framework */; };
+		7EA952891C39A2AE000E5676 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA952881C39A2AE000E5676 /* CFNetwork.framework */; };
+		7EA9528B1C39A2BA000E5676 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9528A1C39A2BA000E5676 /* SystemConfiguration.framework */; };
+		7EA9528C1C39A2C2000E5676 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */; };
+		7EA9528D1C39A2C2000E5676 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */; };
+		7EA9528E1C39A2C8000E5676 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA952821C39A27A000E5676 /* libicucore.tbd */; };
+		7EA9528F1C39A2C9000E5676 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA952821C39A27A000E5676 /* libicucore.tbd */; };
+		7EA952901C39A2CC000E5676 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA952841C39A283000E5676 /* libc++.tbd */; };
+		7EA952911C39A2CC000E5676 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA952841C39A283000E5676 /* libc++.tbd */; };
+		7EA952921C39A2D0000E5676 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA952861C39A289000E5676 /* Security.framework */; };
+		7EA952931C39A2D0000E5676 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA952861C39A289000E5676 /* Security.framework */; };
+		7EA952941C39A2D3000E5676 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA952881C39A2AE000E5676 /* CFNetwork.framework */; };
+		7EA952951C39A2D4000E5676 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA952881C39A2AE000E5676 /* CFNetwork.framework */; };
+		7EA952961C39A2D7000E5676 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9528A1C39A2BA000E5676 /* SystemConfiguration.framework */; };
+		7EA952971C39A2D8000E5676 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9528A1C39A2BA000E5676 /* SystemConfiguration.framework */; };
+		7EA9529D1C39A484000E5676 /* DrawerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9529C1C39A484000E5676 /* DrawerController.framework */; };
+		7EA9529F1C39A58D000E5676 /* DrawerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9529C1C39A484000E5676 /* DrawerController.framework */; };
+		7EA952A01C39A58E000E5676 /* DrawerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9529C1C39A484000E5676 /* DrawerController.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BB461EC61C3032860069B45C /* ViewReceiverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */; };
 		BB487EDF1C2323C0003EC7F5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */; };
 		BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE01C233C82003EC7F5 /* Notifications.swift */; };
 		BB487EE21C233C82003EC7F5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE01C233C82003EC7F5 /* Notifications.swift */; };
@@ -52,6 +95,8 @@
 		BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
 		BB487EE61C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
 		BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
+		BBDA6B901C25F9A50057C3EC /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */; };
+		BBDA6B981C25FE350057C3EC /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B971C25FE350057C3EC /* FormController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,14 +117,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7EC05E091C3A852400CBDF3B /* CopyFiles */ = {
+		7E47F2301C39D976004E0E8E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7EC05E0A1C3A853100CBDF3B /* Nimble.framework in CopyFiles */,
-				7EC05E0B1C3A853100CBDF3B /* Quick.framework in CopyFiles */,
+				7E47F2311C39D988004E0E8E /* Nimble.framework in CopyFiles */,
+				7E47F2321C39D988004E0E8E /* Quick.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,12 +132,22 @@
 
 /* Begin PBXFileReference section */
 		51D613131C232C0400105BFC /* MenuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
+		7E0A7E0A1C2E931900C91E44 /* notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
+		7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuItems.swift; sourceTree = "<group>"; };
+		7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = donorAuthentication.swift; sourceTree = "<group>"; };
+		7E328C171C37033700E30D3F /* authenticationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = authenticationButtons.swift; sourceTree = "<group>"; };
+		7E328C191C3705B200E30D3F /* receiverAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = receiverAuthentication.swift; sourceTree = "<group>"; };
+		7E3929501C353FD000664426 /* MockFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFirebase.swift; sourceTree = "<group>"; };
+		7E3929561C3546A800664426 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
+		7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseWrapper.swift; sourceTree = "<group>"; };
 		7E3FF96E1C23716400CEC296 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		7E3FF97A1C2381C300CEC296 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		7E3FF97E1C2381CF00CEC296 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		7E9AF0DB1C21D33C00F3C6FE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7E47F22A1C39D8C8004E0E8E /* mockFirebaseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mockFirebaseSpec.swift; sourceTree = "<group>"; };
+		7E47F22C1C39D96B004E0E8E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		7E47F22D1C39D96B004E0E8E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		7E9B84E91C21B226007DFE64 /* changr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = changr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E9B84EE1C21B226007DFE64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,24 +156,23 @@
 		7E9B84F61C21B226007DFE64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E9B84F81C21B226007DFE64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E9B84FD1C21B226007DFE64 /* changrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = changrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E9B85011C21B226007DFE64 /* changrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changrTests.swift; sourceTree = "<group>"; };
 		7E9B85031C21B226007DFE64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E9B85111C21C4E3007DFE64 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		7EA9527E1C39A25E000E5676 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		7EA952821C39A27A000E5676 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		7EA952841C39A283000E5676 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7EA952861C39A289000E5676 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7EA952881C39A2AE000E5676 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7EA9528A1C39A2BA000E5676 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7EA9529C1C39A484000E5676 /* DrawerController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DrawerController.framework; path = Carthage/Build/iOS/DrawerController.framework; sourceTree = "<group>"; };
 		7EBA9DA91C222175004E4C60 /* changrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = changrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7EBA9DAB1C222175004E4C60 /* changrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changrUITests.swift; sourceTree = "<group>"; };
 		7EBA9DAD1C222175004E4C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7EC05DF61C3A840E00CBDF3B /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
-		7EC05DF81C3A841A00CBDF3B /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
-		7EC05DFA1C3A842300CBDF3B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		7EC05DFC1C3A842900CBDF3B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		7EC05DFE1C3A843000CBDF3B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		7EC05E001C3A845A00CBDF3B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		7EC05E021C3A849C00CBDF3B /* DrawerController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DrawerController.framework; path = Carthage/Build/iOS/DrawerController.framework; sourceTree = "<group>"; };
-		7EC05E051C3A850D00CBDF3B /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
-		7EC05E061C3A850D00CBDF3B /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewReceiverProfileController.swift; sourceTree = "<group>"; };
 		BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BB487EE01C233C82003EC7F5 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewController.swift; sourceTree = "<group>"; };
+		BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewCell.swift; sourceTree = "<group>"; };
+		BBDA6B971C25FE350057C3EC /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,14 +180,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EC05E031C3A849C00CBDF3B /* DrawerController.framework in Frameworks */,
-				7EC05E011C3A845A00CBDF3B /* SystemConfiguration.framework in Frameworks */,
-				7EC05DFF1C3A843000CBDF3B /* CFNetwork.framework in Frameworks */,
-				7EC05DFD1C3A842900CBDF3B /* Security.framework in Frameworks */,
-				7EC05DFB1C3A842300CBDF3B /* libc++.tbd in Frameworks */,
-				7EC05DF91C3A841A00CBDF3B /* libicucore.tbd in Frameworks */,
-				7EC05DF71C3A840E00CBDF3B /* Firebase.framework in Frameworks */,
+				7EA9529D1C39A484000E5676 /* DrawerController.framework in Frameworks */,
+				7EA9528B1C39A2BA000E5676 /* SystemConfiguration.framework in Frameworks */,
+				7EA952891C39A2AE000E5676 /* CFNetwork.framework in Frameworks */,
+				7EA952871C39A289000E5676 /* Security.framework in Frameworks */,
+				7EA952851C39A283000E5676 /* libc++.tbd in Frameworks */,
+				7EA952831C39A27A000E5676 /* libicucore.tbd in Frameworks */,
 				BB487EDF1C2323C0003EC7F5 /* CoreLocation.framework in Frameworks */,
+				7EA9527F1C39A25E000E5676 /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +195,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EC05E071C3A850D00CBDF3B /* Nimble.framework in Frameworks */,
-				7EC05E081C3A850D00CBDF3B /* Quick.framework in Frameworks */,
+				7E47F22E1C39D96B004E0E8E /* Nimble.framework in Frameworks */,
+				7E47F22F1C39D96B004E0E8E /* Quick.framework in Frameworks */,
+				7EA952941C39A2D3000E5676 /* CFNetwork.framework in Frameworks */,
+				7EA952961C39A2D7000E5676 /* SystemConfiguration.framework in Frameworks */,
+				7EA9528C1C39A2C2000E5676 /* CoreLocation.framework in Frameworks */,
+				7EA952921C39A2D0000E5676 /* Security.framework in Frameworks */,
+				7EA9528E1C39A2C8000E5676 /* libicucore.tbd in Frameworks */,
+				7EA952901C39A2CC000E5676 /* libc++.tbd in Frameworks */,
+				7EA952801C39A25E000E5676 /* Firebase.framework in Frameworks */,
+				7EA9529F1C39A58D000E5676 /* DrawerController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +212,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EA952951C39A2D4000E5676 /* CFNetwork.framework in Frameworks */,
+				7EA952971C39A2D8000E5676 /* SystemConfiguration.framework in Frameworks */,
+				7EA9528D1C39A2C2000E5676 /* CoreLocation.framework in Frameworks */,
+				7EA952931C39A2D0000E5676 /* Security.framework in Frameworks */,
+				7EA9528F1C39A2C9000E5676 /* libicucore.tbd in Frameworks */,
+				7EA952911C39A2CC000E5676 /* libc++.tbd in Frameworks */,
+				7EA952811C39A25E000E5676 /* Firebase.framework in Frameworks */,
+				7EA952A01C39A58E000E5676 /* DrawerController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,18 +229,27 @@
 		675A60480E880A8C47DFA66E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7EC05E051C3A850D00CBDF3B /* Nimble.framework */,
-				7EC05E061C3A850D00CBDF3B /* Quick.framework */,
-				7EC05E021C3A849C00CBDF3B /* DrawerController.framework */,
-				7EC05E001C3A845A00CBDF3B /* SystemConfiguration.framework */,
-				7EC05DFE1C3A843000CBDF3B /* CFNetwork.framework */,
-				7EC05DFC1C3A842900CBDF3B /* Security.framework */,
-				7EC05DFA1C3A842300CBDF3B /* libc++.tbd */,
-				7EC05DF81C3A841A00CBDF3B /* libicucore.tbd */,
-				7EC05DF61C3A840E00CBDF3B /* Firebase.framework */,
+				7E47F22C1C39D96B004E0E8E /* Nimble.framework */,
+				7E47F22D1C39D96B004E0E8E /* Quick.framework */,
+				7EA9529C1C39A484000E5676 /* DrawerController.framework */,
+				7EA9528A1C39A2BA000E5676 /* SystemConfiguration.framework */,
+				7EA952881C39A2AE000E5676 /* CFNetwork.framework */,
+				7EA952861C39A289000E5676 /* Security.framework */,
+				7EA952841C39A283000E5676 /* libc++.tbd */,
+				7EA952821C39A27A000E5676 /* libicucore.tbd */,
+				7EA9527E1C39A25E000E5676 /* Firebase.framework */,
 				BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E39294F1C353FBF00664426 /* MockClasses */ = {
+			isa = PBXGroup;
+			children = (
+				7E3929501C353FD000664426 /* MockFirebase.swift */,
+				7E3929561C3546A800664426 /* TestingAppDelegate.swift */,
+			);
+			name = MockClasses;
 			sourceTree = "<group>";
 		};
 		7E9B84E01C21B225007DFE64 = {
@@ -197,6 +276,7 @@
 		7E9B84EB1C21B226007DFE64 /* changr */ = {
 			isa = PBXGroup;
 			children = (
+				7E39294F1C353FBF00664426 /* MockClasses */,
 				7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */,
 				7EBA9DA11C221A86004E4C60 /* Controllers */,
 				7EBA9DA41C221B5E004E4C60 /* Views */,
@@ -210,8 +290,10 @@
 		7E9B85001C21B226007DFE64 /* changrTests */ = {
 			isa = PBXGroup;
 			children = (
-				7E9B85011C21B226007DFE64 /* changrTests.swift */,
 				7E9B85031C21B226007DFE64 /* Info.plist */,
+				7E0A7E0A1C2E931900C91E44 /* notifications.swift */,
+				7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */,
+				7E47F22A1C39D8C8004E0E8E /* mockFirebaseSpec.swift */,
 			);
 			path = changrTests;
 			sourceTree = "<group>";
@@ -219,14 +301,17 @@
 		7EBA9DA11C221A86004E4C60 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */,
 				7E9B84EE1C21B226007DFE64 /* ViewController.swift */,
 				7E9B85111C21C4E3007DFE64 /* LoginController.swift */,
+				BBDA6B971C25FE350057C3EC /* FormController.swift */,
+				BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */,
+				BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */,
 				7E3FF96E1C23716400CEC296 /* MenuViewController.swift */,
 				7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */,
 				7E3FF97A1C2381C300CEC296 /* ProfileViewController.swift */,
 				7E3FF97E1C2381CF00CEC296 /* SettingsViewController.swift */,
 				7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */,
+				BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -235,8 +320,8 @@
 			isa = PBXGroup;
 			children = (
 				BB487EE01C233C82003EC7F5 /* Notifications.swift */,
-				7E9AF0DB1C21D33C00F3C6FE /* User.swift */,
 				51D613131C232C0400105BFC /* MenuItems.swift */,
+				7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -253,8 +338,10 @@
 		7EBA9DAA1C222175004E4C60 /* changrUITests */ = {
 			isa = PBXGroup;
 			children = (
-				7EBA9DAB1C222175004E4C60 /* changrUITests.swift */,
 				7EBA9DAD1C222175004E4C60 /* Info.plist */,
+				7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */,
+				7E328C171C37033700E30D3F /* authenticationButtons.swift */,
+				7E328C191C3705B200E30D3F /* receiverAuthentication.swift */,
 			);
 			path = changrUITests;
 			sourceTree = "<group>";
@@ -269,7 +356,7 @@
 				7E9B84E51C21B226007DFE64 /* Sources */,
 				7E9B84E61C21B226007DFE64 /* Frameworks */,
 				7E9B84E71C21B226007DFE64 /* Resources */,
-				7EC05E041C3A84AD00CBDF3B /* ShellScript */,
+				7EA9529E1C39A4B2000E5676 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -287,7 +374,7 @@
 				7E9B84F91C21B226007DFE64 /* Sources */,
 				7E9B84FA1C21B226007DFE64 /* Frameworks */,
 				7E9B84FB1C21B226007DFE64 /* Resources */,
-				7EC05E091C3A852400CBDF3B /* CopyFiles */,
+				7E47F2301C39D976004E0E8E /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -383,6 +470,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E39295A1C35678500664426 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,13 +478,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E39295B1C35678900664426 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7EC05E041C3A84AD00CBDF3B /* ShellScript */ = {
+		7EA9529E1C39A4B2000E5676 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -417,17 +506,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E3929511C353FD000664426 /* MockFirebase.swift in Sources */,
 				51D613141C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */,
 				BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */,
 				7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */,
 				BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
 				7E3FF97F1C2381CF00CEC296 /* SettingsViewController.swift in Sources */,
+				BBDA6B981C25FE350057C3EC /* FormController.swift in Sources */,
+				7E3929601C36E20C00664426 /* FirebaseWrapper.swift in Sources */,
 				7E3FF9831C2381D700CEC296 /* HistoryViewController.swift in Sources */,
 				7E3FF97B1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
 				7E3FF9771C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
+				BB461EC61C3032860069B45C /* ViewReceiverProfileController.swift in Sources */,
 				7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */,
-				7E9AF0DC1C21D33C00F3C6FE /* User.swift in Sources */,
+				7E3929571C3546A800664426 /* TestingAppDelegate.swift in Sources */,
+				BBDA6B901C25F9A50057C3EC /* BeaconTableViewCell.swift in Sources */,
 				7E3FF96F1C23716400CEC296 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,15 +530,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E3929521C35418600664426 /* MockFirebase.swift in Sources */,
+				7E58DE371C246B6800AFF2D0 /* LoginController.swift in Sources */,
 				BB487EE21C233C82003EC7F5 /* Notifications.swift in Sources */,
+				7E0A7E0B1C2E931A00C91E44 /* notifications.swift in Sources */,
+				7E0A7E0D1C2E933C00C91E44 /* menuItems.swift in Sources */,
 				BB487EE61C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
-				7E9B85021C21B226007DFE64 /* changrTests.swift in Sources */,
 				7E3FF97C1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
 				7E3FF9801C2381CF00CEC296 /* SettingsViewController.swift in Sources */,
+				7E58DE391C246B6E00AFF2D0 /* ViewController.swift in Sources */,
+				7E7512B71C31864300ADB14E /* FormController.swift in Sources */,
 				51D613151C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E3FF9701C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E3FF9781C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
+				7E3929611C36E20C00664426 /* FirebaseWrapper.swift in Sources */,
+				7E58DE361C246AA500AFF2D0 /* AppDelegate.swift in Sources */,
 				7E3FF9841C2381D700CEC296 /* HistoryViewController.swift in Sources */,
+				7E3929581C3548B100664426 /* TestingAppDelegate.swift in Sources */,
+				7E7512B91C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */,
+				7E7512BB1C31865400ADB14E /* ViewReceiverProfileController.swift in Sources */,
+				7E47F22B1C39D8C8004E0E8E /* mockFirebaseSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,14 +557,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E3929531C35418800664426 /* MockFirebase.swift in Sources */,
+				7E58DE381C246B6900AFF2D0 /* LoginController.swift in Sources */,
+				7E7512B81C31864400ADB14E /* FormController.swift in Sources */,
 				BB487EE31C233C82003EC7F5 /* Notifications.swift in Sources */,
 				BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
 				7E3FF97D1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
-				7EBA9DAC1C222175004E4C60 /* changrUITests.swift in Sources */,
 				7E3FF9811C2381CF00CEC296 /* SettingsViewController.swift in Sources */,
+				7E58DE3A1C246B6E00AFF2D0 /* ViewController.swift in Sources */,
+				7E0A7E0F1C2E936B00C91E44 /* donorAuthentication.swift in Sources */,
 				51D613161C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */,
+				7E7512BC1C31865500ADB14E /* ViewReceiverProfileController.swift in Sources */,
+				7E328C1A1C3705B200E30D3F /* receiverAuthentication.swift in Sources */,
+				7E3929621C36E74500664426 /* FirebaseWrapper.swift in Sources */,
 				7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
+				7E328C181C37033700E30D3F /* authenticationButtons.swift in Sources */,
+				7E58DE351C246AA400AFF2D0 /* AppDelegate.swift in Sources */,
+				7E3929591C3548B100664426 /* TestingAppDelegate.swift in Sources */,
+				7E7512BA1C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */,
 				7E3FF9851C2381D700CEC296 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,6 +635,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -538,6 +655,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-DDEBUG";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -564,6 +682,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -589,15 +708,21 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = changr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrSamover;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
@@ -612,15 +737,21 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = changr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrSamover;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
@@ -638,6 +769,10 @@
 				);
 				INFOPLIST_FILE = changrTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/changr.app/changr";
@@ -655,6 +790,10 @@
 				);
 				INFOPLIST_FILE = changrTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/changr.app/changr";
@@ -667,11 +806,18 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = changrUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
 				TEST_TARGET_NAME = changr;
 				USES_XCTRUNNER = YES;
 			};
@@ -683,11 +829,18 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = changrUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
 				TEST_TARGET_NAME = changr;
 				USES_XCTRUNNER = YES;
 			};

@@ -17,5 +17,9 @@ class MenuItems {
     init?(title: String, icon: UIImage?){
         self.title = title
         self.icon = icon
+        
+        if(title.isEmpty) {
+            return nil
+        }
     }
 }
