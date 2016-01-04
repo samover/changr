@@ -97,6 +97,9 @@
 		BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
 		BBDA6B901C25F9A50057C3EC /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */; };
 		BBDA6B981C25FE350057C3EC /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B971C25FE350057C3EC /* FormController.swift */; };
+		BBF65F941C35F39500C5137A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8C1C35F39500C5137A /* Accelerate.framework */; };
+		BBF65F951C35F39500C5137A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */; };
+		BBF65F961C35F39500C5137A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8E1C35F39500C5137A /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,12 +170,25 @@
 		7EA9529C1C39A484000E5676 /* DrawerController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DrawerController.framework; path = Carthage/Build/iOS/DrawerController.framework; sourceTree = "<group>"; };
 		7EBA9DA91C222175004E4C60 /* changrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = changrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EBA9DAD1C222175004E4C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EC05E0C1C3A8F5F00CBDF3B /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		7EC05E0E1C3A8F6500CBDF3B /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		7EC05E101C3A8F6D00CBDF3B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7EC05E121C3A8F7800CBDF3B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7EC05E141C3A8F7F00CBDF3B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7EC05E161C3A8F9C00CBDF3B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7EC05E181C3A903400CBDF3B /* DrawerController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DrawerController.framework; path = Carthage/Build/iOS/DrawerController.framework; sourceTree = "<group>"; };
+		7EC05E1B1C3A908800CBDF3B /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		7EC05E1C1C3A908800CBDF3B /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewReceiverProfileController.swift; sourceTree = "<group>"; };
 		BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BB487EE01C233C82003EC7F5 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewController.swift; sourceTree = "<group>"; };
 		BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewCell.swift; sourceTree = "<group>"; };
 		BBDA6B971C25FE350057C3EC /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormController.swift; sourceTree = "<group>"; };
+		BBF65F8C1C35F39500C5137A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BBF65F8E1C35F39500C5137A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BBF65F8F1C35F39500C5137A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +204,10 @@
 				7EA952831C39A27A000E5676 /* libicucore.tbd in Frameworks */,
 				BB487EDF1C2323C0003EC7F5 /* CoreLocation.framework in Frameworks */,
 				7EA9527F1C39A25E000E5676 /* Firebase.framework in Frameworks */,
+				BBF65F941C35F39500C5137A /* Accelerate.framework in Frameworks */,
+				BBF65F951C35F39500C5137A /* AudioToolbox.framework in Frameworks */,
+				BBF65F961C35F39500C5137A /* AVFoundation.framework in Frameworks */,
+				BB487EDF1C2323C0003EC7F5 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +258,10 @@
 				7EA952841C39A283000E5676 /* libc++.tbd */,
 				7EA952821C39A27A000E5676 /* libicucore.tbd */,
 				7EA9527E1C39A25E000E5676 /* Firebase.framework */,
+				BBF65F8C1C35F39500C5137A /* Accelerate.framework */,
+				BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */,
+				BBF65F8E1C35F39500C5137A /* AVFoundation.framework */,
+				BBF65F8F1C35F39500C5137A /* CoreMedia.framework */,
 				BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -636,6 +660,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -684,6 +709,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -714,11 +740,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				//	"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = changr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -743,11 +769,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
+//					"$(PROJECT_DIR)/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = changr/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
