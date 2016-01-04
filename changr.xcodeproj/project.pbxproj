@@ -34,9 +34,17 @@
 		7E9B85021C21B226007DFE64 /* changrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85011C21B226007DFE64 /* changrTests.swift */; };
 		7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85111C21C4E3007DFE64 /* LoginController.swift */; };
 		7EBA9DAC1C222175004E4C60 /* changrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA9DAB1C222175004E4C60 /* changrUITests.swift */; };
-		7EF1C8CB1C2319960003C3F0 /* MMDrawerController+Storyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EF1C8C91C2319960003C3F0 /* MMDrawerController+Storyboard.m */; };
-		7EF1C8CC1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 7EF1C8CA1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec */; };
-		BB1F874E1C25C57A003078FA /* libFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1F874D1C25C57A003078FA /* libFirebase.a */; };
+		7EC05E0D1C3A8F5F00CBDF3B /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05E0C1C3A8F5F00CBDF3B /* Firebase.framework */; };
+		7EC05E0F1C3A8F6500CBDF3B /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05E0E1C3A8F6500CBDF3B /* libicucore.tbd */; };
+		7EC05E111C3A8F6D00CBDF3B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05E101C3A8F6D00CBDF3B /* libc++.tbd */; };
+		7EC05E131C3A8F7800CBDF3B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05E121C3A8F7800CBDF3B /* Security.framework */; };
+		7EC05E151C3A8F7F00CBDF3B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05E141C3A8F7F00CBDF3B /* CFNetwork.framework */; };
+		7EC05E171C3A8F9C00CBDF3B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05E161C3A8F9C00CBDF3B /* SystemConfiguration.framework */; };
+		7EC05E191C3A903400CBDF3B /* DrawerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05E181C3A903400CBDF3B /* DrawerController.framework */; };
+		7EC05E1D1C3A908800CBDF3B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05E1B1C3A908800CBDF3B /* Nimble.framework */; };
+		7EC05E1E1C3A908800CBDF3B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC05E1C1C3A908800CBDF3B /* Quick.framework */; };
+		7EC05E201C3A909700CBDF3B /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EC05E1B1C3A908800CBDF3B /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7EC05E211C3A909700CBDF3B /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7EC05E1C1C3A908800CBDF3B /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BB461EC61C3032860069B45C /* ViewReceiverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */; };
 		BB487EDF1C2323C0003EC7F5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */; };
 		BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE01C233C82003EC7F5 /* Notifications.swift */; };
@@ -69,6 +77,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7EC05E1F1C3A908D00CBDF3B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7EC05E201C3A909700CBDF3B /* Nimble.framework in CopyFiles */,
+				7EC05E211C3A909700CBDF3B /* Quick.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		51D613131C232C0400105BFC /* MenuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
 		7E3FF96E1C23716400CEC296 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -87,15 +109,19 @@
 		7E9B84FD1C21B226007DFE64 /* changrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = changrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9B85011C21B226007DFE64 /* changrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changrTests.swift; sourceTree = "<group>"; };
 		7E9B85031C21B226007DFE64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E9B850C1C21B47E007DFE64 /* changr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "changr-Bridging-Header.h"; sourceTree = "<group>"; };
 		7E9B85111C21C4E3007DFE64 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		7EBA9DA91C222175004E4C60 /* changrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = changrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EBA9DAB1C222175004E4C60 /* changrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changrUITests.swift; sourceTree = "<group>"; };
 		7EBA9DAD1C222175004E4C60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7EF1C8C81C2319960003C3F0 /* MMDrawerController+Storyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MMDrawerController+Storyboard.h"; sourceTree = "<group>"; };
-		7EF1C8C91C2319960003C3F0 /* MMDrawerController+Storyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MMDrawerController+Storyboard.m"; sourceTree = "<group>"; };
-		7EF1C8CA1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "MMDrawerController+Storyboard.podspec"; sourceTree = "<group>"; };
-		BB1F874D1C25C57A003078FA /* libFirebase.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFirebase.a; path = "Pods/../build/Debug-iphoneos/libFirebase.a"; sourceTree = "<group>"; };
+		7EC05E0C1C3A8F5F00CBDF3B /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		7EC05E0E1C3A8F6500CBDF3B /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		7EC05E101C3A8F6D00CBDF3B /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		7EC05E121C3A8F7800CBDF3B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7EC05E141C3A8F7F00CBDF3B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7EC05E161C3A8F9C00CBDF3B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7EC05E181C3A903400CBDF3B /* DrawerController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DrawerController.framework; path = Carthage/Build/iOS/DrawerController.framework; sourceTree = "<group>"; };
+		7EC05E1B1C3A908800CBDF3B /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		7EC05E1C1C3A908800CBDF3B /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewReceiverProfileController.swift; sourceTree = "<group>"; };
 		BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BB487EE01C233C82003EC7F5 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
@@ -113,10 +139,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC05E191C3A903400CBDF3B /* DrawerController.framework in Frameworks */,
+				7EC05E171C3A8F9C00CBDF3B /* SystemConfiguration.framework in Frameworks */,
+				7EC05E151C3A8F7F00CBDF3B /* CFNetwork.framework in Frameworks */,
+				7EC05E131C3A8F7800CBDF3B /* Security.framework in Frameworks */,
+				7EC05E111C3A8F6D00CBDF3B /* libc++.tbd in Frameworks */,
+				7EC05E0F1C3A8F6500CBDF3B /* libicucore.tbd in Frameworks */,
+				7EC05E0D1C3A8F5F00CBDF3B /* Firebase.framework in Frameworks */,
 				BBF65F941C35F39500C5137A /* Accelerate.framework in Frameworks */,
 				BBF65F951C35F39500C5137A /* AudioToolbox.framework in Frameworks */,
 				BBF65F961C35F39500C5137A /* AVFoundation.framework in Frameworks */,
-				BB1F874E1C25C57A003078FA /* libFirebase.a in Frameworks */,
 				BB487EDF1C2323C0003EC7F5 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +157,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC05E1D1C3A908800CBDF3B /* Nimble.framework in Frameworks */,
+				7EC05E1E1C3A908800CBDF3B /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,11 +175,19 @@
 		675A60480E880A8C47DFA66E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7EC05E1B1C3A908800CBDF3B /* Nimble.framework */,
+				7EC05E1C1C3A908800CBDF3B /* Quick.framework */,
+				7EC05E181C3A903400CBDF3B /* DrawerController.framework */,
+				7EC05E161C3A8F9C00CBDF3B /* SystemConfiguration.framework */,
+				7EC05E141C3A8F7F00CBDF3B /* CFNetwork.framework */,
+				7EC05E121C3A8F7800CBDF3B /* Security.framework */,
+				7EC05E101C3A8F6D00CBDF3B /* libc++.tbd */,
+				7EC05E0E1C3A8F6500CBDF3B /* libicucore.tbd */,
+				7EC05E0C1C3A8F5F00CBDF3B /* Firebase.framework */,
 				BBF65F8C1C35F39500C5137A /* Accelerate.framework */,
 				BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */,
 				BBF65F8E1C35F39500C5137A /* AVFoundation.framework */,
 				BBF65F8F1C35F39500C5137A /* CoreMedia.framework */,
-				BB1F874D1C25C57A003078FA /* libFirebase.a */,
 				BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -159,7 +201,6 @@
 				7EBA9DAA1C222175004E4C60 /* changrUITests */,
 				7E9B84EA1C21B226007DFE64 /* Products */,
 				675A60480E880A8C47DFA66E /* Frameworks */,
-				7E9B850C1C21B47E007DFE64 /* changr-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,9 +217,6 @@
 		7E9B84EB1C21B226007DFE64 /* changr */ = {
 			isa = PBXGroup;
 			children = (
-				7EF1C8C81C2319960003C3F0 /* MMDrawerController+Storyboard.h */,
-				7EF1C8C91C2319960003C3F0 /* MMDrawerController+Storyboard.m */,
-				7EF1C8CA1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec */,
 				7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */,
 				7EBA9DA11C221A86004E4C60 /* Controllers */,
 				7EBA9DA41C221B5E004E4C60 /* Views */,
@@ -254,6 +292,7 @@
 				7E9B84E51C21B226007DFE64 /* Sources */,
 				7E9B84E61C21B226007DFE64 /* Frameworks */,
 				7E9B84E71C21B226007DFE64 /* Resources */,
+				7EC05E1A1C3A904100CBDF3B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -271,6 +310,7 @@
 				7E9B84F91C21B226007DFE64 /* Sources */,
 				7E9B84FA1C21B226007DFE64 /* Frameworks */,
 				7E9B84FB1C21B226007DFE64 /* Resources */,
+				7EC05E1F1C3A908D00CBDF3B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -356,7 +396,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EF1C8CC1C2319960003C3F0 /* MMDrawerController+Storyboard.podspec in Resources */,
 				7E9B84F71C21B226007DFE64 /* LaunchScreen.storyboard in Resources */,
 				7E9B84F41C21B226007DFE64 /* Assets.xcassets in Resources */,
 				7E9B84F21C21B226007DFE64 /* Main.storyboard in Resources */,
@@ -379,6 +418,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7EC05E1A1C3A904100CBDF3B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/DrawerController.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7E9B84E51C21B226007DFE64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -393,7 +449,6 @@
 				BBDA6B981C25FE350057C3EC /* FormController.swift in Sources */,
 				7E3FF9831C2381D700CEC296 /* HistoryViewController.swift in Sources */,
 				7E3FF97B1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
-				7EF1C8CB1C2319960003C3F0 /* MMDrawerController+Storyboard.m in Sources */,
 				7E3FF9771C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 				BB461EC61C3032860069B45C /* ViewReceiverProfileController.swift in Sources */,
 				7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */,
@@ -511,6 +566,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -550,6 +606,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -566,6 +623,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = changr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
@@ -577,7 +635,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrFergusTuesdayss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -593,6 +651,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = changr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
@@ -604,7 +663,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrFergusTuesdayss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -615,6 +674,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = changrTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -631,6 +691,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = changrTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
