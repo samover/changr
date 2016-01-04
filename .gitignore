@@ -33,4 +33,4 @@ xcuserdata/
 *.xcuserstate
 node_modules/
 Carthage/
-Pods/
+Firebase.framework
