@@ -657,6 +657,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-DDEBUG";
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -696,6 +697,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -725,7 +727,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -754,7 +756,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -817,7 +819,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_TARGET_NAME = changr;
 				USES_XCTRUNNER = YES;
 			};
@@ -840,7 +842,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "changr-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_TARGET_NAME = changr;
 				USES_XCTRUNNER = YES;
 			};
