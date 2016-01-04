@@ -34,4 +34,5 @@ xcuserdata/
 *.moved-aside
 *.xcuserstate
 node_modules/
+Carthage/
 Pods/
