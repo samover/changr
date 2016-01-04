@@ -70,8 +70,9 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
         ref.observeEventType(.Value, withBlock: { snapshot in
             for item in snapshot.children {
                 let child = item as! FDataSnapshot
-                    if child.value["beaconMinor"] as! String == self.beaconData {
-                         self.currentReceiver = child.value as! NSDictionary
+                let value = child.value as! NSDictionary
+                    if value["beaconMinor"] as! String == self.beaconData {
+                         self.currentReceiver = value 
                         
                         // Display the receiver's details:
                         
