@@ -19,11 +19,14 @@ class ViewController: UIViewController {
     
     // MARK: Outlets
     @IBOutlet weak var currentUserLabel: UILabel!
+    @IBOutlet weak var balanceLabel: UILabel!
     
     // MARK: UIViewController Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        balanceLabel.text = "Your Balance is: £0"
     }
 
     override func didReceiveMemoryWarning() {
