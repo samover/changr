@@ -115,6 +115,7 @@
 		BBE486B91C3ACBDE00DB137B /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD2A2291C3A9E8F00220FD2 /* MessageUI.framework */; };
 		BBE486BA1C3ACBDE00DB137B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD2A22B1C3A9E9800220FD2 /* MobileCoreServices.framework */; };
 		BBE486BB1C3ACBDE00DB137B /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD2A22D1C3A9EA100220FD2 /* SafariServices.framework */; };
+		BBE486BD1C3AD16100DB137B /* completeReceiverProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE486BC1C3AD16100DB137B /* completeReceiverProfile.swift */; };
 		BBF65F941C35F39500C5137A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8C1C35F39500C5137A /* Accelerate.framework */; };
 		BBF65F951C35F39500C5137A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */; };
 		BBF65F961C35F39500C5137A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8E1C35F39500C5137A /* AVFoundation.framework */; };
@@ -218,6 +219,7 @@
 		BBD2A2491C3AA0D500220FD2 /* ZZAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZAppDelegate.h; sourceTree = "<group>"; };
 		BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconTableViewCell.swift; sourceTree = "<group>"; };
 		BBDA6B971C25FE350057C3EC /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormController.swift; sourceTree = "<group>"; };
+		BBE486BC1C3AD16100DB137B /* completeReceiverProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = completeReceiverProfile.swift; sourceTree = "<group>"; };
 		BBF65F8C1C35F39500C5137A /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BBF65F8E1C35F39500C5137A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -423,6 +425,7 @@
 				7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */,
 				7E328C171C37033700E30D3F /* authenticationButtons.swift */,
 				7E328C191C3705B200E30D3F /* receiverAuthentication.swift */,
+				BBE486BC1C3AD16100DB137B /* completeReceiverProfile.swift */,
 			);
 			path = changrUITests;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 				7E328C181C37033700E30D3F /* authenticationButtons.swift in Sources */,
 				7E58DE351C246AA400AFF2D0 /* AppDelegate.swift in Sources */,
+				BBE486BD1C3AD16100DB137B /* completeReceiverProfile.swift in Sources */,
 				7E3929591C3548B100664426 /* TestingAppDelegate.swift in Sources */,
 				7E7512BA1C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */,
 				7E3FF9851C2381D700CEC296 /* HistoryViewController.swift in Sources */,

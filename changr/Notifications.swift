@@ -6,21 +6,21 @@
 //  Copyright © 2015 Samuel Overloop. All rights reserved.
 //
 
-import Foundation
-import UIKit
-
-class Notifications {
-    
-    class func display(text: String){
-        
-        let notification: UILocalNotification = UILocalNotification()
-        notification.timeZone = NSTimeZone.defaultTimeZone()
-        
-        let dateTime = NSDate()
-        notification.fireDate = dateTime
-        notification.alertBody = text
-        UIApplication.sharedApplication().scheduleLocalNotification(notification)
-        
-    }
-    
-}
+//import Foundation
+//import UIKit
+//
+//class Notifications {
+//    
+//    class func display(text: String){
+//        
+//        let notification: UILocalNotification = UILocalNotification()
+//        notification.timeZone = NSTimeZone.defaultTimeZone()
+//        
+//        let dateTime = NSDate()
+//        notification.fireDate = dateTime
+//        notification.alertBody = text
+//        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+//        
+//    }
+//    
+//}
