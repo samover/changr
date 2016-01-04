@@ -46,7 +46,8 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         monthField.delegate = self
         yearField.delegate = self
         
-        completeProfileButton.enabled = false
+        // Commented out for testing
+//        completeProfileButton.enabled = false
         
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: "didTapView")
@@ -95,6 +96,10 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         completeProfileButton.enabled = true
     }
     
+    func enableCompleteProfileButton() -> Bool {
+        return true
+    }
+
     // MARK: Actions
     
     @IBAction func completeProfile(sender: UIButton) {

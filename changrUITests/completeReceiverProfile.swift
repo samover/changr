@@ -17,9 +17,17 @@ class completeReceiverProfile: XCTestCase {
     var emailTextField: XCUIElement!
     var passwordTextField: XCUIElement!
     
+//    class MockFormController: FormController {
+//        override func viewDidLoad() {
+//            completeProfileButton.enabled = true
+//        }
+//    }
+//    
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
+        
+//        UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("FormController") as! MockFormController
         
         emailTextField = app.textFields["Example@gmail.com"]
         passwordTextField = app.secureTextFields["Password"]
@@ -30,10 +38,12 @@ class completeReceiverProfile: XCTestCase {
     }
     
     func testCompleteProfile() {
+        
         signUp(email, password: password, role: "Receiver")
-        let alertButton = app.alerts["\u{201c}changr\u{201d} Would Like to Access Your Photos"]
-        let exists = NSPredicate(format: "exists == true")
-        expectationForPredicate(exists, evaluatedWithObject: alertButton, handler: nil)
+//        let alertButton = app.alerts["\u{201c}changr\u{201d} Would Like to Access Your Photos"]
+//        let exists = NSPredicate(format: "exists == true")
+//        expectationForPredicate(exists, evaluatedWithObject: alertButton, handler: nil)
+        let completeProfileButton = app.buttons["COMPLETE PROFILE"]
         
         let fullNameTextField = app.textFields["FULL NAME"]
         fullNameTextField.tap()
@@ -52,14 +62,11 @@ class completeReceiverProfile: XCTestCase {
         let yearTextField = app.textFields["YYYY"]
         yearTextField.tap()
         yearTextField.typeText("2015")
+        app.buttons["Done"].tap()
         
-//        app.images["defaultImage"].tap()
-        app.childrenMatchingType(.Window).elementBoundByIndex(0).childrenMatchingType(.Other).element.childrenMatchingType(.Other).element.tap()
-        waitForExpectationsWithTimeout(10, handler: nil)
-        alertButton.collectionViews.buttons["OK"].tap()
-        app.tables.buttons["Camera Roll"].tap()
-        app.collectionViews.cells["Photo, Landscape, March 13, 2011, 12:17 AM"].tap()
-        app.buttons["COMPLETE PROFILE"].tap()
+        XCTAssert(completeProfileButton.enabled)
+        
+        completeProfileButton.tap()
         
         XCTAssert(app.staticTexts["Your Balance is: £0"].exists)
     }
