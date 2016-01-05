@@ -16,9 +16,19 @@ class mockFirebaseSpec: QuickSpec {
         var ref: MockFirebase!
         UIApplication.sharedApplication().delegate = TestingAppDelegate()
         
+        describe("Initialization") {
+            beforeEach {
+                ref = MockFirebase(url: "mock.this")
+            }
+            
+            describe("#root") {
+                
+            }
+        }
+        
         describe("Auth") {
             beforeEach {
-                ref = MockFirebase()
+                ref = MockFirebase(url: "mock.this")
             }
             
             describe("#authData") {
@@ -106,7 +116,7 @@ class mockFirebaseSpec: QuickSpec {
         
         describe("#FDataSnapshot") {
             beforeEach {
-                ref = MockFirebase()
+                ref = MockFirebase(url: "mock.this")
             }
             
             var data: NSDictionary?

@@ -16,6 +16,10 @@ class MockFirebase: Firebase {
     var users: [User] = []
     var current_user: User?
     var snapshot: Snapshot?
+    var url: String?
+    var rootUrl: String?
+    var parentUrl: String?
+    var locationKey: String?
     
     override var authData: FAuthData? {
         get {
@@ -27,6 +31,66 @@ class MockFirebase: Firebase {
         }
     }
     
+    override init?(url: String!) {
+        super.init()
+        self.url = url
+    }
+    
+    /** @name Retrieving String Representation */
+     
+     /**
+     * Gets the absolute URL of this Firebase location.
+     *
+     * @return The absolute URL of the referenced Firebase location.
+     */
+    override func description() -> String! {
+        return self.url
+    }
+    
+    override var parent: Firebase! {
+        get {
+            return MockFirebase(url: parentUrl)
+        }
+    }
+    
+    /**
+     * Get a Firebase reference for the root location
+     *
+     * @return A new Firebase reference to root location.
+     */
+    
+    override var root: Firebase! {
+        get {
+            return MockFirebase(url: rootUrl)
+        }
+    }
+    
+    /**
+     * Gets last token in a Firebase location (e.g. 'fred' in https://SampleChat.firebaseIO-demo.com/users/fred)
+     *
+     * @return The key of the location this reference points to.
+     */
+    
+    override var key: String! {
+        get {
+            return locationKey
+        }
+    }
+    
+    override func observeEventType(eventType: FEventType, andPreviousSiblingKeyWithBlock block: ((FDataSnapshot!, String!) -> Void)!) -> UInt {
+        block(snapshot, nil)
+        return 1
+    }
+    
+    override func childByAppendingPath(pathString: String!) -> Firebase! {
+        return MockFirebase(url: "\(self.url)/\(pathString)")
+    }
+    
+    override func updateChildValues(values: [NSObject : AnyObject]!) {
+        print("You rock")
+    }
+    
+    // Mark: AUTHENTICATION
     override func authUser(email: String!, password: String!, withCompletionBlock block: ((NSError!, FAuthData!) -> Void)!) {
         var error = authError
         
@@ -38,15 +102,6 @@ class MockFirebase: Firebase {
         }
         
         block(error, authData)
-    }
-    
-    override func observeEventType(eventType: FEventType, andPreviousSiblingKeyWithBlock block: ((FDataSnapshot!, String!) -> Void)!) -> UInt {
-        block(snapshot, nil)
-        return 1
-    }
-    
-    override func childByAppendingPath(pathString: String!) -> Firebase! {
-        return Firebase()
     }
     
     override func createUser(email: String!, password: String!, withCompletionBlock block: ((NSError!) -> Void)!) {
@@ -72,6 +127,9 @@ class MockFirebase: Firebase {
         current_user = nil
     }
     
+    func getParentUrl() -> String! {
+        
+    }
 }
 
 class User: FAuthData {

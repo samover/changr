@@ -13,7 +13,7 @@ class FirebaseWrapper {
     var ref: Firebase!
     
     init() {
-        self.ref = NSProcessInfo.processInfo().arguments.contains("TESTING") ? MockFirebase() : Firebase(url:"https://changr.firebaseio.com")
+        self.ref = NSProcessInfo.processInfo().arguments.contains("TESTING") ? MockFirebase(url: "mock.this") : Firebase(url:"https://changr.firebaseio.com")
     }
     
     func isUserLoggedIn() -> Bool {
