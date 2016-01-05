@@ -124,17 +124,27 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func updateProfile(authData: FAuthData) -> Void {
-        let newUser = [
+        let newDonor = [
             "provider": authData.provider,
             "userType": self.userSelection,
             "email": authData.providerData["email"] as? NSString as? String,
-            "beaconMinor": "",
-            "beaconHistory": ""
+            "beaconHistory": "",
+            "beaconMinor": ""
+        ]
+        let newReceiver = [
+            "provider": authData.provider,
+            "userType": self.userSelection,
+            "email": authData.providerData["email"] as? NSString as? String,
+            "beaconMinor": ""
         ]
         
-        firebase.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
-        self.userSelection == "Donor" ? self.delegateToCenterContainer() : self.segueToCompleteProfile()
-
+        if self.userSelection == "Donor" {
+            firebase.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newDonor)
+            self.delegateToCenterContainer()
+        }  else {
+            firebase.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newReceiver)
+            self.segueToCompleteProfile()
+        }
     }
     
     func delegateToCenterContainer() -> Void {

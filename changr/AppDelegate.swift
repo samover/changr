@@ -102,16 +102,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     // Start searching for nearby beacons and store the found beacons in an array:
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
-        self.beacons = beacons
-        NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
-        for beaconID in self.beacons {
-            let uuid = beaconID.minor.stringValue
-            if(!notificationHistory!.contains(uuid) ) {
-                notificationHistory!.append(uuid)
-                sendNotification(uuid)
-            }
+        if firebase.ref.authData != nil {
+            self.beacons = beacons
+            NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
+            let userRef = Firebase(url: "https://changr.firebaseio.com/users/\(firebase.ref.authData.uid)")
+            userRef.observeEventType(.Value, withBlock: { snapshot in
+                let value = snapshot.value as! NSDictionary
+                for beaconID in self.beacons {
+                    let uuid = beaconID.minor.stringValue
+                    if(!self.notificationHistory!.contains(uuid) && value["userType"] as! String == "Donor") {
+                        self.notificationHistory!.append(uuid)
+                        self.sendNotification(uuid)
+                    }
+                }
+            })
         }
     }
+
 
     // Sending the Local Push Notification:
     
@@ -127,6 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     if(uuid == value["beaconMinor"] as! String) {
                         self.localNotificationSend(uuid, fullName: value["fullName"] as! String)
                         self.updateReceiverHistory(child.key)
+
                     }
                 }
             }
@@ -147,7 +155,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func updateReceiverHistory(uid: String!) {
+        print("You are inside updateReceiverHistory")
         let historyRef = firebase.ref.childByAppendingPath("users/\(firebase.ref.authData.uid)/beaconHistory")
+        print(historyRef)
         let historyItem = ["uid": uid as String!, "time": NSDate().description]
         historyRef.childByAutoId().updateChildValues(historyItem)
     }
