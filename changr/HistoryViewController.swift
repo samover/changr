@@ -14,7 +14,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     // MARK: Properties
     var firebase = FirebaseWrapper()
     var appDelegate: AppDelegate!
-    var items = [NSDictionary]()
+    var beaconHistoryList = [NSDictionary]()
     
     @IBOutlet weak var historySegmentedControl: UISegmentedControl!
     @IBOutlet weak var historyTableView: UITableView!
@@ -29,7 +29,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        items = [NSDictionary]()
+        beaconHistoryList = [NSDictionary]()
         
         loadDataFromFirebase()
     }
@@ -48,7 +48,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
                 returnValue = donationsList.count
                 break
             case 1: // Receivers
-                returnValue = items.count
+                returnValue = beaconHistoryList.count
                 break
             default:
                 break
@@ -74,19 +74,20 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         return historyCell
     }
     
-    // MARK:- Configure Cell
+    // MARK: Configure Cell
     
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
-        let dict = items[indexPath.row]
+        let dict = beaconHistoryList[indexPath.row]
+        let firebaseReceiver = Firebase(url:"https://changr.firebaseio.com/users/\(dict["uid"])")
         
-        cell.textLabel?.text = dict["fullName"] as? String
+        cell.textLabel?.text = firebaseReceiver.ref.valueForKey("fullName") as? String
         cell.detailTextLabel?.text = dict["time"] as? String
         
-        let base64String = dict["profileImage"] as! String
-        populateImage(cell, imageString: base64String)
+        let base64String = firebaseReceiver.ref.valueForKey("profileImage") as? String
+        populateImage(cell, imageString: base64String!)
     }
     
-    // MARK:- Populate Image
+    // MARK: Populate Image
     
     func populateImage(cell:UITableViewCell, imageString: String) {
 
@@ -98,26 +99,28 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
+    // MARK: Load data from Firebase
+    
     func loadDataFromFirebase() {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        firebase.ref.observeEventType(.Value, withBlock: { snapshot in
-            var tempItems = [NSDictionary]()
+        let currentDonorBeaconHistoryRef = firebase.ref.childByAppendingPath("\(firebase.ref.authData)/beaconHistory")
+        
+        currentDonorBeaconHistoryRef.observeEventType(.Value, withBlock: { snapshot in
+            var receiversList = [NSDictionary]()
             
             for item in snapshot.children {
-                let child = item as! FDataSnapshot
-                let dict = child.value as! NSDictionary
-                tempItems.append(dict)
+                let receiver = item as! FDataSnapshot
+                let receiversInfo = receiver.value as! NSDictionary
+                receiversList.append(receiversInfo)
             }
             
-            self.items = tempItems
+            self.beaconHistoryList = receiversList
             self.historyTableView.reloadData()
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-            
         })
     }
-
     
     // MARK: Actions
     
