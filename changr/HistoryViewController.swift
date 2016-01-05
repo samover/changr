@@ -60,11 +60,12 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var historyCell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("historyCell")
         
-        if(historyCell != nil) {
-            historyCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "historyCell")
-        }
+        let historyCell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("historyCell", forIndexPath: indexPath)
+        
+//        if(historyCell != nil) {
+//            historyCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "historyCell")
+//        }
         
         switch(historySegmentedControl.selectedSegmentIndex) {
             case 0: // Donations
@@ -92,18 +93,13 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
             
             cell.textLabel?.text = value["fullName"] as? String
             
-            let dateStr = dict["time"] as? String
-            
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.SSSSxxx"
-            let date = dateFormatter.dateFromString(dateStr!) as? NSTimeInterval
-            
-
-            
-            
-            
-            
-            cell.detailTextLabel?.text = date as? String
+//            let dateStr = dict["time"] as? String
+//            
+//            let dateFormatter = NSDateFormatter()
+//            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss.SSSSxxx"
+//            let date = dateFormatter.dateFromString(dateStr!) as? NSTimeInterval
+//
+//            cell.detailTextLabel?.text = date as? String
             
             let base64String = value["profileImage"] as? String
             self.populateImage(cell, imageString: base64String!)
@@ -167,11 +163,13 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showProfileSelected" {
             if let destination = segue.destinationViewController as? ViewReceiverProfileController {
-                if let _ = historyTableView.indexPathForSelectedRow?.row {
-                    // Find Receiver from database by their name and retrieve their 'beaconMinor' value
-                    let beaconMinor = "49281"
-                    
-                    destination.beaconData = "\(beaconMinor)"
+                if let cellIndex = historyTableView.indexPathForSelectedRow?.row {
+                    let selectedReceiverUID = beaconHistoryList[cellIndex]["uid"]!
+                    let selectedReceiverRef = Firebase(url: "https://changr.firebaseio.com/users/\(selectedReceiverUID)")
+                        selectedReceiverRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+                            let value = snapshot.value as! NSDictionary
+                            destination.beaconData = value["beaconMinor"] as? String
+                        })
                 }
             }
         }
