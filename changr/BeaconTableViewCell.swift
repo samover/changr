@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import DateTools
+
 
 class BeaconTableViewCell: UITableViewCell {
-
+    
 }

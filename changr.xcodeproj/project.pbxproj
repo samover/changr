@@ -13,6 +13,13 @@
 		7E0A7E0B1C2E931A00C91E44 /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0A1C2E931900C91E44 /* notifications.swift */; };
 		7E0A7E0D1C2E933C00C91E44 /* menuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */; };
 		7E0A7E0F1C2E936B00C91E44 /* donorAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */; };
+		7E21064F1C3C626C004CD8B0 /* DTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2106421C3C626C004CD8B0 /* DTConstants.m */; };
+		7E2106501C3C626C004CD8B0 /* DTError.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2106441C3C626C004CD8B0 /* DTError.m */; };
+		7E2106511C3C626C004CD8B0 /* DTTimePeriod.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2106461C3C626C004CD8B0 /* DTTimePeriod.m */; };
+		7E2106521C3C626C004CD8B0 /* DTTimePeriodChain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2106481C3C626C004CD8B0 /* DTTimePeriodChain.m */; };
+		7E2106531C3C626C004CD8B0 /* DTTimePeriodCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E21064A1C3C626C004CD8B0 /* DTTimePeriodCollection.m */; };
+		7E2106541C3C626C004CD8B0 /* DTTimePeriodGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E21064C1C3C626C004CD8B0 /* DTTimePeriodGroup.m */; };
+		7E2106551C3C626C004CD8B0 /* NSDate+DateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E21064E1C3C626C004CD8B0 /* NSDate+DateTools.m */; };
 		7E328C181C37033700E30D3F /* authenticationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E328C171C37033700E30D3F /* authenticationButtons.swift */; };
 		7E328C1A1C3705B200E30D3F /* receiverAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E328C191C3705B200E30D3F /* receiverAuthentication.swift */; };
 		7E3929511C353FD000664426 /* MockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3929501C353FD000664426 /* MockFirebase.swift */; };
@@ -147,6 +154,21 @@
 		7E0A7E0A1C2E931900C91E44 /* notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
 		7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuItems.swift; sourceTree = "<group>"; };
 		7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = donorAuthentication.swift; sourceTree = "<group>"; };
+		7E2106401C3C626C004CD8B0 /* DateTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateTools.h; sourceTree = "<group>"; };
+		7E2106411C3C626C004CD8B0 /* DTConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTConstants.h; sourceTree = "<group>"; };
+		7E2106421C3C626C004CD8B0 /* DTConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTConstants.m; sourceTree = "<group>"; };
+		7E2106431C3C626C004CD8B0 /* DTError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTError.h; sourceTree = "<group>"; };
+		7E2106441C3C626C004CD8B0 /* DTError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTError.m; sourceTree = "<group>"; };
+		7E2106451C3C626C004CD8B0 /* DTTimePeriod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTimePeriod.h; sourceTree = "<group>"; };
+		7E2106461C3C626C004CD8B0 /* DTTimePeriod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTimePeriod.m; sourceTree = "<group>"; };
+		7E2106471C3C626C004CD8B0 /* DTTimePeriodChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTimePeriodChain.h; sourceTree = "<group>"; };
+		7E2106481C3C626C004CD8B0 /* DTTimePeriodChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTimePeriodChain.m; sourceTree = "<group>"; };
+		7E2106491C3C626C004CD8B0 /* DTTimePeriodCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTimePeriodCollection.h; sourceTree = "<group>"; };
+		7E21064A1C3C626C004CD8B0 /* DTTimePeriodCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTimePeriodCollection.m; sourceTree = "<group>"; };
+		7E21064B1C3C626C004CD8B0 /* DTTimePeriodGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTTimePeriodGroup.h; sourceTree = "<group>"; };
+		7E21064C1C3C626C004CD8B0 /* DTTimePeriodGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTTimePeriodGroup.m; sourceTree = "<group>"; };
+		7E21064D1C3C626C004CD8B0 /* NSDate+DateTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateTools.h"; sourceTree = "<group>"; };
+		7E21064E1C3C626C004CD8B0 /* NSDate+DateTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateTools.m"; sourceTree = "<group>"; };
 		7E328C171C37033700E30D3F /* authenticationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = authenticationButtons.swift; sourceTree = "<group>"; };
 		7E328C191C3705B200E30D3F /* receiverAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = receiverAuthentication.swift; sourceTree = "<group>"; };
 		7E3929501C353FD000664426 /* MockFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFirebase.swift; sourceTree = "<group>"; };
@@ -301,6 +323,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7E2106561C3C6277004CD8B0 /* DateTools */ = {
+			isa = PBXGroup;
+			children = (
+				7E2106401C3C626C004CD8B0 /* DateTools.h */,
+				7E2106411C3C626C004CD8B0 /* DTConstants.h */,
+				7E2106421C3C626C004CD8B0 /* DTConstants.m */,
+				7E2106431C3C626C004CD8B0 /* DTError.h */,
+				7E2106441C3C626C004CD8B0 /* DTError.m */,
+				7E2106451C3C626C004CD8B0 /* DTTimePeriod.h */,
+				7E2106461C3C626C004CD8B0 /* DTTimePeriod.m */,
+				7E2106471C3C626C004CD8B0 /* DTTimePeriodChain.h */,
+				7E2106481C3C626C004CD8B0 /* DTTimePeriodChain.m */,
+				7E2106491C3C626C004CD8B0 /* DTTimePeriodCollection.h */,
+				7E21064A1C3C626C004CD8B0 /* DTTimePeriodCollection.m */,
+				7E21064B1C3C626C004CD8B0 /* DTTimePeriodGroup.h */,
+				7E21064C1C3C626C004CD8B0 /* DTTimePeriodGroup.m */,
+				7E21064D1C3C626C004CD8B0 /* NSDate+DateTools.h */,
+				7E21064E1C3C626C004CD8B0 /* NSDate+DateTools.m */,
+			);
+			name = DateTools;
+			sourceTree = "<group>";
+		};
 		7E39294F1C353FBF00664426 /* MockClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +378,7 @@
 		7E9B84EB1C21B226007DFE64 /* changr */ = {
 			isa = PBXGroup;
 			children = (
+				7E2106561C3C6277004CD8B0 /* DateTools */,
 				7EC05E2C1C3AC14800CBDF3B /* CardIO */,
 				7EC05E221C3AC13700CBDF3B /* PayPalMobile */,
 				7E39294F1C353FBF00664426 /* MockClasses */,
@@ -605,12 +650,19 @@
 				7E3929511C353FD000664426 /* MockFirebase.swift in Sources */,
 				51D613141C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */,
+				7E2106521C3C626C004CD8B0 /* DTTimePeriodChain.m in Sources */,
+				7E2106511C3C626C004CD8B0 /* DTTimePeriod.m in Sources */,
 				BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */,
 				7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */,
 				BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
+				7E21064F1C3C626C004CD8B0 /* DTConstants.m in Sources */,
+				7E2106531C3C626C004CD8B0 /* DTTimePeriodCollection.m in Sources */,
 				7E3FF97F1C2381CF00CEC296 /* SettingsViewController.swift in Sources */,
 				BBDA6B981C25FE350057C3EC /* FormController.swift in Sources */,
 				7E3929601C36E20C00664426 /* FirebaseWrapper.swift in Sources */,
+				7E2106551C3C626C004CD8B0 /* NSDate+DateTools.m in Sources */,
+				7E2106541C3C626C004CD8B0 /* DTTimePeriodGroup.m in Sources */,
+				7E2106501C3C626C004CD8B0 /* DTError.m in Sources */,
 				7E3FF9831C2381D700CEC296 /* HistoryViewController.swift in Sources */,
 				7E3FF97B1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
 				7E3FF9771C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
