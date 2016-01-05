@@ -34,3 +34,5 @@ xcuserdata/
 node_modules/
 Carthage/
 Pods/
+changr/CardIO/
+changr/PayPalMobile/
