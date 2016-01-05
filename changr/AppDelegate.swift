@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     var beacons = [CLBeacon]()
     var receiverName: String!
+    var receiverUid: String!
     let locationManager = CLLocationManager()
     var stopSending = false
     
@@ -120,11 +121,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 
                 firebase.ref.observeEventType(.Value, withBlock: { snapshot in
                     for item in snapshot.children {
-                        let child = item as! FDataSnapshot
-                        let value = child.value as! NSDictionary
+                        let user = item as! FDataSnapshot
+                        for brother in user.children {
+                            let child = brother as! FDataSnapshot
+                            let value = child.value as! NSDictionary
                             if value["beaconMinor"] as? String == self.beacons.first!.minor.stringValue {
                                 self.receiverName = value["fullName"] as! String
+                                self.receiverUid = child.key as String
+                                print("Hello world")
                             }
+                        }
                     }
                 })
                 
@@ -136,28 +142,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 localNotification.userInfo = beaconInfo // This stores the beacon minor value within the notification
                 localNotification.soundName = UILocalNotificationDefaultSoundName
                 UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-                
-                if(firebase.ref.authdata != nil) {
+
+//                print(self.receiverName)
+//                print(self.receiverUid)
+
+                if(firebase.ref.authData != nil) {
                     updateReceiverHistory()
                 }
-            
+
                 stopSending = true // This is to prevent repeat notifications
             }
         }
     }
     
     func updateReceiverHistory() {
-        var ref: Firebase!
-        ref = Firebase(url: "https://changr.firebaseio.com/")
-        beaconHistoryArray.append(self.beacons.first!.minor.stringValue)
-        
-        let updateUserHistory = [
-            "beaconHistory": beaconHistoryArray
-        ]
-        
-        let usersRef = ref.childByAppendingPath("users")
-        let currentUserRef = usersRef.childByAppendingPath("\(ref.authData.uid)")
-        currentUserRef.updateChildValues(updateUserHistory)
+        let historyRef = firebase.ref.childByAppendingPath("users/\(firebase.ref.authData.uid)/beaconHistory")
+        let historyItem = ["uid": self.receiverUid, "time": NSDate().description]
+        historyRef.updateChildValues(historyItem)
         
     }
 
