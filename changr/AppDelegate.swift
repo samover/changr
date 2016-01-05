@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var receiverName: String!
     let locationManager = CLLocationManager()
     var stopSending = false
+    
+    var beaconHistoryArray = [String]()
 
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!, identifier: "Estimotes")
 
@@ -105,9 +107,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
     }
 
-    func updateReceiverHistory() {
-        
-    }
     // Sending the Local Push Notification:
     
     func sendNotification() {
@@ -137,11 +136,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 localNotification.userInfo = beaconInfo // This stores the beacon minor value within the notification
                 localNotification.soundName = UILocalNotificationDefaultSoundName
                 UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+                
+                if(firebase.ref.authdata != nil) {
+                    updateReceiverHistory()
+                }
             
                 stopSending = true // This is to prevent repeat notifications
             }
         }
-        updateReceiverHistory()
+    }
+    
+    func updateReceiverHistory() {
+        var ref: Firebase!
+        ref = Firebase(url: "https://changr.firebaseio.com/")
+        beaconHistoryArray.append(self.beacons.first!.minor.stringValue)
+        
+        let updateUserHistory = [
+            "beaconHistory": beaconHistoryArray
+        ]
+        
+        let usersRef = ref.childByAppendingPath("users")
+        let currentUserRef = usersRef.childByAppendingPath("\(ref.authData.uid)")
+        currentUserRef.updateChildValues(updateUserHistory)
+        
     }
 
     

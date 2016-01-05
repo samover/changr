@@ -435,7 +435,7 @@
 				TargetAttributes = {
 					7E9B84E81C21B226007DFE64 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = JX4R5DM3GR;
+						DevelopmentTeam = VGGPQ7MNVT;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -746,7 +746,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.makersapp.lemon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makersapp.mahmud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -774,7 +774,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.makersapp.lemon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makersapp.mahmud;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
