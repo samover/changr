@@ -137,7 +137,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 localNotification.soundName = UILocalNotificationDefaultSoundName
                 UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
                 
-                if(firebase.ref.authdata != nil) {
+                if(firebase.ref.authData != nil) {
                     updateReceiverHistory()
                 }
             
