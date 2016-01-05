@@ -118,21 +118,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func sendNotification(uuid: String) {
         // This gets the name of the receiver that a user walked past:
         
-        firebase.ref.observeEventType(.Value, withBlock: { snapshot in
+        firebase.ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
             for item in snapshot.children {
                 let user = item as! FDataSnapshot
                 for brother in user.children {
                     let child = brother as! FDataSnapshot
                     let value = child.value as! NSDictionary
                     if(uuid == value["beaconMinor"] as! String) {
-                        self.localNotificationSend(uuid, childKey: child.key, fullName: value["fullName"] as! String)
+                        self.localNotificationSend(uuid, fullName: value["fullName"] as! String)
+                        self.updateReceiverHistory(child.key)
                     }
                 }
             }
         })
     }
     
-    func localNotificationSend(beaconID: String, childKey: String, fullName: String) -> Void {
+    func localNotificationSend(beaconID: String, fullName: String) -> Void {
         var beaconInfo = [String:String]()
         
         beaconInfo["beaconMinor"] = beaconID //"\(self.beacons.first!.minor)" // This gets the minor value of the beacon that the user walked past
@@ -143,12 +144,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         localNotification.userInfo = beaconInfo // This stores the beacon minor value within the notification
         localNotification.soundName = UILocalNotificationDefaultSoundName
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-
-        //                if(self.firebase.ref.authData != nil) {
-        //                    print("Ok, now let's update the history"
-        //                    self.updateReceiverHistory(self.receiverKey)
-        //                }
-//        self.receiverName = nil
     }
     
     func updateReceiverHistory(uid: String!) {
@@ -156,8 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let historyItem = ["uid": uid as String!, "time": NSDate().description]
         historyRef.childByAutoId().updateChildValues(historyItem)
     }
-
-    
+   
     // Once the user has exited a region then turn notification sending back on for the next beacon they walk past:
 
     func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
