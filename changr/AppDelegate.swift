@@ -23,8 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     var beacons = [CLBeacon]()
     var receiverName: String!
+    var receiverKey: String!
     let locationManager = CLLocationManager()
     var stopSending = false
+    var notificationHistory: [String]? = []
+    
+    var beaconHistoryArray = [String]()
 
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!, identifier: "Estimotes")
 
@@ -102,52 +106,69 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     // Start searching for nearby beacons and store the found beacons in an array:
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
-        self.beacons = beacons
-        NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
-        
-        sendNotification() // When a beacon is found, send out a local notification to user
-        
-    }
-    
-    // Sending the Local Push Notification:
-    
-    func sendNotification() {
-        
-        var beaconInfo = [String:String]()
-        
-        if self.beacons.first != nil {
-            if stopSending == false {
-                
-                // This gets the name of the receiver that a user walked past:
-                
-                firebase.ref.observeEventType(.Value, withBlock: { snapshot in
-                    for item in snapshot.children {
-                        let child = item as! FDataSnapshot
-                        let value = child.value as! NSDictionary
-                            if value["beaconMinor"] as? String == self.beacons.first!.minor.stringValue {
-                                self.receiverName = value["fullName"] as! String
-                            }
+        if firebase.ref.authData != nil {
+            self.beacons = beacons
+            NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
+            let userRef = Firebase(url: "https://changr.firebaseio.com/users/\(firebase.ref.authData.uid)")
+            userRef.observeEventType(.Value, withBlock: { snapshot in
+                let value = snapshot.value as! NSDictionary
+                for beaconID in self.beacons {
+                    let uuid = beaconID.minor.stringValue
+                    if(!self.notificationHistory!.contains(uuid) && value["userType"] as! String == "Donor") {
+                        self.notificationHistory!.append(uuid)
+                        self.sendNotification(uuid)
                     }
-                })
-                
-                beaconInfo["beaconMinor"] = "\(self.beacons.first!.minor)" // This gets the minor value of the beacon that the user walked past
-                let localNotification:UILocalNotification = UILocalNotification()
-                localNotification.alertAction = "view options"
-                localNotification.alertBody = "Please take a moment to view \(self.receiverName)'s profile and see why they need your help."
-                localNotification.category = "RECEIVER_IN_RANGE_ALERT"
-                localNotification.userInfo = beaconInfo // This stores the beacon minor value within the notification
-                localNotification.soundName = UILocalNotificationDefaultSoundName
-                UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-            
-                stopSending = true // This is to prevent repeat notifications
-            }
+                }
+            })
         }
     }
+
+    // Sending the Local Push Notification:
     
+    func sendNotification(uuid: String) {
+        // This gets the name of the receiver that a user walked past:
+        
+        firebase.ref.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            for item in snapshot.children {
+                let user = item as! FDataSnapshot
+                for brother in user.children {
+                    let child = brother as! FDataSnapshot
+                    let value = child.value as! NSDictionary
+                    if(uuid == value["beaconMinor"] as! String) {
+                        self.localNotificationSend(uuid, fullName: value["fullName"] as! String)
+                        self.updateReceiverHistory(child.key)
+
+                    }
+                }
+            }
+        })
+    }
+    
+    func localNotificationSend(beaconID: String, fullName: String) -> Void {
+        var beaconInfo = [String:String]()
+        
+        beaconInfo["beaconMinor"] = beaconID //"\(self.beacons.first!.minor)" // This gets the minor value of the beacon that the user walked past
+        let localNotification:UILocalNotification = UILocalNotification()
+        localNotification.alertAction = "view options"
+        localNotification.alertBody = "Please take a moment to view \(fullName)'s profile and see why they need your help."
+        localNotification.category = "RECEIVER_IN_RANGE_ALERT"
+        localNotification.userInfo = beaconInfo // This stores the beacon minor value within the notification
+        localNotification.soundName = UILocalNotificationDefaultSoundName
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+    }
+    
+    func updateReceiverHistory(uid: String!) {
+        print("You are inside updateReceiverHistory")
+        let historyRef = firebase.ref.childByAppendingPath("users/\(firebase.ref.authData.uid)/beaconHistory")
+        print(historyRef)
+        let historyItem = ["uid": uid as String!, "time": NSDate().description]
+        historyRef.childByAutoId().updateChildValues(historyItem)
+    }
+   
     // Once the user has exited a region then turn notification sending back on for the next beacon they walk past:
 
     func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
-        stopSending = false
+        notificationHistory! = []
     }
     
     // Directing a user to a specific view controller when they tap on "View Profile" after receiving a local push notification:

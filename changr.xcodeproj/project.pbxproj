@@ -107,6 +107,8 @@
 		BBF65F941C35F39500C5137A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8C1C35F39500C5137A /* Accelerate.framework */; };
 		BBF65F951C35F39500C5137A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */; };
 		BBF65F961C35F39500C5137A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8E1C35F39500C5137A /* AVFoundation.framework */; };
+		BCDBDE791C3ADED50056B800 /* ReceiversTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDBDE781C3ADED50056B800 /* ReceiversTableViewCell.swift */; };
+		BCDBDE7A1C3ADED50056B800 /* ReceiversTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDBDE781C3ADED50056B800 /* ReceiversTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +213,7 @@
 		BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BBF65F8E1C35F39500C5137A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BBF65F8F1C35F39500C5137A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		BCDBDE781C3ADED50056B800 /* ReceiversTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiversTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +368,7 @@
 				BBDA6B971C25FE350057C3EC /* FormController.swift */,
 				BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */,
 				BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */,
+				BCDBDE781C3ADED50056B800 /* ReceiversTableViewCell.swift */,
 				7E3FF96E1C23716400CEC296 /* MenuViewController.swift */,
 				7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */,
 				7E3FF97A1C2381C300CEC296 /* ProfileViewController.swift */,
@@ -614,6 +618,7 @@
 				7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */,
 				7E3929571C3546A800664426 /* TestingAppDelegate.swift in Sources */,
 				BBDA6B901C25F9A50057C3EC /* BeaconTableViewCell.swift in Sources */,
+				BCDBDE791C3ADED50056B800 /* ReceiversTableViewCell.swift in Sources */,
 				7E3FF96F1C23716400CEC296 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -662,6 +667,7 @@
 				7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E7512BC1C31865500ADB14E /* ViewReceiverProfileController.swift in Sources */,
 				7E328C1A1C3705B200E30D3F /* receiverAuthentication.swift in Sources */,
+				BCDBDE7A1C3ADED50056B800 /* ReceiversTableViewCell.swift in Sources */,
 				7E3929621C36E74500664426 /* FirebaseWrapper.swift in Sources */,
 				7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 				7E328C181C37033700E30D3F /* authenticationButtons.swift in Sources */,
