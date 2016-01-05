@@ -55,7 +55,6 @@
                                         </segments>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </segmentedControl>
-
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="132" placeholderIntrinsicHeight="30" distribution="equalCentering" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="31l-Kq-nmD">
                                         <rect key="frame" x="47" y="326" width="271" height="30"/>
                                         <subviews>
@@ -539,7 +538,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="historySegmentedControl" destination="sQi-XG-MHu" id="VA1-Zx-Vqz"/>
-                        <outlet property="historyTableView" destination="44L-SM-4N4" id="T67-8H-q2k"/>
+                        <outlet property="historyTableView" destination="44L-SM-4N4" id="aID-bP-oPs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i4t-Cp-wiX" userLabel="First Responder" sceneMemberID="firstResponder"/>
