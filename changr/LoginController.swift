@@ -128,7 +128,8 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             "provider": authData.provider,
             "userType": self.userSelection,
             "email": authData.providerData["email"] as? NSString as? String,
-            "beaconMinor": ""
+            "beaconMinor": "",
+            "beaconHistory": ""
         ]
         
         firebase.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newUser)
