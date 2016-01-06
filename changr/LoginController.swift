@@ -107,7 +107,8 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                 self.showErrorMessage("Username or password incorrect")
             } else {
                 self.resetAuthenticationForm()
-                self.isRegisteredUser(authData) ? self.delegateToCenterContainer() : self.updateProfile(authData)
+                self.delegateToCenterContainer()
+                // self.isRegisteredUser(authData) ? self.delegateToCenterContainer() : self.updateProfile(authData)
 
             }
         })

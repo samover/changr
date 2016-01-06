@@ -20,12 +20,11 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var historySegmentedControl: UISegmentedControl!
     @IBOutlet weak var historyTableView: UITableView!
 
-    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        loadDataFromFirebase()
+//        loadDataFromFirebase()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -112,7 +111,8 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
             let value = snapshot.value as! NSDictionary
 
             cell.textLabel?.text = value["fullName"] as? String
-            cell.detailTextLabel?.text = timeAgoSince(date!)
+            cell.detailTextLabel?.text = "Date Stamp"
+//            cell.detailTextLabel?.text = timeAgoSince(date!)
             
             let base64String = value["profileImage"] as? String
             self.populateImage(cell, imageString: base64String!)

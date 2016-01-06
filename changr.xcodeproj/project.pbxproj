@@ -99,6 +99,8 @@
 		BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
 		BB487EE61C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
 		BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
+		BB8613A31C3D48C10080CFBF /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2106591C3D1921004CD8B0 /* TimeAgo.swift */; };
+		BB8613A41C3D48C20080CFBF /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2106591C3D1921004CD8B0 /* TimeAgo.swift */; };
 		BBD2A2281C3A9E7B00220FD2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8F1C35F39500C5137A /* CoreMedia.framework */; };
 		BBD2A22A1C3A9E8F00220FD2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD2A2291C3A9E8F00220FD2 /* MessageUI.framework */; };
 		BBD2A22C1C3A9E9800220FD2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD2A22B1C3A9E9800220FD2 /* MobileCoreServices.framework */; };
@@ -515,7 +517,7 @@
 				TargetAttributes = {
 					7E9B84E81C21B226007DFE64 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 44ZWH2XGWA;
+						DevelopmentTeam = 2JV2F8MS42;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -633,6 +635,7 @@
 			files = (
 				7E3929521C35418600664426 /* MockFirebase.swift in Sources */,
 				7E58DE371C246B6800AFF2D0 /* LoginController.swift in Sources */,
+				BB8613A31C3D48C10080CFBF /* TimeAgo.swift in Sources */,
 				BB487EE21C233C82003EC7F5 /* Notifications.swift in Sources */,
 				7E0A7E0B1C2E931A00C91E44 /* notifications.swift in Sources */,
 				7E0A7E0D1C2E933C00C91E44 /* menuItems.swift in Sources */,
@@ -672,6 +675,7 @@
 				7E7512BC1C31865500ADB14E /* ViewReceiverProfileController.swift in Sources */,
 				7E328C1A1C3705B200E30D3F /* receiverAuthentication.swift in Sources */,
 				BCDBDE7A1C3ADED50056B800 /* ReceiversTableViewCell.swift in Sources */,
+				BB8613A41C3D48C20080CFBF /* TimeAgo.swift in Sources */,
 				7E3929621C36E74500664426 /* FirebaseWrapper.swift in Sources */,
 				7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 				7E328C181C37033700E30D3F /* authenticationButtons.swift in Sources */,
@@ -837,7 +841,7 @@
 					"$(PROJECT_DIR)/changr/PayPalMobile",
 					"$(PROJECT_DIR)/changr/CardIO",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changrHamzaSheikh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr/changr-Bridging-Header.h";
@@ -867,7 +871,7 @@
 					"$(PROJECT_DIR)/changr/PayPalMobile",
 					"$(PROJECT_DIR)/changr/CardIO",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changrHamzaSheikh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr/changr-Bridging-Header.h";
