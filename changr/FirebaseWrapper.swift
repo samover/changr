@@ -30,6 +30,10 @@ class FirebaseWrapper {
         }
     }
     
+    func authRef() -> Firebase {
+        return ref.childByAppendingPath("users/\(ref.authData.uid)")
+    }
+    
     private func isTestEnvironment() -> Bool {
         return NSProcessInfo.processInfo().arguments.contains("TESTING")
     }

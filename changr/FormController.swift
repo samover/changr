@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class FormController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -22,7 +21,7 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet var beaconNameLabel: UILabel!
     @IBOutlet weak var completeProfileButton: UIButton!
     
-    var ref: Firebase!
+    let firebase = FirebaseWrapper()
     let defaults = NSUserDefaults.standardUserDefaults()
     var beaconName = String()
     var gender = String()
@@ -39,7 +38,6 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Firebase(url: "https://changr.firebaseio.com/")
         
         nameTextField.delegate = self
         dayField.delegate = self
@@ -114,10 +112,7 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             "profileImage": self.base64String
         ]
         
-        let usersRef = ref.childByAppendingPath("users")
-        let currentUserRef = usersRef.childByAppendingPath("\(ref.authData.uid)")
-        currentUserRef.updateChildValues(updateUser)
-        
+        firebase.authRef().updateChildValues(updateUser)
         clearUserDefaults()
     }
     
@@ -156,16 +151,4 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         imagePickerController.delegate = self
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
-
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-
 }
