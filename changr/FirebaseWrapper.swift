@@ -11,6 +11,7 @@ import Firebase
 
 class FirebaseWrapper {
     var ref: Firebase!
+    var userData: NSDictionary?
     
     init() {
         self.ref = NSProcessInfo.processInfo().arguments.contains("TESTING") ? MockFirebase() : Firebase(url:"https://changr.firebaseio.com")
@@ -21,6 +22,19 @@ class FirebaseWrapper {
             return true
         } else {
             return false
+        }
+    }
+    
+    func fetchData() -> NSDictionary {
+        if(isUserLoggedIn() && userData != nil) {
+            return userData!
+        }
+        else if ( isUserLoggedIn() ) {
+            
+        }
+        else {
+            userData = nil
+            return userData
         }
     }
     
