@@ -179,11 +179,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let destinationViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewReceiverProfileController") as! ViewReceiverProfileController
             destinationViewController.beaconData = notification.userInfo!["beaconMinor"] as! String
-            
-            let navigationController:UINavigationController = self.window?.rootViewController as! UINavigationController
-            navigationController.pushViewController(destinationViewController, animated: false)
-//            window!.rootViewController = destinationViewController
-//            window!.makeKeyAndVisible()
+
+            window!.rootViewController = destinationViewController
+            window!.makeKeyAndVisible()
         }
         completionHandler()
     }
