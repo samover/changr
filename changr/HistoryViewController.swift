@@ -15,11 +15,11 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     var firebase = FirebaseWrapper()
     var appDelegate: AppDelegate!
     var beaconHistoryList = [NSDictionary]()
+    var donationsList = [["amount" : "Donation Amount: £2.00", "date" : "Paid On: 01/01/2016"], ["amount" : "Donation Amount: £4.50", "date" : "Paid On: 03/01/2016"], ["amount" : "Donation Amount: £6.50", "date" : "Paid On: 16/12/2015"], ["amount" : "Donation Amount: £10.00", "date" : "Paid On: 29/12/2015"], ["amount" : "Donation Amount: £3.50", "date" : "Paid On: 03/01/2016"], ["amount" : "Donation Amount: £7.00", "date" : "Paid On: 11/12/2015"], ["amount" : "Donation Amount: £2.20", "date" : "Paid On: 29/12/2015"], ["amount" : "Donation Amount: £9.50", "date" : "Paid On: 10/12/2015"], ["amount" : "Donation Amount: £5.00", "date" : "Paid On: 20/12/2016"], ["amount" : "Donation Amount: £1.50", "date" : "Paid On: 31/12/2015"]]
     
     @IBOutlet weak var historySegmentedControl: UISegmentedControl!
     @IBOutlet weak var historyTableView: UITableView!
-   
-    let donationsList:[String] = ["Donation 1", "Donation 2", "Donation 3"]
+
     
     // MARK: Lifecycle
     override func viewDidLoad() {
@@ -85,8 +85,8 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         
         switch(historySegmentedControl.selectedSegmentIndex) {
             case 0: // Donations
-                historyCell!.textLabel!.text = donationsList[indexPath.row]
-                historyCell!.detailTextLabel?.text = "Donated on 01/01/2016"
+                historyCell!.textLabel!.text = donationsList[indexPath.row]["amount"]
+                historyCell!.detailTextLabel?.text = donationsList[indexPath.row]["date"]
                 break
             case 1: // Receivers
                 configureCell(historyCell!, indexPath: indexPath)
@@ -121,10 +121,29 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     func populateImage(cell:UITableViewCell, imageString: String) {
         let decodedData = NSData(base64EncodedString: imageString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
         let decodedImage = UIImage(data: decodedData!)
-        cell.imageView!.image = decodedImage
-        cell.imageView!.layer.cornerRadius = 28
-        cell.imageView!.layer.masksToBounds = true
-        cell.imageView!.clipsToBounds = true
+        let newImage = resizeImage(decodedImage!, toTheSize: CGSizeMake(65, 65))
+        let cellImageLayer: CALayer?  = cell.imageView!.layer
+        cellImageLayer!.cornerRadius = 32.5
+        cellImageLayer!.masksToBounds = true
+        cell.imageView!.image = newImage
+    }
+    
+    // Making the Image circular
+    
+    func resizeImage(image:UIImage, toTheSize size:CGSize)->UIImage{
+        
+        let scale = CGFloat(max(size.width/image.size.width,
+            size.height/image.size.height))
+        let width:CGFloat  = image.size.width * scale
+        let height:CGFloat = image.size.height * scale;
+        
+        let rr:CGRect = CGRectMake( 0, 0, width, height);
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, 0);
+        image.drawInRect(rr)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext();
+        return newImage
     }
     
     // MARK: Actions

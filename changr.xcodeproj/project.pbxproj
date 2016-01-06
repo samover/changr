@@ -927,7 +927,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITestsss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_TARGET_NAME = changr;
@@ -950,7 +950,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITestsss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_TARGET_NAME = changr;
