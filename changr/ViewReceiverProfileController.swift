@@ -20,6 +20,7 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
     var beaconData: String!
     var currentReceiver: NSDictionary!
     var payPalConfig = PayPalConfiguration()
+    var appDelegate: AppDelegate!
     var environment:String = PayPalEnvironmentNoNetwork {
         willSet(newEnvironment) {
             if (newEnvironment != environment) {
@@ -39,7 +40,8 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
         PopUpView.hidden = true
         PopUpView.layer.cornerRadius = 5;
         PopUpView.layer.masksToBounds = true
-        
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate!
+
         ref = Firebase(url: "https://changr.firebaseio.com/users")
         getReceiverFromDatabaseAndDisplayData()
         
@@ -103,7 +105,7 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
         self.profileImageView.layer.borderWidth = 6.0
     }
     
-    // PayPalPaymentDelegate
+    // MARK: PayPalPaymentDelegate
     
     func payPalPaymentDidCancel(paymentViewController: PayPalPaymentViewController!) {
         paymentViewController?.dismissViewControllerAnimated(true, completion: nil)
@@ -161,6 +163,11 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
             presentViewController(paymentViewController, animated: true, completion: nil)
         }
         else { print("Payment not processalbe: \(payment)") }
+    }
+    
+    @IBAction func homeButton(sender: AnyObject) {
+        self.appDelegate.window?.rootViewController = self.appDelegate.centerContainer
+        self.appDelegate.window!.makeKeyAndVisible()
     }
     
     // To move the donationAmount TextField up when keyboard appears:

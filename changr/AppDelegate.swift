@@ -14,7 +14,9 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
+    let defaults = NSUserDefaults.standardUserDefaults()
     var firebase = FirebaseWrapper()
+    var currentUser: NSDictionary?
     var window: UIWindow?
     var centerContainer: DrawerController?
     var rootController: UIViewController?
@@ -41,9 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
+//        firebase.fetchUserData()
+//        while(firebase.fetched == false) {
+//            print("Wating for completiong")
+//            print(firebase.userData)
+//        }
         
         // For PayPal Integration:
-            
+//        firebase.ref.unauth()
         PayPalMobile.initializeWithClientIdsForEnvironments([PayPalEnvironmentProduction: "AaAqHxwwgSS6LjhixZVQqFZNeCrjzaDgwIdSBvOoxptrcGAmDTvtrNrH4500aR7o9b42WUe-hTVq62hA", PayPalEnvironmentSandbox: "AUOe5U1jc9EbPxihVXMPlFVbsqcZwAan42In7Rue5QZZsAL3H3U9uSlQdBSKUyznjRUEBdAxTDGY_7KH"])
         
         // Building the Push Notification Options:
@@ -70,11 +77,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let centerNav = UINavigationController(rootViewController: centerViewController)
 
         centerContainer = DrawerController(centerViewController: centerNav, leftDrawerViewController: leftSideNav)
-        centerContainer!.openDrawerGestureModeMask = OpenDrawerGestureMode.PanningCenterView;
-        centerContainer!.closeDrawerGestureModeMask = CloseDrawerGestureMode.PanningCenterView;
-
-        window!.rootViewController = firebase.isUserLoggedIn() ? centerContainer : rootController
-        window!.makeKeyAndVisible()
+        centerContainer!.openDrawerGestureModeMask = OpenDrawerGestureMode.PanningCenterView
+        centerContainer!.closeDrawerGestureModeMask = CloseDrawerGestureMode.PanningCenterView
+        
+        if(firebase.isUserLoggedIn()) {
+            firebase.authRef().observeSingleEventOfType(.Value, withBlock: { snapshot in
+                print(snapshot.value)
+                self.firebase.userData = snapshot.value as? NSDictionary
+                self.window!.rootViewController = self.centerContainer
+                self.window!.makeKeyAndVisible()
+            })
+        } else {
+            window!.rootViewController = rootController
+            self.window!.makeKeyAndVisible()
+        }
+        
 
         return true
     }
@@ -159,6 +176,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func updateReceiverHistory(uid: String!) {
         print("You are inside updateReceiverHistory")
+
         let historyRef = firebase.ref.childByAppendingPath("users/\(firebase.ref.authData.uid)/beaconHistory")
         print(historyRef)
         let historyItem = ["uid": uid as String!, "time": NSDate().description]
@@ -179,6 +197,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let destinationViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewReceiverProfileController") as! ViewReceiverProfileController
             destinationViewController.beaconData = notification.userInfo!["beaconMinor"] as! String
+
             window!.rootViewController = destinationViewController
             window!.makeKeyAndVisible()
         }

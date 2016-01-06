@@ -112,31 +112,20 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         })
     }
     
-//    func isRegisteredUser(authData: FAuthData) -> Bool {
-//        var isRegistered = false
-//        
-//        print("print: \(authData.uid)")
-//        
-//        firebase.ref.observeSingleEventOfType(.Value, withBlock: {
-//            snapshot in
-//            isRegistered = snapshot.hasChild("users/\(authData.uid)")
-//        })
-//        print("isRegistered is: \(isRegistered)")
-//        return isRegistered
-//    }
-    
     func updateProfile(authData: FAuthData) -> Void {
+        let email = authData.providerData["email"] as? NSString as? String
+        
         let newDonor = [
             "provider": authData.provider,
             "userType": self.userSelection,
-            "email": authData.providerData["email"] as? NSString as? String,
+            "email": email,
             "beaconHistory": "",
             "beaconMinor": ""
         ]
         let newReceiver = [
             "provider": authData.provider,
             "userType": self.userSelection,
-            "email": authData.providerData["email"] as? NSString as? String,
+            "email": email,
             "beaconMinor": ""
         ]
         
@@ -162,10 +151,8 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         print(firebase.ref)
         firebase.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
             (error: NSError!) in
-//            error == nil ? self.loginUser() : self.showErrorMessage("Please enter a valid password and email")
             if(error == nil) {
-                let newUser = true
-                self.loginUser(newUser)
+                self.loginUser(true)
             } else {
                 self.showErrorMessage("Please enter a valid password and email")
             }
