@@ -352,7 +352,7 @@
             </objects>
             <point key="canvasLocation" x="1559" y="1052"/>
         </scene>
-        <!--Beacon Table View Controller-->
+        <!--Beacons in Range-->
         <scene sceneID="w0R-Ro-jye">
             <objects>
                 <tableViewController storyboardIdentifier="BeaconTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qRK-Yo-adH" customClass="BeaconTableViewController" customModule="changr" customModuleProvider="target" sceneMemberID="viewController">
@@ -362,12 +362,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.0" green="0.72984481820000002" blue="0.64854029609999997" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="beaconCell" rowHeight="90" id="gs4-EZ-dFn" customClass="BeaconTableViewCell" customModule="changr" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="414" height="90"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="beaconCell" textLabel="T7H-V5-oSl" detailTextLabel="97m-MF-U2h" rowHeight="90" style="IBUITableViewCellStyleSubtitle" id="gs4-EZ-dFn" customClass="BeaconTableViewCell" customModule="changr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gs4-EZ-dFn" id="xSU-WP-qNi">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T7H-V5-oSl">
+                                            <rect key="frame" x="15" y="28" width="33" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.72941176470588232" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="97m-MF-U2h">
+                                            <rect key="frame" x="15" y="48" width="38" height="13"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="11"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="On4-E1-Kzf" kind="unwind" trigger="accessoryAction" unwindAction="unwindToFormController:" id="IPp-0t-jOC"/>
@@ -380,7 +396,7 @@
                             <outlet property="delegate" destination="qRK-Yo-adH" id="0NO-Dw-kDl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="KaJ-tE-0gq">
+                    <navigationItem key="navigationItem" title="Beacons in Range" id="KaJ-tE-0gq">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="jSW-WU-AN2">
                             <connections>
                                 <action selector="cancel:" destination="qRK-Yo-adH" id="N5t-6y-PBJ"/>
@@ -462,14 +478,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JxZ-7O-ItN">
-                                                    <rect key="frame" x="15" y="22" width="33" height="19.5"/>
+                                                    <rect key="frame" x="15" y="21" width="33" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.72984481820000002" blue="0.64854029609999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kaH-2n-hFf">
-                                                    <rect key="frame" x="15" y="41.5" width="37.5" height="13"/>
+                                                    <rect key="frame" x="15" y="41" width="38" height="13"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Subtitle">
@@ -926,6 +942,6 @@
         <image name="menu" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g48-SA-gyR"/>
+        <segue reference="g7m-cm-cm8"/>
     </inferredMetricsTieBreakers>
 </document>
