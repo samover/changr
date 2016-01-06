@@ -30,12 +30,23 @@ class FirebaseWrapper {
             return userData!
         }
         else if ( isUserLoggedIn() ) {
-            
+            authRef().obs
+            authRef().observeSingleEventOfType(.Value, withBlock: { snapshot in
+                self.userData = snapshot.value as? NSDictionary
+            })
         }
         else {
             userData = nil
-            return userData
+            return userData!
         }
+    }
+    
+    func authRef() -> Firebase {
+        return ref.childByAppendingPath("users/\(ref.authData.uid)")
+    }
+    
+    func childRef(path: String) -> Firebase {
+        return ref.childByAppendingPath(path)
     }
     
     func setPersistenceEnabled() -> Void {

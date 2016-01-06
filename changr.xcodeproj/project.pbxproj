@@ -58,9 +58,6 @@
 		7E7512BA1C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */; };
 		7E7512BB1C31865400ADB14E /* ViewReceiverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */; };
 		7E7512BC1C31865500ADB14E /* ViewReceiverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */; };
-		7E8E64881C3D827200062386 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8E64871C3D827200062386 /* User.swift */; };
-		7E8E64891C3D827200062386 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8E64871C3D827200062386 /* User.swift */; };
-		7E8E648A1C3D827200062386 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8E64871C3D827200062386 /* User.swift */; };
 		7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
 		7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EE1C21B226007DFE64 /* ViewController.swift */; };
 		7E9B84F21C21B226007DFE64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B84F01C21B226007DFE64 /* Main.storyboard */; };
@@ -163,7 +160,6 @@
 		7E47F22A1C39D8C8004E0E8E /* mockFirebaseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mockFirebaseSpec.swift; sourceTree = "<group>"; };
 		7E47F22C1C39D96B004E0E8E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		7E47F22D1C39D96B004E0E8E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		7E8E64871C3D827200062386 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7E9B84E91C21B226007DFE64 /* changr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = changr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E9B84EE1C21B226007DFE64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -389,7 +385,6 @@
 				BB487EE01C233C82003EC7F5 /* Notifications.swift */,
 				51D613131C232C0400105BFC /* MenuItems.swift */,
 				7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */,
-				7E8E64871C3D827200062386 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -625,7 +620,6 @@
 				BBDA6B901C25F9A50057C3EC /* BeaconTableViewCell.swift in Sources */,
 				BCDBDE791C3ADED50056B800 /* ReceiversTableViewCell.swift in Sources */,
 				7E3FF96F1C23716400CEC296 /* MenuViewController.swift in Sources */,
-				7E8E64881C3D827200062386 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,7 +647,6 @@
 				7E7512B91C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */,
 				7E7512BB1C31865400ADB14E /* ViewReceiverProfileController.swift in Sources */,
 				7E47F22B1C39D8C8004E0E8E /* mockFirebaseSpec.swift in Sources */,
-				7E8E64891C3D827200062386 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,7 +664,6 @@
 				7E58DE3A1C246B6E00AFF2D0 /* ViewController.swift in Sources */,
 				7E0A7E0F1C2E936B00C91E44 /* donorAuthentication.swift in Sources */,
 				51D613161C232C0400105BFC /* MenuItems.swift in Sources */,
-				7E8E648A1C3D827200062386 /* User.swift in Sources */,
 				7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E7512BC1C31865500ADB14E /* ViewReceiverProfileController.swift in Sources */,
 				7E328C1A1C3705B200E30D3F /* receiverAuthentication.swift in Sources */,
