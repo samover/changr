@@ -100,27 +100,30 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         return emailTextField.text == "" || passwordTextField.text == ""
     }
     
-    func loginUser() -> Void {
+    func loginUser(newUser: Bool) -> Void {
         firebase.ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: {
             (error, authData) in
             if error != nil {
                 self.showErrorMessage("Username or password incorrect")
             } else {
                 self.resetAuthenticationForm()
-                self.isRegisteredUser(authData) ? self.delegateToCenterContainer() : self.updateProfile(authData)
+                newUser == true ? self.updateProfile(authData) : self.delegateToCenterContainer()
             }
         })
     }
     
-    func isRegisteredUser(authData: FAuthData) -> Bool {
-        var isRegistered = false
-        
-        firebase.ref.observeEventType(.Value, withBlock: {
-            snapshot in
-            isRegistered = snapshot.hasChild("users/\(authData.uid)")
-        })
-        return isRegistered
-    }
+//    func isRegisteredUser(authData: FAuthData) -> Bool {
+//        var isRegistered = false
+//        
+//        print("print: \(authData.uid)")
+//        
+//        firebase.ref.observeSingleEventOfType(.Value, withBlock: {
+//            snapshot in
+//            isRegistered = snapshot.hasChild("users/\(authData.uid)")
+//        })
+//        print("isRegistered is: \(isRegistered)")
+//        return isRegistered
+//    }
     
     func updateProfile(authData: FAuthData) -> Void {
         let newDonor = [
@@ -159,13 +162,19 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         print(firebase.ref)
         firebase.ref.createUser(self.emailTextField.text, password: self.passwordTextField.text) {
             (error: NSError!) in
-            error == nil ? self.loginUser() : self.showErrorMessage("Please enter a valid password and email")
+//            error == nil ? self.loginUser() : self.showErrorMessage("Please enter a valid password and email")
+            if(error == nil) {
+                let newUser = true
+                self.loginUser(newUser)
+            } else {
+                self.showErrorMessage("Please enter a valid password and email")
+            }
         }
     }
 
     // MARK: Actions
     @IBAction func loginButton(sender: AnyObject) {
-        self.isInvalidInput() ? self.showErrorMessage("Please fill in a username and password") : loginUser()
+        self.isInvalidInput() ? self.showErrorMessage("Please fill in a username and password") : loginUser(false)
     }
 
     
