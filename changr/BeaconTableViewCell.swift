@@ -8,6 +8,7 @@
 
 import UIKit
 
-class BeaconTableViewCell: UITableViewCell {
 
+class BeaconTableViewCell: UITableViewCell {
+    
 }

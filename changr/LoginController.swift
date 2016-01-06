@@ -108,7 +108,6 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             } else {
                 self.resetAuthenticationForm()
                 self.isRegisteredUser(authData) ? self.delegateToCenterContainer() : self.updateProfile(authData)
-
             }
         })
     }

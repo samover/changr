@@ -13,6 +13,7 @@
 		7E0A7E0B1C2E931A00C91E44 /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0A1C2E931900C91E44 /* notifications.swift */; };
 		7E0A7E0D1C2E933C00C91E44 /* menuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */; };
 		7E0A7E0F1C2E936B00C91E44 /* donorAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */; };
+		7E21065A1C3D1921004CD8B0 /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2106591C3D1921004CD8B0 /* TimeAgo.swift */; };
 		7E328C181C37033700E30D3F /* authenticationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E328C171C37033700E30D3F /* authenticationButtons.swift */; };
 		7E328C1A1C3705B200E30D3F /* receiverAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E328C191C3705B200E30D3F /* receiverAuthentication.swift */; };
 		7E3929511C353FD000664426 /* MockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3929501C353FD000664426 /* MockFirebase.swift */; };
@@ -94,6 +95,8 @@
 		BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
 		BB487EE61C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
 		BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */; };
+		BB8613A31C3D48C10080CFBF /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2106591C3D1921004CD8B0 /* TimeAgo.swift */; };
+		BB8613A41C3D48C20080CFBF /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2106591C3D1921004CD8B0 /* TimeAgo.swift */; };
 		BBD2A2281C3A9E7B00220FD2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8F1C35F39500C5137A /* CoreMedia.framework */; };
 		BBD2A22A1C3A9E8F00220FD2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD2A2291C3A9E8F00220FD2 /* MessageUI.framework */; };
 		BBD2A22C1C3A9E9800220FD2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD2A22B1C3A9E9800220FD2 /* MobileCoreServices.framework */; };
@@ -103,8 +106,6 @@
 		BBF65F941C35F39500C5137A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8C1C35F39500C5137A /* Accelerate.framework */; };
 		BBF65F951C35F39500C5137A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */; };
 		BBF65F961C35F39500C5137A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8E1C35F39500C5137A /* AVFoundation.framework */; };
-		BCDBDE791C3ADED50056B800 /* ReceiversTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDBDE781C3ADED50056B800 /* ReceiversTableViewCell.swift */; };
-		BCDBDE7A1C3ADED50056B800 /* ReceiversTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDBDE781C3ADED50056B800 /* ReceiversTableViewCell.swift */; };
 		BCEF12E81C3D2CFF000FC204 /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEF12E51C3D2CFF000FC204 /* libCardIO.a */; };
 		BCEF12E91C3D2CFF000FC204 /* libopencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEF12E61C3D2CFF000FC204 /* libopencv_core.a */; };
 		BCEF12EA1C3D2CFF000FC204 /* libopencv_imgproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEF12E71C3D2CFF000FC204 /* libopencv_imgproc.a */; };
@@ -147,6 +148,7 @@
 		7E0A7E0A1C2E931900C91E44 /* notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
 		7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuItems.swift; sourceTree = "<group>"; };
 		7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = donorAuthentication.swift; sourceTree = "<group>"; };
+		7E2106591C3D1921004CD8B0 /* TimeAgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAgo.swift; sourceTree = "<group>"; };
 		7E328C171C37033700E30D3F /* authenticationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = authenticationButtons.swift; sourceTree = "<group>"; };
 		7E328C191C3705B200E30D3F /* receiverAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = receiverAuthentication.swift; sourceTree = "<group>"; };
 		7E3929501C353FD000664426 /* MockFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFirebase.swift; sourceTree = "<group>"; };
@@ -194,7 +196,6 @@
 		BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BBF65F8E1C35F39500C5137A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BBF65F8F1C35F39500C5137A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		BCDBDE781C3ADED50056B800 /* ReceiversTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiversTableViewCell.swift; sourceTree = "<group>"; };
 		BCEF12DD1C3D2CFF000FC204 /* CardIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIO.h; sourceTree = "<group>"; };
 		BCEF12DE1C3D2CFF000FC204 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIOCreditCardInfo.h; sourceTree = "<group>"; };
 		BCEF12DF1C3D2CFF000FC204 /* CardIODetectionMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardIODetectionMode.h; sourceTree = "<group>"; };
@@ -368,7 +369,6 @@
 				BBDA6B971C25FE350057C3EC /* FormController.swift */,
 				BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */,
 				BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */,
-				BCDBDE781C3ADED50056B800 /* ReceiversTableViewCell.swift */,
 				7E3FF96E1C23716400CEC296 /* MenuViewController.swift */,
 				7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */,
 				7E3FF97A1C2381C300CEC296 /* ProfileViewController.swift */,
@@ -385,6 +385,7 @@
 				BB487EE01C233C82003EC7F5 /* Notifications.swift */,
 				51D613131C232C0400105BFC /* MenuItems.swift */,
 				7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */,
+				7E2106591C3D1921004CD8B0 /* TimeAgo.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -512,7 +513,7 @@
 				TargetAttributes = {
 					7E9B84E81C21B226007DFE64 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = JX4R5DM3GR;
+						DevelopmentTeam = 2JV2F8MS42;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -617,8 +618,8 @@
 				BB461EC61C3032860069B45C /* ViewReceiverProfileController.swift in Sources */,
 				7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */,
 				7E3929571C3546A800664426 /* TestingAppDelegate.swift in Sources */,
+				7E21065A1C3D1921004CD8B0 /* TimeAgo.swift in Sources */,
 				BBDA6B901C25F9A50057C3EC /* BeaconTableViewCell.swift in Sources */,
-				BCDBDE791C3ADED50056B800 /* ReceiversTableViewCell.swift in Sources */,
 				7E3FF96F1C23716400CEC296 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,6 +630,7 @@
 			files = (
 				7E3929521C35418600664426 /* MockFirebase.swift in Sources */,
 				7E58DE371C246B6800AFF2D0 /* LoginController.swift in Sources */,
+				BB8613A31C3D48C10080CFBF /* TimeAgo.swift in Sources */,
 				BB487EE21C233C82003EC7F5 /* Notifications.swift in Sources */,
 				7E0A7E0B1C2E931A00C91E44 /* notifications.swift in Sources */,
 				7E0A7E0D1C2E933C00C91E44 /* menuItems.swift in Sources */,
@@ -667,7 +669,7 @@
 				7E3FF9711C23716400CEC296 /* MenuViewController.swift in Sources */,
 				7E7512BC1C31865500ADB14E /* ViewReceiverProfileController.swift in Sources */,
 				7E328C1A1C3705B200E30D3F /* receiverAuthentication.swift in Sources */,
-				BCDBDE7A1C3ADED50056B800 /* ReceiversTableViewCell.swift in Sources */,
+				BB8613A41C3D48C20080CFBF /* TimeAgo.swift in Sources */,
 				7E3929621C36E74500664426 /* FirebaseWrapper.swift in Sources */,
 				7E3FF9791C2377C900CEC296 /* MenuTableViewCell.swift in Sources */,
 				7E328C181C37033700E30D3F /* authenticationButtons.swift in Sources */,
@@ -833,7 +835,7 @@
 					"$(PROJECT_DIR)/changr/PayPalMobile",
 					"$(PROJECT_DIR)/changr/CardIO",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fergus.today;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changrHamzaSheikh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr/changr-Bridging-Header.h";
@@ -863,7 +865,7 @@
 					"$(PROJECT_DIR)/changr/PayPalMobile",
 					"$(PROJECT_DIR)/changr/CardIO",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fergus.today;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changrHamzaSheikh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr/changr-Bridging-Header.h";
@@ -927,7 +929,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITestsss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_TARGET_NAME = changr;
@@ -950,7 +952,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.makers.changrUITestsss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_TARGET_NAME = changr;
