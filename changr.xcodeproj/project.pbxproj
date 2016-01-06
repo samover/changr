@@ -58,6 +58,9 @@
 		7E7512BA1C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */; };
 		7E7512BB1C31865400ADB14E /* ViewReceiverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */; };
 		7E7512BC1C31865500ADB14E /* ViewReceiverProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB461EC51C3032860069B45C /* ViewReceiverProfileController.swift */; };
+		7E8E64901C3D8EA200062386 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8E648F1C3D8EA200062386 /* CurrentUser.swift */; };
+		7E8E64911C3D8EA200062386 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8E648F1C3D8EA200062386 /* CurrentUser.swift */; };
+		7E8E64921C3D8EA200062386 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8E648F1C3D8EA200062386 /* CurrentUser.swift */; };
 		7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
 		7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EE1C21B226007DFE64 /* ViewController.swift */; };
 		7E9B84F21C21B226007DFE64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E9B84F01C21B226007DFE64 /* Main.storyboard */; };
@@ -160,6 +163,7 @@
 		7E47F22A1C39D8C8004E0E8E /* mockFirebaseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mockFirebaseSpec.swift; sourceTree = "<group>"; };
 		7E47F22C1C39D96B004E0E8E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		7E47F22D1C39D96B004E0E8E /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		7E8E648F1C3D8EA200062386 /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		7E9B84E91C21B226007DFE64 /* changr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = changr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E9B84EE1C21B226007DFE64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -385,6 +389,7 @@
 				BB487EE01C233C82003EC7F5 /* Notifications.swift */,
 				51D613131C232C0400105BFC /* MenuItems.swift */,
 				7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */,
+				7E8E648F1C3D8EA200062386 /* CurrentUser.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -606,6 +611,7 @@
 				51D613141C232C0400105BFC /* MenuItems.swift in Sources */,
 				7E9B84EF1C21B226007DFE64 /* ViewController.swift in Sources */,
 				BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */,
+				7E8E64901C3D8EA200062386 /* CurrentUser.swift in Sources */,
 				7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */,
 				BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
 				7E3FF97F1C2381CF00CEC296 /* SettingsViewController.swift in Sources */,
@@ -646,6 +652,7 @@
 				7E3929581C3548B100664426 /* TestingAppDelegate.swift in Sources */,
 				7E7512B91C31864C00ADB14E /* BeaconTableViewCell.swift in Sources */,
 				7E7512BB1C31865400ADB14E /* ViewReceiverProfileController.swift in Sources */,
+				7E8E64911C3D8EA200062386 /* CurrentUser.swift in Sources */,
 				7E47F22B1C39D8C8004E0E8E /* mockFirebaseSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,6 +663,7 @@
 			files = (
 				7E3929531C35418800664426 /* MockFirebase.swift in Sources */,
 				7E58DE381C246B6900AFF2D0 /* LoginController.swift in Sources */,
+				7E8E64921C3D8EA200062386 /* CurrentUser.swift in Sources */,
 				7E7512B81C31864400ADB14E /* FormController.swift in Sources */,
 				BB487EE31C233C82003EC7F5 /* Notifications.swift in Sources */,
 				BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,

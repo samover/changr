@@ -8,10 +8,13 @@
 
 import UIKit
 
+
 class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     // MARK: Properties
     var appDelegate: AppDelegate!
+    var firebase = FirebaseWrapper()
+//    var currentUser: CurrentUser!
     var centerViewController: ViewController!
     var settingsViewController: SettingsViewController!
     var profileViewController: ProfileViewController!
@@ -26,6 +29,9 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        firebase = appDelegate.firebase
+//        currentUser = appDelegate.currentUser
+        
         centerViewController = storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
         settingsViewController = storyboard?.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         profileViewController = storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
@@ -39,14 +45,23 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let icon2 = UIImage(named: "history")!
         let item2 = MenuItems(title: "History", icon: icon2)!
-
-        let icon3 = UIImage(named: "Resources")!
-        let item3 = menuItems(title: "Resources", icon: icon3)
+        
+        let icon3 = UIImage(named: "resources")!
+        let item3 = MenuItems(title: "Resources", icon: icon3)!
         
         let icon4 = UIImage(named: "profile")!
         let item4 = MenuItems(title: "Profile", icon: icon4)!
         
-        menuItems += [item0, item1, item2, item3]
+//        while(currentUser.fetched == false) {
+//            print("Waiting for data")
+//        }
+//        
+//        if(currentUser.type() == "Receiver") {
+            menuItems = [item0, item1, item2, item3, item4]
+//        } else {
+//            menuItems = [item0, item1, item2, item3]
+//        }
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -15,6 +15,7 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var firebase = FirebaseWrapper()
+//    var currentUser = CurrentUser()
     var window: UIWindow?
     var centerContainer: DrawerController?
     var rootController: UIViewController?
@@ -159,6 +160,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     func updateReceiverHistory(uid: String!) {
         print("You are inside updateReceiverHistory")
+
         let historyRef = firebase.ref.childByAppendingPath("users/\(firebase.ref.authData.uid)/beaconHistory")
         print(historyRef)
         let historyItem = ["uid": uid as String!, "time": NSDate().description]

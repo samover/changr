@@ -11,7 +11,6 @@ import Firebase
 
 class FirebaseWrapper {
     var ref: Firebase!
-    var userData: NSDictionary?
     
     init() {
         self.ref = NSProcessInfo.processInfo().arguments.contains("TESTING") ? MockFirebase() : Firebase(url:"https://changr.firebaseio.com")
@@ -24,23 +23,7 @@ class FirebaseWrapper {
             return false
         }
     }
-    
-    func fetchData() -> NSDictionary {
-        if(isUserLoggedIn() && userData != nil) {
-            return userData!
-        }
-        else if ( isUserLoggedIn() ) {
-            authRef().obs
-            authRef().observeSingleEventOfType(.Value, withBlock: { snapshot in
-                self.userData = snapshot.value as? NSDictionary
-            })
-        }
-        else {
-            userData = nil
-            return userData!
-        }
-    }
-    
+        
     func authRef() -> Firebase {
         return ref.childByAppendingPath("users/\(ref.authData.uid)")
     }
