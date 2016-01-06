@@ -102,14 +102,17 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
         let dict = beaconHistoryList[indexPath.row]
-        
         let firebaseReceiver = Firebase(url: "https://changr.firebaseio.com/users/\(dict["uid"]!)")
-        
+        let dateFormatter = NSDateFormatter()
+        let dateStrn = dict["time"] as! String
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss x"
+        let date = dateFormatter.dateFromString(dateStrn)
+
         firebaseReceiver.observeSingleEventOfType(.Value, withBlock: { snapshot in
             let value = snapshot.value as! NSDictionary
-            
+
             cell.textLabel?.text = value["fullName"] as? String
-            cell.detailTextLabel?.text = dict["time"] as? String
+            cell.detailTextLabel?.text = timeAgoSince(date!)
             
             let base64String = value["profileImage"] as? String
             self.populateImage(cell, imageString: base64String!)

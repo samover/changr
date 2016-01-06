@@ -13,6 +13,7 @@
 		7E0A7E0B1C2E931A00C91E44 /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0A1C2E931900C91E44 /* notifications.swift */; };
 		7E0A7E0D1C2E933C00C91E44 /* menuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */; };
 		7E0A7E0F1C2E936B00C91E44 /* donorAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */; };
+		7E21065A1C3D1921004CD8B0 /* TimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2106591C3D1921004CD8B0 /* TimeAgo.swift */; };
 		7E328C181C37033700E30D3F /* authenticationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E328C171C37033700E30D3F /* authenticationButtons.swift */; };
 		7E328C1A1C3705B200E30D3F /* receiverAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E328C191C3705B200E30D3F /* receiverAuthentication.swift */; };
 		7E3929511C353FD000664426 /* MockFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3929501C353FD000664426 /* MockFirebase.swift */; };
@@ -147,6 +148,7 @@
 		7E0A7E0A1C2E931900C91E44 /* notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
 		7E0A7E0C1C2E933C00C91E44 /* menuItems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = menuItems.swift; sourceTree = "<group>"; };
 		7E0A7E0E1C2E936B00C91E44 /* donorAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = donorAuthentication.swift; sourceTree = "<group>"; };
+		7E2106591C3D1921004CD8B0 /* TimeAgo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAgo.swift; sourceTree = "<group>"; };
 		7E328C171C37033700E30D3F /* authenticationButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = authenticationButtons.swift; sourceTree = "<group>"; };
 		7E328C191C3705B200E30D3F /* receiverAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = receiverAuthentication.swift; sourceTree = "<group>"; };
 		7E3929501C353FD000664426 /* MockFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockFirebase.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				BB487EE01C233C82003EC7F5 /* Notifications.swift */,
 				51D613131C232C0400105BFC /* MenuItems.swift */,
 				7E39295F1C36E20C00664426 /* FirebaseWrapper.swift */,
+				7E2106591C3D1921004CD8B0 /* TimeAgo.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -512,7 +515,7 @@
 				TargetAttributes = {
 					7E9B84E81C21B226007DFE64 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 2JV2F8MS42;
+						DevelopmentTeam = 44ZWH2XGWA;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -617,6 +620,7 @@
 				BB461EC61C3032860069B45C /* ViewReceiverProfileController.swift in Sources */,
 				7E9B84ED1C21B226007DFE64 /* AppDelegate.swift in Sources */,
 				7E3929571C3546A800664426 /* TestingAppDelegate.swift in Sources */,
+				7E21065A1C3D1921004CD8B0 /* TimeAgo.swift in Sources */,
 				BBDA6B901C25F9A50057C3EC /* BeaconTableViewCell.swift in Sources */,
 				BCDBDE791C3ADED50056B800 /* ReceiversTableViewCell.swift in Sources */,
 				7E3FF96F1C23716400CEC296 /* MenuViewController.swift in Sources */,
@@ -833,7 +837,7 @@
 					"$(PROJECT_DIR)/changr/PayPalMobile",
 					"$(PROJECT_DIR)/changr/CardIO",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changrHamza;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr/changr-Bridging-Header.h";
@@ -863,7 +867,7 @@
 					"$(PROJECT_DIR)/changr/PayPalMobile",
 					"$(PROJECT_DIR)/changr/CardIO",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changrHamza;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr/changr-Bridging-Header.h";
