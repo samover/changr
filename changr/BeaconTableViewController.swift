@@ -63,13 +63,15 @@ class BeaconTableViewController : UITableViewController {
             proximityString = "Unknown"
         }
 
-        cell.textLabel?.text = "Major: \(majorString) Minor: \(minorString) Proximity: \(proximityString) "
+        cell.textLabel?.text =  "Proximity: \(proximityString)"
+        cell.detailTextLabel?.text = "Major: \(majorString) | Minor: \(minorString)"
 
         return cell
     }
-
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Beacons in range"
+    
+    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        let numberOfBeacons = beacons.count
+        return "Total found: \(numberOfBeacons)"
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
