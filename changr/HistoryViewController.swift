@@ -18,24 +18,44 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var historySegmentedControl: UISegmentedControl!
     @IBOutlet weak var historyTableView: UITableView!
-    
-    let donationsList:[String] = ["Donation 1", "Donation 2"]
+   
+    let donationsList:[String] = ["Donation 1", "Donation 2", "Donation 3"]
     
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        loadDataFromFirebase()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         beaconHistoryList = [NSDictionary]()
-        
         loadDataFromFirebase()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    // MARK: Load data from Firebase
+    
+    func loadDataFromFirebase() {
+        
+        let currentDonorBeaconHistoryRef = firebase.ref.childByAppendingPath("users/\(firebase.ref.authData.uid)/beaconHistory")
+        
+        currentDonorBeaconHistoryRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            var receiversList = [NSDictionary]()
+            
+            for item in snapshot.children {
+                let receiver = item as! FDataSnapshot
+                let receiversInfo = receiver.value as! NSDictionary
+                receiversList.append(receiversInfo)
+            }
+            
+            self.beaconHistoryList = receiversList
+            self.historyTableView.reloadData()
+        })
     }
     
     // MARK: - Table view data source
@@ -57,69 +77,54 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         return returnValue
     }
     
+    // MARK: Create the Cell
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let historyCell = tableView.dequeueReusableCellWithIdentifier("historyCell", forIndexPath: indexPath)
+        
+        let historyCell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("historyCell", forIndexPath: indexPath)
         
         switch(historySegmentedControl.selectedSegmentIndex) {
             case 0: // Donations
-                historyCell.textLabel!.text = donationsList[indexPath.row]
+                historyCell!.textLabel!.text = donationsList[indexPath.row]
+                historyCell!.detailTextLabel?.text = "Donated on 01/01/2016"
                 break
             case 1: // Receivers
-                configureCell(historyCell, indexPath: indexPath)
+                configureCell(historyCell!, indexPath: indexPath)
                 break
             default:
                 break
         }
         
-        return historyCell
+        return historyCell!
     }
     
     // MARK: Configure Cell
     
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
         let dict = beaconHistoryList[indexPath.row]
-        let firebaseReceiver = Firebase(url:"https://changr.firebaseio.com/users/\(dict["uid"])")
         
-        cell.textLabel?.text = firebaseReceiver.ref.valueForKey("fullName") as? String
-        cell.detailTextLabel?.text = dict["time"] as? String
+        let firebaseReceiver = Firebase(url: "https://changr.firebaseio.com/users/\(dict["uid"]!)")
         
-        let base64String = firebaseReceiver.ref.valueForKey("profileImage") as? String
-        populateImage(cell, imageString: base64String!)
+        firebaseReceiver.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            let value = snapshot.value as! NSDictionary
+            
+            cell.textLabel?.text = value["fullName"] as? String
+            cell.detailTextLabel?.text = dict["time"] as? String
+            
+            let base64String = value["profileImage"] as? String
+            self.populateImage(cell, imageString: base64String!)
+        })
     }
     
     // MARK: Populate Image
     
     func populateImage(cell:UITableViewCell, imageString: String) {
-
         let decodedData = NSData(base64EncodedString: imageString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-        
         let decodedImage = UIImage(data: decodedData!)
-        
         cell.imageView!.image = decodedImage
-        
-    }
-    
-    // MARK: Load data from Firebase
-    
-    func loadDataFromFirebase() {
-        
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
-        let currentDonorBeaconHistoryRef = firebase.ref.childByAppendingPath("\(firebase.ref.authData)/beaconHistory")
-        
-        currentDonorBeaconHistoryRef.observeEventType(.Value, withBlock: { snapshot in
-            var receiversList = [NSDictionary]()
-            
-            for item in snapshot.children {
-                let receiver = item as! FDataSnapshot
-                let receiversInfo = receiver.value as! NSDictionary
-                receiversList.append(receiversInfo)
-            }
-            
-            self.beaconHistoryList = receiversList
-            self.historyTableView.reloadData()
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        })
+        cell.imageView!.layer.cornerRadius = 28
+        cell.imageView!.layer.masksToBounds = true
+        cell.imageView!.clipsToBounds = true
     }
     
     // MARK: Actions
@@ -141,13 +146,18 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     // MARK: Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
         if segue.identifier == "showProfileSelected" {
             if let destination = segue.destinationViewController as? ViewReceiverProfileController {
-                if let _ = historyTableView.indexPathForSelectedRow?.row {
-                    // Find Receiver from database by their name and retrieve their 'beaconMinor' value
-                    let beaconMinor = "49281"
+                
+                if let cellIndex = historyTableView.indexPathForSelectedRow?.row {
+                    let selectedReceiverUID = beaconHistoryList[cellIndex]["uid"]!
+                    let selectedReceiverRef = Firebase(url: "https://changr.firebaseio.com/users/\(selectedReceiverUID)")
                     
-                    destination.beaconData = "\(beaconMinor)"
+                        selectedReceiverRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+                            let value = snapshot.value as! NSDictionary
+                            destination.beaconData = value["beaconMinor"] as? String
+                        })
                 }
             }
         }
