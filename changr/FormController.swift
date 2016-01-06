@@ -28,6 +28,7 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     var gender = String()
     var data: NSData = NSData()
     var base64String: NSString!
+    var appDelegate: AppDelegate!
    
     override func viewWillAppear(animated: Bool) {
         beaconNameLabel.text = "Beacon Selected: \(beaconName)"
@@ -40,6 +41,7 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Firebase(url: "https://changr.firebaseio.com/")
+        appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate!
         
         nameTextField.delegate = self
         dayField.delegate = self
@@ -119,6 +121,8 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         currentUserRef.updateChildValues(updateUser)
         
         clearUserDefaults()
+        self.appDelegate.window?.rootViewController = self.appDelegate.centerContainer
+        self.appDelegate.window!.makeKeyAndVisible()
     }
     
     func setGender() {
@@ -156,16 +160,4 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         imagePickerController.delegate = self
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
-
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
-
 }
