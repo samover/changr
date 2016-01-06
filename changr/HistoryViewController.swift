@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import DateTools
 
 class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -107,7 +108,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         
         firebaseReceiver.observeSingleEventOfType(.Value, withBlock: { snapshot in
             let value = snapshot.value as! NSDictionary
-            
+                       
             cell.textLabel?.text = value["fullName"] as? String
             cell.detailTextLabel?.text = dict["time"] as? String
             
