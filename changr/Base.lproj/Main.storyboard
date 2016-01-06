@@ -866,7 +866,6 @@
                         <segue destination="Ak6-fa-yPu" kind="show" id="Jho-lG-fv5"/>
                         <segue destination="Z1l-3X-KMj" kind="show" id="iKV-Mm-dnE"/>
                         <segue destination="yB3-26-0Qn" kind="show" id="Y2S-XN-4os"/>
-                        <segue destination="qGK-YU-L9E" kind="show" id="4b5-LN-QAK"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4fA-2L-nGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -898,7 +897,6 @@
         <image name="menu" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="awz-qm-GhF"/>
         <segue reference="YDX-8L-ffu"/>
     </inferredMetricsTieBreakers>
 </document>
