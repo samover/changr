@@ -111,7 +111,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
             let value = snapshot.value as! NSDictionary
 
             cell.textLabel?.text = value["fullName"] as? String
-            cell.detailTextLabel?.text = "Date Stamp"
+            cell.detailTextLabel?.text = dict["time"] as! String
 //            cell.detailTextLabel?.text = timeAgoSince(date!)
             
             let base64String = value["profileImage"] as? String
@@ -131,7 +131,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.imageView!.image = newImage
     }
     
-    // Making the Image circular
+    // Resize the Image
     
     func resizeImage(image:UIImage, toTheSize size:CGSize)->UIImage{
         

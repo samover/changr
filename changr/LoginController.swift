@@ -107,27 +107,19 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
                 self.showErrorMessage("Username or password incorrect")
             } else {
                 self.resetAuthenticationForm()
-//                self.delegateToCenterContainer()
-                self.checkUserStateAndRedirect(authData)
-//                self.isRegisteredUser(authData) ? self.delegateToCenterContainer() : self.updateProfile(authData)
-
+                self.isRegisteredUser(authData) ? self.delegateToCenterContainer() : self.updateProfile(authData)
             }
         })
     }
     
-    func checkUserStateAndRedirect(authData: FAuthData) -> Void {
-//        var isRegistered = false
+    func isRegisteredUser(authData: FAuthData) -> Bool {
+        var isRegistered = false
         
         firebase.ref.observeEventType(.Value, withBlock: {
             snapshot in
-            if snapshot.hasChild("users/\(authData.uid)") {
-                self.delegateToCenterContainer()
-            }
-            else {
-                self.updateProfile(authData)
-            }
+            isRegistered = snapshot.hasChild("users/\(authData.uid)")
         })
-//        return isRegistered
+        return isRegistered
     }
     
     func updateProfile(authData: FAuthData) -> Void {
@@ -145,14 +137,11 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             "beaconMinor": ""
         ]
         
-        print(self.userSelection)
-        
         if self.userSelection == "Donor" {
             firebase.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newDonor)
             self.delegateToCenterContainer()
         }  else {
             firebase.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newReceiver)
-            print("perform segue")
             self.segueToCompleteProfile()
         }
     }
