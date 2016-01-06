@@ -104,18 +104,19 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             break;
         
         case 2:
-            profileNavController = UINavigationController(rootViewController: profileViewController)
-            appDelegate.centerContainer!.centerViewController = profileNavController
-            break;
-
-        case 3:
             historyNavController = UINavigationController(rootViewController: historyViewController)
             appDelegate.centerContainer!.centerViewController = historyNavController
             break;
             
+        case 3:
+            profileNavController = UINavigationController(rootViewController: profileViewController)
+            appDelegate.centerContainer!.centerViewController = profileNavController
+            break;
+
+            
         case 4:
-            historyNavController = UINavigationController(rootViewController: historyViewController)
-            appDelegate.centerContainer!.centerViewController = historyNavController
+            profileNavController = UINavigationController(rootViewController: profileViewController)
+            appDelegate.centerContainer!.centerViewController = profileNavController
 
         default:
             print("\(menuItems[indexPath.row]) is selected");
