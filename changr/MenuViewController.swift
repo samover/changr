@@ -14,7 +14,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: Properties
     var appDelegate: AppDelegate!
     var firebase = FirebaseWrapper()
-//    var currentUser: CurrentUser!
+    var userData: NSDictionary!
     var centerViewController: ViewController!
     var settingsViewController: SettingsViewController!
     var profileViewController: ProfileViewController!
@@ -30,6 +30,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         firebase = appDelegate.firebase
+        userData = firebase.userData
+        
 //        currentUser = appDelegate.currentUser
         
         centerViewController = storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
@@ -52,16 +54,19 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let icon4 = UIImage(named: "profile")!
         let item4 = MenuItems(title: "Profile", icon: icon4)!
         
-//        while(currentUser.fetched == false) {
-//            print("Waiting for data")
-//        }
-//        
-//        if(currentUser.type() == "Receiver") {
-            menuItems = [item0, item1, item2, item3, item4]
-//        } else {
-//            menuItems = [item0, item1, item2, item3]
-//        }
+        if(userData!["userType"] as? String == "Receiver") {
+            print("You are a receiver")
+            self.menuItems = [item0, item1, item2, item3, item4]
+        } else {
+            print("You are a donor")
+            self.menuItems = [item0, item1, item2, item3]
+        }
+
         
+        
+//        while(menuItems.count < 1) {
+//            print("Dont'do shit")
+//        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,6 +112,10 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             historyNavController = UINavigationController(rootViewController: historyViewController)
             appDelegate.centerContainer!.centerViewController = historyNavController
             break;
+            
+        case 4:
+            historyNavController = UINavigationController(rootViewController: historyViewController)
+            appDelegate.centerContainer!.centerViewController = historyNavController
 
         default:
             print("\(menuItems[indexPath.row]) is selected");

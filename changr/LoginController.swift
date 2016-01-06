@@ -124,17 +124,19 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func updateProfile(authData: FAuthData) -> Void {
+        let email = authData.providerData["email"] as? NSString as? String
+        
         let newDonor = [
             "provider": authData.provider,
             "userType": self.userSelection,
-            "email": authData.providerData["email"] as? NSString as? String,
+            "email": email,
             "beaconHistory": "",
             "beaconMinor": ""
         ]
         let newReceiver = [
             "provider": authData.provider,
             "userType": self.userSelection,
-            "email": authData.providerData["email"] as? NSString as? String,
+            "email": email,
             "beaconMinor": ""
         ]
         

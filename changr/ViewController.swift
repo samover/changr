@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     // MARK: Properties
     var appDelegate: AppDelegate!
     let firebase = FirebaseWrapper()
+    let defaults = NSUserDefaults.standardUserDefaults()
+
     
     // MARK: Outlets
     @IBOutlet weak var currentUserLabel: UILabel!
@@ -33,6 +35,8 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func menuButton(sender: AnyObject) {
+        let userData = defaults.objectForKey("userData")
+        print("Data: \(userData)")
         appDelegate.centerContainer!.toggleDrawerSide(.Left, animated: true, completion: nil)
     }
     
