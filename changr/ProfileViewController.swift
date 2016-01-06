@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var emailDisplay: UILabel!
     @IBOutlet weak var dateOfBirthDisplay: UILabel!
     @IBOutlet weak var genderDisplay: UILabel!
+    @IBOutlet weak var accountBalanceDisplay: UILabel!
 
 
     
@@ -45,6 +46,7 @@ class ProfileViewController: UIViewController {
             self.dateOfBirthDisplay.text = "DOB: \(currentUser["dateOfBirth"] as! String)"
             self.genderDisplay.text = "GENDER: \(currentUser["gender"] as! String)"
         })
+        self.accountBalanceDisplay.text = "ACC. BALANCE: £5"
     }
 
     // This decodes the base64string into an UIImage:
