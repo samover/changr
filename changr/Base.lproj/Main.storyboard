@@ -424,7 +424,21 @@
                     <view key="view" contentMode="scaleToFill" id="dRN-O0-s9X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenIcon" translatesAutoresizingMaskIntoConstraints="NO" id="N5i-Ko-4b1">
+                                <rect key="frame" x="67" y="72" width="260" height="171"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="171" id="FPU-c7-Rsf"/>
+                                    <constraint firstAttribute="width" constant="260" id="fB6-CK-qCX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.72941176470000002" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="N5i-Ko-4b1" firstAttribute="leading" secondItem="dRN-O0-s9X" secondAttribute="leadingMargin" constant="47" id="0SC-Ff-bre"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="N5i-Ko-4b1" secondAttribute="trailing" constant="47" id="KcV-q6-1yL"/>
+                            <constraint firstItem="N5i-Ko-4b1" firstAttribute="top" secondItem="Gey-aE-mjc" secondAttribute="bottom" constant="8" id="P0Q-K1-zzx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="rkt-bZ-KKM">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="UWb-uE-Dew">
@@ -939,6 +953,7 @@
     <resources>
         <image name="defaultImage" width="540" height="540"/>
         <image name="donateButton" width="150" height="50"/>
+        <image name="launchScreenIcon" width="500" height="500"/>
         <image name="menu" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -28,12 +28,14 @@ class ViewController: UIViewController {
         // Welcome Label:
         welcomeLabel = UILabel(frame: CGRectMake(0, 0, 350, 350))
         welcomeLabel.text = "Welcome to Changr!"
-        welcomeLabel.font = UIFont.boldSystemFontOfSize(28)
+        welcomeLabel.font = UIFont(name: "HelveticaNeue", size: 30)
+        welcomeLabel.font = UIFont.boldSystemFontOfSize(30)
         welcomeLabel.textColor = UIColor.whiteColor()
         welcomeLabel.center = CGPointMake(100, 2)
         welcomeLabel.textAlignment = NSTextAlignment.Center
         view.addSubview(welcomeLabel)
         
+        // Welcome Label Animation:
         UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.welcomeLabel.center = CGPointMake(160, 270)
             }, completion: nil)
@@ -52,6 +54,7 @@ class ViewController: UIViewController {
         
         descriptionLabel.alpha = 0
         
+        // Description Label Animation:
         UIView.animateWithDuration(2.0, delay: 0.5, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: {
             self.descriptionLabel.center = CGPointMake(160, 425)
             self.descriptionLabel.alpha = 1
@@ -61,7 +64,6 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
     
     // MARK: Actions
     @IBAction func menuButton(sender: AnyObject) {
