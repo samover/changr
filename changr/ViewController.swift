@@ -4,7 +4,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class ViewController: UIViewController {
 
     // MARK: Properties
 
