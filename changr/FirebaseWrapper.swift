@@ -16,7 +16,7 @@ class FirebaseWrapper {
     let defaults = NSUserDefaults.standardUserDefaults()
     
     init() {
-        self.ref = NSProcessInfo.processInfo().arguments.contains("TESTING") ? MockFirebase() : Firebase(url:"https://changrproduction.firebaseio.com/")
+        self.ref = NSProcessInfo.processInfo().arguments.contains("TESTING") ? MockFirebase() : Firebase(url:"https://changr.firebaseio.com/")
         self.fetched = false
     }
     
