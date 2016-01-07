@@ -206,7 +206,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="284" placeholderIntrinsicHeight="20" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Cw-vm-EoK">
                                 <rect key="frame" x="20" y="284" width="374" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.61463017170000001" blue="0.54655703030000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.078939937055110931" green="0.61445581912994385" blue="0.54657310247421265" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="ENI-Oc-10c"/>
                                     <constraint firstAttribute="width" constant="374" id="S7c-2N-W0a"/>
@@ -442,7 +442,21 @@
                     <view key="view" contentMode="scaleToFill" id="dRN-O0-s9X">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenIcon" translatesAutoresizingMaskIntoConstraints="NO" id="N5i-Ko-4b1">
+                                <rect key="frame" x="67" y="72" width="260" height="171"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="171" id="FPU-c7-Rsf"/>
+                                    <constraint firstAttribute="width" constant="260" id="fB6-CK-qCX"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.72941176470000002" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="N5i-Ko-4b1" firstAttribute="leading" secondItem="dRN-O0-s9X" secondAttribute="leadingMargin" constant="47" id="0SC-Ff-bre"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="N5i-Ko-4b1" secondAttribute="trailing" constant="47" id="KcV-q6-1yL"/>
+                            <constraint firstItem="N5i-Ko-4b1" firstAttribute="top" secondItem="Gey-aE-mjc" secondAttribute="bottom" constant="8" id="P0Q-K1-zzx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="rkt-bZ-KKM">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="UWb-uE-Dew">
@@ -492,18 +506,18 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ykZ-K0-gAS" id="dgz-8S-rOO">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="75.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JxZ-7O-ItN">
-                                                    <rect key="frame" x="15" y="22" width="33" height="19.5"/>
+                                                    <rect key="frame" x="15" y="21" width="33" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.72984481820000002" blue="0.64854029609999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kaH-2n-hFf">
-                                                    <rect key="frame" x="15" y="41.5" width="37.5" height="13"/>
+                                                    <rect key="frame" x="15" y="41" width="38" height="13"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Subtitle">
@@ -957,6 +971,7 @@
     <resources>
         <image name="defaultImage" width="540" height="540"/>
         <image name="donateButton" width="150" height="50"/>
+        <image name="launchScreenIcon" width="500" height="500"/>
         <image name="menu" width="12" height="12"/>
     </resources>
     <inferredMetricsTieBreakers>
