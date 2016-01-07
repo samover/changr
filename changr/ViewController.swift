@@ -1,30 +1,29 @@
 
 // NOTE TO SELF: Do not use appdelegate for firebase operation
-// rather have a model that can be mocked 
+// rather have a model that can be mocked
 
 import UIKit
 
-class ViewController: UIViewController {
-    
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+
     // MARK: Properties
-    
+
     var appDelegate: AppDelegate!
     let firebase = FirebaseWrapper()
     var welcomeLabel: UILabel!
     var descriptionLabel: UILabel!
-    
+
     // MARK: UIViewController Lifecycle
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
         displayWelcomeLabel()
         displayDescriptionLabel()
     }
-    
+
     func displayWelcomeLabel() {
-        
+
         welcomeLabel = UILabel(frame: CGRectMake(0, 0, 350, 350))
         welcomeLabel.text = "Welcome to Changr!"
         welcomeLabel.font = UIFont(name: "HelveticaNeue", size: 30)
@@ -33,15 +32,15 @@ class ViewController: UIViewController {
         welcomeLabel.center = CGPointMake(200, 90)
         welcomeLabel.textAlignment = NSTextAlignment.Center
         view.addSubview(welcomeLabel)
-        
+
         // Welcome Label Animation:
         UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
             self.welcomeLabel.center = CGPointMake(160, 270)
             }, completion: nil)
     }
-    
+
     func displayDescriptionLabel() {
-        
+
         descriptionLabel = UILabel(frame: CGRectMake(0, 0, 255, 230))
         descriptionLabel.text = "...This app was built by a team of Makers Academy students. It is to help people who are homeless in receiving donations from the general public. The app works with Estimote beacons so that donors can receive a custom notification on their phone when walking past a registered homeless person..."
         descriptionLabel.font = UIFont.italicSystemFontOfSize(17)
@@ -52,9 +51,9 @@ class ViewController: UIViewController {
         descriptionLabel.layer.masksToBounds = true
         descriptionLabel.layer.cornerRadius = 8.0
         view.addSubview(descriptionLabel)
-        
+
         descriptionLabel.alpha = 0
-        
+
         // Description Label Animation:
         UIView.animateWithDuration(2.0, delay: 0.5, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: {
             self.descriptionLabel.center = CGPointMake(160, 425)
@@ -70,11 +69,10 @@ class ViewController: UIViewController {
     @IBAction func menuButton(sender: AnyObject) {
         appDelegate.centerContainer!.toggleDrawerSide(.Left, animated: true, completion: nil)
     }
-    
+
     @IBAction func logoutButton(sender: AnyObject) {
         firebase.ref.unauth()
         appDelegate.window?.rootViewController = appDelegate.rootController
         appDelegate.window!.makeKeyAndVisible()
     }
 }
-
