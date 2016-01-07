@@ -185,10 +185,11 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
             if let destination = segue.destinationViewController as? ViewReceiverProfileController {
                 
                 if let cellIndex = historyTableView.indexPathForSelectedRow?.row {
-                    let selectedReceiverUID = beaconHistoryList[cellIndex]["uid"]!
-                    let selectedReceiverRef = Firebase(url: "https://changr.firebaseio.com/users/\(selectedReceiverUID)")
                     
-                        selectedReceiverRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+                    let selectedReceiverUID = beaconHistoryList[cellIndex]["uid"]!
+                    let path = "users/\(selectedReceiverUID)"
+                    
+                        firebase.childRef(path).observeSingleEventOfType(.Value, withBlock: { snapshot in
                             let value = snapshot.value as! NSDictionary
                             destination.beaconData = value["beaconMinor"] as? String
                         })
