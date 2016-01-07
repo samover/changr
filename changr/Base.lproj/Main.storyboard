@@ -490,10 +490,12 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sQi-XG-MHu">
                                 <rect key="frame" x="20" y="91" width="374" height="29"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <segments>
                                     <segment title="Donations"/>
                                     <segment title="Receivers"/>
                                 </segments>
+                                <color key="tintColor" red="0.0" green="0.72941176470000002" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="segmentedControlActionChanged:" destination="yB3-26-0Qn" eventType="valueChanged" id="T6Z-Ta-7w5"/>
                                 </connections>
@@ -774,7 +776,7 @@
                                     <constraint firstItem="klL-Su-o4e" firstAttribute="trailing" secondItem="bGT-Re-6y5" secondAttribute="trailingMargin" id="nyJ-7y-wEo"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="changr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLs-Hw-rbI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Changr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLs-Hw-rbI">
                                 <rect key="frame" x="20" y="101" width="374" height="77"/>
                                 <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="64"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
