@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class FormController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -22,14 +21,14 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet var beaconNameLabel: UILabel!
     @IBOutlet weak var completeProfileButton: UIButton!
     
-    var ref: Firebase!
     let defaults = NSUserDefaults.standardUserDefaults()
     var beaconName = String()
     var gender = String()
     var data: NSData = NSData()
     var base64String: NSString!
     var appDelegate: AppDelegate!
-   
+    var firebase: FirebaseWrapper!
+
     override func viewWillAppear(animated: Bool) {
         beaconNameLabel.text = "Beacon Selected: \(beaconName)"
         nameTextField.text = defaults.stringForKey("fullName")
@@ -40,8 +39,8 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Firebase(url: "https://changr.firebaseio.com/")
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate!
+        firebase = appDelegate.firebase
         
         nameTextField.delegate = self
         dayField.delegate = self
@@ -116,10 +115,7 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
             "profileImage": self.base64String
         ]
         
-        let usersRef = ref.childByAppendingPath("users")
-        let currentUserRef = usersRef.childByAppendingPath("\(ref.authData.uid)")
-        currentUserRef.updateChildValues(updateUser)
-        
+        firebase.authRef().updateChildValues(updateUser)
         clearUserDefaults()
         self.appDelegate.window?.rootViewController = self.appDelegate.centerContainer
         self.appDelegate.window!.makeKeyAndVisible()

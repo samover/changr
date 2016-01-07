@@ -30,6 +30,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         passwordTextField.delegate = self
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate!
         firebase = appDelegate.firebase
+        
         self.userType.dataSource = self
         self.userType.delegate = self
         self.errorMessage.hidden = true
