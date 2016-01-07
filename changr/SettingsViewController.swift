@@ -12,12 +12,13 @@ class SettingsViewController: UIViewController {
     
     // MARK: Properties
     var appDelegate: AppDelegate!
-    let firebase = FirebaseWrapper()
+    var firebase: FirebaseWrapper!
     
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        firebase = appDelegate.firebase
     }
     
     override func didReceiveMemoryWarning() {

@@ -12,11 +12,12 @@ import Firebase
 class HistoryViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: Properties
-    var firebase = FirebaseWrapper()
+    var firebase: FirebaseWrapper!
     var appDelegate: AppDelegate!
     var beaconHistoryList = [NSDictionary]()
     var donationsList = [["amount" : "Donation Amount: £2.00", "date" : "Paid On: 01/01/2016"], ["amount" : "Donation Amount: £4.50", "date" : "Paid On: 03/01/2016"], ["amount" : "Donation Amount: £6.50", "date" : "Paid On: 16/12/2015"], ["amount" : "Donation Amount: £10.00", "date" : "Paid On: 29/12/2015"], ["amount" : "Donation Amount: £3.50", "date" : "Paid On: 03/01/2016"], ["amount" : "Donation Amount: £7.00", "date" : "Paid On: 11/12/2015"], ["amount" : "Donation Amount: £2.20", "date" : "Paid On: 29/12/2015"], ["amount" : "Donation Amount: £9.50", "date" : "Paid On: 10/12/2015"], ["amount" : "Donation Amount: £5.00", "date" : "Paid On: 20/12/2016"], ["amount" : "Donation Amount: £1.50", "date" : "Paid On: 31/12/2015"]]
     
+    // MARK: Outlets
     @IBOutlet weak var historySegmentedControl: UISegmentedControl!
     @IBOutlet weak var historyTableView: UITableView!
 
@@ -24,7 +25,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//        loadDataFromFirebase()
+        firebase = appDelegate.firebase
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -41,9 +42,9 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func loadDataFromFirebase() {
         
-        let currentDonorBeaconHistoryRef = firebase.ref.childByAppendingPath("users/\(firebase.ref.authData.uid)/beaconHistory")
+        let path = "users/\(firebase.ref.authData.uid)/beaconHistory"
         
-        currentDonorBeaconHistoryRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+        firebase.childRef(path).observeSingleEventOfType(.Value, withBlock: { snapshot in
             var receiversList = [NSDictionary]()
             
             for item in snapshot.children {
@@ -101,20 +102,15 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func configureCell(cell: UITableViewCell, indexPath: NSIndexPath) {
         let dict = beaconHistoryList[indexPath.row]
-        let firebaseReceiver = Firebase(url: "https://changr.firebaseio.com/users/\(dict["uid"]!)")
-        let dateFormatter = NSDateFormatter()
-        let dateStrn = dict["time"] as! String
-        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss x"
-        let date = dateFormatter.dateFromString(dateStrn)
+        let path = "users/\(dict["uid"]!)"
 
-        firebaseReceiver.observeSingleEventOfType(.Value, withBlock: { snapshot in
+        firebase.childRef(path).observeSingleEventOfType(.Value, withBlock: { snapshot in
             let value = snapshot.value as! NSDictionary
+            let base64String = value["profileImage"] as? String
 
             cell.textLabel?.text = value["fullName"] as? String
-            cell.detailTextLabel?.text = dict["time"] as! String
-//            cell.detailTextLabel?.text = timeAgoSince(date!)
+            cell.detailTextLabel?.text = self.timeAgoInWords(dict["time"] as! String)
             
-            let base64String = value["profileImage"] as? String
             self.populateImage(cell, imageString: base64String!)
         })
     }
@@ -147,6 +143,15 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext();
         return newImage
+    }
+    
+    // MARK: Format DATE 
+    func timeAgoInWords(dateString: String) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss x"
+        let date = dateFormatter.dateFromString(dateString)
+
+        return timeAgoSince(date!)
     }
     
     // MARK: Actions

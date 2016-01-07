@@ -13,7 +13,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     // MARK: Properties
     var appDelegate: AppDelegate!
-    var firebase = FirebaseWrapper()
+    var firebase: FirebaseWrapper!
     var userData: NSDictionary!
     var centerViewController: ViewController!
     var settingsViewController: SettingsViewController!
@@ -23,17 +23,15 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var centerNavController: UINavigationController!
     var profileNavController: UINavigationController!
     var historyNavController: UINavigationController!
-    var menuItems = [MenuItems]()
+    var menuItems: [MenuItems]!
 
     // MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         firebase = appDelegate.firebase
         userData = firebase.userData
-        
-//        currentUser = appDelegate.currentUser
-        
         centerViewController = storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
         settingsViewController = storyboard?.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         profileViewController = storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
@@ -55,10 +53,8 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let item4 = MenuItems(title: "Profile", icon: icon4)!
         
         if(userData!["userType"] as? String == "Receiver") {
-            print("You are a receiver")
             self.menuItems = [item0, item1, item2, item3, item4]
         } else {
-            print("You are a donor")
             self.menuItems = [item0, item1, item2, item3]
         }
     }
