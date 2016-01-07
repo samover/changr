@@ -15,9 +15,7 @@ class ViewController: UIViewController {
     
     // MARK: Properties
     var appDelegate: AppDelegate!
-    let firebase = FirebaseWrapper()
-    let defaults = NSUserDefaults.standardUserDefaults()
-
+    var firebase: FirebaseWrapper!
     
     // MARK: Outlets
     @IBOutlet weak var currentUserLabel: UILabel!
@@ -26,6 +24,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        firebase = appDelegate.firebase
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,8 +34,6 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func menuButton(sender: AnyObject) {
-        let userData = defaults.objectForKey("userData")
-        print("Data: \(userData)")
         appDelegate.centerContainer!.toggleDrawerSide(.Left, animated: true, completion: nil)
     }
     

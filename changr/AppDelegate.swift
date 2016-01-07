@@ -58,7 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         if(firebase.isUserLoggedIn()) {
             firebase.authRef().observeSingleEventOfType(.Value, withBlock: { snapshot in
-                print(snapshot.value)
                 self.firebase.userData = snapshot.value as? NSDictionary
                 self.window!.rootViewController = self.centerContainer
                 self.window!.makeKeyAndVisible()
@@ -68,56 +67,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             self.window!.makeKeyAndVisible()
         }
         
-
         return true
     }
     
-    // Checking User permissions for using background location updates
-
-    
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-
-        switch status {
-
-            case .AuthorizedAlways:
-                locationManager.startMonitoringForRegion(region)
-                locationManager.startRangingBeaconsInRegion(region)
-                locationManager.requestStateForRegion(region)
-
-            case .Denied:
-                let alert = UIAlertController(title: "Warning", message: "You've disabled location update which is required for this app to work. Go to your phone settings and change the permissions.", preferredStyle: UIAlertControllerStyle.Alert)
-                let alertAction = UIAlertAction(title: "OK!", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
-                alert.addAction(alertAction)
-
-                self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
-
-            default:
-                print("default case")
-        }
-    }
-    
-    // Start searching for nearby beacons and store the found beacons in an array:
-    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
-        if firebase.isUserLoggedIn() {
-            self.beacons = beacons
-
-            NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
-
-            firebase.authRef().observeEventType(.Value, withBlock: { snapshot in
-                let value = snapshot.value as! NSDictionary
-                for beaconID in self.beacons {
-                    let beaconMinor = beaconID.minor.stringValue
-                    if(self.notification.containsHistory(beaconMinor) && value["userType"] as! String == "Donor") {
-                        self.notification.send(beaconMinor)
-                    }
-                }
-            })
-        }
-    }
-
-    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
-        notification.resetHistory()
-    }
     
     // Directing a user to a specific view controller when they tap on "View Profile" after receiving a local push notification:
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, withResponseInfo responseInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
@@ -153,4 +105,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
     }
 
+    // MARK: LocationManager Functions
+    // Checking User permissions for using background location updates
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        
+        switch status {
+            
+        case .AuthorizedAlways:
+            locationManager.startMonitoringForRegion(region)
+            locationManager.startRangingBeaconsInRegion(region)
+            locationManager.requestStateForRegion(region)
+            
+        case .Denied:
+            let alert = UIAlertController(title: "Warning", message: "You've disabled location update which is required for this app to work. Go to your phone settings and change the permissions.", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertAction = UIAlertAction(title: "OK!", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
+            alert.addAction(alertAction)
+            
+            self.window?.rootViewController?.presentViewController(alert, animated: true, completion: nil)
+            
+        default:
+            print("default case")
+        }
+    }
+    
+    // Start searching for nearby beacons and store the found beacons in an array:
+    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
+        if firebase.isUserLoggedIn() {
+            self.beacons = beacons
+            
+            NSNotificationCenter.defaultCenter().postNotificationName("updateBeaconTableView", object: self.beacons)
+            
+            firebase.authRef().observeEventType(.Value, withBlock: { snapshot in
+                let value = snapshot.value as! NSDictionary
+                for beaconID in self.beacons {
+                    let beaconMinor = beaconID.minor.stringValue
+                    if(self.notification.containsHistory(beaconMinor) && value["userType"] as! String == "Donor") {
+                        self.notification.send(beaconMinor)
+                    }
+                }
+            })
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didExitRegion region: CLRegion) {
+        notification.resetHistory()
+    }
 }

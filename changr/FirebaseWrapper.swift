@@ -22,8 +22,6 @@ class FirebaseWrapper {
     
     func isUserLoggedIn() -> Bool {
         if(ref.authData != nil) {
-            let userData = defaults.dictionaryForKey("userData")
-            print(userData)
             return true
         } else {
             return false
@@ -40,7 +38,6 @@ class FirebaseWrapper {
     
     func fetchUserData() -> Void {
         authRef().observeSingleEventOfType(.Value, withBlock: { snapshot in
-            print(snapshot.value)
             self.userData = snapshot.value as? NSDictionary
             self.fetched = true
         })
