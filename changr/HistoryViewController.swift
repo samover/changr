@@ -17,6 +17,8 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     var beaconHistoryList = [NSDictionary]()
     var donationsList = [["amount" : "Donation Amount: £2.00", "date" : "Paid On: 01/01/2016"], ["amount" : "Donation Amount: £4.50", "date" : "Paid On: 03/01/2016"], ["amount" : "Donation Amount: £6.50", "date" : "Paid On: 16/12/2015"], ["amount" : "Donation Amount: £10.00", "date" : "Paid On: 29/12/2015"], ["amount" : "Donation Amount: £3.50", "date" : "Paid On: 03/01/2016"], ["amount" : "Donation Amount: £7.00", "date" : "Paid On: 11/12/2015"], ["amount" : "Donation Amount: £2.20", "date" : "Paid On: 29/12/2015"], ["amount" : "Donation Amount: £9.50", "date" : "Paid On: 10/12/2015"], ["amount" : "Donation Amount: £5.00", "date" : "Paid On: 20/12/2016"], ["amount" : "Donation Amount: £1.50", "date" : "Paid On: 31/12/2015"]]
     
+    var donationsReceivedList = [["amount" : "£2.00 from Arfah Farooq", "date" : "just now"], ["amount" : "£4.50 from John Davies", "date" : "1 day ago"], ["amount" : "£1.50 from Sarah Darling", "date" : "3 days ago"], ["amount" : "£3.20 from Alan Sugar", "date" : "6 hours ago"], ["amount" : "£0.50 from Bill Gates", "date" : "last week"], ["amount" : "£8.50 from Sam Overloop", "date" : "2 weeks ago"], ["amount" : "£2.50 from Fergus Lemon", "date" : "3 hours ago"]]
+    
     // MARK: Outlets
     @IBOutlet weak var historySegmentedControl: UISegmentedControl!
     @IBOutlet weak var historyTableView: UITableView!
@@ -65,7 +67,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         
         switch(historySegmentedControl.selectedSegmentIndex) {
             case 0: // Donations
-                returnValue = donationsList.count
+                returnValue = firebase.userData!["userType"] as? String == "Donor" ? donationsList.count : donationsReceivedList.count
                 break
             case 1: // Receivers
                 returnValue = beaconHistoryList.count
@@ -85,8 +87,13 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
         
         switch(historySegmentedControl.selectedSegmentIndex) {
             case 0: // Donations
-                historyCell!.textLabel!.text = donationsList[indexPath.row]["amount"]
-                historyCell!.detailTextLabel?.text = donationsList[indexPath.row]["date"]
+                if(firebase.userData!["userType"] as? String == "Donor") {
+                    historyCell!.textLabel!.text = donationsList[indexPath.row]["amount"]
+                    historyCell!.detailTextLabel?.text = donationsList[indexPath.row]["date"]
+                } else {
+                    historyCell!.textLabel!.text = donationsReceivedList[indexPath.row]["amount"]
+                    historyCell!.detailTextLabel?.text = donationsReceivedList[indexPath.row]["date"]
+                }
                 break
             case 1: // Receivers
                 configureCell(historyCell!, indexPath: indexPath)
