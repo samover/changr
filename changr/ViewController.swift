@@ -46,12 +46,14 @@ class ViewController: UIViewController {
         descriptionLabel.center = CGPointMake(200, 90)
         descriptionLabel.textAlignment = NSTextAlignment.Center
         descriptionLabel.numberOfLines = 0
+        descriptionLabel.layer.masksToBounds = true
+        descriptionLabel.layer.cornerRadius = 8.0
         view.addSubview(descriptionLabel)
         
         descriptionLabel.alpha = 0
         
         UIView.animateWithDuration(2.0, delay: 0.5, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: {
-            self.descriptionLabel.center = CGPointMake(160, 410)
+            self.descriptionLabel.center = CGPointMake(160, 425)
             self.descriptionLabel.alpha = 1
             }, completion: nil)
     }
