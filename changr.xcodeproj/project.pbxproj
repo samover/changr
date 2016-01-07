@@ -107,6 +107,9 @@
 		BBF65F941C35F39500C5137A /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8C1C35F39500C5137A /* Accelerate.framework */; };
 		BBF65F951C35F39500C5137A /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */; };
 		BBF65F961C35F39500C5137A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8E1C35F39500C5137A /* AVFoundation.framework */; };
+		BCEF12FB1C3E7D3E000FC204 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF12FA1C3E7D3D000FC204 /* ResourcesViewController.swift */; };
+		BCEF12FC1C3E7D3E000FC204 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF12FA1C3E7D3D000FC204 /* ResourcesViewController.swift */; };
+		BCEF12FD1C3E7D3E000FC204 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF12FA1C3E7D3D000FC204 /* ResourcesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +214,7 @@
 		BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BBF65F8E1C35F39500C5137A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BBF65F8F1C35F39500C5137A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		BCEF12FA1C3E7D3D000FC204 /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,6 +369,7 @@
 				BBDA6B971C25FE350057C3EC /* FormController.swift */,
 				BB487EE41C2341BF003EC7F5 /* BeaconTableViewController.swift */,
 				BBDA6B8F1C25F9A50057C3EC /* BeaconTableViewCell.swift */,
+				BCEF12FA1C3E7D3D000FC204 /* ResourcesViewController.swift */,
 				7E3FF96E1C23716400CEC296 /* MenuViewController.swift */,
 				7E3FF9761C2377C900CEC296 /* MenuTableViewCell.swift */,
 				7E3FF97A1C2381C300CEC296 /* ProfileViewController.swift */,
@@ -508,7 +513,7 @@
 				TargetAttributes = {
 					7E9B84E81C21B226007DFE64 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 2JV2F8MS42;
+						DevelopmentTeam = JX4R5DM3GR;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -604,6 +609,7 @@
 				BB487EE11C233C82003EC7F5 /* Notifications.swift in Sources */,
 				7E9B85121C21C4E3007DFE64 /* LoginController.swift in Sources */,
 				BB487EE51C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
+				BCEF12FB1C3E7D3E000FC204 /* ResourcesViewController.swift in Sources */,
 				7E3FF97F1C2381CF00CEC296 /* SettingsViewController.swift in Sources */,
 				BBDA6B981C25FE350057C3EC /* FormController.swift in Sources */,
 				7E3929601C36E20C00664426 /* FirebaseWrapper.swift in Sources */,
@@ -625,6 +631,7 @@
 				7E3929521C35418600664426 /* MockFirebase.swift in Sources */,
 				7E58DE371C246B6800AFF2D0 /* LoginController.swift in Sources */,
 				BB487EE21C233C82003EC7F5 /* Notifications.swift in Sources */,
+				BCEF12FC1C3E7D3E000FC204 /* ResourcesViewController.swift in Sources */,
 				7E0A7E0B1C2E931A00C91E44 /* notifications.swift in Sources */,
 				7E0A7E0D1C2E933C00C91E44 /* menuItems.swift in Sources */,
 				BB487EE61C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
@@ -652,6 +659,7 @@
 				7E3929531C35418800664426 /* MockFirebase.swift in Sources */,
 				7E58DE381C246B6900AFF2D0 /* LoginController.swift in Sources */,
 				7E7512B81C31864400ADB14E /* FormController.swift in Sources */,
+				BCEF12FD1C3E7D3E000FC204 /* ResourcesViewController.swift in Sources */,
 				BB487EE31C233C82003EC7F5 /* Notifications.swift in Sources */,
 				BB487EE71C2341BF003EC7F5 /* BeaconTableViewController.swift in Sources */,
 				7E3FF97D1C2381C300CEC296 /* ProfileViewController.swift in Sources */,
@@ -827,7 +835,7 @@
 					"$(PROJECT_DIR)/changr/PayPalMobile",
 					"$(PROJECT_DIR)/changr/CardIO",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changrHamza;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fergus.lemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr/changr-Bridging-Header.h";
@@ -857,7 +865,7 @@
 					"$(PROJECT_DIR)/changr/PayPalMobile",
 					"$(PROJECT_DIR)/changr/CardIO",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changrHamza;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fergus.lemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr/changr-Bridging-Header.h";

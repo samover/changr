@@ -16,10 +16,12 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var settingsViewController: SettingsViewController!
     var profileViewController: ProfileViewController!
     var historyViewController: HistoryViewController!
+    var resourcesViewController: ResourcesViewController!
     var settingsNavController: UINavigationController!
     var centerNavController: UINavigationController!
     var profileNavController: UINavigationController!
     var historyNavController: UINavigationController!
+    var resourcesNavController: UINavigationController!
     var menuItems = [MenuItems]()
 
     // MARK: LifeCycle
@@ -30,6 +32,7 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         settingsViewController = storyboard?.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         profileViewController = storyboard?.instantiateViewControllerWithIdentifier("ProfileViewController") as! ProfileViewController
         historyViewController = storyboard?.instantiateViewControllerWithIdentifier("HistoryViewController") as! HistoryViewController
+        resourcesViewController = storyboard?.instantiateViewControllerWithIdentifier("ResourcesViewController") as! ResourcesViewController
         
         let icon0 = UIImage(named: "home")!
         let item0 = MenuItems(title: "Home", icon: icon0)!
@@ -37,13 +40,16 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let icon1 = UIImage(named: "settings")!
         let item1 = MenuItems(title: "Settings", icon: icon1)!
 
-        let icon2 = UIImage(named: "profile")!
-        let item2 = MenuItems(title: "Profile", icon: icon2)!
+        let icon2 = UIImage(named: "history")!
+        let item2 = MenuItems(title: "History", icon: icon2)!
         
-        let icon3 = UIImage(named: "history")!
-        let item3 = MenuItems(title: "History", icon: icon3)!
+        let icon3 = UIImage(named: "resources")!
+        let item3 = MenuItems(title: "Resources", icon: icon3)!
+
+        let icon4 = UIImage(named: "profile")!
+        let item4 = MenuItems(title: "Profile", icon: icon4)!
         
-        menuItems += [item0, item1, item2, item3]
+        menuItems += [item0, item1, item2, item3, item4]
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,15 +85,20 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             settingsNavController = UINavigationController(rootViewController: settingsViewController)
             appDelegate.centerContainer!.centerViewController = settingsNavController
             break;
-        
+
         case 2:
-            profileNavController = UINavigationController(rootViewController: profileViewController)
-            appDelegate.centerContainer!.centerViewController = profileNavController
+            historyNavController = UINavigationController(rootViewController: historyViewController)
+            appDelegate.centerContainer!.centerViewController = historyNavController
             break;
 
         case 3:
-            historyNavController = UINavigationController(rootViewController: historyViewController)
-            appDelegate.centerContainer!.centerViewController = historyNavController
+            resourcesNavController = UINavigationController(rootViewController: resourcesViewController)
+            appDelegate.centerContainer!.centerViewController = resourcesNavController
+            break;
+
+        case 4:
+            profileNavController = UINavigationController(rootViewController: profileViewController)
+            appDelegate.centerContainer!.centerViewController = profileNavController
             break;
 
         default:
