@@ -25,28 +25,31 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
-        welcomeLabel = UILabel()
-        welcomeLabel.text = "Welcome to Changr"
-        welcomeLabel.font = UIFont.systemFontOfSize(25)
-        welcomeLabel.sizeToFit()
-        welcomeLabel.center = CGPoint(x: 100, y: 40)
+        // Welcome Label:
+        welcomeLabel = UILabel(frame: CGRectMake(0, 0, 350, 350))
+        welcomeLabel.text = "Welcome to Changr!"
+        welcomeLabel.font = UIFont.boldSystemFontOfSize(27)
+        welcomeLabel.center = CGPointMake(100, 40)
+        welcomeLabel.textAlignment = NSTextAlignment.Center
         view.addSubview(welcomeLabel)
         
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: {
-            self.welcomeLabel.center = CGPoint(x: 100, y:40 + 200)
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: {
+            self.welcomeLabel.center = CGPointMake(160, 240)
             }, completion: nil)
         
-        descriptionLabel = UILabel()
+        // Description Label:
+        descriptionLabel = UILabel(frame: CGRectMake(0, 0, 270, 450))
         descriptionLabel.text = "Changr is an app to help those who are homeless..."
-        descriptionLabel.font = UIFont.boldSystemFontOfSize(15)
-        descriptionLabel.sizeToFit()
-        descriptionLabel.center = CGPoint(x: 200, y: 90)
+        descriptionLabel.font = UIFont.italicSystemFontOfSize(18)
+        descriptionLabel.center = CGPointMake(200, 90)
+        descriptionLabel.textAlignment = NSTextAlignment.Center
+        descriptionLabel.numberOfLines = 0
         view.addSubview(descriptionLabel)
         
         descriptionLabel.alpha = 0
         
         UIView.animateWithDuration(2.0, delay: 0.5, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: UIViewAnimationOptions.TransitionNone, animations: {
-            self.descriptionLabel.center = CGPoint(x: 200, y: 90 + 200)
+            self.descriptionLabel.center = CGPointMake(160, 290)
             self.descriptionLabel.alpha = 1
             }, completion: nil)
     }
