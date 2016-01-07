@@ -117,6 +117,7 @@ class FormController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
         firebase.authRef().updateChildValues(updateUser)
         clearUserDefaults()
+        self.dismissViewControllerAnimated(true, completion: nil)
         self.appDelegate.window?.rootViewController = self.appDelegate.centerContainer
         self.appDelegate.window!.makeKeyAndVisible()
     }
