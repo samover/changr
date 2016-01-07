@@ -34,7 +34,6 @@ class ProfileViewController: UIViewController {
 
     func getCurrentUserInfoFromDBAndDisplayData() {
          firebase.authRef().observeSingleEventOfType(.Value, withBlock: { snapshot in
-            print(snapshot.value)
             let currentUser = snapshot.value
             self.displayReceiverProfileImage((currentUser["profileImage"] as? String)!)
             self.fullNameDisplay.text = (currentUser["fullName"] as! String)

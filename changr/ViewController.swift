@@ -9,7 +9,7 @@ class ViewController: UIViewController {
     // MARK: Properties
 
     var appDelegate: AppDelegate!
-    let firebase = FirebaseWrapper()
+    var firebase: FirebaseWrapper!
     var welcomeLabel: UILabel!
     var descriptionLabel: UILabel!
 
@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        firebase = appDelegate.firebase
         displayWelcomeLabel()
         displayDescriptionLabel()
     }

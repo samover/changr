@@ -10,13 +10,14 @@ import UIKit
 import Firebase
 
 class Notification {
-    let firebase = FirebaseWrapper()
+    var firebase: FirebaseWrapper!
     var history: [String]?
     let notificationActionViewProfile :UIMutableUserNotificationAction = UIMutableUserNotificationAction()
     let notificationCategory: UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
     
-    init() {
+    init(firebase: FirebaseWrapper!) {
         self.history = []
+        self.firebase = firebase
     }
     
     func build() -> Void {

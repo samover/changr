@@ -33,11 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         firebase = FirebaseWrapper()
-        notification = Notification()
+        notification = Notification(firebase: firebase)
         locationManager.requestAlwaysAuthorization()
         locationManager.delegate = self
         
-//        firebase.ref.unauth()
         // For PayPal Integration:
         PayPalMobile.initializeWithClientIdsForEnvironments([PayPalEnvironmentProduction: "AaAqHxwwgSS6LjhixZVQqFZNeCrjzaDgwIdSBvOoxptrcGAmDTvtrNrH4500aR7o9b42WUe-hTVq62hA", PayPalEnvironmentSandbox: "AUOe5U1jc9EbPxihVXMPlFVbsqcZwAan42In7Rue5QZZsAL3H3U9uSlQdBSKUyznjRUEBdAxTDGY_7KH"])
         
