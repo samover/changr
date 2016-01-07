@@ -11,7 +11,7 @@ import Firebase
 
 class ProfileViewController: UIViewController {
 
-    // MARK: Properties
+    // MARK: Outlets
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var fullNameDisplay: UILabel!
@@ -19,24 +19,21 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var dateOfBirthDisplay: UILabel!
     @IBOutlet weak var genderDisplay: UILabel!
 
-
     
-    let firebase = FirebaseWrapper()
+    // MARK: Properties
+    var firebase: FirebaseWrapper!
     var appDelegate: AppDelegate!
 
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-
-
+        firebase = appDelegate.firebase
         getCurrentUserInfoFromDBAndDisplayData()
     }
 
     func getCurrentUserInfoFromDBAndDisplayData() {
-         let userRef = Firebase(url: "https://changr.firebaseio.com/users/\(firebase.ref.authData.uid)")
-
-         userRef.observeEventType(.Value, withBlock: { snapshot in
+         firebase.authRef().observeSingleEventOfType(.Value, withBlock: { snapshot in
             print(snapshot.value)
             let currentUser = snapshot.value
             self.displayReceiverProfileImage((currentUser["profileImage"] as? String)!)

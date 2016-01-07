@@ -6,7 +6,6 @@
 //  Copyright © 2015 Samuel Overloop. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import CoreLocation
 

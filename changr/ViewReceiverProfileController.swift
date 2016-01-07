@@ -5,8 +5,7 @@ import Firebase
 
 class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayPalPaymentDelegate {
     
-    // MARK: Properties
-    
+    // MARK: Outlets
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var fullNameDisplay: UILabel!
     @IBOutlet weak var emailDisplay: UILabel!
@@ -16,11 +15,12 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
     @IBOutlet weak var baseConstraint: NSLayoutConstraint!
     @IBOutlet weak var PopUpView: UIView!
 
-    var ref: Firebase!
+    // MARK: Properties
+    var firebase: FirebaseWrapper!
+    var appDelegate: AppDelegate!
     var beaconData: String!
     var currentReceiver: NSDictionary!
     var payPalConfig = PayPalConfiguration()
-    var appDelegate: AppDelegate!
     var environment:String = PayPalEnvironmentNoNetwork {
         willSet(newEnvironment) {
             if (newEnvironment != environment) {
@@ -34,6 +34,7 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
         }
     }
 
+    // MARK: Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,8 +42,8 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
         PopUpView.layer.cornerRadius = 5;
         PopUpView.layer.masksToBounds = true
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate!
-
-        ref = Firebase(url: "https://changr.firebaseio.com/users")
+        firebase = appDelegate.firebase
+        
         getReceiverFromDatabaseAndDisplayData()
         
         // PayPal Configuration:
@@ -70,7 +71,7 @@ class ViewReceiverProfileController: UIViewController, UITextFieldDelegate, PayP
         
         // Get receiver from database:
         
-        ref.observeEventType(.Value, withBlock: { snapshot in
+        firebase.childRef("users").observeEventType(.Value, withBlock: { snapshot in
             for item in snapshot.children {
                 let child = item as! FDataSnapshot
                 let value = child.value as! NSDictionary
