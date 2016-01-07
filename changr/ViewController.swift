@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         welcomeLabel = UILabel(frame: CGRectMake(0, 0, 350, 350))
         welcomeLabel.text = "Welcome to Changr!"
         welcomeLabel.font = UIFont.boldSystemFontOfSize(28)
+        welcomeLabel.textColor = UIColor.whiteColor()
         welcomeLabel.center = CGPointMake(100, 2)
         welcomeLabel.textAlignment = NSTextAlignment.Center
         view.addSubview(welcomeLabel)
