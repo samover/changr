@@ -154,7 +154,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     if(uuid == value["beaconMinor"] as! String) {
                         self.localNotificationSend(uuid, fullName: value["fullName"] as! String)
                         self.updateReceiverHistory(child.key)
-
                     }
                 }
             }

@@ -61,12 +61,6 @@ class MenuViewController: UIViewController, UITableViewDataSource, UITableViewDe
             print("You are a donor")
             self.menuItems = [item0, item1, item2, item3]
         }
-
-        
-        
-//        while(menuItems.count < 1) {
-//            print("Dont'do shit")
-//        }
     }
 
     override func didReceiveMemoryWarning() {

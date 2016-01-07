@@ -13,7 +13,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     
     // MARK: Properties
     var appDelegate: AppDelegate!
-    var firebase = FirebaseWrapper()
+    var firebase: FirebaseWrapper!
     var pickerDataSource = ["Donor", "Receiver"]
     var userSelection = "Donor"
     
@@ -29,7 +29,7 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         emailTextField.delegate = self
         passwordTextField.delegate = self
         appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate!
-        
+        firebase = appDelegate.firebase
         self.userType.dataSource = self
         self.userType.delegate = self
         self.errorMessage.hidden = true
@@ -106,8 +106,12 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             if error != nil {
                 self.showErrorMessage("Username or password incorrect")
             } else {
-                self.resetAuthenticationForm()
-                newUser == true ? self.updateProfile(authData) : self.delegateToCenterContainer()
+                self.firebase.authRef().observeSingleEventOfType(.Value, withBlock: { snapshot in
+                    print(snapshot.value)
+                    self.firebase.userData = snapshot.value as? NSDictionary
+                    self.resetAuthenticationForm()
+                    newUser == true ? self.updateProfile(authData) : self.delegateToCenterContainer()
+                })
             }
         })
     }
