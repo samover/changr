@@ -148,8 +148,6 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
             self.appDelegate.window?.rootViewController = self.appDelegate.centerContainer
             self.appDelegate.window!.makeKeyAndVisible()
         })
-
-
     }
     
     func segueToCompleteProfile() -> Void {
