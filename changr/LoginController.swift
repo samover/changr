@@ -102,17 +102,13 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func loginUser(newUser: Bool) -> Void {
-        firebase.ref.authUser(emailTextField.text, password: passwordTextField.text, withCompletionBlock: {
+        firebase.ref.authUser(self.emailTextField.text, password: self.passwordTextField.text, withCompletionBlock: {
             (error, authData) in
             if error != nil {
                 self.showErrorMessage("Username or password incorrect")
             } else {
-                self.firebase.authRef().observeSingleEventOfType(.Value, withBlock: { snapshot in
-                    print(snapshot.value)
-                    self.firebase.userData = snapshot.value as? NSDictionary
-                    self.resetAuthenticationForm()
-                    newUser == true ? self.updateProfile(authData) : self.delegateToCenterContainer()
-                })
+                self.resetAuthenticationForm()
+                newUser == true ? self.updateProfile(authData) : self.delegateToCenterContainer()
             }
         })
     }
@@ -136,16 +132,24 @@ class LoginController: UIViewController, UIPickerViewDataSource, UIPickerViewDel
         
         if self.userSelection == "Donor" {
             firebase.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newDonor)
+            self.firebase.userData = newDonor
             self.delegateToCenterContainer()
         }  else {
             firebase.ref.childByAppendingPath("users").childByAppendingPath(authData.uid).setValue(newReceiver)
+            self.firebase.userData = newReceiver
             self.segueToCompleteProfile()
         }
     }
     
     func delegateToCenterContainer() -> Void {
-        self.appDelegate.window?.rootViewController = self.appDelegate.centerContainer
-        self.appDelegate.window!.makeKeyAndVisible()
+        self.firebase.authRef().observeSingleEventOfType(.Value, withBlock: { snapshot in
+            print(snapshot.value)
+            self.firebase.userData = snapshot.value as? NSDictionary
+            self.appDelegate.window?.rootViewController = self.appDelegate.centerContainer
+            self.appDelegate.window!.makeKeyAndVisible()
+        })
+
+
     }
     
     func segueToCompleteProfile() -> Void {
