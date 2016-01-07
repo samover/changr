@@ -851,7 +851,7 @@
 					"$(PROJECT_DIR)/changr/PayPalMobile",
 					"$(PROJECT_DIR)/changr/CardIO",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changrHSheikh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fergus.changrHSheikh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr/changr-Bridging-Header.h";
@@ -881,7 +881,7 @@
 					"$(PROJECT_DIR)/changr/PayPalMobile",
 					"$(PROJECT_DIR)/changr/CardIO",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.samover.changrHSheikh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fergus.changrHSheikh;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "changr/changr-Bridging-Header.h";
