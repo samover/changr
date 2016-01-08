@@ -47,10 +47,6 @@
 		7E3FF9841C2381D700CEC296 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */; };
 		7E3FF9851C2381D700CEC296 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FF9821C2381D700CEC296 /* HistoryViewController.swift */; };
 		7E47F22B1C39D8C8004E0E8E /* mockFirebaseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E47F22A1C39D8C8004E0E8E /* mockFirebaseSpec.swift */; };
-		7E47F22E1C39D96B004E0E8E /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E47F22C1C39D96B004E0E8E /* Nimble.framework */; };
-		7E47F22F1C39D96B004E0E8E /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E47F22D1C39D96B004E0E8E /* Quick.framework */; };
-		7E47F2311C39D988004E0E8E /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E47F22C1C39D96B004E0E8E /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7E47F2321C39D988004E0E8E /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E47F22D1C39D96B004E0E8E /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7E58DE351C246AA400AFF2D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
 		7E58DE361C246AA500AFF2D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B84EC1C21B226007DFE64 /* AppDelegate.swift */; };
 		7E58DE371C246B6800AFF2D0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9B85111C21C4E3007DFE64 /* LoginController.swift */; };
@@ -79,6 +75,10 @@
 		7E9F16FA1C3FB6B400A0AFFB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8E1C35F39500C5137A /* AVFoundation.framework */; };
 		7E9F16FB1C3FB6B800A0AFFB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8F1C35F39500C5137A /* CoreMedia.framework */; };
 		7E9F16FC1C3FB6C100A0AFFB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */; };
+		7E9F16FE1C3FB89000A0AFFB /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E47F22C1C39D96B004E0E8E /* Nimble.framework */; };
+		7E9F16FF1C3FB89000A0AFFB /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E47F22D1C39D96B004E0E8E /* Quick.framework */; };
+		7E9F17001C3FB89F00A0AFFB /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E47F22C1C39D96B004E0E8E /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7E9F17011C3FB89F00A0AFFB /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7E47F22D1C39D96B004E0E8E /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7EA9527F1C39A25E000E5676 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9527E1C39A25E000E5676 /* Firebase.framework */; };
 		7EA952801C39A25E000E5676 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9527E1C39A25E000E5676 /* Firebase.framework */; };
 		7EA952811C39A25E000E5676 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9527E1C39A25E000E5676 /* Firebase.framework */; };
@@ -148,8 +148,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7E47F2311C39D988004E0E8E /* Nimble.framework in CopyFiles */,
-				7E47F2321C39D988004E0E8E /* Quick.framework in CopyFiles */,
+				7E9F17001C3FB89F00A0AFFB /* Nimble.framework in CopyFiles */,
+				7E9F17011C3FB89F00A0AFFB /* Quick.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,8 +260,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E47F22E1C39D96B004E0E8E /* Nimble.framework in Frameworks */,
-				7E47F22F1C39D96B004E0E8E /* Quick.framework in Frameworks */,
+				7E9F16FE1C3FB89000A0AFFB /* Nimble.framework in Frameworks */,
+				7E9F16FF1C3FB89000A0AFFB /* Quick.framework in Frameworks */,
 				7EA952941C39A2D3000E5676 /* CFNetwork.framework in Frameworks */,
 				7EA952961C39A2D7000E5676 /* SystemConfiguration.framework in Frameworks */,
 				7EA9528C1C39A2C2000E5676 /* CoreLocation.framework in Frameworks */,
