@@ -9,6 +9,12 @@
 import XCTest
 
 class menuItems: XCTestCase {
+    
+    override func setUp() {
+        super.setUp()
+        UIApplication.sharedApplication().delegate = TestingAppDelegate()
+    }
+    
     func testInitialization() {
         let item = MenuItems(title: "Foo", icon: nil)
         XCTAssertNotNil(item)

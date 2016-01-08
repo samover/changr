@@ -12,6 +12,8 @@ class notifications: XCTestCase {
 
     override func setUp() {
         super.setUp()
+        UIApplication.sharedApplication().delegate = TestingAppDelegate()
+
     }
     
     override func tearDown() {
