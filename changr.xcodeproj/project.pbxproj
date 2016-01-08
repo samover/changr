@@ -71,6 +71,14 @@
 		7E9F16F21C3EFA0B00A0AFFB /* libCardIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 171FFE711C3EC7A10007E2DB /* libCardIO.a */; };
 		7E9F16F31C3EFA0B00A0AFFB /* libopencv_core.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 171FFE721C3EC7A10007E2DB /* libopencv_core.a */; };
 		7E9F16F41C3EFA0B00A0AFFB /* libopencv_imgproc.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 171FFE731C3EC7A10007E2DB /* libopencv_imgproc.a */; };
+		7E9F16F51C3FB69500A0AFFB /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD2A22D1C3A9EA100220FD2 /* SafariServices.framework */; };
+		7E9F16F61C3FB69900A0AFFB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD2A22B1C3A9E9800220FD2 /* MobileCoreServices.framework */; };
+		7E9F16F71C3FB69C00A0AFFB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBD2A2291C3A9E8F00220FD2 /* MessageUI.framework */; };
+		7E9F16F81C3FB6AC00A0AFFB /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8C1C35F39500C5137A /* Accelerate.framework */; };
+		7E9F16F91C3FB6B000A0AFFB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8D1C35F39500C5137A /* AudioToolbox.framework */; };
+		7E9F16FA1C3FB6B400A0AFFB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8E1C35F39500C5137A /* AVFoundation.framework */; };
+		7E9F16FB1C3FB6B800A0AFFB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBF65F8F1C35F39500C5137A /* CoreMedia.framework */; };
+		7E9F16FC1C3FB6C100A0AFFB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB487EDE1C2323C0003EC7F5 /* CoreLocation.framework */; };
 		7EA9527F1C39A25E000E5676 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9527E1C39A25E000E5676 /* Firebase.framework */; };
 		7EA952801C39A25E000E5676 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9527E1C39A25E000E5676 /* Firebase.framework */; };
 		7EA952811C39A25E000E5676 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EA9527E1C39A25E000E5676 /* Firebase.framework */; };
@@ -241,6 +249,7 @@
 				7EA952831C39A27A000E5676 /* libicucore.tbd in Frameworks */,
 				7EA9527F1C39A25E000E5676 /* Firebase.framework in Frameworks */,
 				BBF65F941C35F39500C5137A /* Accelerate.framework in Frameworks */,
+				7E9F16FC1C3FB6C100A0AFFB /* CoreLocation.framework in Frameworks */,
 				BBF65F951C35F39500C5137A /* AudioToolbox.framework in Frameworks */,
 				BBF65F961C35F39500C5137A /* AVFoundation.framework in Frameworks */,
 				171FFE751C3EC7A10007E2DB /* libopencv_core.a in Frameworks */,
@@ -268,15 +277,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E9F16F91C3FB6B000A0AFFB /* AudioToolbox.framework in Frameworks */,
 				7EA952951C39A2D4000E5676 /* CFNetwork.framework in Frameworks */,
+				7E9F16FA1C3FB6B400A0AFFB /* AVFoundation.framework in Frameworks */,
+				7E9F16F61C3FB69900A0AFFB /* MobileCoreServices.framework in Frameworks */,
+				7E9F16FB1C3FB6B800A0AFFB /* CoreMedia.framework in Frameworks */,
 				7EA952971C39A2D8000E5676 /* SystemConfiguration.framework in Frameworks */,
 				7EA9528D1C39A2C2000E5676 /* CoreLocation.framework in Frameworks */,
 				7E9F16EB1C3EF87E00A0AFFB /* libPayPalMobile.a in Frameworks */,
 				7EA952931C39A2D0000E5676 /* Security.framework in Frameworks */,
 				7EA9528F1C39A2C9000E5676 /* libicucore.tbd in Frameworks */,
+				7E9F16F51C3FB69500A0AFFB /* SafariServices.framework in Frameworks */,
 				7E9F16F31C3EFA0B00A0AFFB /* libopencv_core.a in Frameworks */,
+				7E9F16F81C3FB6AC00A0AFFB /* Accelerate.framework in Frameworks */,
 				7EA952911C39A2CC000E5676 /* libc++.tbd in Frameworks */,
 				7E9F16F41C3EFA0B00A0AFFB /* libopencv_imgproc.a in Frameworks */,
+				7E9F16F71C3FB69C00A0AFFB /* MessageUI.framework in Frameworks */,
 				7E9F16F21C3EFA0B00A0AFFB /* libCardIO.a in Frameworks */,
 				7EA952811C39A25E000E5676 /* Firebase.framework in Frameworks */,
 				7EA952A01C39A58E000E5676 /* DrawerController.framework in Frameworks */,
