@@ -1,6 +1,6 @@
 # Changr
 
-Final project for Makers Academy. Working in an agile team we build an IOS app in **Swift**, a language none of us had any prior experience with. With this project we wanted to help the less advantaged in our society to receive donations on the fly using a location-aware app thanks to **Bluetooth Beacons**.
+Final project for Makers Academy. Working in an agile team we built an IOS app in **Swift**, a language none of us had any prior experience with. With this project we wanted to help the less advantaged in our society to receive donations on the fly using a location-aware app thanks to **Bluetooth Beacons**.
 
 Using a TDD approach, we had to write [an ad-hoc mock](https://github.com/samover/FirebaseMock) for **Firebase** in Swift, which we tested using **Quick/Nimble**. Unit testing was done through **XCTest**.
 
