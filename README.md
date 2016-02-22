@@ -4,7 +4,7 @@ Final project for Makers Academy. Working in an agile team we built an IOS app i
 
 Using a TDD approach, we had to write [an ad-hoc mock](https://github.com/samover/FirebaseMock) for **Firebase** in Swift, which we tested using **Quick/Nimble**. Unit testing was done through **XCTest**.
 
-The presentation video of the app can be found on [Youtube](https://youtu.be/AyVZJ511cqI?t=96)
+The presentation video of the app can be found on [Youtube](https://www.youtube.com/watch?v=r0fKhXaRQPc)
 
 How to install?
 ---------------
