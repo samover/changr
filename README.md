@@ -17,4 +17,12 @@ How to install?
 
 How to contribute?
 ------------------
-This was a two week project. We would love to bring this app forward. Contact [the makers](mailto:changr@samover.33mail.com) if you are interested.
+This was a two week project. We would love to bring this app forward. Contact one of the contributors if you are interested.
+
+Contributors
+------------
+* [Hamza Sheikh](https://github.com/hsheikhm)
+* [Radu Asandei](https://github.com/hasulica)
+* [Fergus Lemon](https://github.com/FergusLemon)
+* [Mahmud Hussain](https://github.com/MahmudH)
+* [Samuel Overloop](https://github.com/samover)
